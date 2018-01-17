@@ -1,0 +1,24 @@
+.sentence {
+     background-color: white;
+     padding-top: 50px;
+     clear: both;
+     font-size: 250%;
+     padding-bottom: 20px;
+     center;
+}
+.counter{
+     background-color: white;
+     padding-top: 10px;
+     clear: both;
+     font-size: 100%;
+     center;
+}
+.arrow {
+     background-color: white;
+     padding-top: 0%;
+     clear: both;
+     font-size: 250%;
+     padding-bottom: 0%;
+     center;
+}
+
