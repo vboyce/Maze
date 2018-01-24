@@ -16,9 +16,44 @@
 .arrow {
      background-color: white;
      padding-top: 0%;
-     clear: both;
-     font-size: 250%;
+     float: center;
+     font-size: 100%;
      padding-bottom: 0%;
-     center;
+     text-align: center;
+}
+.larrow {
+     background-color: white;
+     width: 50%;
+     padding-top: 0%;
+     font-size: 350%;
+     outline: 2px solid black;
+     padding-bottom: 0%;
+     display: inline-block;
+}
+.rarrow {
+     background-color: white;
+     width: 50%;
+     padding-top: 0%;
+     font-size: 350%;
+     outline: 2px solid black;
+     padding-bottom: 0%;
+     display: inline-block;
 }
 
+.parent {
+	background: gray;
+  /* inline-block hack */
+  font-size: 0;
+  
+}
+
+.child {
+	width: 400px;
+  height: 400px;
+  margin: 0 10px;
+	background: blue;
+  /* inline-block hack */
+  display: inline-block;
+  font-size: medium;
+  text-align: left;
+}

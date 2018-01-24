@@ -43,6 +43,8 @@ jqueryWidget: {
         this.stoppingPoint = this.words.length;
         this.counter=$("<div>").addClass(this.cssPrefix + 'counter');
         this.arrow=$("<div>").addClass(this.cssPrefix + 'arrow');
+        this.larrow=$("<div>").addClass(this.cssPrefix + 'larrow');
+        this.rarrow=$("<div>").addClass(this.cssPrefix + 'rarrow');
         this.wordSpan=$("<div>").addClass(this.cssPrefix + 'sentence');
         this.mainDiv= $("<div>");
         this.element.append(this.mainDiv);
@@ -65,9 +67,15 @@ jqueryWidget: {
         this.wordSpan.html((this.order[this.currentWord]===0) ?
             (this.words[this.currentWord]+"&emsp;&emsp;"+this.alts[this.currentWord]):
             (+this.alts[this.currentWord]+"&emsp;&emsp;"+this.words[this.currentWord]));
-        this.arrow.html("&larr;&emsp;&rarr;");
-        this.counter.html("Words so far: 0");
+        this.larrow.html("&larr;");
+        this.rarrow.html("&rarr;");
+        var x = this.utils.getValueFromPreviousElement("counter");
+        if (x) this.wordsSoFar=x;
+        else this.wordsSoFar=0;
+        this.counter.html("Words so far: "+this.wordsSoFar);
         this.mainDiv.css('text-align', 'center');
+        this.arrow.append(this.larrow);
+        this.arrow.append(this.rarrow);
         this.mainDiv.append(this.counter);
         this.mainDiv.append(this.wordSpan);
         this.mainDiv.append(this.arrow);
@@ -87,6 +95,7 @@ jqueryWidget: {
                         rs[1] = t.previousTime;
 		            if (t.correct[word]=="no"){
 		                t.utils.setValueForNextElement("failed", true);
+		                t.utils.setValueForNextElement("counter", t.wordsSoFar);
 		                t.processMazeResults();
 		                t.finishedCallback(t.resultsLines);
 		                return true;
@@ -95,6 +104,7 @@ jqueryWidget: {
                 t.previousTime = time;
                 ++(t.currentWord);
                 if (t.currentWord >= t.stoppingPoint) {
+                    t.utils.setValueForNextElement("counter", t.wordsSoFar);
                     t.processMazeResults();
                     t.finishedCallback(t.resultsLines);
                     return true;
@@ -114,7 +124,8 @@ jqueryWidget: {
             this.wordSpan.html((this.order[this.currentWord]===0) ?
             (this.words[this.currentWord]+"&emsp;&emsp;"+this.alts[this.currentWord]):
             (this.alts[this.currentWord]+"&emsp;&emsp;"+this.words[this.currentWord]));
-            this.counter.html("Words so far: "+this.currentWord);
+            this.wordsSoFar++;
+            this.counter.html("Words so far: "+this.wordsSoFar);
         }
     },
 
