@@ -20,24 +20,29 @@
      font-size: 100%;
      padding-bottom: 0%;
      text-align: center;
+     width: 300px;
 }
 .larrow {
      background-color: white;
-     width: 50%;
+     width: 38%;
      padding-top: 0%;
      font-size: 350%;
-     outline: 2px solid black;
+     border: 2px solid black;
      padding-bottom: 0%;
      display: inline-block;
+     margin: 5%;
+     
 }
 .rarrow {
      background-color: white;
-     width: 50%;
+     width: 38%;
      padding-top: 0%;
      font-size: 350%;
-     outline: 2px solid black;
+     border: 2px solid black;
      padding-bottom: 0%;
      display: inline-block;
+     margin: 5%;
+     
 }
 
 .parent {
