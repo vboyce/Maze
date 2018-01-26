@@ -9,6 +9,8 @@ var items = [
     ["test", "Maze", {s: "The day was sunny.", a: "--- went warm and", order: [0,1,1,0]}],
     ["test", "Maze", {s: "The day was cloudy.", a: "--- blew wind because"} ],
     ["test", "Maze", {s: "The doctor said that she had two months to live.", a: "--- he pretty and grow extreme fly give false blue",}],
-    ["sep", "Maze_Separator", {normalMessage: "Correct! Press any key to continue", errorMessage: "Incorrect! Press any key to continue."}],
+    ["test", "Maze", {s: "The dog went to the park.", a: "--- hlh bodf ks dhd atuj."}],
+    ["test", "Maze", {s: "Look, a rainbow!", a: "--- c acizavy!"}],
+    ["sep", "MazeSeparator", {normalMessage: "Correct! Press any key to continue", errorMessage: "Incorrect! Press any key to continue."}],
     ["done", "Message", {html: "All done!"}]
 ];
