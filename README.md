@@ -15,16 +15,17 @@ When a participant makes an incorrect selection, maze will record the time it to
 
 Maze also displays a count of words gotten right so far. If you use the normal separator, the count will reset to 0 at the beginning of each item. If you want the count to be cumulative, you need to use MazeSeparator (.css and .js files included) to separate. All items that intervene between Maze tasks must contain the lines below for cumulative counting to work. 
 > var x = this.utils.getValueFromPreviousElement("counter");
+
 > if (x) this.utils.setValueForNextElement("counter",x);
 
 ### Result columns: (first seven are same as for other modules)
-* 8. Word number: Starting at 0 for the first (no-real-choice) word.
-* 9. Word: The text of the correct word.
-* 10. Alternative: The text of the incorrect choice.
-* 11. Word on (0=left, 1=right): Either 0 or 1 to indicate which side of the screen the correct word was displayed on. 
-* 12. Correct: "yes" or "no" depending on whether the participant answered correctly. Note that "no" will be shown for words the participant did not see (i.e. words after the one they got wrong). 
-* 13. Reading time: in ms. Reading time is provided for all words a participant saw, but the 0-word reading time is assessed differently (and so may not be comparable with other words in the sentence). Reading times are given for the word a participant gets wrong. "None" is used for words a participant did not see. 
-* 14. Sentence. Text of the entire correct sentence. 
+* 8.Word number: Starting at 0 for the first (no-real-choice) word.
+* 9.Word: The text of the correct word.
+* 10.Alternative: The text of the incorrect choice.
+* 11.Word on (0=left, 1=right): Either 0 or 1 to indicate which side of the screen the correct word was displayed on. 
+* 12.Correct: "yes" or "no" depending on whether the participant answered correctly. Note that "no" will be shown for words the participant did not see (i.e. words after the one they got wrong). 
+* 13.Reading time: in ms. Reading time is provided for all words a participant saw, but the 0-word reading time is assessed differently (and so may not be comparable with other words in the sentence). Reading times are given for the word a participant gets wrong. "None" is used for words a participant did not see. 
+* 14.Sentence. Text of the entire correct sentence. 
 
 ## Python tools
 maze.py contains a couple functions that may be helpful for constructing maze tasks. 
