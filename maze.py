@@ -69,7 +69,6 @@ for including in the items list of an ibex experiment. If a file is given, write
     items=""
     for i in range(len(sentences)):
         items+=("[\""+item_name[i]+"\", \"Maze\", {s: \""+sentences[i]+"\", a: \""+distractors[i]+"\"}],\n")
-    print (items)
     if file:
         f=open(file, "w")
         f.writelines(items)
