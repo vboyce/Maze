@@ -28,8 +28,12 @@ Maze also displays a count of words gotten right so far. If you use the normal s
 * 14.Sentence. Text of the entire correct sentence. 
 
 ## Python tools
-maze.py contains a couple functions that may be helpful for constructing maze tasks. 
+maze.py is a command-line runnable python script (run via "python maze.py input.csv") meant to make it easier to create experiments/ibex data files by automating the creation of distractor items. Input should be a tab-separated file with a first column of sentences and a second column of item labels. 
 
-distractor takes a list of strings (sentences) and returns a list of corresponding distractor strings. Modes so far are word-length-matched strings of random letters, or anagrams of the letters in each correct word. Capitilization and end punctuation in the distractor match that of the original sentence. Options include whether to have the first distractor word be three dashes.
+To use, open the maze.py file and check that settings are set appropriately.  
+* mode: either anagram or nonce. Anagram tries to provide distractor words that are anagrams of the real word, and nonce tries to provide length-matched distractors constructed from random letters. (When non-words meeting these criteria are not quickly found, the program will add a random letter to the string and try again. Thus, in some cases distractors may be longer than the matching correct word.0
+* dashes: either True or False depending on whether the first distractor is --- or a normal distractor word
+* output-file: path to where the ibex data file should be outputted
+* header: Everything that goes in the ibex file towards the top
+* footer: Everything that goes in the ibex file towards the bottom
 
-ibex_format takes a list of item-labels, a list of sentences, a list of distractors and produces a string with the input formatted for including in the items list of an ibex data file. This is returned and, if a file argument was provided, written to the file. 

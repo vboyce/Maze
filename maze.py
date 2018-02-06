@@ -1,6 +1,7 @@
 import numpy
 import csv
 import sys
+
 ###Settings:###
 # Set these to specify what options you want#
 #options for mode are "nonce" and "anagram"
@@ -22,6 +23,8 @@ header=('var shuffleSequence = seq("intro",followEachWith("sep","test"), "done")
     '\n\t["done", "Message", {html: "All done!"}]')
 #what ibex stuff goes towards the end of the file
 footer=('\n];')
+
+
 #define global variables WORDLIST and ALPHABET
 with open("celex_words.txt") as celex:
     words=celex.readlines()
@@ -31,7 +34,8 @@ ALPHABET="abcdefghijklmnoqrstuvwxyz"
 
 
 def read_input(file):
-    '''given a file name/path, reads in contents of file into two line by line list.'''
+    '''file: location/name of a tsv file with input sentences in column 1 and and item labels in column 2
+    returns a tuple of lists;first is list of sentences, second is list of item labels'''
     sentences=[]
     items=[]
     with open(file) as f:
@@ -42,11 +46,9 @@ def read_input(file):
     return (sentences, items)
 
 def distractor(data, mode="nonce", dashed=False):
-    '''Given an array of sentences, returns a same size array of distractor word sentences.
+    '''Given a list of sentences, returns a same size list of distractor word sentences.
     If dashed=True, first word of each fake sentence is set to be ---
-    mode can be nonce or anagram
-    if mode is nonce, distractor sentence have same word length as original, but random letters
-    if mode is anagram, distractor sentence is word by word anagram of original, with exception if length 1 words'''
+    mode can be nonce or anagram'''
     output=[]
     for i in range(len(data)):
         words=data[i].split(" ")
@@ -83,7 +85,8 @@ def redo_case(word, case, punc):
         return(word+punc)
 
 def nonce(word):
-    '''returns string of random letters of length word'''
+    '''takes a string and returns string of random letters; output guaranteed not in celex list;
+    usually lengtho of input, but if first 10 attempts to find a non-word fail; tries with length n+1'''
     for i in range(10):
         test="".join(numpy.random.choice(list(ALPHABET), (len(word))))
         if test not in WORDLIST:
@@ -91,7 +94,8 @@ def nonce(word):
     return(nonce(word+"a"))
 
 def anagram(word):
-    '''takes a string and returns an anagram '''
+    '''takes a string and returns an anagram; output guaranteed not in celex list;
+    if first 10 attempts to find non-word anagram fails, tries again anagramming word+1 random letter'''
     for i in range(10):
         nagaram="".join(numpy.random.choice(list(word), len(word), replace=False))
         if nagaram not in WORDLIST:
@@ -101,8 +105,8 @@ def anagram(word):
     return(anagram(new_word))
 
 def ibex_format(item_name, sentences, distractors,header, footer, file=None, ):
-    '''given a list of item names, a list of sentences and a list of distrator items, produces a string suitable
-for including in the items list of an ibex experiment. If a file is given, writes to there as well.'''
+    '''given a list of item names, a list of sentences and a list of distrator items, a header, and a footer, produces a string suitable
+for running in ibex. If a file is given, writes to there as well.'''
     if not len(item_name)==len(sentences):
         raise Exception("item_name and sentences are not same length")
     if not len(sentences)==len(distractors):
