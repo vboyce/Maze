@@ -85,24 +85,40 @@ def redo_case(word, case, punc):
         return(word+punc)
 
 def nonce(word):
-    '''takes a string and returns string of random letters; output guaranteed not in celex list;
-    usually lengtho of input, but if first 10 attempts to find a non-word fail; tries with length n+1'''
-    for i in range(10):
+    '''takes a string and returns length matched string of random letters; output guaranteed not in celex list
+    for words of length 2+; for single letter, returns a letter that is not a,i,o
+    '''
+    if len(word)==1:
+        return(single_letter())
+    while True:
         test="".join(numpy.random.choice(list(ALPHABET), (len(word))))
         if test not in WORDLIST:
             return test
-    return(nonce(word+"a"))
+
 
 def anagram(word):
     '''takes a string and returns an anagram; output guaranteed not in celex list;
-    if first 10 attempts to find non-word anagram fails, tries again anagramming word+1 random letter'''
+    if first 10 attempts to find non-word anagram fails, replaces the first letter
+    with a random letter and tries again
+    for words of length one returns a letter that is not a,i,o '''
+    
+    if len(word)==1:
+        return(single_letter())
     for i in range(10):
         nagaram="".join(numpy.random.choice(list(word), len(word), replace=False))
         if nagaram not in WORDLIST:
             return nagaram
     print("Warning, can't find valid angram of "+word)
-    new_word="".join(numpy.random.choice(list(ALPHABET), 1))+word
+    new_word="".join(numpy.random.choice(list(ALPHABET), 1))+word[1:]
     return(anagram(new_word))
+
+def single_letter():
+    '''returns a letter that is not a,i,o; all single letters are in celex, but other than these three
+    they aren't really words'''
+    safe_single_letter="bcdefghjklmnpqrstuvwxyz" #ommitting a,i,o on the basis of being ~words
+    test="".join(numpy.random.choice(list(safe_single_letter), 1))
+    return test
+                                        
 
 def ibex_format(item_name, sentences, distractors,header, footer, file=None, ):
     '''given a list of item names, a list of sentences and a list of distrator items, a header, and a footer, produces a string suitable
