@@ -20,29 +20,31 @@
      font-size: 100%;
      padding-bottom: 0%;
      text-align: center;
-     width: 600px;
+     width: 800px;
      display: block;
 }
 .larrow {
      background-color: white;
-     width: 22%;
+     width: 20%;
      padding-top: 0%;
      font-size: 350%;
      border: 2px solid black;
      padding-bottom: 0%;
      display: inline-block;
-     margin: 5%;
+     margin-right: 2%;
+     margin-left:20%;
      
 }
 .rarrow {
      background-color: white;
-     width: 22%;
+     width: 20%;
      padding-top: 0%;
      font-size: 350%;
      border: 2px solid black;
      padding-bottom: 0%;
      display: inline-block;
-     margin: 5%;
+     margin-left: 2%;
+     margin-right: 20%;
      
 }
 
@@ -54,7 +56,7 @@
 }
 
 .child {
-	width: 600px;
+	width: 800px;
   height: 400px;
   margin: 0 10px;
 	background: blue;
