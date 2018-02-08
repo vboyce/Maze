@@ -1,17 +1,17 @@
 .sentence {
      background-color: white;
      padding-top: 50px;
-     clear: both;
      font-size: 250%;
      padding-bottom: 20px;
-     center;
+     float: center;
+     text-align: center;
 }
 .counter{
      background-color: white;
      padding-top: 10px;
-     clear: both;
      font-size: 100%;
-     center;
+     text-align: center;
+     float: center
 }
 .arrow {
      background-color: white;
@@ -20,11 +20,12 @@
      font-size: 100%;
      padding-bottom: 0%;
      text-align: center;
-     width: 300px;
+     width: 600px;
+     display: block;
 }
 .larrow {
      background-color: white;
-     width: 38%;
+     width: 22%;
      padding-top: 0%;
      font-size: 350%;
      border: 2px solid black;
@@ -35,7 +36,7 @@
 }
 .rarrow {
      background-color: white;
-     width: 38%;
+     width: 22%;
      padding-top: 0%;
      font-size: 350%;
      border: 2px solid black;
@@ -53,7 +54,7 @@
 }
 
 .child {
-	width: 400px;
+	width: 600px;
   height: 400px;
   margin: 0 10px;
 	background: blue;
