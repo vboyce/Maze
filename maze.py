@@ -1,6 +1,7 @@
 import numpy
 import csv
 import sys
+import argparse
 
 ###Settings:###
 # Set these to specify what options you want#
@@ -25,13 +26,25 @@ header=('var shuffleSequence = seq("intro",followEachWith("sep","test"), "done")
 footer=('\n];')
 
 
-#define global variables WORDLIST and ALPHABET
+#define global variables WORDLIST, ALPHABET, and NONCELIST
 with open("celex_words.txt") as celex:
     words=celex.readlines()
 words=[x.strip().lower() for x in words]
 WORDLIST=set(words)
 ALPHABET="abcdefghijklmnoqrstuvwxyz"
 
+#a list of lists of noncewords by length (generated from Wuggy run on Wuggy's orthographic english list,
+#with defaults except 1 nonce/real word and no more than 1 second to find a nonce for each real word
+#guaranteed not in celex word list
+NONCELIST=[[] for _ in range(30)]
+with open("noncewords.txt") as nonce_list:
+    nonce_list=csv.reader(nonce_list, delimiter='\t')
+    next(nonce_list)
+    for row in nonce_list:
+        word=str(row[1])
+        if word not in NONCELIST[len(word)]:
+            if word not in WORDLIST:
+                NONCELIST[len(word)].append(word)
 
 def read_input(file):
     '''file: location/name of a tsv file with input sentences in column 1 and and item labels in column 2
@@ -48,7 +61,7 @@ def read_input(file):
 def distractor(data, mode="nonce", dashed=False):
     '''Given a list of sentences, returns a same size list of distractor word sentences.
     If dashed=True, first word of each fake sentence is set to be ---
-    mode can be nonce or anagram'''
+    mode can be nonce, good_nonce or anagram'''
     output=[]
     for i in range(len(data)):
         words=data[i].split(" ")
@@ -59,6 +72,8 @@ def distractor(data, mode="nonce", dashed=False):
                 new=nonce(lower)
             if mode=="anagram":
                 new=anagram(lower)
+            if mode=="good_nonce":
+                new=good_nonce(lower)
             new_words.append(redo_case(new, case, punc))
         if dashed:
             nonsense="--- "+" ".join(new_words[1:])
@@ -95,6 +110,15 @@ def nonce(word):
         if test not in WORDLIST:
             return test
 
+def good_nonce(word):
+    '''takes a string and returns length matched orthographically legal non word; output guaranteed not
+    in celex list for words of length 2+; for single letter, returns a letter that is not a,i,o
+    non words sourced from Wuggy'''
+    if len(word)==1:
+        return(single_letter())
+    while True:
+        test=numpy.random.choice(NONCELIST[len(word)])
+        return(test)
 
 def anagram(word):
     '''takes a string and returns an anagram; output guaranteed not in celex list;
@@ -117,8 +141,7 @@ def single_letter():
     they aren't really words'''
     safe_single_letter="bcdefghjklmnpqrstuvwxyz" #ommitting a,i,o on the basis of being ~words
     test="".join(numpy.random.choice(list(safe_single_letter), 1))
-    return test
-                                        
+    return test                                      
 
 def ibex_format(item_name, sentences, distractors,header, footer, file=None, ):
     '''given a list of item names, a list of sentences and a list of distrator items, a header, and a footer, produces a string suitable
@@ -137,7 +160,20 @@ for running in ibex. If a file is given, writes to there as well.'''
     return items
 
 if __name__ == "__main__":
-    filename=sys.argv[1]
-    sentences, items=read_input(filename)
-    distractors=distractor(sentences, mode, dashes)
-    ibex_format(items, sentences, distractors, header, footer, output_file)
+    parser = argparse.ArgumentParser(description='Take materials and output an ibex maze data file')
+    parser.add_argument('filename', metavar='I', type=str, help='input file')
+    parser.add_argument('write_to', metavar='O', type=str, help='output file')
+    parser.add_argument('--anagram', '-a', dest='mode', action='store_const',const='anagram', default='good_nonce',
+                        help='use anagrams as distractors')
+    parser.add_argument('--random', '-r', dest='mode', action='store_const',const='nonce', default='good_nonce',
+                        help='use random letter sequences as distractors')
+    parser.add_argument('--nonce', '-n', dest='mode', action='store_const', const='good_nonce',
+                        default='good_nonce', help='use orthographically legal nonwords as distractors (default)')
+    parser.add_argument('--allword', '-w', dest='dashes', action='store_const', const=False, default=True,
+                        help='use a normal distractor for the first pair')
+    parser.add_argument('--firstdash', '-d', dest='dashes', action='store_const', const=True, default=True,
+                        help='use --- as the first distractor (default)')
+    args=vars(parser.parse_args())
+    sentences, items=read_input(args['filename'])
+    distractors=distractor(sentences, args['mode'], args['dashes'])
+    ibex_format(items, sentences, distractors, header, footer, args['write_to'])
