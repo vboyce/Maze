@@ -3,14 +3,7 @@ import csv
 import sys
 import argparse
 
-###Settings:###
-# Set these to specify what options you want#
-#options for mode are "nonce" and "anagram"
-mode="anagram"
-#options for dashes are False and True
-dashes=True
-#specify a file name for the output
-output_file="ibex-master/data_includes/ibex_data.js"
+#defaults 
 #what ibex stuff goes at the top of the file
 header=('var shuffleSequence = seq("intro",followEachWith("sep","test"), "done");\n\n'
     'var showProgressBar =false;\n\n'
@@ -68,12 +61,12 @@ def distractor(data, mode="nonce", dashed=False):
         new_words=[]
         for i in range(len(words)):
             lower,case, punc=undo_case(words[i])
-            if mode=="nonce":
-                new=nonce(lower)
+            if mode=="gibber":
+                new=gibber(lower)
             if mode=="anagram":
                 new=anagram(lower)
-            if mode=="good_nonce":
-                new=good_nonce(lower)
+            if mode=="nonce":
+                new=nonce(lower)
             new_words.append(redo_case(new, case, punc))
         if dashed:
             nonsense="--- "+" ".join(new_words[1:])
@@ -99,7 +92,7 @@ def redo_case(word, case, punc):
     else:
         return(word+punc)
 
-def nonce(word):
+def gibber(word):
     '''takes a string and returns length matched string of random letters; output guaranteed not in celex list
     for words of length 2+; for single letter, returns a letter that is not a,i,o
     '''
@@ -110,7 +103,7 @@ def nonce(word):
         if test not in WORDLIST:
             return test
 
-def good_nonce(word):
+def nonce(word):
     '''takes a string and returns length matched orthographically legal non word; output guaranteed not
     in celex list for words of length 2+; for single letter, returns a letter that is not a,i,o
     non words sourced from Wuggy'''
@@ -144,8 +137,9 @@ def single_letter():
     return test                                      
 
 def ibex_format(item_name, sentences, distractors,header, footer, file=None, ):
-    '''given a list of item names, a list of sentences and a list of distrator items, a header, and a footer, produces a string suitable
-for running in ibex. If a file is given, writes to there as well.'''
+    '''given a list of item names, a list of sentences and a list of distrator items,
+    a header, and a footer, produces a string suitable
+    for running in ibex. If a file is given, writes to there as well.'''
     if not len(item_name)==len(sentences):
         raise Exception("item_name and sentences are not same length")
     if not len(sentences)==len(distractors):
@@ -161,19 +155,30 @@ for running in ibex. If a file is given, writes to there as well.'''
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Take materials and output an ibex maze data file')
-    parser.add_argument('filename', metavar='I', type=str, help='input file')
-    parser.add_argument('write_to', metavar='O', type=str, help='output file')
-    parser.add_argument('--anagram', '-a', dest='mode', action='store_const',const='anagram', default='good_nonce',
+    parser.add_argument('filename', metavar='Input', type=str, help='file with input in tsv format,'+
+                        'first column sentences, second column item labels')
+    parser.add_argument('write_to', metavar='Output', type=str, help='file to write output to')
+    parser.add_argument('--top','-t', type=str, help='file with header contents')
+    parser.add_argument('--bottom','-b', type=str, help='file with footer contents')
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--anagram', '-a', dest='mode', action='store_const',const='anagram', default='nonce',
                         help='use anagrams as distractors')
-    parser.add_argument('--random', '-r', dest='mode', action='store_const',const='nonce', default='good_nonce',
+    modes.add_argument('--gibber', '-g', dest='mode', action='store_const',const='gibber', default='nonce',
                         help='use random letter sequences as distractors')
-    parser.add_argument('--nonce', '-n', dest='mode', action='store_const', const='good_nonce',
-                        default='good_nonce', help='use orthographically legal nonwords as distractors (default)')
-    parser.add_argument('--allword', '-w', dest='dashes', action='store_const', const=False, default=True,
+    modes.add_argument('--nonce', '-n', dest='mode', action='store_const', const='nonce',
+                        default='nonce', help='use orthographically legal nonwords as distractors (default)')
+    dashes = parser.add_mutually_exclusive_group()
+    dashes.add_argument('--allword', '-w', dest='dashes', action='store_const', const=False, default=True,
                         help='use a normal distractor for the first pair')
-    parser.add_argument('--firstdash', '-d', dest='dashes', action='store_const', const=True, default=True,
+    dashes.add_argument('--firstdash', '-d', dest='dashes', action='store_const', const=True, default=True,
                         help='use --- as the first distractor (default)')
     args=vars(parser.parse_args())
+    if args['top']:
+        with open(args['top']) as f:
+            header=f.read()
+    if args['bottom']:
+        with open(args['bottom']) as f:
+            footer=f.read()
     sentences, items=read_input(args['filename'])
     distractors=distractor(sentences, args['mode'], args['dashes'])
     ibex_format(items, sentences, distractors, header, footer, args['write_to'])
