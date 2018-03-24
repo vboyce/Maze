@@ -30,28 +30,23 @@ Maze also displays a count of words gotten right so far. If you use the normal s
 ## Python tools
 maze.py is a command-line runnable python script meant to make it easier to create experiments/ibex data files by automating the creation of distractor items. Input should be a tab-separated file with a first column of sentences and a second column of item labels. 
 
-usage: python maze.py [-h] [-top TOP] [-bottom BOTTOM] [--anagram | --gibber | --nonce] [--allword | --firstdash] I O
-
-Take materials and output an ibex maze data file
+usage: python maze.py [-h] [-top TOP] [-bottom BOTTOM] [--anagram | --gibber | --nonce] [--allword | --firstdash] Input Output
 
 Take materials and output an ibex maze data file
 
 positional arguments:
-  Input                 file with input in tsv format,first column sentences,
-                        second column item labels
-  Output                file to write output to
+* Input: file with input in tsv format,first column sentences, second column item labels
+* Output: file to write output to
 
 optional arguments:
-  -h, --help            show this help message and exit
-  --top TOP, -t TOP     file with header contents
-  --bottom BOTTOM, -b BOTTOM
-                        file with footer contents
-  --anagram, -a         use anagrams as distractors
-  --gibber, -g          use random letter sequences as distractors
-  --nonce, -n           use orthographically legal nonwords as distractors
-                        (default)
-  --allword, -w         use a normal distractor for the first pair
-  --firstdash, -d       use --- as the first distractor (default)
+* -h, --help: show this help message and exit
+* --top TOP, -t TOP: use contents of this file instead of default header 
+* --bottom BOTTOM, -b BOTTOM: use contents of this file instead of default footer
+* --anagram, -a: use anagrams as distractors
+* --gibber, -g: use random letter sequences as distractors
+* --nonce, -n: use orthographically legal nonwords as distractors (default)
+* --allword, -w: use a normal distractor for the first pair
+* --firstdash, -d: use --- as the first distractor (default)
 
 The input file should be in tab separated format; with a first column of sentences, and a second column of item labels.
 

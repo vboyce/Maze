@@ -158,8 +158,8 @@ if __name__ == "__main__":
     parser.add_argument('filename', metavar='Input', type=str, help='file with input in tsv format,'+
                         'first column sentences, second column item labels')
     parser.add_argument('write_to', metavar='Output', type=str, help='file to write output to')
-    parser.add_argument('--top','-t', type=str, help='file with header contents')
-    parser.add_argument('--bottom','-b', type=str, help='file with footer contents')
+    parser.add_argument('--top','-t', type=str, help='use contents of this file instead of default header')
+    parser.add_argument('--bottom','-b', type=str, help='use contents of this file instead of default footer')
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--anagram', '-a', dest='mode', action='store_const',const='anagram', default='nonce',
                         help='use anagrams as distractors')
