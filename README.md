@@ -28,6 +28,7 @@ Maze also displays a count of words gotten right so far. If you use the normal s
 * 14.Sentence. Text of the entire correct sentence. 
 
 ## Python tools
+
 maze.py is a command-line runnable python script meant to make it easier to create experiments/ibex data files by automating the creation of distractor items. Input should be a tab-separated file with a first column of sentences and a second column of item labels. 
 
 usage: python maze.py [-h] [-top TOP] [-bottom BOTTOM] [--anagram | --gibber | --nonce] [--allword | --firstdash] Input Output
