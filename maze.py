@@ -111,7 +111,8 @@ def nonce(word):
         return(single_letter())
     while True:
         test=numpy.random.choice(NONCELIST[len(word)])
-        return(test)
+        if test not in WORDLIST:
+            return(test)
 
 def anagram(word):
     '''takes a string and returns an anagram; output guaranteed not in celex list;
