@@ -57,7 +57,7 @@ def distractor(data, mode="nonce", dashed=False):
     mode can be nonce, good_nonce or anagram'''
     output=[]
     for i in range(len(data)):
-        words=data[i].split(" ")
+        words=data[i].split()
         new_words=[]
         for i in range(len(words)):
             lower,case, punc=undo_case(words[i])
@@ -147,7 +147,7 @@ def ibex_format(item_name, sentences, distractors,header, footer, file=None, ):
         raise Exception("sentences and distractors are not the same length")
     items=header
     for i in range(len(sentences)):
-        items+=(",\n\t[\""+item_name[i]+"\", \"Maze\", {s: \""+sentences[i]+"\", a: \""+distractors[i]+"\"}]")
+        items+=(",\n\t["+item_name[i]+", \"Maze\", {s: \""+sentences[i]+"\", a: \""+distractors[i]+"\"}]")
     items+=footer
     if file:
         f=open(file, "w")
