@@ -147,7 +147,10 @@ def ibex_format(item_name, sentences, distractors,header, footer, file=None, ):
         raise Exception("sentences and distractors are not the same length")
     items=header
     for i in range(len(sentences)):
-        items+=(",\n\t["+item_name[i]+", \"Maze\", {s: \""+sentences[i]+"\", a: \""+distractors[i]+"\"}]")
+        if item_name[i][0]=='[':
+            items+=(",\n\t["+item_name[i]+", \"Maze\", {s: \""+sentences[i]+"\", a: \""+distractors[i]+"\"}]")
+        else:
+            items+=(",\n\t[\""+item_name[i]+"\", \"Maze\", {s: \""+sentences[i]+"\", a: \""+distractors[i]+"\"}]")
     items+=footer
     if file:
         f=open(file, "w")
