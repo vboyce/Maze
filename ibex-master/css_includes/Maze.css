@@ -20,7 +20,7 @@
      font-size: 100%;
      padding-bottom: 0%;
      text-align: center;
-     width: 800px;
+     width: 1000px;
      display: block;
 }
 .larrow {
@@ -41,6 +41,38 @@
      padding-top: 0%;
      font-size: 350%;
      border: 2px solid black;
+     padding-bottom: 0%;
+     display: inline-block;
+     margin-left: 2%;
+     margin-right: 20%;
+     
+}
+.words {
+     background-color: white;
+     float: center;
+     text-align: center;
+     width: 1000px;
+     display: block;
+     background-color: white;
+     padding-top: 50px;
+     font-size: 250%;
+     padding-bottom: 20px;
+     float: center;
+     text-align: center;
+}
+.lword {
+     background-color: white;
+     width: 20%;
+     padding-top: 0%;
+     padding-bottom: 0%;
+     display: inline-block;
+     margin-right: 2%;
+     margin-left:20%;
+     
+}
+.rword {
+     background-color: white;
+     width: 20%;
      padding-bottom: 0%;
      display: inline-block;
      margin-left: 2%;

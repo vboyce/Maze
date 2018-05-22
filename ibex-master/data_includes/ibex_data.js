@@ -9,6 +9,7 @@ var items = [
 	["done", "Message", {html: "All done!"}],
 	["practice", "Maze", {s: "This is a practice sentence.", a: "--- yo j coptuses cecorted."}],
 	["practice", "Maze", {s: "Here is another practice sentence.", a: "--- ez debroms bentring knatchly."}],
+	["practice", "Maze", {s: "Here is a sesquipedalian word", a:"--- blah blah blabbity blah"}],
 	["practice", "Maze", {s: "After this sentence, the experiment will begin.", a: "--- weap roardage, pak sirelished jims zetus."}],
 	["test", "Maze", {s: "The dog went to the park.", a: "--- odg netw ot teh arkp."}],
 	["test", "Maze", {s: "The boy took the puppy to the park to play on the swings.", a: "--- byo toko eht upypp ot eht rpak ot alpy ln eth wigssn."}],

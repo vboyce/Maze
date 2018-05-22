@@ -45,7 +45,9 @@ jqueryWidget: {
         this.arrow=$("<div>").addClass(this.cssPrefix + 'arrow');
         this.larrow=$("<div>").addClass(this.cssPrefix + 'larrow');
         this.rarrow=$("<div>").addClass(this.cssPrefix + 'rarrow');
-        this.wordSpan=$("<div>").addClass(this.cssPrefix + 'sentence');
+        this.wordSpan=$("<div>").addClass(this.cssPrefix + 'words');
+        this.leftWord=$("<div>").addClass(this.cssPrefix + 'lword');
+        this.rightWord=$("<div>").addClass(this.cssPrefix + 'rword');
         this.mainDiv= $("<div>");
         this.element.append(this.mainDiv);
 
@@ -64,9 +66,10 @@ jqueryWidget: {
         }
         this.previousTime = new Date().getTime();
 
-        this.wordSpan.html((this.order[this.currentWord]===0) ?
-            (this.words[this.currentWord]+"&emsp;&emsp;"+this.alts[this.currentWord]):
-            (+this.alts[this.currentWord]+"&emsp;&emsp;"+this.words[this.currentWord]));
+        this.leftWord.html((this.order[this.currentWord]===0) ?
+            this.words[this.currentWord]:this.alts[this.currentWord]);
+        this.rightWord.html((this.order[this.currentWord]===0) ?
+            this.alts[this.currentWord]:this.words[this.currentWord]);
         this.larrow.html("&larr;");
         this.rarrow.html("&rarr;");
         var x = this.utils.getValueFromPreviousElement("counter");
@@ -76,6 +79,8 @@ jqueryWidget: {
         this.mainDiv.css('text-align', 'center');
         this.arrow.append(this.larrow);
         this.arrow.append(this.rarrow);
+        this.wordSpan.append(this.leftWord);
+        this.wordSpan.append(this.rightWord);
         this.mainDiv.append(this.counter);
         this.mainDiv.append(this.wordSpan);
         this.mainDiv.append(this.arrow);
@@ -121,9 +126,10 @@ jqueryWidget: {
 
     showWord: function (w) {
         if (this.currentWord < this.stoppingPoint) {
-            this.wordSpan.html((this.order[this.currentWord]===0) ?
-            (this.words[this.currentWord]+"&emsp;&emsp;"+this.alts[this.currentWord]):
-            (this.alts[this.currentWord]+"&emsp;&emsp;"+this.words[this.currentWord]));
+            this.leftWord.html((this.order[this.currentWord]===0) ?
+                this.words[this.currentWord]:this.alts[this.currentWord]);
+            this.rightWord.html((this.order[this.currentWord]===0) ?
+                this.alts[this.currentWord]:this.words[this.currentWord]);
             this.wordsSoFar++;
             this.counter.html("Words so far: "+this.wordsSoFar);
         }
