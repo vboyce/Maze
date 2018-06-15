@@ -90,11 +90,11 @@ jqueryWidget: {
             var time = new Date().getTime();
             var code = event.keyCode;
 
-            if (code == 37 || code==39) {
+            if (code == 70 || code==74) {
                 var word = t.currentWord;
                 if (word <= t.stoppingPoint) {
-		            t.correct[word]=((code==37 && t.order[word]==0)||
-		                (code==39 && t.order[word]==1)) ? "yes" : "no";
+		            t.correct[word]=((code==70 && t.order[word]==0)||
+		                (code==74 && t.order[word]==1)) ? "yes" : "no";
 		            var rs = t.mazeResults[word];
 		                rs[0] = time;
                         rs[1] = t.previousTime;
