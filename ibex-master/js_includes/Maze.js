@@ -48,6 +48,10 @@ jqueryWidget: {
         this.wordSpan=$("<div>").addClass(this.cssPrefix + 'words');
         this.leftWord=$("<div>").addClass(this.cssPrefix + 'lword');
         this.rightWord=$("<div>").addClass(this.cssPrefix + 'rword');
+        this.larrsym=$("<div>").addClass(this.cssPrefix + 'keyarrow');
+        this.rarrsym=$("<div>").addClass(this.cssPrefix + 'keyarrow');
+        this.lkeytext=$("<div>").addClass(this.cssPrefix + 'keytext');
+        this.rkeytext=$("<div>").addClass(this.cssPrefix + 'keytext');
         this.mainDiv= $("<div>");
         this.element.append(this.mainDiv);
 
@@ -70,13 +74,15 @@ jqueryWidget: {
             this.words[this.currentWord]:this.alts[this.currentWord]);
         this.rightWord.html((this.order[this.currentWord]===0) ?
             this.alts[this.currentWord]:this.words[this.currentWord]);
-        this.larrow.html("&larr;");
-        this.rarrow.html("&rarr;");
+        this.larrsym.html("&larr;");
+        this.rarrsym.html("&rarr;");
         var x = this.utils.getValueFromPreviousElement("counter");
         if (x) this.wordsSoFar=x;
         else this.wordsSoFar=0;
         this.counter.html("Words so far: "+this.wordsSoFar);
         this.mainDiv.css('text-align', 'center');
+        this.larrow.append(this.larrsym);
+        this.rarrow.append(this.rarrsym);
         this.arrow.append(this.larrow);
         this.arrow.append(this.rarrow);
         this.wordSpan.append(this.leftWord);

@@ -17,7 +17,6 @@
      background-color: white;
      padding-top: 0%;
      float: center;
-     font-size: 100%;
      padding-bottom: 0%;
      text-align: center;
      width: 1000px;
@@ -27,24 +26,35 @@
      background-color: white;
      width: 20%;
      padding-top: 0%;
-     font-size: 350%;
      border: 2px solid black;
      padding-bottom: 0%;
      display: inline-block;
      margin-right: 2%;
      margin-left:20%;
-     
+     position: relative;
 }
+.keyarrow {
+    font-size: 350%;
+    display: inline-block;
+}
+.keytext{
+   font-size: 200%;
+   display: inline-block;
+   position: absolute;
+    top: 25%;
+    bottom: 0;
+    margin: auto;
+ }
 .rarrow {
      background-color: white;
      width: 20%;
      padding-top: 0%;
-     font-size: 350%;
      border: 2px solid black;
      padding-bottom: 0%;
      display: inline-block;
      margin-left: 2%;
      margin-right: 20%;
+     position: relative;
      
 }
 .words {
