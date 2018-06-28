@@ -48,10 +48,6 @@ jqueryWidget: {
         this.wordSpan=$("<div>").addClass(this.cssPrefix + 'words');
         this.leftWord=$("<div>").addClass(this.cssPrefix + 'lword');
         this.rightWord=$("<div>").addClass(this.cssPrefix + 'rword');
-        this.larrsym=$("<div>").addClass(this.cssPrefix + 'keyarrow');
-        this.rarrsym=$("<div>").addClass(this.cssPrefix + 'keyarrow');
-        this.lkeytext=$("<div>").addClass(this.cssPrefix + 'keytext');
-        this.rkeytext=$("<div>").addClass(this.cssPrefix + 'keytext');
         this.mainDiv= $("<div>");
         this.element.append(this.mainDiv);
 
@@ -74,15 +70,13 @@ jqueryWidget: {
             this.words[this.currentWord]:this.alts[this.currentWord]);
         this.rightWord.html((this.order[this.currentWord]===0) ?
             this.alts[this.currentWord]:this.words[this.currentWord]);
-        this.larrsym.html("&larr;");
-        this.rarrsym.html("&rarr;");
+        this.larrow.html("e");
+        this.rarrow.html("i");
         var x = this.utils.getValueFromPreviousElement("counter");
         if (x) this.wordsSoFar=x;
         else this.wordsSoFar=0;
         this.counter.html("Words so far: "+this.wordsSoFar);
         this.mainDiv.css('text-align', 'center');
-        this.larrow.append(this.larrsym);
-        this.rarrow.append(this.rarrsym);
         this.arrow.append(this.larrow);
         this.arrow.append(this.rarrow);
         this.wordSpan.append(this.leftWord);
@@ -96,11 +90,11 @@ jqueryWidget: {
             var time = new Date().getTime();
             var code = event.keyCode;
 
-            if (code == 70 || code==74) {
+            if (code == 69 || code==73) {
                 var word = t.currentWord;
                 if (word <= t.stoppingPoint) {
-		            t.correct[word]=((code==70 && t.order[word]==0)||
-		                (code==74 && t.order[word]==1)) ? "yes" : "no";
+		            t.correct[word]=((code==69 && t.order[word]==0)||
+		                (code==73 && t.order[word]==1)) ? "yes" : "no";
 		            var rs = t.mazeResults[word];
 		                rs[0] = time;
                         rs[1] = t.previousTime;
