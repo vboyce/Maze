@@ -4,7 +4,7 @@ var showProgressBar =false;
 
 var items = [
 
-	["intro", "Message", {html: "In this experiment, you will read a sentence word by word. On each screen you will see two options: one will be the next word in the sentence, and one will not.  Use your left and right arrow buttons to indicate which word continues the sentence." }],
+	["intro", "Message", {html: "For this experiment, please place your left index finger on the 'e' key and your right index finger on the 'i' key. You will read sentences word by word. On each screen you will see two options: one will be the next word in the sentence, and one will not. Select the word that continues the sentence by pressing 'e' (left-hand) for the word on the left or pressing 'i' (right-hand) for the word on the right." }],
 	["sep", "MazeSeparator", {normalMessage: "Correct! Press any key to continue", errorMessage: "Incorrect! Press any key to continue."}],
 	["done", "Message", {html: "All done!"}],
 	["practice", "Maze", {s: "This is a practice sentence.", a: "--- yo j coptuses cecorted."}],
