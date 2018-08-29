@@ -90,15 +90,15 @@ The reporter
     
  The reporter had dinner yesterday with the   
  ['baseball', 25.288055419921875]  
-? ['throwing', 26.92560577392578]  
-o ['commands', 28.507186889648438]  
-x ['symmetry', 29.419092178344727]  
-? ['annually', 30.681936264038086]  
-x ['efficacy', 32.58613586425781]  
-x ['utilized', 33.989933013916016]  
-o ['husbands', 33.302833557128906]  
-o ['buddhist', 39.89736557006836]  
-x ['receptor', 42.39029312133789]  
+ ['throwing', 26.92560577392578]  
+ ['commands', 28.507186889648438]  
+['symmetry', 29.419092178344727]  
+ ['annually', 30.681936264038086]  
+ ['efficacy', 32.58613586425781]  
+ ['utilized', 33.989933013916016]  
+ ['husbands', 33.302833557128906]  
+ ['buddhist', 39.89736557006836]  
+ ['receptor', 42.39029312133789]  
  
  The reporter had dinner yesterday with the baseball   
 ['player', 22.89716148376465]  
