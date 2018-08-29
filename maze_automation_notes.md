@@ -1,4 +1,5 @@
-#Overview of process so far
+
+# Overview of process so far
 
 To generate length and frequency matched 'neighbors' for words I'm using google unigram corpora. I sum over all the years for each word and also sum over permuatations of the word (Foo, foo, foo_NOUN, etc. are all mapped to foo). This is good for handling start of sentence capitilization, not so good for proper names. 'Words' that that have charcters other than apostrophe, hyphen, and letters are discarded. Additionally, words that occur less than 2^13 times (after summing over different forms) are discarded. 
 
@@ -15,18 +16,19 @@ I took one of the practice items ('The reporter had dinner yesterday with the ba
 
 What are the surprisal and frequencies of the words and alternates they used?
 
-good-surprisal, bad-surprisal, good-freq, bad-freq  good bad 
-[23.97480583190918, 26.46285057067871, 23, 27], reporter admired
-[21.112266540527344, 19.74556541442871, 31, 31], had are
-[24.579774856567383, 25.566600799560547, 25, 25], dinner save
-[29.05268096923828, 30.04982566833496, 24, 26], yesterday myself
-[20.047908782958984, 30.420507431030273, 32, 23], with tank
-[33.25505065917969, 24.00752067565918, 35, 28], the go
-[25.288055419921875, 25.235382080078125, 23, 28], baseball take
-[22.89716148376465, 23.90438461303711, 24, 22], player pose
-[17.975175857543945, 35.5666389465332, 30, 26], who speak
-[12.99376106262207, 20.013521194458008, 22, 27], Kevin body
-[31.829620361328125, 21.151525497436523, 23, 23] admired guys
+|good-surprisal |bad-surprisal | good-freq | bad-freq | good| bad |
+| --- | --- | --- | --- | --- | --- |
+| 23.97480583190918 | 26.46285057067871 | 23 | 27 | reporter  |admired |
+ | 21.112266540527344 |  19.74556541442871 |  31 |  31 |  |  had | are |
+ | 24.579774856567383 |  25.566600799560547 |  25 |  25 |  |  dinner | save |
+ | 29.05268096923828 |  30.04982566833496 |  24 |  26 |  |  yesterday | myself |
+ | 20.047908782958984 |  30.420507431030273 |  32 |  23 |  |  with | tank |
+ | 33.25505065917969 |  24.00752067565918 |  35 |  28 |  |  the | go |
+ | 25.288055419921875 |  25.235382080078125 |  23 |  28 |  |  baseball | take |
+ | 22.89716148376465 |  23.90438461303711 |  24 |  22 |  |  player | pose |
+ | 17.975175857543945 |  35.5666389465332 |  30 |  26 |  |  who | speak |
+ | 12.99376106262207 |  20.013521194458008 |  22 |  27 |  |  Kevin | body |
+ | 31.829620361328125 |  21.151525497436523 |  23 |  23 |  admired | guys |
 
 Mostly, we see that surprisal/relative surprisal is not going to be a perfect measure (predicts that 'guys' better than 'admired'), so we're hoping that large enough numbers/differences really make things bad. 
 
