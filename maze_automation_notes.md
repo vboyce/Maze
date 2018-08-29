@@ -19,137 +19,137 @@ What are the surprisal and frequencies of the words and alternates they used?
 |good-surprisal |bad-surprisal | good-freq | bad-freq | good| bad |
 | --- | --- | --- | --- | --- | --- |
 | 23.97480583190918 | 26.46285057067871 | 23 | 27 | reporter  |admired |
- | 21.112266540527344 |  19.74556541442871 |  31 |  31 |  |  had | are |
- | 24.579774856567383 |  25.566600799560547 |  25 |  25 |  |  dinner | save |
- | 29.05268096923828 |  30.04982566833496 |  24 |  26 |  |  yesterday | myself |
- | 20.047908782958984 |  30.420507431030273 |  32 |  23 |  |  with | tank |
- | 33.25505065917969 |  24.00752067565918 |  35 |  28 |  |  the | go |
- | 25.288055419921875 |  25.235382080078125 |  23 |  28 |  |  baseball | take |
- | 22.89716148376465 |  23.90438461303711 |  24 |  22 |  |  player | pose |
- | 17.975175857543945 |  35.5666389465332 |  30 |  26 |  |  who | speak |
- | 12.99376106262207 |  20.013521194458008 |  22 |  27 |  |  Kevin | body |
+ | 21.112266540527344 |  19.74556541442871 |  31 |  31 |  had | are |
+ | 24.579774856567383 |  25.566600799560547 |  25 |  25 |  dinner | save |
+ | 29.05268096923828 |  30.04982566833496 |  24 |  26 |  yesterday | myself |
+ | 20.047908782958984 |  30.420507431030273 |  32 |  23 |  with | tank |
+ | 33.25505065917969 |  24.00752067565918 |  35 |  28 |  the | go |
+ | 25.288055419921875 |  25.235382080078125 |  23 |  28 |   baseball | take |
+ | 22.89716148376465 |  23.90438461303711 |  24 |  22 |   player | pose |
+ | 17.975175857543945 |  35.5666389465332 |  30 |  26 |   who | speak |
+ | 12.99376106262207 |  20.013521194458008 |  22 |  27 |  Kevin | body |
  | 31.829620361328125 |  21.151525497436523 |  23 |  23 |  admired | guys |
 
 Mostly, we see that surprisal/relative surprisal is not going to be a perfect measure (predicts that 'guys' better than 'admired'), so we're hoping that large enough numbers/differences really make things bad. 
 
-Next, I tried arbitrarily choosing potential alternates and seeing what their surprisals were. Context, then first line is the 'good' word, then some alternates and their surprisals. (the x,o,?, were my attempts to code how acceptable the words were, you can ignore them). 
+Next, I tried arbitrarily choosing potential alternates and seeing what their surprisals were. Context, then first line is the 'good' word, then some alternates and their surprisals.
 
-The 
-['reporter', 23.97480583190918]
-o['splendid', 24.90536117553711]
-?['enjoying', 27.496967315673828]
-o['deciding', 28.561344146728516]
-o['drawings', 28.744977951049805]
-o['mentally', 30.318307876586914]
-?['pointing', 32.033897399902344]
-o['fracture', 32.51325988769531]
-o['paradise', 35.768348693847656]
-x['depended', 39.373531341552734]
-x['perceive', 42.75691604614258]
+The \\
+['reporter', 23.97480583190918]\\\\
+['splendid', 24.90536117553711]\\
+['enjoying', 27.496967315673828]\\
+['deciding', 28.561344146728516]\\
+['drawings', 28.744977951049805]\\
+['mentally', 30.318307876586914]\\
+['pointing', 32.033897399902344]\\
+['fracture', 32.51325988769531]\\
+['paradise', 35.768348693847656]\\
+['depended', 39.373531341552734]\\
+['perceive', 42.75691604614258]\\
 
-The reporter 
- ['had', 21.112266540527344]
-? ['one', 17.91001319885254]
-? ['but', 22.197383880615234]
-o ['you', 22.89556884765625]
-o ['his', 23.668861389160156] 
+The reporter \\
+ ['had', 21.112266540527344]\\
+ ['one', 17.91001319885254]\\
+ ['but', 22.197383880615234]\\
+ ['you', 22.89556884765625]\\
+['his', 23.668861389160156]\\ 
  
- The reporter had
- ['dinner', 24.579774856567383]
-x ['doctor', 20.653162002563477]
-o ['orders', 24.62776756286621]
-o ['broken', 26.547609329223633]
-? ['cities', 26.473920822143555]
-o ['stress', 27.845401763916016]
-o ['served', 30.01453971862793]
-o ['tables', 30.319805145263672]
-x ['unable', 32.349151611328125]
-o ['duties', 36.887237548828125]
-o ['edward', 44.53696823120117]
+ The reporter had \\
+ ['dinner', 24.579774856567383]\\
+['doctor', 20.653162002563477]\\
+['orders', 24.62776756286621]\\
+['broken', 26.547609329223633]\\
+['cities', 26.473920822143555]\\
+['stress', 27.845401763916016]\\
+['served', 30.01453971862793]\\
+['tables', 30.319805145263672]\\
+['unable', 32.349151611328125]\\
+['duties', 36.887237548828125]\\
+['edward', 44.53696823120117]\\
  
- The reporter had dinner 
-  ['yesterday', 29.05268096923828]
-  ?['perceived', 23.652320861816406]
-  o['diversity', 23.320693969726562]
-  x['empirical', 26.086444854736328]
-  ?['customers', 26.165138244628906]
-  ?['directors', 28.52153205871582]
-  x['affection', 28.96552276611328]
-  x['libraries', 30.89655303955078]
-  ?['measuring', 32.73731994628906]
-  ?['witnesses', 33.15302658081055]
-  x['plaintiff', 38.271034240722656]
+ The reporter had dinner \\
+  ['yesterday', 29.05268096923828]\\
+  ['perceived', 23.652320861816406]\\
+  ['diversity', 23.320693969726562]\\
+  ['empirical', 26.086444854736328]\\
+  ['customers', 26.165138244628906]\\
+  ['directors', 28.52153205871582]\\
+  ['affection', 28.96552276611328]\\
+  ['libraries', 30.89655303955078]\\
+  ['measuring', 32.73731994628906]\\
+  ['witnesses', 33.15302658081055]\\
+  ['plaintiff', 38.271034240722656]\\
   
- The reporter had dinner yesterday 
-   ['with', 20.047908782958984]
-   o['that', 24.91154670715332]],
+ The reporter had dinner yesterday \\
+   ['with', 20.047908782958984]\\
+   ['that', 24.91154670715332]\\
    
- The reporter had dinner yesterday with 
-    ['the', 33.25505065917969]
+ The reporter had dinner yesterday with \\
+    ['the', 33.25505065917969]\\
      
     
- The reporter had dinner yesterday with the 
- ['baseball', 25.288055419921875]
-? ['throwing', 26.92560577392578]
-o ['commands', 28.507186889648438]
-x ['symmetry', 29.419092178344727]
-? ['annually', 30.681936264038086]
-x ['efficacy', 32.58613586425781]
-x ['utilized', 33.989933013916016]
-o ['husbands', 33.302833557128906]
-o ['buddhist', 39.89736557006836]
-x ['receptor', 42.39029312133789]
+ The reporter had dinner yesterday with the \\
+ ['baseball', 25.288055419921875]\\
+? ['throwing', 26.92560577392578]\\
+o ['commands', 28.507186889648438]\\
+x ['symmetry', 29.419092178344727]\\
+? ['annually', 30.681936264038086]\\
+x ['efficacy', 32.58613586425781]\\
+x ['utilized', 33.989933013916016]\\
+o ['husbands', 33.302833557128906]\\
+o ['buddhist', 39.89736557006836]\\
+x ['receptor', 42.39029312133789]\\
  
- The reporter had dinner yesterday with the baseball
-['player', 22.89716148376465]
-x['deeper', 22.415802001953125]
-x['smooth', 24.986736297607422]
-x['topics', 26.370197296142578]
-x['fruits', 27.864635467529297]
-x['viewed', 27.16878890991211]
-o['firmly', 29.291152954101562]
-o['screen', 29.692142486572266]
-x['strike', 32.393592834472656]
-x['breath', 34.374359130859375]
-x['miller', 36.802677154541016]
+ The reporter had dinner yesterday with the baseball \\
+['player', 22.89716148376465]\\
+['deeper', 22.415802001953125]\\
+['smooth', 24.986736297607422]\\
+['topics', 26.370197296142578]\\
+['fruits', 27.864635467529297]\\
+['viewed', 27.16878890991211]\\
+['firmly', 29.291152954101562]\\
+['screen', 29.692142486572266]\\
+['strike', 32.393592834472656]\\
+['breath', 34.374359130859375]\\
+['miller', 36.802677154541016]\\
 
     
-The reporter had dinner yesterday with the baseball player 
-['who', 17.975175857543945]
-x['has', 18.126537322998047]
-x['can', 19.33433723449707]
-o['all', 21.970523834228516]
-x['may', 23.42855453491211]
-x['him', 24.559154510498047]
-o['she', 25.349952697753906]
-o['her', 26.464155197143555]
+The reporter had dinner yesterday with the baseball player \\
+['who', 17.975175857543945]\\
+['has', 18.126537322998047]\\
+['can', 19.33433723449707]\\
+['all', 21.970523834228516]\\
+['may', 23.42855453491211]\\
+['him', 24.559154510498047]\\
+['she', 25.349952697753906]\\
+['her', 26.464155197143555]\\
 
      
-The reporter had dinner yesterday with the baseball player who
-['Kevin', 12.99376106262207]
-o['daddy', 28.464637756347656]
-o['folds', 30.381877899169922]
-x['creep', 31.83360481262207]
-?['herbs', 32.085933685302734]
-x['infra', 38.690589904785156]
-o['dwelt', 39.07101821899414]
-x['bless', 41.446083068847656]
-x['sudan', 42.30971145629883]
-x['ghana', 42.811729431152344]
-x['digit', 48.42172622680664]
+The reporter had dinner yesterday with the baseball player who\\
+['Kevin', 12.99376106262207]\\
+['daddy', 28.464637756347656]\\
+['folds', 30.381877899169922]\\
+['creep', 31.83360481262207]\\
+['herbs', 32.085933685302734]\\
+['infra', 38.690589904785156]\\
+['dwelt', 39.07101821899414]\\
+['bless', 41.446083068847656]\\
+['sudan', 42.30971145629883]\\
+['ghana', 42.811729431152344]\\
+['digit', 48.42172622680664]\\
       
-The reporter had dinner yesterday with the baseball player who Kevin 
-['admired', 31.829620361328125]
-x['obscure', 23.41954231262207]
-x['parking', 24.398550033569336]
-o['plainly', 28.353910446166992]
-x['license', 29.508159637451172]
-x['outlook', 30.418350219726562]
-o['trusted', 32.76241683959961]
-o['relates', 35.003623962402344]
-x['furnish', 37.430789947509766]
-x['clauses', 41.0998420715332]
-x['alabama', 49.8082275390625]
+The reporter had dinner yesterday with the baseball player who Kevin \\
+['admired', 31.829620361328125]\\
+['obscure', 23.41954231262207]\\
+['parking', 24.398550033569336]\\
+['plainly', 28.353910446166992]\\
+['license', 29.508159637451172]\\
+['outlook', 30.418350219726562]\\
+['trusted', 32.76241683959961]\\
+['relates', 35.003623962402344]\\
+['furnish', 37.430789947509766]\\
+['clauses', 41.0998420715332]\\
+['alabama', 49.8082275390625]\\
 
 This reveals a few things:
  1) some words (the, with) don't have enough neighbors under the current scheme. I need to adjust how words are being grouped to handle frequent short words better and will want a scheme for if none of the neighbors meet the badness criteria, where to look next (obvious options are the off-by-ones for either length or frequency). 
