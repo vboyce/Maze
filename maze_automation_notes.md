@@ -124,6 +124,7 @@ The reporter
 
  
  The reporter had dinner yesterday with the baseball   
+
 | player | 2.89|
 | --- | --- |
 |paying | 16.31| 
