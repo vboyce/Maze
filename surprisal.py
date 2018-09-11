@@ -70,6 +70,7 @@ def Context_Surprisal(sentence):
     # Load the model with the given pbtxt file and the checkpoint files
     sess, t = _LoadModel("../data/graph-2016-09-10.pbtxt", "../data/ckpt-*")
 
+    result = []
     inputs = np.zeros([BATCH_SIZE, NUM_TIMESTEPS], np.int32)
     char_ids_inputs = np.zeros( [BATCH_SIZE, NUM_TIMESTEPS, vocab.max_word_length], np.int32)
     
@@ -79,17 +80,19 @@ def Context_Surprisal(sentence):
     samples = sent[:]
     char_ids_samples = sent_char_ids[:]
 
-   
-    inputs[0, 0] = samples[0]
-    char_ids_inputs[0, 0, :] = char_ids_samples[0]
-    samples = samples[1:]
-    char_ids_samples = char_ids_samples[1:]
-    softmax = sess.run(t['softmax_out'],
-                         feed_dict={t['char_inputs_in']: char_ids_inputs,
-                                    t['inputs_in']: inputs,
-                                    t['targets_in']: targets,
-                                    t['target_weights_in']: weights})
+    total_surprisal = 0
 
-    surprisal = -1 * np.log2(softmax[0][sent[-1]])
+    for n in range(len(sentence.split(" "))-1):
+            inputs[0, 0] = samples[0]
+            char_ids_inputs[0, 0, :] = char_ids_samples[0]
+            samples = samples[1:]
+            char_ids_samples = char_ids_samples[1:]
+            softmax = sess.run(t['softmax_out'],
+                                 feed_dict={t['char_inputs_in']: char_ids_inputs,
+                                            t['inputs_in']: inputs,
+                                            t['targets_in']: targets,
+                                            t['target_weights_in']: weights})
+
+            surprisal = -1 * np.log2(softmax[0][sent[n+1]])
+            total_surprisal += surprisal
     return(surprisal)
-

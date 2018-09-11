@@ -67,27 +67,23 @@ def do_stuff():
     k=test_alternates("The reporter had dinner yesterday with the baseball player who Kevin", "admired")
     print([a,b,c,d,e,f,g,h,i,j,k])
 
+def do_stuff_2():
+    a= check_badness("The","reporter", "admired")
+    b= check_badness("The reporter", "had", "are")
+    c= check_badness("The reporter had", "dinner", "save")
+    d= check_badness("The reporter had dinner","yesterday", "myself")
+    e= check_badness("The reporter had dinner yesterday","with", "tank")
+    f= check_badness("The reporter had dinner yesterday with", "the", "go")
+    g= check_badness("The reporter had dinner yesterday with the", "baseball", "take")
+    h= check_badness("The reporter had dinner yesterday with the baseball","player", "pose")
+    i= check_badness("The reporter had dinner yesterday with the baseball player","who", "speak")
+    j= check_badness("The reporter had dinner yesterday with the baseball player who","Kevin", "body")
+    k= check_badness("The reporter had dinner yesterday with the baseball player who Kevin","admired", "guys")
+    print([a,b,c,d,e,f,g,h,i,j,k])
 def check_lexicon():
     for key in sorted(LEXICON):
         if len(LEXICON[key])<10:
             print(key,LEXICON[key])
 
-#print(test_alternates("The reporter had dinner yesterday", "with"))
-#print(get_unigram_freq("infusoria"))
-#print(get_unigram_freq("yesterday"))
-print(len(get_alternates("reporter")))
-print(len(get_alternates("had")))
-print(len(get_alternates("dinner")))
-print(len(get_alternates("yesterday")))
-print(len(get_alternates("with")))
-print(len(get_alternates("the")))
-print(len(get_alternates("baseball")))
-print(len(get_alternates("player")))
-print(len(get_alternates("who")))
-print(len(get_alternates("Kevin")))
-print(len(get_alternates("admired")))
 
-#print(get_unigram_freq("with"))
-#check_lexicon()
-#do_stuff()
-
+do_stuff_2()
