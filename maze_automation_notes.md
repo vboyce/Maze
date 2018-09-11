@@ -35,6 +35,7 @@ What are the surprisal and frequencies of the words and alternates they used?
 Next, I tried arbitrarily choosing potential alternates and seeing what their surprisals were. Context, then first line is the 'good' word with it's surprisal, then some alternates and their surprisals.
 
 The   
+
 |reporter | 23.97|
 | --- | --- |
 |vehicles | 24.62| 
@@ -49,6 +50,7 @@ The
 |missouri | 40.01| 
 
 The reporter   
+
  | had | 8.03|
 | --- | --- |
 |you | 8.90| 
@@ -76,6 +78,7 @@ The reporter
 
 
  The reporter had dinner   
+
 | yesterday | 9.81|
 | --- | --- |
 |occasions | 16.22| 
@@ -105,6 +108,7 @@ The reporter
 
     
  The reporter had dinner yesterday with the   
+
 | baseball | 15.02|
 | --- | --- |
 |defeated | 13.20| 
@@ -134,6 +138,7 @@ The reporter
 |tended | 25.45| 
 
 The reporter had dinner yesterday with the baseball player   
+
 | who | 3.73|
 | --- | --- |
 |she | 10.9| 
@@ -144,6 +149,7 @@ The reporter had dinner yesterday with the baseball player
 |may | 16.53| 
 
 The reporter had dinner yesterday with the baseball player who  
+
 | Kevin | 17.14|
 | --- | --- |
 |waved | 14.86|
@@ -182,5 +188,5 @@ This reveals a few things:
 Aside from addressing the above issues, there are some things I need to figure out / write code for before we can generate enough to test things on other people. 
 1) handling punctuation. Maze treats punctuation as attached to the previous word, but the language model wants it treated as its own word. This should be easy enough to code, but I will need to handle it. 
 2) Running things on a machine with more computation. I assume the solution here is to learn how open mind works and get an account and use that for running > 1 sentence worth of alternate generation. 
-3) Algorithm: I think for each word that needs a distractor, I should randomly permute its list of neighbors, and then go through that new list until I find a word that meets the cutoff criteria. If the end of the list is reached, have some rule for what list to try next. (This assumes the goal is one alternate / word, but it could be modified if we want backups.)
+3) Algorithm: I think for each word that needs a distractor, I should randomly permute its list of neighbors, and then go through that new list until I find a word that meets the cutoff criteria. If the end of the list is reached, have some rule for what list to try next. (This assumes the goal is one alternate / word, but it could be modified if we want backups.) Depending on algorithm chosen, there may be ways to speed up the lang-model part by repeating fewer of the steps / batching things. 
 
