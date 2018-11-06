@@ -1,167 +1,5 @@
 
 
-Yesterday the wife of the politician discussed health care with old people.
-
-Yesterday the wife of the politician discussed health care with old people.
-
-Yesterday the wife of the politician discussed health care with old people.
-
-Yesterday
-
- | the | g: 7 | 1_b: 17.0 |
-|---|---|---|
- | let | 16 | 23.0 |
- | du | 19 | 29.0 |
- | arm | 21 | 28.0 |
- | new | 16 | 21.0 |
- | X | 15 | 25.0 |
- | a | 10 | 12.0 |
- | hot | 18 | 22.0 |
- | red | 17 | 22.0 |
- | and | 3 | 5.0 |
- | en | 17 | 24.0 |
-
-Yesterday the
-
- | wife | g: 12 | 1_b: 28.0 |
-|---|---|---|
- | felt | 18 | 15.0 |
- | five | 11 | 19.0 |
- | note | 15 | 21.0 |
- | post | 13 | 19.0 |
- | next | 6 | 17.0 |
- | send | 18 | 21.0 |
- | Fort | 16 | 27.0 |
- | wine | 15 | 22.0 |
- | port | 15 | 25.0 |
- | Miss | 14 | 19.0 |
-
-Yesterday the wife
-
- | of | g: 1 | 1_b: 15.0 |
-|---|---|---|
- | of | 1 | 15.0 |
-
-Yesterday the wife of
-
- | the | g: 2 | 1_b: 18.0 |
-|---|---|---|
- | so | 15 | 14.0 |
- | Sec | 4 | 28.0 |
- | up | 14 | 17.0 |
- | her | 6 | 22.0 |
- | won | 22 | 17.0 |
- | all | 9 | 15.0 |
- | air | 15 | 19.0 |
- | tax | 17 | 27.0 |
- | art | 16 | 25.0 |
- | H | 19 | 23.0 |
-
-Yesterday the wife of the
-
- | politician | g: 10 | 1_b: 28.0 |
-|---|---|---|
- | recurrence | 23 | 37.0 |
- | negatively | 22 | 29.0 |
- | institutes | 23 | 34.0 |
- | responsive | 23 | 30.0 |
- | respondent | 18 | 33.0 |
- | observable | 22 | 29.0 |
- | saturation | 24 | 33.0 |
- | chronology | 24 | 34.0 |
- | Englishman | 12 | 29.0 |
- | Conversely | 24 | 22.0 |
-
-Yesterday the wife of the politician
-
- | discussed | g: 18 | 1_b: 23.0 |
-|---|---|---|
- | equipment | 23 | 26.0 |
- | expansion | 22 | 28.0 |
- | mountains | 23 | 27.0 |
- | character | 12 | 27.0 |
- | executive | 14 | 23.0 |
- | movements | 22 | 29.0 |
- | solutions | 25 | 28.0 |
- | challenge | 22 | 24.0 |
- | explained | 17 | 21.0 |
-
-Yesterday the wife of the politician discussed
-
- | health | g: 16 | 1_b: 27.0 |
-|---|---|---|
- | stands | 19 | 23.0 |
- | begins | 19 | 25.0 |
- | needed | 17 | 23.0 |
- | muscle | 24 | 26.0 |
- | income | 18 | 28.0 |
- | winter | 21 | 25.0 |
- | little | 14 | 20.0 |
- | though | 12 | 19.0 |
- | public | 13 | 25.0 |
- | window | 23 | 27.0 |
-
-Yesterday the wife of the politician discussed health
-
- | care | g: 4 | 1_b: 27.0 |
-|---|---|---|
- | sign | 18 | 23.0 |
- | game | 19 | 22.0 |
- | Club | 17 | 21.0 |
- | move | 16 | 23.0 |
- | said | 16 | 15.0 |
- | down | 15 | 20.0 |
- | arms | 17 | 29.0 |
- | plus | 19 | 19.0 |
- | five | 19 | 20.0 |
- | lose | 20 | 27.0 |
-
-Yesterday the wife of the politician discussed health care
-
- | with | g: 8 | 1_b: 14.0 |
-|---|---|---|
- | only | 11 | 15.0 |
- | warm | 20 | 27.0 |
- | neck | 23 | 27.0 |
- | know | 21 | 26.0 |
- | ring | 21 | 22.0 |
- | even | 13 | 16.0 |
- | East | 16 | 21.0 |
- | camp | 15 | 27.0 |
- | hard | 16 | 25.0 |
- | whom | 15 | 25.0 |
-
-Yesterday the wife of the politician discussed health care with
-
- | old | g: 13 | 1_b: 23.0 |
-|---|---|---|
- | all | 9 | 17.0 |
- | o | 23 | 22.0 |
- | six | 11 | 22.0 |
- | de | 15 | 22.0 |
- | op | 25 | 28.0 |
- | d' | 4 | 12.0 |
- | an | 6 | 20.0 |
- | oil | 15 | 25.0 |
- | who | 14 | 18.0 |
-
-Yesterday the wife of the politician discussed health care with old
-
- | people. | g: 4 | 1_b: 35.0 |
-|---|---|---|
- | fields | 14 | 27.0 |
- | stream | 18 | 29.0 |
- | levels | 16 | 25.0 |
- | United | 14 | 22.0 |
- | master | 13 | 28.0 |
- | decide | 20 | 30.0 |
- | easily | 22 | 23.0 |
- | taught | 21 | 23.0 |
- | secret | 13 | 27.0 |
- | Thomas | 16 | 22.0 |
-
-
-
 The children of the rich man were spoiled, but they were charming and handsome.
 
 The children of the rich man were spoiled, but they were charming and handsome.
@@ -170,539 +8,941 @@ The children of the rich man were spoiled, but they were charming and handsome.
 
 The
 
- | children | g: 15 | 1_b: 14.0 |
+ | children | g: 15 | 1_b: 24.0 |
 |---|---|---|
- | variable | 20 | 23.0 |
- | involves | 21 | 23.0 |
- | proposed | 17 | 16.0 |
- | sequence | 17 | 18.0 |
- | churches | 17 | 21.0 |
- | external | 16 | 24.0 |
- | strategy | 19 | 19.0 |
- | somewhat | 19 | 18.0 |
- | computer | 16 | 18.0 |
+ | diseases | 20 | 32.0 |
+ | detailed | 20 | 29.0 |
+ | function | 16 | 34.0 |
+ | chemical | 17 | 24.0 |
+ | expected | 19 | 25.0 |
+ | complete | 15 | 23.0 |
+ | thoughts | 21 | 28.0 |
+ | distance | 17 | 27.0 |
+ | speaking | 21 | 28.0 |
+ | remained | 18 | 28.0 |
+ | accounts | 18 | 25.0 |
+ | original | 12 | 22.0 |
+ | whenever | 23 | 29.0 |
+ | violence | 18 | 25.0 |
+ | suitable | 19 | 22.0 |
+ | contrast | 19 | 24.0 |
+ | attached | 20 | 31.0 |
+ | proposed | 17 | 26.0 |
+ | answered | 23 | 29.0 |
+ | repeated | 18 | 26.0 |
 
 The children
 
- | of | g: 3 | 1_b: 17.0 |
+ | of | g: 3 | 1_b: 7.0 |
 |---|---|---|
- | of | 3 | 17.0 |
-
-The children of
-
- | the | g: 2 | 1_b: 26.0 |
-|---|---|---|
- | die | 17 | 24.0 |
- | do | 17 | 20.0 |
- | it | 13 | 22.0 |
- | re | 24 | 23.0 |
- | few | 16 | 21.0 |
- | him | 9 | 24.0 |
- | per | 21 | 19.0 |
- | red | 16 | 20.0 |
- | eat | 21 | 28.0 |
- | ed | 21 | 26.0 |
-
-The children of the
-
- | rich | g: 11 | 1_b: 22.0 |
-|---|---|---|
- | tell | 17 | 23.0 |
- | died | 19 | 22.0 |
- | wish | 19 | 24.0 |
- | King | 9 | 9.0 |
- | list | 16 | 16.0 |
- | want | 18 | 22.0 |
- | past | 10 | 20.0 |
- | only | 10 | 17.0 |
- | bone | 18 | 25.0 |
- | Asia | 17 | 19.0 |
-
-The children of the rich
-
- | man | g: 6 | 1_b: 19.0 |
-|---|---|---|
- | op | 19 | 25.0 |
- | s | 20 | 21.0 |
- | ago | 18 | 26.0 |
- | ad | 21 | 20.0 |
- | pre | 23 | 25.0 |
- | in | 5 | 18.0 |
- | who | 7 | 19.0 |
- | lie | 15 | 23.0 |
- | say | 17 | 20.0 |
- | are | 4 | 18.0 |
-
-The children of the rich man
-
- | were | g: 5 | 1_b: 18.0 |
-|---|---|---|
- | with | 7 | 21.0 |
- | real | 17 | 21.0 |
- | that | 7 | 20.0 |
- | thus | 14 | 25.0 |
- | jobs | 22 | 23.0 |
- | made | 10 | 20.0 |
- | cent | 23 | 25.0 |
- | arms | 19 | 23.0 |
- | mere | 22 | 24.0 |
- | soil | 22 | 25.0 |
-
-The children of the rich man were
-
- | spoiled, | g: 5 | 1_b: 4.0 |
-|---|---|---|
- | endorse | 25 | 25.0 |
- | tossing | 18 | 28.0 |
- | expired | 21 | 28.0 |
- | torrent | 25 | 27.0 |
- | prowess | 25 | 28.0 |
- | resorts | 19 | 26.0 |
- | regimen | 25 | 30.0 |
- | behaves | 25 | 28.0 |
- | repeats | 21 | 26.0 |
- | measles | 21 | 33.0 |
-
-The children of the rich man were spoiled,
-
- | but | g: 9 | 1_b: 20.0 |
-|---|---|---|
- | art | 14 | 23.0 |
- | me | 14 | 22.0 |
- | all | 10 | 23.0 |
- | men | 9 | 21.0 |
- | own | 17 | 20.0 |
- | ago | 17 | 26.0 |
- | my | 14 | 24.0 |
- | why | 17 | 24.0 |
- | y | 21 | 20.0 |
-
-The children of the rich man were spoiled, but
-
- | they | g: 4 | 1_b: 23.0 |
-|---|---|---|
- | safe | 16 | 26.0 |
- | task | 20 | 22.0 |
- | same | 14 | 16.0 |
- | help | 16 | 19.0 |
- | rock | 17 | 20.0 |
- | blue | 16 | 22.0 |
- | copy | 19 | 22.0 |
- | walk | 18 | 22.0 |
- | wave | 21 | 23.0 |
- | such | 11 | 24.0 |
-
-The children of the rich man were spoiled, but they
-
- | were | g: 2 | 1_b: 18.0 |
-|---|---|---|
- | Paul | 20 | 14.0 |
- | page | 21 | 24.0 |
- | help | 15 | 19.0 |
- | show | 14 | 19.0 |
- | live | 12 | 22.0 |
- | Club | 24 | 12.0 |
- | cash | 21 | 23.0 |
- | over | 18 | 20.0 |
- | with | 13 | 21.0 |
- | mark | 18 | 18.0 |
-
-The children of the rich man were spoiled, but they were
-
- | charming | g: 14 | 1_b: 26.0 |
-|---|---|---|
- | mobility | 23 | 27.0 |
- | sleeping | 14 | 28.0 |
- | mistaken | 11 | 26.0 |
- | prevents | 24 | 29.0 |
- | emerging | 17 | 26.0 |
- | implicit | 19 | 23.0 |
- | Bulletin | 27 | 13.0 |
- | antibody | 26 | 28.0 |
- | brethren | 19 | 27.0 |
-
-The children of the rich man were spoiled, but they were charming
-
- | and | g: 2 | 1_b: 16.0 |
-|---|---|---|
- | as | 6 | 18.0 |
- | St | 19 | 14.0 |
- | Sir | 17 | 13.0 |
- | no | 13 | 25.0 |
- | an | 14 | 24.0 |
- | you | 15 | 25.0 |
- | way | 16 | 19.0 |
- | too | 12 | 25.0 |
- | my | 16 | 24.0 |
- | lot | 17 | 22.0 |
-
-The children of the rich man were spoiled, but they were charming and
-
- | handsome. | g: 4 | 1_b: 5.0 |
-|---|---|---|
- | steadily | 16 | 25.0 |
- | missions | 22 | 28.0 |
- | feasible | 21 | 34.0 |
- | friction | 23 | 28.0 |
- | assessed | 19 | 23.0 |
- | versions | 20 | 24.0 |
- | vehicles | 22 | 24.0 |
- | collapse | 24 | 19.0 |
- | literacy | 21 | 28.0 |
- | injuries | 23 | 28.0 |
-
-
-
-Yesterday the wife of the politician discussed health care with old people.
-
-Yesterday the wife of the politician discussed health care with old people.
-
-Yesterday the wife of the politician discussed health care with old people.
-
-Yesterday
-
- | the | g: 7 | 1_b: 17.0 |
-|---|---|---|
- | bar | 16 | 23.0 |
- | a | 10 | 12.0 |
- | for | 9 | 10.0 |
- | buy | 20 | 29.0 |
- | et | 15 | 25.0 |
- | fit | 21 | 29.0 |
- | Sir | 16 | 17.0 |
- | man | 16 | 29.0 |
- | co | 7 | 33.0 |
- | U | 17 | 24.0 |
-
-Yesterday the
-
- | wife | g: 12 | 1_b: 25.0 |
-|---|---|---|
- | body | 13 | 18.0 |
- | path | 13 | 26.0 |
- | mode | 15 | 24.0 |
- | need | 12 | 12.0 |
- | eyes | 16 | 19.0 |
- | just | 15 | 19.0 |
- | task | 14 | 25.0 |
- | heat | 15 | 22.0 |
- | shot | 15 | 15.0 |
- | made | 20 | 14.0 |
-
-Yesterday the wife
-
- | of | g: 1 | 1_b: 5.0 |
-|---|---|---|
- | of | 1 | 5.0 |
-
-Yesterday the wife of
-
- | the | g: 2 | 1_b: 2.0 |
-|---|---|---|
- | off | 21 | 20.0 |
- | my | 10 | 9.0 |
- | le | 18 | 19.0 |
- | d' | 4 | 7.0 |
- | end | 16 | 20.0 |
- | V | 15 | 18.0 |
- | Sec | 4 | 18.0 |
- | pay | 16 | 20.0 |
- | ten | 14 | 13.0 |
- | it | 13 | 15.0 |
-
-Yesterday the wife of the
-
- | politician | g: 10 | 1_b: 12.0 |
-|---|---|---|
- | moderately | 20 | 19.0 |
- | censorship | 21 | 23.0 |
- | identifies | 25 | 24.0 |
- | interstate | 20 | 25.0 |
- | sanctioned | 20 | 23.0 |
- | resentment | 23 | 23.0 |
- | comprising | 24 | 29.0 |
- | quotations | 24 | 27.0 |
- | loneliness | 18 | 26.0 |
- | invaluable | 20 | 22.0 |
-
-Yesterday the wife of the politician
-
- | discussed | g: 18 | 1_b: 12.0 |
-|---|---|---|
- | immediate | 22 | 21.0 |
- | challenge | 22 | 20.0 |
- | discovery | 23 | 24.0 |
- | structure | 20 | 23.0 |
- | developed | 17 | 17.0 |
- | societies | 23 | 24.0 |
- | increased | 20 | 16.0 |
- | Americans | 20 | 20.0 |
-
-Yesterday the wife of the politician discussed
-
- | health | g: 16 | 1_b: 11.0 |
-|---|---|---|
- | pieces | 18 | 17.0 |
- | strong | 16 | 14.0 |
- | winter | 21 | 17.0 |
- | public | 13 | 12.0 |
- | battle | 16 | 18.0 |
- | vision | 20 | 18.0 |
- | follow | 18 | 19.0 |
- | sister | 18 | 19.0 |
- | Jewish | 16 | 15.0 |
- | object | 17 | 23.0 |
-
-Yesterday the wife of the politician discussed health
-
- | care | g: 4 | 1_b: 2.0 |
-|---|---|---|
- | wide | 20 | 19.0 |
- | bone | 22 | 23.0 |
- | mere | 23 | 21.0 |
- | dear | 22 | 23.0 |
- | cold | 18 | 20.0 |
- | role | 14 | 15.0 |
- | male | 20 | 22.0 |
- | race | 20 | 19.0 |
- | able | 21 | 21.0 |
- | plus | 19 | 15.0 |
-
-Yesterday the wife of the politician discussed health care
-
- | with | g: 8 | 1_b: 5.0 |
-|---|---|---|
- | news | 12 | 15.0 |
- | much | 16 | 15.0 |
- | root | 22 | 23.0 |
- | flat | 22 | 22.0 |
- | that | 8 | 9.0 |
- | said | 14 | 15.0 |
- | Park | 15 | 21.0 |
- | used | 13 | 15.0 |
- | Jews | 20 | 24.0 |
- | note | 20 | 22.0 |
-
-Yesterday the wife of the politician discussed health care with
-
- | old | g: 13 | 1_b: 12.0 |
-|---|---|---|
- | box | 19 | 17.0 |
- | bit | 18 | 19.0 |
- | it | 9 | 11.0 |
- | III | 21 | 22.0 |
- | few | 13 | 15.0 |
- | Bay | 18 | 20.0 |
- | mm | 27 | 25.0 |
- | hot | 15 | 16.0 |
- | n | 21 | 17.0 |
- | he | 13 | 14.0 |
-
-Yesterday the wife of the politician discussed health care with old
-
- | people. | g: 4 | 1_b: 14.0 |
-|---|---|---|
- | George | 14 | 11.0 |
- | always | 21 | 20.0 |
- | credit | 14 | 16.0 |
- | highly | 16 | 19.0 |
- | nature | 14 | 19.0 |
- | manner | 16 | 22.0 |
- | muscle | 18 | 18.0 |
- | chosen | 17 | 21.0 |
- | fourth | 18 | 18.0 |
- | people | 7 | 4.0 |
-
-
-
-The children of the rich man were spoiled, but they were charming and handsome.
-
-The children of the rich man were spoiled, but they were charming and handsome.
-
-The children of the rich man were spoiled, but they were charming and handsome.
-
-The
-
- | children | g: 15 | 1_b: 16.0 |
-|---|---|---|
- | greatest | 15 | 16.0 |
- | purposes | 20 | 24.0 |
- | starting | 16 | 20.0 |
- | numerous | 17 | 21.0 |
- | absolute | 17 | 22.0 |
- | involves | 21 | 28.0 |
- | building | 13 | 16.0 |
- | products | 20 | 19.0 |
- | citizens | 17 | 21.0 |
- | activity | 17 | 23.0 |
-
-The children
-
- | of | g: 3 | 1_b: 4.0 |
-|---|---|---|
- | of | 3 | 4.0 |
-
-The children of
-
- | the | g: 2 | 1_b: 2.0 |
-|---|---|---|
- | sit | 19 | 20.0 |
- | bar | 18 | 18.0 |
- | six | 11 | 12.0 |
- | ice | 15 | 16.0 |
- | the | 2 | 2.0 |
- | by | 18 | 16.0 |
- | can | 19 | 18.0 |
- | El | 13 | 15.0 |
- | P | 17 | 15.0 |
-
-The children of the
-
- | rich | g: 11 | 1_b: 7.0 |
-|---|---|---|
- | camp | 11 | 14.0 |
- | Miss | 15 | 17.0 |
- | gold | 14 | 16.0 |
- | fair | 15 | 17.0 |
- | rule | 17 | 18.0 |
- | mail | 18 | 18.0 |
- | seem | 21 | 21.0 |
- | ball | 16 | 17.0 |
- | Hill | 15 | 14.0 |
- | lack | 17 | 15.0 |
-
-The children of the rich
-
- | man | g: 6 | 1_b: 11.0 |
-|---|---|---|
- | lie | 15 | 18.0 |
- | get | 16 | 12.0 |
- | joy | 20 | 22.0 |
- | put | 15 | 14.0 |
- | s | 20 | 17.0 |
- | le | 20 | 21.0 |
- | how | 17 | 15.0 |
- | sat | 17 | 17.0 |
- | if | 14 | 12.0 |
+ | at | 7 | 11.0 |
+ | non | 22 | 24.0 |
+ | six | 15 | 19.0 |
+ | for | 8 | 11.0 |
+ | sat | 15 | 15.0 |
+ | ad | 19 | 18.0 |
+ | gas | 20 | 22.0 |
+ | son | 18 | 17.0 |
+ | an | 14 | 15.0 |
+ | led | 12 | 15.0 |
+ | que | 7 | 20.0 |
+ | ran | 12 | 14.0 |
+ | n | 22 | 20.0 |
+ | sun | 19 | 22.0 |
+ | red | 17 | 19.0 |
+ | say | 13 | 12.0 |
+ | cut | 14 | 15.0 |
  | had | 7 | 10.0 |
+ | air | 18 | 19.0 |
+ | to | 8 | 12.0 |
+
+The children of
+
+ | the | g: 2 | 1_b: 4.0 |
+|---|---|---|
+ | us | 13 | 14.0 |
+ | his | 6 | 9.0 |
+ | old | 11 | 8.0 |
+ | the | 2 | 4.0 |
+ | led | 19 | 25.0 |
+ | way | 17 | 20.0 |
+ | s | 22 | 17.0 |
+ | bed | 17 | 21.0 |
+ | up | 14 | 18.0 |
+ | sin | 19 | 20.0 |
+ | own | 17 | 17.0 |
+ | yet | 18 | 16.0 |
+ | out | 20 | 16.0 |
+ | lot | 20 | 20.0 |
+ | end | 18 | 19.0 |
+ | net | 22 | 21.0 |
+ | joy | 20 | 20.0 |
+ | ran | 20 | 24.0 |
+ | has | 22 | 20.0 |
+ | if | 19 | 20.0 |
+
+The children of the
+
+ | rich | g: 11 | 1_b: 4.0 |
+|---|---|---|
+ | wall | 17 | 14.0 |
+ | hear | 21 | 25.0 |
+ | time | 10 | 13.0 |
+ | jobs | 19 | 19.0 |
+ | four | 8 | 11.0 |
+ | note | 19 | 17.0 |
+ | held | 20 | 20.0 |
+ | step | 20 | 21.0 |
+ | site | 11 | 14.0 |
+ | page | 17 | 16.0 |
+ | task | 16 | 16.0 |
+ | died | 19 | 17.0 |
+ | side | 15 | 16.0 |
+ | stay | 18 | 19.0 |
+ | iron | 16 | 16.0 |
+ | role | 15 | 14.0 |
+ | band | 9 | 11.0 |
+ | lies | 21 | 15.0 |
+ | with | 19 | 16.0 |
+ | wait | 21 | 19.0 |
+
+The children of the rich
+
+ | man | g: 6 | 1_b: 8.0 |
+|---|---|---|
+ | he | 13 | 11.0 |
+ | son | 13 | 12.0 |
+ | led | 12 | 13.0 |
+ | and | 3 | 1.0 |
+ | is | 7 | 9.0 |
+ | n | 19 | 16.0 |
+ | own | 15 | 13.0 |
+ | mm | 23 | 25.0 |
+ | was | 8 | 11.0 |
+ | buy | 15 | 12.0 |
+ | pay | 18 | 12.0 |
+ | sin | 22 | 19.0 |
+ | day | 14 | 15.0 |
+ | see | 19 | 12.0 |
+ | so | 14 | 9.0 |
+ | be | 14 | 12.0 |
+ | go | 12 | 11.0 |
+ | key | 16 | 19.0 |
+ | far | 17 | 15.0 |
+ | his | 18 | 14.0 |
 
 The children of the rich man
 
- | were | g: 5 | 1_b: 10.0 |
+ | were | g: 5 | 1_b: 7.0 |
 |---|---|---|
- | well | 14 | 13.0 |
- | jobs | 22 | 18.0 |
- | feel | 16 | 17.0 |
- | hair | 19 | 18.0 |
- | been | 13 | 14.0 |
- | rest | 19 | 18.0 |
- | fund | 21 | 16.0 |
- | Holy | 19 | 21.0 |
- | talk | 17 | 15.0 |
- | John | 9 | 11.0 |
+ | good | 16 | 12.0 |
+ | heat | 21 | 18.0 |
+ | fire | 18 | 15.0 |
+ | uses | 15 | 17.0 |
+ | zero | 24 | 17.0 |
+ | blue | 19 | 16.0 |
+ | hair | 19 | 15.0 |
+ | duty | 24 | 19.0 |
+ | deal | 17 | 14.0 |
+ | past | 15 | 12.0 |
+ | even | 13 | 12.0 |
+ | cent | 23 | 19.0 |
+ | risk | 22 | 15.0 |
+ | with | 7 | 6.0 |
+ | find | 12 | 13.0 |
+ | rise | 17 | 15.0 |
+ | fall | 15 | 14.0 |
+ | size | 19 | 18.0 |
+ | cell | 20 | 20.0 |
+ | kept | 12 | 13.0 |
 
 The children of the rich man were
 
- | spoiled, | g: 5 | 1_b: 8.0 |
+ | spoiled, | g: 5 | 1_b: 7.0 |
 |---|---|---|
- | cartoon | 21 | 18.0 |
- | prolong | 24 | 26.0 |
- | bacilli | 5 | 29.0 |
- | orchard | 22 | 26.0 |
- | bombers | 22 | 21.0 |
- | fulness | 5 | 8.0 |
- | turmoil | 23 | 21.0 |
- | potency | 26 | 26.0 |
- | tonnage | 25 | 28.0 |
- | twofold | 20 | 23.0 |
+ | placebo, | 5 | 7.0 |
+ | hideous, | 5 | 7.0 |
+ | assists, | 5 | 7.0 |
+ | pigeons, | 5 | 7.0 |
+ | quartet, | 5 | 7.0 |
+ | partake, | 5 | 7.0 |
+ | remorse, | 5 | 7.0 |
+ | attains, | 5 | 7.0 |
+ | tubular, | 5 | 7.0 |
+ | embryos, | 5 | 7.0 |
+ | spurred, | 5 | 7.0 |
+ | lexical, | 5 | 7.0 |
+ | behaves, | 5 | 7.0 |
+ | pronoun, | 5 | 7.0 |
+ | depicts, | 5 | 7.0 |
+ | tossing, | 5 | 7.0 |
+ | whipped, | 5 | 7.0 |
+ | discord, | 5 | 7.0 |
+ | equated, | 5 | 7.0 |
+ | moulded, | 5 | 7.0 |
 
 The children of the rich man were spoiled,
 
- | but | g: 9 | 1_b: 8.0 |
+ | but | g: 9 | 1_b: 7.0 |
 |---|---|---|
- | III | 16 | 23.0 |
- | bad | 15 | 15.0 |
- | G | 20 | 21.0 |
- | is | 13 | 11.0 |
- | de | 12 | 17.0 |
- | set | 14 | 17.0 |
- | fat | 17 | 16.0 |
- | s | 20 | 16.0 |
- | El | 18 | 20.0 |
- | Bay | 19 | 20.0 |
+ | be | 17 | 14.0 |
+ | mm | 18 | 26.0 |
+ | in | 4 | 5.0 |
+ | go | 17 | 16.0 |
+ | if | 11 | 9.0 |
+ | had | 13 | 14.0 |
+ | air | 17 | 16.0 |
+ | ago | 17 | 16.0 |
+ | gas | 18 | 18.0 |
+ | hot | 15 | 15.0 |
+ | try | 19 | 18.0 |
+ | e | 20 | 17.0 |
+ | box | 19 | 19.0 |
+ | oil | 17 | 17.0 |
+ | der | 19 | 25.0 |
+ | que | 5 | 19.0 |
+ | l | 21 | 18.0 |
+ | too | 12 | 8.0 |
+ | act | 17 | 20.0 |
+ | put | 14 | 16.0 |
 
 The children of the rich man were spoiled, but
 
- | they | g: 4 | 1_b: 6.0 |
+ | they | g: 4 | 1_b: 5.0 |
 |---|---|---|
- | fund | 21 | 18.0 |
- | full | 13 | 11.0 |
- | West | 16 | 17.0 |
- | came | 10 | 11.0 |
- | land | 14 | 19.0 |
- | hope | 16 | 14.0 |
- | main | 16 | 17.0 |
- | evil | 14 | 14.0 |
- | rest | 16 | 15.0 |
- | code | 20 | 20.0 |
+ | mere | 15 | 16.0 |
+ | sand | 20 | 19.0 |
+ | room | 19 | 17.0 |
+ | team | 17 | 16.0 |
+ | jobs | 16 | 19.0 |
+ | seat | 21 | 20.0 |
+ | from | 10 | 11.0 |
+ | data | 21 | 19.0 |
+ | baby | 18 | 15.0 |
+ | made | 9 | 10.0 |
+ | says | 14 | 13.0 |
+ | grew | 11 | 14.0 |
+ | care | 14 | 15.0 |
+ | form | 16 | 17.0 |
+ | fall | 16 | 16.0 |
+ | draw | 19 | 16.0 |
+ | page | 18 | 20.0 |
+ | join | 17 | 18.0 |
+ | lost | 9 | 11.0 |
+ | need | 14 | 12.0 |
 
 The children of the rich man were spoiled, but they
 
- | were | g: 2 | 1_b: 3.0 |
+ | were | g: 2 | 1_b: 2.0 |
 |---|---|---|
- | lost | 9 | 9.0 |
- | Paul | 20 | 22.0 |
- | laid | 12 | 13.0 |
- | them | 20 | 19.0 |
- | heat | 20 | 20.0 |
- | edge | 26 | 22.0 |
- | slow | 17 | 18.0 |
- | hour | 26 | 23.0 |
- | sets | 20 | 23.0 |
- | then | 10 | 11.0 |
+ | user | 27 | 26.0 |
+ | baby | 21 | 19.0 |
+ | most | 13 | 13.0 |
+ | each | 13 | 13.0 |
+ | main | 21 | 21.0 |
+ | more | 13 | 13.0 |
+ | mine | 21 | 17.0 |
+ | drug | 23 | 22.0 |
+ | grew | 10 | 12.0 |
+ | your | 23 | 18.0 |
+ | goal | 25 | 22.0 |
+ | test | 21 | 18.0 |
+ | dear | 22 | 22.0 |
+ | fast | 17 | 18.0 |
+ | kind | 15 | 13.0 |
+ | flat | 22 | 19.0 |
+ | feel | 12 | 10.0 |
+ | pain | 24 | 22.0 |
+ | milk | 21 | 17.0 |
+ | free | 16 | 16.0 |
 
 The children of the rich man were spoiled, but they were
 
  | charming | g: 14 | 1_b: 11.0 |
 |---|---|---|
- | discrete | 19 | 20.0 |
- | mentions | 21 | 24.0 |
- | laughing | 14 | 8.0 |
- | Russians | 19 | 18.0 |
- | maternal | 19 | 20.0 |
- | impaired | 17 | 19.0 |
- | refugees | 15 | 18.0 |
- | clearing | 17 | 16.0 |
- | clusters | 22 | 23.0 |
- | nobility | 18 | 23.0 |
+ | maritime | 20 | 23.0 |
+ | sickness | 20 | 22.0 |
+ | supports | 24 | 22.0 |
+ | remedies | 22 | 21.0 |
+ | reliance | 22 | 25.0 |
+ | autonomy | 24 | 24.0 |
+ | afforded | 14 | 13.0 |
+ | reporter | 22 | 22.0 |
+ | cellular | 24 | 23.0 |
+ | treatise | 24 | 28.0 |
+ | diabetes | 23 | 22.0 |
+ | analyzed | 18 | 19.0 |
+ | summoned | 15 | 17.0 |
+ | specimen | 24 | 25.0 |
+ | generate | 23 | 23.0 |
+ | handsome | 13 | 12.0 |
+ | carriers | 18 | 18.0 |
+ | pressing | 16 | 15.0 |
+ | symmetry | 27 | 25.0 |
+ | midnight | 22 | 22.0 |
 
 The children of the rich man were spoiled, but they were charming
 
  | and | g: 2 | 1_b: 2.0 |
 |---|---|---|
- | we | 14 | 12.0 |
- | eat | 21 | 22.0 |
- | men | 9 | 8.0 |
- | or | 9 | 11.0 |
- | put | 18 | 17.0 |
- | our | 14 | 12.0 |
- | F | 24 | 20.0 |
- | due | 11 | 15.0 |
- | him | 12 | 11.0 |
- | re | 26 | 18.0 |
+ | sit | 23 | 22.0 |
+ | six | 15 | 17.0 |
+ | ill | 17 | 20.0 |
+ | get | 21 | 16.0 |
+ | let | 18 | 17.0 |
+ | it | 12 | 11.0 |
+ | won | 22 | 16.0 |
+ | day | 15 | 18.0 |
+ | age | 19 | 19.0 |
+ | lot | 17 | 14.0 |
+ | air | 20 | 16.0 |
+ | ran | 24 | 21.0 |
+ | an | 14 | 14.0 |
+ | was | 15 | 13.0 |
+ | out | 10 | 13.0 |
+ | eye | 18 | 18.0 |
+ | off | 13 | 12.0 |
+ | and | 2 | 2.0 |
+ | ice | 20 | 19.0 |
+ | by | 6 | 8.0 |
 
 The children of the rich man were spoiled, but they were charming and
 
  | handsome. | g: 4 | 1_b: 7.0 |
 |---|---|---|
- | critique | 22 | 23.0 |
- | fourteen | 19 | 22.0 |
- | metaphor | 22 | 23.0 |
- | Archives | 30 | 27.0 |
- | receptor | 27 | 30.0 |
- | latitude | 24 | 26.0 |
- | decisive | 15 | 13.0 |
- | defeated | 14 | 16.0 |
- | parental | 20 | 18.0 |
- | fracture | 28 | 26.0 |
+ | festival. | 4 | 28.0 |
+ | promises. | 4 | 27.0 |
+ | treatise. | 4 | 7.0 |
+ | annually. | 4 | 31.0 |
+ | uncommon. | 4 | 7.0 |
+ | landlord. | 4 | 7.0 |
+ | maternal. | 4 | 7.0 |
+ | feasible. | 4 | 27.0 |
+ | envelope. | 4 | 30.0 |
+ | mobility. | 4 | 29.0 |
+ | trustees. | 4 | 28.0 |
+ | heavenly. | 4 | 7.0 |
+ | enforced. | 4 | 29.0 |
+ | revenues. | 4 | 28.0 |
+ | statutes. | 4 | 7.0 |
+ | minerals. | 4 | 27.0 |
+ | feedback. | 4 | 28.0 |
+ | embodied. | 4 | 7.0 |
+ | breeding. | 4 | 7.0 |
+ | residual. | 4 | 7.0 |
+
+
+
+Yesterday, the wife of the politician discussed health care with old people.
+
+Yesterday, the wife of the politician discussed health care with old people.
+
+Yesterday, the wife of the politician discussed health care with old people.
+
+Yesterday,
+
+ | the | g: 6 | 1_b: 6.0 |
+|---|---|---|
+ | as | 7 | 9.0 |
+ | and | 4 | 6.0 |
+ | war | 13 | 16.0 |
+ | few | 17 | 15.0 |
+ | all | 11 | 10.0 |
+ | two | 13 | 12.0 |
+ | own | 15 | 15.0 |
+ | job | 16 | 15.0 |
+ | in | 5 | 7.0 |
+ | pre | 21 | 22.0 |
+ | is | 7 | 5.0 |
+ | und | 16 | 19.0 |
+ | hot | 16 | 15.0 |
+ | mm | 14 | 27.0 |
+ | if | 12 | 11.0 |
+ | say | 15 | 13.0 |
+ | to | 6 | 10.0 |
+ | yet | 14 | 15.0 |
+ | ice | 15 | 17.0 |
+ | les | 19 | 16.0 |
+
+Yesterday, the
+
+ | wife | g: 12 | 1_b: 12.0 |
+|---|---|---|
+ | page | 13 | 11.0 |
+ | hope | 13 | 13.0 |
+ | star | 11 | 11.0 |
+ | easy | 15 | 12.0 |
+ | stop | 15 | 17.0 |
+ | here | 19 | 17.0 |
+ | thin | 14 | 15.0 |
+ | camp | 12 | 16.0 |
+ | draw | 15 | 14.0 |
+ | skin | 13 | 15.0 |
+ | vast | 11 | 13.0 |
+ | rare | 14 | 14.0 |
+ | task | 11 | 16.0 |
+ | than | 19 | 17.0 |
+ | thus | 19 | 24.0 |
+ | week | 12 | 11.0 |
+ | seen | 19 | 18.0 |
+ | salt | 14 | 13.0 |
+ | gold | 12 | 13.0 |
+ | coal | 14 | 15.0 |
+
+Yesterday, the wife
+
+ | of | g: 1 | 1_b: 3.0 |
+|---|---|---|
+ | law | 20 | 17.0 |
+ | bar | 16 | 18.0 |
+ | mid | 24 | 19.0 |
+ | got | 15 | 6.0 |
+ | l | 22 | 20.0 |
+ | joy | 22 | 18.0 |
+ | dog | 16 | 15.0 |
+ | n | 22 | 15.0 |
+ | new | 17 | 16.0 |
+ | say | 18 | 13.0 |
+ | boy | 16 | 16.0 |
+ | ago | 18 | 18.0 |
+ | set | 13 | 12.0 |
+ | sex | 16 | 16.0 |
+ | the | 10 | 11.0 |
+ | its | 17 | 15.0 |
+ | ask | 19 | 15.0 |
+ | few | 19 | 18.0 |
+ | no | 15 | 12.0 |
+ | l' | 6 | 7.0 |
+
+Yesterday, the wife of
+
+ | the | g: 2 | 1_b: 2.0 |
+|---|---|---|
+ | mm | 24 | 28.0 |
+ | add | 23 | 21.0 |
+ | nor | 23 | 17.0 |
+ | see | 19 | 17.0 |
+ | cut | 19 | 18.0 |
+ | ten | 14 | 13.0 |
+ | had | 17 | 16.0 |
+ | sat | 24 | 18.0 |
+ | did | 18 | 16.0 |
+ | dry | 19 | 17.0 |
+ | old | 12 | 12.0 |
+ | be | 16 | 14.0 |
+ | an | 5 | 6.0 |
+ | you | 17 | 10.0 |
+ | to | 20 | 14.0 |
+ | la | 18 | 17.0 |
+ | d' | 4 | 6.0 |
+ | und | 25 | 24.0 |
+ | no | 14 | 12.0 |
+ | she | 17 | 17.0 |
+
+Yesterday, the wife of the
+
+ | politician | g: 10 | 1_b: 9.0 |
+|---|---|---|
+ | incidental | 20 | 25.0 |
+ | expressive | 22 | 23.0 |
+ | selections | 26 | 24.0 |
+ | patriotism | 22 | 23.0 |
+ | homosexual | 15 | 18.0 |
+ | epithelium | 22 | 28.0 |
+ | compassion | 24 | 22.0 |
+ | prosecutor | 13 | 15.0 |
+ | criticized | 23 | 22.0 |
+ | pilgrimage | 20 | 20.0 |
+ | stretching | 25 | 25.0 |
+ | fertilizer | 20 | 19.0 |
+ | millennium | 20 | 15.0 |
+ | instituted | 21 | 26.0 |
+ | inventions | 22 | 28.0 |
+ | ministries | 21 | 22.0 |
+ | scheduling | 24 | 23.0 |
+ | governance | 18 | 20.0 |
+ | detachment | 21 | 24.0 |
+ | landowners | 17 | 22.0 |
+
+Yesterday, the wife of the politician
+
+ | discussed | g: 20 | 1_b: 15.0 |
+|---|---|---|
+ | exception | 22 | 22.0 |
+ | operation | 21 | 20.0 |
+ | attention | 22 | 18.0 |
+ | mentioned | 14 | 13.0 |
+ | organized | 19 | 17.0 |
+ | criticism | 24 | 18.0 |
+ | responses | 28 | 21.0 |
+ | frequency | 24 | 25.0 |
+ | otherwise | 19 | 16.0 |
+ | afternoon | 21 | 19.0 |
+ | knowledge | 23 | 21.0 |
+ | processes | 24 | 21.0 |
+ | completed | 21 | 15.0 |
+ | technique | 21 | 22.0 |
+ | operating | 16 | 17.0 |
+ | agreement | 22 | 19.0 |
+ | appointed | 14 | 13.0 |
+ | territory | 23 | 21.0 |
+ | decisions | 24 | 19.0 |
+ | naturally | 21 | 15.0 |
+
+Yesterday, the wife of the politician discussed
+
+ | health | g: 15 | 1_b: 10.0 |
+|---|---|---|
+ | heaven | 24 | 14.0 |
+ | mainly | 13 | 18.0 |
+ | bridge | 18 | 18.0 |
+ | agency | 23 | 18.0 |
+ | answer | 21 | 21.0 |
+ | assume | 21 | 23.0 |
+ | placed | 19 | 22.0 |
+ | causes | 14 | 14.0 |
+ | safety | 15 | 14.0 |
+ | prices | 18 | 15.0 |
+ | spirit | 20 | 19.0 |
+ | powers | 18 | 19.0 |
+ | acting | 13 | 14.0 |
+ | caught | 19 | 18.0 |
+ | supply | 21 | 15.0 |
+ | notion | 22 | 22.0 |
+ | claims | 14 | 13.0 |
+ | troops | 20 | 17.0 |
+ | reader | 20 | 21.0 |
+ | stages | 15 | 20.0 |
+
+Yesterday, the wife of the politician discussed health
+
+ | care | g: 3 | 1_b: 1.0 |
+|---|---|---|
+ | just | 16 | 11.0 |
+ | bone | 21 | 24.0 |
+ | laid | 22 | 19.0 |
+ | boys | 22 | 19.0 |
+ | skin | 19 | 21.0 |
+ | acid | 23 | 22.0 |
+ | mass | 23 | 20.0 |
+ | dark | 23 | 20.0 |
+ | they | 15 | 11.0 |
+ | foot | 24 | 20.0 |
+ | does | 18 | 16.0 |
+ | thin | 23 | 21.0 |
+ | full | 22 | 17.0 |
+ | face | 18 | 18.0 |
+ | soil | 16 | 21.0 |
+ | lies | 16 | 17.0 |
+ | grow | 20 | 21.0 |
+ | once | 15 | 15.0 |
+ | wall | 18 | 20.0 |
+ | role | 14 | 16.0 |
+
+Yesterday, the wife of the politician discussed health care
+
+ | with | g: 8 | 1_b: 2.0 |
+|---|---|---|
+ | rate | 13 | 17.0 |
+ | part | 17 | 16.0 |
+ | word | 18 | 21.0 |
+ | lose | 24 | 20.0 |
+ | fear | 20 | 18.0 |
+ | week | 17 | 18.0 |
+ | came | 16 | 17.0 |
+ | said | 15 | 15.0 |
+ | done | 16 | 14.0 |
+ | life | 10 | 16.0 |
+ | laid | 19 | 17.0 |
+ | fine | 21 | 18.0 |
+ | seek | 20 | 20.0 |
+ | core | 17 | 20.0 |
+ | even | 14 | 11.0 |
+ | left | 15 | 14.0 |
+ | turn | 20 | 19.0 |
+ | will | 12 | 12.0 |
+ | lost | 17 | 15.0 |
+ | real | 17 | 16.0 |
+
+Yesterday, the wife of the politician discussed health care with
+
+ | old | g: 13 | 1_b: 12.0 |
+|---|---|---|
+ | not | 12 | 11.0 |
+ | up | 11 | 13.0 |
+ | put | 17 | 17.0 |
+ | gas | 16 | 16.0 |
+ | sin | 18 | 19.0 |
+ | que | 4 | 22.0 |
+ | mm | 27 | 24.0 |
+ | nor | 22 | 20.0 |
+ | and | 11 | 10.0 |
+ | add | 21 | 21.0 |
+ | art | 15 | 15.0 |
+ | per | 17 | 17.0 |
+ | son | 12 | 12.0 |
+ | day | 16 | 14.0 |
+ | sum | 19 | 21.0 |
+ | way | 17 | 15.0 |
+ | his | 4 | 5.0 |
+ | m | 23 | 17.0 |
+ | now | 14 | 15.0 |
+ | at | 11 | 11.0 |
+
+Yesterday, the wife of the politician discussed health care with old
+
+ | people. | g: 4 | 1_b: 14.0 |
+|---|---|---|
+ | before. | 4 | 26.0 |
+ | moving. | 4 | 29.0 |
+ | raised. | 4 | 29.0 |
+ | having. | 4 | 31.0 |
+ | bridge. | 4 | 26.0 |
+ | height. | 4 | 6.0 |
+ | agency. | 4 | 26.0 |
+ | myself. | 4 | 29.0 |
+ | remove. | 4 | 29.0 |
+ | record. | 4 | 26.0 |
+ | bottom. | 4 | 25.0 |
+ | narrow. | 4 | 31.0 |
+ | detail. | 4 | 27.0 |
+ | claims. | 4 | 26.0 |
+ | method. | 4 | 26.0 |
+ | battle. | 4 | 27.0 |
+ | exists. | 4 | 30.0 |
+ | indeed. | 4 | 26.0 |
+ | parent. | 4 | 21.0 |
+ | nation. | 4 | 24.0 |
+
+
+
+The boyfriend of the model was killed in an accident while skiing last week.
+
+The boyfriend of the model was killed in an accident while skiing last week.
+
+The boyfriend of the model was killed in an accident while skiing last week.
+
+The
+
+ | boyfriend | g: 20 | 1_b: 16.0 |
+|---|---|---|
+ | impulsive | 22 | 27.0 |
+ | radiating | 22 | 30.0 |
+ | cardboard | 22 | 19.0 |
+ | alienated | 22 | 24.0 |
+ | inhibitor | 22 | 30.0 |
+ | homestead | 20 | 27.0 |
+ | expansive | 21 | 27.0 |
+ | signaling | 21 | 25.0 |
+ | microbial | 23 | 26.0 |
+ | infantile | 21 | 22.0 |
+ | novelists | 21 | 23.0 |
+ | negligent | 21 | 25.0 |
+ | complains | 23 | 21.0 |
+ | occlusion | 23 | 28.0 |
+ | occupancy | 25 | 28.0 |
+ | solicitor | 20 | 26.0 |
+ | occipital | 20 | 31.0 |
+ | predatory | 21 | 23.0 |
+ | nationals | 22 | 27.0 |
+ | ligaments | 23 | 26.0 |
+
+The boyfriend
+
+ | of | g: 2 | 1_b: 3.0 |
+|---|---|---|
+ | war | 18 | 14.0 |
+ | any | 16 | 14.0 |
+ | big | 19 | 13.0 |
+ | aid | 21 | 17.0 |
+ | y | 21 | 16.0 |
+ | des | 19 | 17.0 |
+ | as | 9 | 8.0 |
+ | ran | 13 | 13.0 |
+ | do | 14 | 12.0 |
+ | dog | 14 | 14.0 |
+ | got | 12 | 10.0 |
+ | lie | 19 | 15.0 |
+ | joy | 23 | 21.0 |
+ | bit | 16 | 13.0 |
+ | buy | 19 | 15.0 |
+ | le | 19 | 19.0 |
+ | sum | 19 | 20.0 |
+ | dry | 22 | 18.0 |
+ | who | 7 | 6.0 |
+ | art | 16 | 16.0 |
+
+The boyfriend of
+
+ | the | g: 2 | 1_b: 2.0 |
+|---|---|---|
+ | boy | 12 | 16.0 |
+ | cut | 18 | 17.0 |
+ | but | 16 | 14.0 |
+ | up | 15 | 13.0 |
+ | car | 14 | 15.0 |
+ | des | 21 | 20.0 |
+ | ad | 18 | 19.0 |
+ | aid | 19 | 16.0 |
+ | and | 13 | 11.0 |
+ | sin | 17 | 20.0 |
+ | un | 3 | 18.0 |
+ | run | 18 | 18.0 |
+ | son | 13 | 13.0 |
+ | we | 17 | 15.0 |
+ | am | 22 | 20.0 |
+ | le | 17 | 19.0 |
+ | an | 5 | 7.0 |
+ | out | 18 | 15.0 |
+ | m | 24 | 19.0 |
+ | net | 20 | 19.0 |
+
+The boyfriend of the
+
+ | model | g: 12 | 1_b: 9.0 |
+|---|---|---|
+ | knows | 20 | 19.0 |
+ | maybe | 21 | 20.0 |
+ | unity | 20 | 19.0 |
+ | piece | 15 | 15.0 |
+ | music | 11 | 14.0 |
+ | twice | 21 | 16.0 |
+ | labor | 15 | 17.0 |
+ | enemy | 10 | 10.0 |
+ | first | 6 | 8.0 |
+ | named | 14 | 15.0 |
+ | coast | 17 | 16.0 |
+ | built | 17 | 18.0 |
+ | court | 11 | 12.0 |
+ | floor | 14 | 15.0 |
+ | fixed | 16 | 20.0 |
+ | their | 21 | 17.0 |
+ | added | 17 | 17.0 |
+ | issue | 14 | 15.0 |
+ | leave | 16 | 18.0 |
+ | fluid | 19 | 21.0 |
+
+The boyfriend of the model
+
+ | was | g: 3 | 1_b: 9.0 |
+|---|---|---|
+ | at | 9 | 9.0 |
+ | is | 2 | 8.0 |
+ | led | 14 | 15.0 |
+ | won | 12 | 13.0 |
+ | re | 25 | 19.0 |
+ | let | 16 | 16.0 |
+ | she | 12 | 9.0 |
+ | gas | 16 | 21.0 |
+ | nor | 19 | 18.0 |
+ | ed | 20 | 24.0 |
+ | you | 15 | 13.0 |
+ | law | 18 | 16.0 |
+ | und | 23 | 25.0 |
+ | sat | 15 | 15.0 |
+ | sea | 16 | 19.0 |
+ | try | 17 | 18.0 |
+ | age | 14 | 14.0 |
+ | que | 6 | 22.0 |
+ | die | 13 | 16.0 |
+ | and | 5 | 5.0 |
+
+The boyfriend of the model was
+
+ | killed | g: 7 | 1_b: 7.0 |
+|---|---|---|
+ | branch | 19 | 23.0 |
+ | forest | 19 | 22.0 |
+ | attack | 19 | 18.0 |
+ | likely | 12 | 13.0 |
+ | impact | 21 | 21.0 |
+ | theory | 19 | 21.0 |
+ | images | 20 | 20.0 |
+ | agreed | 13 | 13.0 |
+ | wealth | 19 | 20.0 |
+ | myself | 19 | 15.0 |
+ | accept | 22 | 20.0 |
+ | agents | 16 | 19.0 |
+ | nation | 19 | 19.0 |
+ | height | 19 | 20.0 |
+ | object | 18 | 21.0 |
+ | formed | 11 | 16.0 |
+ | future | 12 | 17.0 |
+ | useful | 17 | 17.0 |
+ | answer | 19 | 17.0 |
+ | father | 14 | 15.0 |
+
+The boyfriend of the model was killed
+
+ | in | g: 2 | 1_b: 2.0 |
+|---|---|---|
+ | do | 20 | 16.0 |
+ | gas | 20 | 19.0 |
+ | ill | 17 | 17.0 |
+ | say | 20 | 17.0 |
+ | act | 24 | 20.0 |
+ | and | 4 | 4.0 |
+ | man | 17 | 16.0 |
+ | saw | 19 | 20.0 |
+ | joy | 26 | 22.0 |
+ | aid | 24 | 20.0 |
+ | the | 10 | 8.0 |
+ | map | 26 | 23.0 |
+ | bad | 21 | 18.0 |
+ | get | 20 | 17.0 |
+ | are | 16 | 15.0 |
+ | s | 22 | 16.0 |
+ | men | 18 | 17.0 |
+ | des | 24 | 22.0 |
+ | ask | 24 | 21.0 |
+ | car | 16 | 17.0 |
+
+The boyfriend of the model was killed in
+
+ | an | g: 4 | 1_b: 4.0 |
+|---|---|---|
+ | at | 14 | 13.0 |
+ | nor | 26 | 22.0 |
+ | sin | 21 | 17.0 |
+ | di | 22 | 20.0 |
+ | act | 16 | 15.0 |
+ | aid | 17 | 15.0 |
+ | add | 24 | 23.0 |
+ | may | 22 | 19.0 |
+ | red | 15 | 16.0 |
+ | set | 15 | 17.0 |
+ | al | 23 | 14.0 |
+ | you | 21 | 16.0 |
+ | sat | 26 | 21.0 |
+ | les | 24 | 22.0 |
+ | arm | 17 | 15.0 |
+ | yet | 18 | 13.0 |
+ | que | 6 | 20.0 |
+ | un | 6 | 20.0 |
+ | key | 15 | 17.0 |
+ | age | 16 | 18.0 |
+
+The boyfriend of the model was killed in an
+
+ | accident | g: 1 | 1_b: 1.0 |
+|---|---|---|
+ | currency | 26 | 26.0 |
+ | likewise | 27 | 29.0 |
+ | restored | 23 | 31.0 |
+ | darkness | 20 | 31.0 |
+ | portrait | 25 | 28.0 |
+ | frontier | 26 | 28.0 |
+ | gathered | 28 | 26.0 |
+ | supplies | 24 | 28.0 |
+ | scarcely | 27 | 27.0 |
+ | graduate | 25 | 27.0 |
+ | morality | 28 | 25.0 |
+ | drinking | 20 | 19.0 |
+ | electron | 17 | 22.0 |
+ | assuming | 26 | 29.0 |
+ | symbolic | 23 | 27.0 |
+ | schedule | 27 | 28.0 |
+ | preserve | 28 | 29.0 |
+ | absorbed | 25 | 27.0 |
+ | reliable | 28 | 32.0 |
+ | hydrogen | 22 | 26.0 |
+
+The boyfriend of the model was killed in an accident
+
+ | while | g: 4 | 1_b: 5.0 |
+|---|---|---|
+ | steps | 20 | 19.0 |
+ | facts | 27 | 22.0 |
+ | white | 22 | 21.0 |
+ | thing | 24 | 19.0 |
+ | sound | 20 | 19.0 |
+ | looks | 25 | 18.0 |
+ | judge | 23 | 20.0 |
+ | asked | 20 | 19.0 |
+ | sides | 29 | 23.0 |
+ | wages | 26 | 23.0 |
+ | shall | 27 | 20.0 |
+ | faith | 26 | 25.0 |
+ | ideas | 29 | 23.0 |
+ | steel | 21 | 24.0 |
+ | block | 18 | 19.0 |
+ | lines | 23 | 20.0 |
+ | field | 21 | 19.0 |
+ | order | 20 | 20.0 |
+ | still | 15 | 15.0 |
+ | solid | 23 | 20.0 |
+
+The boyfriend of the model was killed in an accident while
+
+ | skiing | g: 11 | 1_b: 8.0 |
+|---|---|---|
+ | allege | 28 | 26.0 |
+ | creeks | 26 | 31.0 |
+ | mortem | 5 | 27.0 |
+ | stasis | 22 | 27.0 |
+ | roster | 24 | 25.0 |
+ | audits | 26 | 27.0 |
+ | glycol | 25 | 29.0 |
+ | dogged | 19 | 19.0 |
+ | scurvy | 23 | 28.0 |
+ | banded | 22 | 27.0 |
+ | flawed | 21 | 21.0 |
+ | quiver | 5 | 28.0 |
+ | dearth | 25 | 29.0 |
+ | clones | 21 | 23.0 |
+ | stroll | 24 | 22.0 |
+ | blasts | 21 | 23.0 |
+ | vapors | 24 | 27.0 |
+ | mammal | 25 | 28.0 |
+ | safest | 23 | 22.0 |
+ | filial | 27 | 30.0 |
+
+The boyfriend of the model was killed in an accident while skiing
+
+ | last | g: 14 | 1_b: 6.0 |
+|---|---|---|
+ | dead | 15 | 13.0 |
+ | ring | 20 | 22.0 |
+ | book | 19 | 21.0 |
+ | draw | 20 | 22.0 |
+ | path | 22 | 20.0 |
+ | word | 23 | 22.0 |
+ | more | 14 | 12.0 |
+ | safe | 19 | 15.0 |
+ | fact | 24 | 23.0 |
+ | plus | 18 | 17.0 |
+ | camp | 14 | 17.0 |
+ | fast | 15 | 12.0 |
+ | anti | 24 | 22.0 |
+ | four | 13 | 13.0 |
+ | mere | 19 | 21.0 |
+ | open | 16 | 15.0 |
+ | fine | 21 | 16.0 |
+ | much | 15 | 15.0 |
+ | soft | 23 | 19.0 |
+ | used | 14 | 17.0 |
+
+The boyfriend of the model was killed in an accident while skiing last
+
+ | week. | g: 10 | 1_b: 11.0 |
+|---|---|---|
+ | said. | 10 | 28.0 |
+ | hard. | 10 | 28.0 |
+ | good. | 10 | 30.0 |
+ | rate. | 10 | 29.0 |
+ | work. | 10 | 27.0 |
+ | kept. | 10 | 10.0 |
+ | item. | 10 | 28.0 |
+ | such. | 10 | 33.0 |
+ | born. | 10 | 29.0 |
+ | baby. | 10 | 30.0 |
+ | over. | 10 | 27.0 |
+ | site. | 10 | 27.0 |
+ | heat. | 10 | 30.0 |
+ | told. | 10 | 30.0 |
+ | seek. | 10 | 34.0 |
+ | boys. | 10 | 29.0 |
+ | thus. | 10 | 10.0 |
+ | play. | 10 | 25.0 |
+ | much. | 10 | 26.0 |
 
