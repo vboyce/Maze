@@ -72,15 +72,15 @@ def Surprisal(sentence_input):
 
     result = []
     
-    for j in range(len(sentence_list)):
+    for j in range(len(sentence_input)):
         print("One_b "+str(j))
-        sentence,alts=sentence_input[j]
+        good_sentence,alts=sentence_input[j]
 
         inputs = np.zeros([BATCH_SIZE, NUM_TIMESTEPS], np.int32)
         char_ids_inputs = np.zeros( [BATCH_SIZE, NUM_TIMESTEPS, vocab.max_word_length], np.int32)
         
-        sent = [vocab.word_to_id(w) for w in sentence.split()]
-        sent_char_ids = [vocab.word_to_char_ids(w) for w in sentence.split()]
+        sent = [vocab.word_to_id(w) for w in good_sentence.split()]
+        sent_char_ids = [vocab.word_to_char_ids(w) for w in good_sentence.split()]
 
         samples = sent[:]
         char_ids_samples = sent_char_ids[:]
@@ -88,7 +88,7 @@ def Surprisal(sentence_input):
         inputs[0, 0] = samples[0]
         char_ids_inputs[0, 0, :] = char_ids_samples[0]
         total_surprisal = 0
-        resuts_list=[]
+        results_list=[]
         good_results=[]
         for i in range(len(alts)):
             results={}
@@ -105,9 +105,11 @@ def Surprisal(sentence_input):
             good_word_token=sent[i+1]
             good_word_chars=sent_char_ids[i+1]
             word_surprisal=-1 * np.log2(softmax[0][good_word_token])
-            total_surprisal+=surprisal
+            total_surprisal+=word_surprisal
             samples = samples[1:]
             char_ids_samples = char_ids_samples[1:]
+            inputs[0,0]=samples[0]
+            char_ids_inputs[0,0,:]=char_ids_samples[0]
             good_results.append(word_surprisal)
         result.append((good_sentence,good_results, results_list))
     return(result)

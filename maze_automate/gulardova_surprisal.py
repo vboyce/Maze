@@ -45,9 +45,9 @@ def Surprisal(sentence_input):
     device = torch.device("cpu")
     ###
     result=[]
-    for j in range(len(sentence_list)):
+    for j in range(len(sentence_input)):
         print("Gulardova "+str(j))
-        sentence, alts=sentence_list[j]
+        sentence, alts=sentence_input[j]
         
         torch.manual_seed(1111)
         hidden = model.init_hidden(1)
@@ -66,17 +66,18 @@ def Surprisal(sentence_input):
         good_results=[]
         for i in range(len(alts)):
             results={}
-            for k in range(len(alts[i]):
+            for k in range(len(alts[i])):
                 test_word=alts[i][k] #word being tested
-                results[test_word]=word_surprisals[word].item()
+                test_token=dictionary_corpus.tokenize_str(dictionary, test_word)[0]
+                results[test_word]=word_surprisals[test_token].item()
             results_list.append(results)
             good_word=good_sentence[i+1]
-            word_surprisal = word_surprisals[word].item()  
+            word_surprisal = word_surprisals[good_word].item()  
             totalsurprisal = word_surprisal + totalsurprisal
-            input.fill_(word.item())
+            input.fill_(good_word.item())
             output, hidden = model(input, hidden)
             word_weights = output.squeeze().div(1.0).exp().cpu()
             word_surprisals = -1*torch.log2(word_weights/sum(word_weights))
             good_results.append(word_surprisal)
-        result.append((good_sentence, good_results, results_list))
+        result.append((sentence, good_results, results_list))
     return(result)

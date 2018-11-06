@@ -46,7 +46,7 @@ def pre_surprisal(sentences):
             alts_to_use=[]
             for k in range(10):
                 alt=random.choice(alts)
-                if alt not in used_so_far:
+                if alt not in alts_to_use:
                     alts_to_use.append(alt)
             list_of_alts.append(alts_to_use)
         to_surprisal.append((sentence,list_of_alts))
@@ -60,11 +60,12 @@ def output(sentences, g_s, one_b_s, filename):
         f.write("\n"+one_b_s[i][0]+"\n\n")
         words=split_sentence(sentences[i])
         for j in range(len(g_s[i][1])):
-            f.write(" ".join(words[:(i+1)])+"\n\n") # context 
-            f.write(" | "+words[i+1]+" | g: "+str(round(g_s[i][1][j]))+ " | 1_b: "+str(round(one_b_s[i][1][j]) + " |\n")
-            f.write("|---|---|---|")
+            f.write(" ".join(words[:(j+1)])+"\n\n") # context 
+            f.write(" | "+words[j+1]+" | g: "+str(round(g_s[i][1][j]))+ " | 1_b: "+str(round(one_b_s[i][1][j])) + " |\n")
+            f.write("|---|---|---|\n")
             for k in g_s[i][2][j]:
-                f.write(" | "+k+ " | "+str(round(g_s[i][2][j][k]))+" | "+str(round(b_s_one[i][2][j][k]))+" |\n")
+                f.write(" | "+k+ " | "+str(round(g_s[i][2][j][k]))+" | "+str(round(one_b_s[i][2][j][k]))+" |\n")
+            f.write("\n")
     f.close()
 
           
@@ -75,7 +76,7 @@ def process_sentences(sentences, filename):
     to_test=pre_surprisal(sentences)
     g_surprisal = g.Surprisal(to_test)
     one_b_surprisal = one_b.Surprisal(to_test)
-    output(to_test, g_surprisal, one_b_surprisal, filename)
+    output(sentences, g_surprisal, one_b_surprisal, filename)
 
 #test surprisal on some of their examples to get a baseline for how bad is bad
 
@@ -135,6 +136,6 @@ def check_lexicon():
 
 ### end deprecated
 #do_sentence_badness("Yesterday the wife of the politician discussed health care with old people.", "x-x-x try when phrases for conclue plan hear city image I cute.", "output.txt")
-process_sentences(["Yesterday the wife of the politician discussed health care with old people.","The children of the rich man were spoiled, but they were charming and handsome."], "output_new.txt")
+process_sentences(["Yesterday the wife of the politician discussed health care with old people.","The children of the rich man were spoiled, but they were charming and handsome."], "output_3.txt")
 #do_sentence_badness("The children of the rich man were spoiled, but they were charming and handsome.", "x-x-x of is were an same lawsuit reservation, unison door researchers are they atmosphere.", "output.txt")
-do_sentence("The children of the rich man were spoiled, but they were charming and handsome.")
+#do_sentence("The children of the rich man were spoiled, but they were charming and handsome.")
