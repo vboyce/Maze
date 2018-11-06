@@ -23,8 +23,14 @@ def get_alternates(word):
     '''given a word, returns candidate buddies'''
     alts=[]
     i=0
+    print(word)
+    word_length=len(word)
+    if word_length<3:
+        word_length=3
+    if word_length>15:
+        word_length=15
     while len(alts)<50:
-        a=LEXICON.get((len(word)+i, get_unigram_freq(word)))
+        a=LEXICON.get((word_length, get_unigram_freq(word)-1))
         if a!=None:
             alts.extend(a)
         i+=1
@@ -45,10 +51,7 @@ def pre_surprisal(sentences):
         for i in range(1, len(words)):
             word=words[i]
             if word[-1] in [".",",","!", "?"]:
-                punct=word[-1]
                 word=word[:-1]
-            else:
-                punct=""
             alts=get_alternates(word)
             alts_to_use=[]
             for i in range(50):
@@ -57,7 +60,7 @@ def pre_surprisal(sentences):
                 alt=random.choice(alts)
                 if alt not in alts_to_use:
                     if alt==alt.lower():
-                        alts_to_use.append(alt+punct)
+                        alts_to_use.append(alt)
             list_of_alts.append(alts_to_use)
         to_surprisal.append((sentence,list_of_alts))
     return(to_surprisal)
@@ -94,4 +97,7 @@ def check_lexicon():
     for key in sorted(LEXICON):
         print(key,"\t",len(LEXICON[key]))
 
-process_sentences("input.txt", "output_4.md")
+process_sentences("input.txt", "output_5.md")
+#process_sentences("intest.txt", "outtest.md")
+#check_lexicon()
+

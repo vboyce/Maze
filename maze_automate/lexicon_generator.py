@@ -16,7 +16,6 @@ from ast import literal_eval
 def good_word(word,count):
     '''determines whether the "word" is actually a word we want
     '''
-    # should eventually do more checking
     threshold=1000
     if count>=threshold: #common enough
         word_fixed=word.split("_")[0]
@@ -67,7 +66,9 @@ def make_lexicon(unigram):
     uni_good={}
     lexicon={}
     for key in unigram:
-        common_index=unigram[key][1].index(max(unigram[key][1]))
+        #for each word form, find the plurality form
+        #sum up occurances and count them all as being plurality form (wrt capitalization)
+        common_index=unigram[key][1].index(max(unigram[key][1])) 
         common_form=unigram[key][0][common_index]
         total_count=sum(unigram[key][1])
         freq=math.floor(math.log(total_count,2))

@@ -9,7 +9,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
+from nltk.tokenize import word_tokenize
 from gulardova_code import dictionary_corpus
 from gulardova_code.utils import repackage_hidden, batchify, get_batch
 import numpy as np
@@ -52,16 +52,30 @@ def Surprisal(sentence_input):
         torch.manual_seed(1111)
         hidden = model.init_hidden(1)
         input = torch.randint(ntokens, (1, 1), dtype=torch.long).to(device)
-
-        good_sentence = dictionary_corpus.tokenize_str(dictionary,sentence)
+        
+        good_words=sentence.split()
+        good_tokens=[word_tokenize(x) for x in good_words]
+        print(good_tokens)
         totalsurprisal = 0
-        firstword = good_sentence[0]
-
+        firstword = dictionary_corpus.tokenize_str(dictionary,good_tokens[0][0])[0]
+        if good_tokens[0][0] not in dictionary.word2idx:
+            print(good_tokens[0][0]+" in unknown")
         input.fill_(firstword.item())
         output, hidden = model(input,hidden)        
         word_weights = output.squeeze().div(1.0).exp().cpu()
         word_surprisals = -1*torch.log2(word_weights/sum(word_weights))
-
+        
+        for j in range(1, len(good_tokens[0])): 
+            next_token=dictionary_corpus.tokenize_str(dictionary,good_tokens[0][j])[0]
+            if good_tokens[0][j] not in dictionary.word2idx:
+                print(good_tokens[0][j]+" is unknown")
+            word_surprisal = word_surprisals[next_token].item()  
+            totalsurprisal = word_surprisal + totalsurprisal
+            input.fill_(next_token.item())
+            output, hidden = model(input, hidden)
+            word_weights = output.squeeze().div(1.0).exp().cpu()
+            word_surprisals = -1*torch.log2(word_weights/sum(word_weights))
+            
         results_list=[]
         good_results=[]
         for i in range(len(alts)):
@@ -69,9 +83,14 @@ def Surprisal(sentence_input):
             for k in range(len(alts[i])):
                 test_word=alts[i][k] #word being tested
                 test_token=dictionary_corpus.tokenize_str(dictionary, test_word)[0]
-                results[test_word]=word_surprisals[test_token].item()
+                if test_word not in dictionary.word2idx:
+                    print(test_word+" is unknown")
+                else:
+                    results[test_word]=word_surprisals[test_token].item()
             results_list.append(results)
-            good_word=good_sentence[i+1]
+            good_word=dictionary_corpus.tokenize_str(dictionary,good_tokens[i+1][0])[0]
+            if good_tokens[i+1][0] not in dictionary.word2idx:
+                print(good_tokens[i+1][0]+" is unknown")
             word_surprisal = word_surprisals[good_word].item()  
             totalsurprisal = word_surprisal + totalsurprisal
             input.fill_(good_word.item())
@@ -79,5 +98,15 @@ def Surprisal(sentence_input):
             word_weights = output.squeeze().div(1.0).exp().cpu()
             word_surprisals = -1*torch.log2(word_weights/sum(word_weights))
             good_results.append(word_surprisal)
+            for j in range(1, len(good_tokens[i+1])): 
+                next_token=dictionary_corpus.tokenize_str(dictionary,good_tokens[i+1][j])[0]
+                if good_tokens[i+1][j] not in dictionary.word2idx:
+                    print(good_tokens[i+1][j]+" is unknown")
+                word_surprisal = word_surprisals[next_token].item()  
+                totalsurprisal = word_surprisal + totalsurprisal
+                input.fill_(next_token.item())
+                output, hidden = model(input, hidden)
+                word_weights = output.squeeze().div(1.0).exp().cpu()
+                word_surprisals = -1*torch.log2(word_weights/sum(word_weights))
         result.append((sentence, good_results, results_list))
     return(result)

@@ -4,7 +4,7 @@ import sys
 import numpy as np
 from six.moves import xrange
 import tensorflow as tf
-
+from nltk.tokenize import word_tokenize
 from google.protobuf import text_format
 from one_b_code import data_utils
 
@@ -79,15 +79,37 @@ def Surprisal(sentence_input):
         inputs = np.zeros([BATCH_SIZE, NUM_TIMESTEPS], np.int32)
         char_ids_inputs = np.zeros( [BATCH_SIZE, NUM_TIMESTEPS, vocab.max_word_length], np.int32)
         
-        sent = [vocab.word_to_id(w) for w in good_sentence.split()]
-        sent_char_ids = [vocab.word_to_char_ids(w) for w in good_sentence.split()]
+        good_words=good_sentence.split()
+        good_tokens=[word_tokenize(x) for x in good_words]
+        #sent = [vocab.word_to_id(w) for w in good_sentence.split()]
+        #sent_char_ids = [vocab.word_to_char_ids(w) for w in good_sentence.split()]
 
-        samples = sent[:]
-        char_ids_samples = sent_char_ids[:]
-
-        inputs[0, 0] = samples[0]
-        char_ids_inputs[0, 0, :] = char_ids_samples[0]
+        #samples = sent[:]
+        #char_ids_samples = sent_char_ids[:]
+        firstword=vocab.word_to_id(good_tokens[0][0])
+        firstword_char=vocab.word_to_char_ids(good_tokens[0][0])
+        if firstword==vocab.unk:
+            print(good_tokens[0][0]+" is unknown")
+        inputs[0, 0] = firstword
+        char_ids_inputs[0, 0, :] = firstword_char
         total_surprisal = 0
+
+        for j in range(1, len(good_tokens[0])): 
+            softmax = sess.run(t['softmax_out'],
+                                     feed_dict={t['char_inputs_in']: char_ids_inputs,
+                                                t['inputs_in']: inputs,
+                                                t['targets_in']: targets,
+                                                t['target_weights_in']: weights})
+            next_token=vocab.word_to_id(good_tokens[0][j])
+            if next_token==vocab.unk:
+                print(good_tokens[0][j]+" is unknown")
+            next_token_chars=vocab.word_to_char_ids(good_tokens[0][j])
+            word_surprisal=-1 * np.log2(softmax[0][next_token])
+            total_surprisal+=word_surprisal
+            inputs[0,0]=next_token
+            char_ids_inputs[0,0,:]=next_token_chars
+
+
         results_list=[]
         good_results=[]
         for i in range(len(alts)):
@@ -100,17 +122,35 @@ def Surprisal(sentence_input):
             for k in range(len(alts[i])):
                 test_word=alts[i][k]
                 test_token=vocab.word_to_id(test_word)
-                results[test_word]=-1 * np.log2(softmax[0][test_token])
+                if test_token==vocab.unk:
+                    print(test_word+" is unknown")
+                else:
+                    results[test_word]=-1 * np.log2(softmax[0][test_token])
             results_list.append(results)
-            good_word_token=sent[i+1]
-            good_word_chars=sent_char_ids[i+1]
+            good_word_token=vocab.word_to_id(good_tokens[i+1][0])
+            if good_word_token==vocab.unk:
+                print(good_tokens[i+1][0]+" is unknown")
+            good_word_chars=vocab.word_to_char_ids(good_tokens[i+1][0])
             word_surprisal=-1 * np.log2(softmax[0][good_word_token])
             total_surprisal+=word_surprisal
-            samples = samples[1:]
-            char_ids_samples = char_ids_samples[1:]
-            inputs[0,0]=samples[0]
-            char_ids_inputs[0,0,:]=char_ids_samples[0]
             good_results.append(word_surprisal)
+            inputs[0, 0] = good_word_token
+            char_ids_inputs[0, 0, :] = good_word_chars
+            for j in range(1, len(good_tokens[i+1])): 
+                softmax = sess.run(t['softmax_out'],
+                                         feed_dict={t['char_inputs_in']: char_ids_inputs,
+                                                    t['inputs_in']: inputs,
+                                                    t['targets_in']: targets,
+                                                    t['target_weights_in']: weights})                
+                next_token=vocab.word_to_id(good_tokens[i+1][j])
+                if next_token==vocab.unk:
+                    print(good_tokens[i+1][j]+" is unknown")
+                next_token_chars=vocab.word_to_char_ids(good_tokens[i+1][j])
+                word_surprisal = -1 * np.log2(softmax[0][next_token])
+                total_surprisal+=word_surprisal
+                inputs[0,0]=next_token
+                char_ids_inputs[0,0,:]=next_token_chars
+
         result.append((good_sentence,good_results, results_list))
     return(result)
 
