@@ -67,7 +67,7 @@ def pre_surprisal(sentences):
 def output(sentences, g_s, one_b_s, filename):
     f=open(filename, "a")
     for i in range(len(g_s)):
-        f.write("\n\n"+sentences[i]+"\n")
+        f.write("\n\n"+sentences[i]+"\n\n")
         words=split_sentence(sentences[i])
         for j in range(len(g_s[i][1])):
             f.write(" ".join(words[:(j+1)])+"\n\n") # context 
