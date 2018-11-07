@@ -5,930 +5,930 @@ The
 
  | children | g: 15 | 1_b: 24 |
 |---|---|---|
- | increase | 16 | 24 |
- | appeared | 19 | 25 |
- | indicate | 20 | 35 |
- | repeated | 18 | 26 |
- | expected | 19 | 25 |
- | approach | 16 | 32 |
- | internal | 16 | 24 |
- | describe | 22 | 37 |
- | analysis | 18 | 25 |
- | greatest | 15 | 26 |
- | benefits | 16 | 27 |
- | compared | 23 | 29 |
- | reaction | 18 | 26 |
- | elements | 17 | 19 |
- | whenever | 23 | 29 |
- | suggests | 18 | 27 |
- | attempts | 18 | 23 |
- | anything | 25 | 27 |
- | slightly | 17 | 26 |
- | together | 21 | 34 |
+ | pleasant | 20 | 26 |
+ | believes | 22 | 27 |
+ | resident | 18 | 31 |
+ | retained | 21 | 30 |
+ | magnetic | 18 | 30 |
+ | rejected | 19 | 25 |
+ | servants | 19 | 33 |
+ | overcome | 23 | 33 |
+ | recovery | 19 | 28 |
+ | inferior | 19 | 31 |
+ | belonged | 22 | 35 |
+ | millions | 20 | 23 |
+ | profound | 20 | 24 |
+ | platform | 18 | 28 |
+ | respects | 24 | 30 |
+ | watching | 24 | 24 |
+ | assuming | 21 | 32 |
+ | guidance | 20 | 27 |
+ | arranged | 19 | 29 |
+ | earnings | 21 | 28 |
 
 The children
 
  | of | g: 3 | 1_b: 7 |
 |---|---|---|
- | put | 12 | 12 |
- | own | 15 | 15 |
- | sky | 20 | 21 |
- | joy | 21 | 19 |
- | him | 15 | 19 |
- | not | 11 | 13 |
- | for | 8 | 11 |
- | die | 13 | 16 |
- | fat | 20 | 20 |
- | why | 18 | 18 |
- | has | 10 | 13 |
- | our | 18 | 18 |
- | was | 9 | 13 |
- | an | 14 | 15 |
- | us | 20 | 19 |
- | way | 18 | 18 |
- | due | 14 | 17 |
- | ago | 19 | 19 |
- | le | 21 | 23 |
- | nor | 18 | 20 |
+ | par | 22 | 21 |
+ | era | 18 | 21 |
+ | km | 25 | 25 |
+ | via | 14 | 18 |
+ | sad | 22 | 20 |
+ | ha | 24 | 22 |
+ | fly | 15 | 16 |
+ | cat | 19 | 19 |
+ | gap | 15 | 21 |
+ | ray | 23 | 25 |
+ | ff | -1 | 27 |
+ | au | 21 | 20 |
+ | win | 16 | 15 |
+ | fee | 22 | 21 |
+ | del | 22 | 23 |
+ | gay | 20 | 20 |
+ | il | -1 | 23 |
+ | ex | 21 | 21 |
+ | bag | 19 | 19 |
+ | ml | -1 | 26 |
 
 The children of
 
  | the | g: 2 | 1_b: 4 |
 |---|---|---|
- | man | 11 | 15 |
- | boy | 14 | 17 |
- | has | 22 | 20 |
- | at | 13 | 15 |
- | und | 25 | 29 |
- | of | 19 | 16 |
- | no | 14 | 14 |
- | n | 21 | 21 |
- | al | 19 | 12 |
- | arm | 20 | 23 |
- | un | 4 | 18 |
- | set | 17 | 20 |
- | saw | 19 | 22 |
- | l' | 4 | 6 |
- | buy | 20 | 22 |
- | who | 14 | 14 |
- | la | 17 | 16 |
- | put | 18 | 20 |
- | day | 14 | 17 |
- | can | 19 | 21 |
+ | das | -1 | 24 |
+ | si | -1 | 26 |
+ | gun | 18 | 17 |
+ | ft | 26 | 28 |
+ | cit | -1 | 26 |
+ | sad | 21 | 19 |
+ | ml | -1 | 31 |
+ | se | 25 | 23 |
+ | ear | 20 | 28 |
+ | tip | 23 | 29 |
+ | eds | -1 | 25 |
+ | aim | 25 | 26 |
+ | via | 23 | 24 |
+ | cry | 22 | 21 |
+ | da | 19 | 18 |
+ | pro | 19 | 15 |
+ | raw | 20 | 21 |
+ | ne | -1 | 19 |
+ | gay | 13 | 13 |
+ | fee | 26 | 26 |
 
 The children of the
 
  | rich | g: 11 | 1_b: 4 |
 |---|---|---|
- | unit | 13 | 17 |
- | milk | 17 | 15 |
- | tell | 17 | 21 |
- | sets | 17 | 18 |
- | seen | 20 | 19 |
- | wall | 17 | 14 |
- | view | 19 | 17 |
- | fund | 18 | 14 |
- | fair | 15 | 15 |
- | four | 8 | 11 |
- | male | 11 | 14 |
- | sons | 10 | 12 |
- | wait | 21 | 19 |
- | poem | 14 | 15 |
- | step | 20 | 21 |
- | when | 20 | 21 |
- | they | 19 | 17 |
- | sell | 20 | 20 |
- | wine | 15 | 14 |
- | also | 15 | 17 |
+ | bore | 18 | 20 |
+ | pick | 19 | 20 |
+ | sole | 14 | 14 |
+ | wore | 22 | 23 |
+ | feed | 20 | 19 |
+ | harm | 19 | 18 |
+ | pole | 18 | 18 |
+ | thee | 22 | 24 |
+ | mood | 20 | 20 |
+ | gods | 9 | 12 |
+ | axis | 21 | 15 |
+ | push | 22 | 21 |
+ | tail | 17 | 19 |
+ | yard | 18 | 15 |
+ | crew | 10 | 12 |
+ | bird | 14 | 17 |
+ | fail | 21 | 18 |
+ | kids | 11 | 11 |
+ | fame | 20 | 15 |
+ | puts | 25 | 20 |
 
 The children of the rich
 
  | man | g: 6 | 1_b: 8 |
 |---|---|---|
- | bed | 15 | 18 |
- | let | 19 | 14 |
- | hot | 18 | 16 |
- | sky | 18 | 18 |
- | ad | 21 | 16 |
- | car | 18 | 14 |
- | as | 9 | 9 |
- | big | 16 | 13 |
- | set | 13 | 11 |
- | age | 11 | 14 |
- | do | 11 | 9 |
- | arm | 19 | 17 |
- | on | 10 | 9 |
- | sit | 17 | 15 |
- | up | 15 | 13 |
- | al | 22 | 18 |
- | bit | 20 | 13 |
- | no | 17 | 11 |
- | re | 26 | 19 |
- | now | 12 | 10 |
+ | au | 21 | 18 |
+ | win | 19 | 13 |
+ | bag | 21 | 17 |
+ | da | 18 | 20 |
+ | row | 19 | 16 |
+ | das | -1 | 23 |
+ | eds | -1 | 23 |
+ | ha | 22 | 20 |
+ | sub | 18 | 19 |
+ | ion | 22 | 23 |
+ | via | 16 | 15 |
+ | km | 25 | 25 |
+ | arc | 22 | 21 |
+ | cry | 21 | 16 |
+ | se | 26 | 22 |
+ | pan | 20 | 22 |
+ | gap | 21 | 19 |
+ | hat | 16 | 18 |
+ | hit | 19 | 13 |
+ | im | 21 | 20 |
 
 The children of the rich man
 
  | were | g: 5 | 1_b: 7 |
 |---|---|---|
- | root | 20 | 18 |
- | near | 13 | 13 |
- | year | 17 | 16 |
- | once | 12 | 12 |
- | task | 23 | 19 |
- | sell | 17 | 14 |
- | been | 13 | 13 |
- | coal | 19 | 17 |
- | long | 15 | 12 |
- | size | 19 | 18 |
- | goes | 15 | 12 |
- | sign | 17 | 16 |
- | land | 16 | 16 |
- | star | 18 | 14 |
- | acid | 22 | 19 |
- | rock | 19 | 15 |
- | blue | 19 | 16 |
- | cost | 21 | 14 |
- | idea | 20 | 16 |
- | need | 14 | 12 |
+ | huge | 20 | 16 |
+ | grey | 21 | 17 |
+ | loud | 23 | 19 |
+ | sake | 21 | 19 |
+ | wear | 14 | 15 |
+ | kids | 19 | 14 |
+ | cook | 16 | 18 |
+ | tied | 15 | 14 |
+ | glad | 21 | 19 |
+ | ears | 24 | 20 |
+ | tons | 24 | 21 |
+ | fail | 17 | 14 |
+ | fame | 21 | 13 |
+ | pour | 19 | 18 |
+ | worn | 18 | 18 |
+ | roll | 19 | 18 |
+ | disk | 22 | 21 |
+ | shut | 21 | 16 |
+ | rice | 21 | 20 |
+ | coat | 20 | 19 |
 
 The children of the rich man were
 
- | spoiled, | g: 5 | 1_b: 7 |
+ | spoiled, | g: 13 | 1_b: 13 |
 |---|---|---|
- | summers, | 5 | 7 |
- | informs, | 5 | 7 |
- | sucrose, | 5 | 7 |
- | repeats, | 5 | 7 |
- | prelude, | 5 | 7 |
- | fistula, | 5 | 7 |
- | frowned, | 5 | 7 |
- | remnant, | 5 | 7 |
- | spurred, | 5 | 7 |
- | concede, | 5 | 7 |
- | whistle, | 5 | 7 |
- | leakage, | 5 | 7 |
- | hybrids, | 5 | 7 |
- | evasion, | 5 | 7 |
- | platoon, | 5 | 7 |
- | ovarian, | 5 | 7 |
- | mustard, | 5 | 7 |
- | tendons, | 5 | 7 |
- | measles, | 5 | 7 |
- | acutely, | 5 | 7 |
+ | cheated | 15 | 15 |
+ | plasmid | -1 | 27 |
+ | gathers | 22 | 22 |
+ | veranda | -1 | 30 |
+ | canvass | -1 | 27 |
+ | forlorn | -1 | 19 |
+ | parlour | 20 | 25 |
+ | deacons | 19 | 25 |
+ | jointed | -1 | 22 |
+ | ignoble | -1 | 23 |
+ | breezes | 23 | 27 |
+ | perjury | 24 | 23 |
+ | pastime | 21 | 25 |
+ | grapple | 22 | 28 |
+ | cleanse | 22 | 26 |
+ | fervour | -1 | 29 |
+ | affront | 23 | 26 |
+ | situate | -1 | 30 |
+ | branded | 14 | 12 |
+ | belated | 22 | 22 |
 
 The children of the rich man were spoiled,
 
- | but | g: 9 | 1_b: 7 |
+ | but | g: 6 | 1_b: 4 |
 |---|---|---|
- | net | 22 | 19 |
- | les | 20 | 19 |
- | one | 11 | 11 |
- | arm | 21 | 21 |
- | di | 18 | 21 |
- | who | 7 | 10 |
- | sat | 19 | 20 |
- | son | 14 | 17 |
- | al | 21 | 20 |
- | go | 17 | 16 |
- | far | 13 | 14 |
- | lot | 19 | 16 |
- | bed | 19 | 19 |
- | s | 20 | 17 |
- | won | 17 | 17 |
- | law | 18 | 20 |
- | d' | 5 | 9 |
- | got | 17 | 17 |
- | yet | 13 | 11 |
- | lie | 19 | 21 |
+ | fee | 26 | 19 |
+ | fly | 20 | 17 |
+ | arc | 25 | 26 |
+ | mix | 19 | 19 |
+ | ll | -1 | 20 |
+ | se | 25 | 22 |
+ | egg | 20 | 17 |
+ | ff | -1 | 25 |
+ | del | 25 | 22 |
+ | ear | 20 | 20 |
+ | gay | 14 | 16 |
+ | qui | 23 | 24 |
+ | cit | -1 | 28 |
+ | ne | -1 | 17 |
+ | tip | 25 | 20 |
+ | mg | 27 | 26 |
+ | si | -1 | 20 |
+ | pan | 23 | 21 |
+ | cry | 16 | 16 |
+ | na | 23 | 21 |
 
 The children of the rich man were spoiled, but
 
- | they | g: 4 | 1_b: 5 |
+ | they | g: 3 | 1_b: 5 |
 |---|---|---|
- | only | 7 | 7 |
- | past | 18 | 16 |
- | time | 14 | 14 |
- | camp | 19 | 18 |
- | they | 4 | 5 |
- | easy | 14 | 11 |
- | arts | 21 | 19 |
- | meet | 18 | 16 |
- | case | 21 | 17 |
- | flat | 16 | 15 |
- | wide | 15 | 16 |
- | jobs | 16 | 19 |
- | back | 15 | 13 |
- | find | 13 | 13 |
- | have | 7 | 8 |
- | road | 18 | 19 |
- | fair | 15 | 10 |
- | gain | 17 | 16 |
- | post | 18 | 16 |
- | send | 18 | 15 |
+ | dust | 17 | 19 |
+ | maps | 22 | 23 |
+ | loop | 24 | 25 |
+ | wars | 20 | 19 |
+ | crew | 18 | 19 |
+ | mile | 25 | 23 |
+ | sees | 19 | 17 |
+ | wore | 14 | 19 |
+ | onto | 19 | 19 |
+ | stem | 20 | 19 |
+ | eggs | 19 | 18 |
+ | hath | 20 | 17 |
+ | fail | 14 | 15 |
+ | worn | 17 | 20 |
+ | corn | 17 | 21 |
+ | hung | 16 | 19 |
+ | calm | 15 | 17 |
+ | bare | 19 | 20 |
+ | kids | 17 | 12 |
+ | rays | 21 | 25 |
 
 The children of the rich man were spoiled, but they
 
- | were | g: 2 | 1_b: 2 |
+ | were | g: 2 | 1_b: 3 |
 |---|---|---|
- | wife | 21 | 19 |
- | send | 16 | 14 |
- | bank | 21 | 18 |
- | draw | 16 | 16 |
- | rise | 17 | 17 |
- | sign | 18 | 16 |
- | rare | 18 | 21 |
- | camp | 20 | 19 |
- | live | 12 | 11 |
- | past | 23 | 20 |
- | good | 18 | 16 |
- | sure | 17 | 10 |
- | city | 22 | 22 |
- | skin | 22 | 21 |
- | soon | 7 | 12 |
- | find | 11 | 12 |
- | slow | 17 | 18 |
- | cast | 13 | 14 |
- | wide | 22 | 21 |
- | anti | 27 | 23 |
+ | host | 19 | 16 |
+ | rain | 20 | 19 |
+ | legs | 24 | 24 |
+ | card | 25 | 23 |
+ | bath | 21 | 22 |
+ | fail | 11 | 12 |
+ | eggs | 24 | 24 |
+ | pray | 16 | 16 |
+ | pick | 17 | 13 |
+ | gray | 23 | 24 |
+ | cook | 18 | 17 |
+ | kids | 20 | 17 |
+ | pool | 21 | 19 |
+ | busy | 21 | 19 |
+ | disk | 24 | 25 |
+ | pipe | 25 | 22 |
+ | snow | 22 | 22 |
+ | hole | 23 | 20 |
+ | shop | 19 | 17 |
+ | adds | 22 | 21 |
 
 The children of the rich man were spoiled, but they were
 
- | charming | g: 14 | 1_b: 11 |
+ | charming | g: 13 | 1_b: 12 |
 |---|---|---|
- | attained | 21 | 22 |
- | generals | 20 | 20 |
- | laughing | 14 | 10 |
- | carriers | 18 | 18 |
- | cerebral | 20 | 19 |
- | designer | 22 | 18 |
- | treatise | 24 | 28 |
- | feminist | 21 | 19 |
- | declined | 15 | 18 |
- | heavenly | 19 | 16 |
- | securing | 21 | 17 |
- | mistress | 19 | 19 |
- | salaries | 23 | 20 |
- | instinct | 19 | 20 |
- | solitary | 13 | 18 |
- | overseas | 20 | 19 |
- | metaphor | 25 | 23 |
- | enhanced | 17 | 16 |
- | fracture | 23 | 27 |
- | prophets | 18 | 19 |
+ | poetical | 19 | 22 |
+ | wireless | 24 | 21 |
+ | pathetic | 15 | 12 |
+ | corridor | 26 | 27 |
+ | instruct | 24 | 27 |
+ | planners | 22 | 21 |
+ | notebook | 25 | 26 |
+ | suburban | 19 | 19 |
+ | luminous | 21 | 18 |
+ | shrugged | -1 | 19 |
+ | radicals | 18 | 19 |
+ | nineteen | 18 | 23 |
+ | outbreak | 23 | 26 |
+ | verified | 20 | 20 |
+ | climbing | 18 | 17 |
+ | gambling | 17 | 15 |
+ | inasmuch | -1 | 25 |
+ | catheter | 28 | 29 |
+ | turnover | 26 | 24 |
+ | narrowly | 15 | 17 |
 
 The children of the rich man were spoiled, but they were charming
 
- | and | g: 2 | 1_b: 2 |
+ | and | g: 1 | 1_b: 2 |
 |---|---|---|
- | are | 14 | 13 |
- | thy | 20 | 22 |
- | man | 12 | 12 |
- | any | 16 | 16 |
- | sea | 19 | 18 |
- | put | 18 | 18 |
- | met | 19 | 19 |
- | our | 14 | 14 |
- | did | 18 | 16 |
- | see | 21 | 19 |
- | des | 21 | 22 |
- | joy | 18 | 18 |
- | how | 14 | 13 |
- | set | 18 | 17 |
- | e | 23 | 18 |
- | s | 24 | 18 |
- | top | 17 | 16 |
- | try | 19 | 19 |
- | not | 10 | 11 |
- | sum | 25 | 22 |
+ | est | 23 | 25 |
+ | par | 24 | 20 |
+ | cit | -1 | 26 |
+ | si | -1 | 27 |
+ | log | 22 | 24 |
+ | fun | 15 | 11 |
+ | ll | -1 | 27 |
+ | na | 23 | 26 |
+ | pro | 19 | 20 |
+ | fed | 18 | 19 |
+ | con | 20 | 19 |
+ | fly | 22 | 22 |
+ | cry | 20 | 22 |
+ | via | 16 | 15 |
+ | odd | 16 | 18 |
+ | aim | 23 | 25 |
+ | raw | 17 | 18 |
+ | del | 21 | 24 |
+ | se | 24 | 28 |
+ | km | 26 | 28 |
 
 The children of the rich man were spoiled, but they were charming and
 
- | handsome. | g: 4 | 1_b: 7 |
+ | handsome. | g: 7 | 1_b: 8 |
 |---|---|---|
- | declined. | 4 | 26 |
- | fourteen. | 4 | 7 |
- | latitude. | 4 | 7 |
- | aluminum. | 4 | 30 |
- | displays. | 4 | 30 |
- | destined. | 4 | 7 |
- | invested. | 4 | 24 |
- | imposing. | 4 | 7 |
- | fragment. | 4 | 7 |
- | specimen. | 4 | 7 |
- | spelling. | 4 | 7 |
- | festival. | 4 | 28 |
- | football. | 4 | 28 |
- | exciting. | 4 | 21 |
- | dressing. | 4 | 28 |
- | trustees. | 4 | 28 |
- | injuries. | 4 | 31 |
- | thirteen. | 4 | 7 |
- | mistaken. | 4 | 27 |
- | tropical. | 4 | 7 |
+ | receipts | 22 | 22 |
+ | reversal | 24 | 24 |
+ | fruitful | 12 | 13 |
+ | acoustic | 21 | 20 |
+ | stubborn | 11 | 13 |
+ | alphabet | 28 | 26 |
+ | steering | 25 | 22 |
+ | calories | 24 | 24 |
+ | investor | 25 | 22 |
+ | desirous | -1 | 16 |
+ | tolerate | 18 | 20 |
+ | embraced | 14 | 15 |
+ | affirmed | 20 | 20 |
+ | offender | 24 | 26 |
+ | catheter | 28 | 27 |
+ | antigens | 27 | 30 |
+ | licensed | 19 | 17 |
+ | episodes | 22 | 22 |
+ | sediment | 25 | 30 |
+ | comrades | 22 | 21 |
 
 
 
 Yesterday, the wife of the politician discussed health care with old people.
 Yesterday,
 
- | the | g: 6 | 1_b: 6 |
+ | the | g: 4 | 1_b: 6 |
 |---|---|---|
- | der | 16 | 21 |
- | ed | 18 | 19 |
- | war | 13 | 16 |
- | hot | 16 | 15 |
- | op | 18 | 22 |
- | joy | 19 | 16 |
- | six | 15 | 15 |
- | set | 12 | 12 |
- | now | 12 | 11 |
- | one | 12 | 11 |
- | not | 11 | 9 |
- | he | 10 | 8 |
- | les | 19 | 16 |
- | two | 13 | 12 |
- | la | 16 | 15 |
- | son | 15 | 13 |
- | ago | 18 | 18 |
- | let | 16 | 11 |
- | oil | 13 | 16 |
- | act | 14 | 17 |
+ | cup | 19 | 22 |
+ | mg | 23 | 26 |
+ | bus | 18 | 19 |
+ | ff | -1 | 25 |
+ | fun | 18 | 14 |
+ | log | 20 | 18 |
+ | aim | 21 | 20 |
+ | tea | 17 | 17 |
+ | ll | -1 | 22 |
+ | se | 22 | 23 |
+ | km | 24 | 26 |
+ | ear | 20 | 19 |
+ | gay | 18 | 16 |
+ | gun | 19 | 19 |
+ | mix | 18 | 19 |
+ | con | 19 | 21 |
+ | bag | 23 | 19 |
+ | raw | 17 | 17 |
+ | par | 18 | 19 |
+ | ex | 16 | 16 |
 
 Yesterday, the
 
- | wife | g: 12 | 1_b: 12 |
+ | wife | g: 11 | 1_b: 10 |
 |---|---|---|
- | near | 14 | 15 |
- | wife | 12 | 12 |
- | pair | 11 | 13 |
- | poet | 12 | 14 |
- | sort | 14 | 14 |
- | feel | 15 | 16 |
- | sand | 14 | 13 |
- | fell | 16 | 16 |
- | away | 15 | 15 |
- | book | 9 | 10 |
- | step | 14 | 17 |
- | race | 11 | 14 |
- | form | 11 | 17 |
- | with | 15 | 14 |
- | copy | 15 | 15 |
- | some | 18 | 16 |
- | foot | 14 | 19 |
- | they | 18 | 17 |
- | task | 11 | 16 |
- | seat | 12 | 15 |
+ | maps | 18 | 18 |
+ | crew | 11 | 13 |
+ | diet | 17 | 16 |
+ | bath | 16 | 15 |
+ | sick | 14 | 14 |
+ | glad | 19 | 18 |
+ | tape | 13 | 16 |
+ | gift | 12 | 11 |
+ | guns | 17 | 16 |
+ | bore | 19 | 16 |
+ | hero | 11 | 12 |
+ | busy | 15 | 15 |
+ | shut | 19 | 21 |
+ | meat | 14 | 14 |
+ | tour | 11 | 13 |
+ | clay | 19 | 17 |
+ | kids | 14 | 8 |
+ | snow | 15 | 12 |
+ | coat | 15 | 15 |
+ | wear | 19 | 17 |
 
 Yesterday, the wife
 
- | of | g: 1 | 1_b: 3 |
+ | of | g: 0 | 1_b: 1 |
 |---|---|---|
- | men | 17 | 15 |
- | ad | 18 | 17 |
- | an | 13 | 13 |
- | tax | 19 | 14 |
- | sum | 20 | 21 |
- | per | 15 | 14 |
- | eat | 21 | 16 |
- | why | 19 | 16 |
- | co | 6 | 19 |
- | mm | 21 | 25 |
- | and | 4 | 4 |
- | fat | 18 | 16 |
- | off | 14 | 13 |
- | buy | 20 | 15 |
- | can | 11 | 7 |
- | has | 9 | 6 |
- | bad | 21 | 14 |
- | un | 6 | 21 |
- | dry | 21 | 17 |
- | or | 8 | 10 |
+ | arc | 22 | 24 |
+ | ll | -1 | 25 |
+ | ye | 21 | 24 |
+ | odd | 24 | 21 |
+ | win | 21 | 15 |
+ | ml | -1 | 30 |
+ | con | 22 | 22 |
+ | gap | 21 | 20 |
+ | via | 16 | 17 |
+ | hat | 24 | 20 |
+ | den | 23 | 22 |
+ | wet | 23 | 20 |
+ | fun | 22 | 18 |
+ | bus | 21 | 21 |
+ | aim | 24 | 24 |
+ | im | 24 | 22 |
+ | il | -1 | 26 |
+ | guy | 19 | 20 |
+ | ne | -1 | 22 |
+ | da | 18 | 20 |
 
 Yesterday, the wife of
 
  | the | g: 2 | 1_b: 2 |
 |---|---|---|
- | que | 4 | 24 |
- | thy | 20 | 17 |
- | eye | 19 | 18 |
- | l | 25 | 18 |
- | by | 18 | 15 |
- | war | 12 | 13 |
- | or | 18 | 16 |
- | buy | 21 | 18 |
- | key | 16 | 16 |
- | up | 15 | 15 |
- | for | 20 | 15 |
- | has | 20 | 15 |
- | did | 18 | 16 |
- | he | 17 | 12 |
- | had | 17 | 16 |
- | say | 19 | 17 |
- | few | 17 | 16 |
- | may | 21 | 18 |
- | why | 21 | 17 |
- | so | 16 | 12 |
+ | leg | 22 | 21 |
+ | aim | 24 | 24 |
+ | cup | 21 | 21 |
+ | tip | 22 | 23 |
+ | pan | 23 | 23 |
+ | min | 26 | 26 |
+ | sad | 20 | 19 |
+ | sub | 20 | 21 |
+ | cit | -1 | 29 |
+ | cry | 22 | 20 |
+ | bag | 24 | 20 |
+ | del | 21 | 19 |
+ | era | 19 | 21 |
+ | eds | -1 | 26 |
+ | si | -1 | 27 |
+ | cat | 17 | 17 |
+ | au | 20 | 23 |
+ | fee | 24 | 21 |
+ | row | 23 | 19 |
+ | via | 22 | 21 |
 
 Yesterday, the wife of the
 
- | politician | g: 10 | 1_b: 9 |
+ | politician | g: 9 | 1_b: 9 |
 |---|---|---|
- | cautiously | 23 | 22 |
- | procedural | 21 | 25 |
- | miraculous | 18 | 23 |
- | violations | 25 | 27 |
- | legitimacy | 21 | 23 |
- | visibility | 25 | 26 |
- | highlights | 22 | 18 |
- | enrollment | 24 | 24 |
- | landscapes | 22 | 24 |
- | profoundly | 20 | 18 |
- | unfamiliar | 19 | 24 |
- | conclusive | 23 | 24 |
- | exercising | 22 | 22 |
- | ridiculous | 21 | 15 |
- | theatrical | 15 | 18 |
- | derivation | 22 | 27 |
- | recordings | 20 | 25 |
- | politician | 10 | 9 |
- | decorative | 20 | 20 |
- | peculiarly | 22 | 23 |
+ | exigencies | -1 | 22 |
+ | turbulence | 23 | 21 |
+ | forfeiture | 21 | 27 |
+ | functioned | 27 | 28 |
+ | devastated | 20 | 18 |
+ | prophecies | 21 | 29 |
+ | persecuted | 18 | 19 |
+ | inhibitory | 23 | 31 |
+ | expectancy | 25 | 26 |
+ | convection | 25 | 31 |
+ | greenhouse | 18 | 19 |
+ | permanence | 23 | 26 |
+ | librarians | 20 | 22 |
+ | anesthetic | 19 | 28 |
+ | outrageous | 20 | 15 |
+ | subversive | 21 | 20 |
+ | initiating | 21 | 24 |
+ | retrospect | 26 | 27 |
+ | admissible | 25 | 25 |
+ | compliment | 22 | 26 |
 
 Yesterday, the wife of the politician
 
- | discussed | g: 20 | 1_b: 15 |
+ | discussed | g: 19 | 1_b: 14 |
 |---|---|---|
- | perfectly | 22 | 15 |
- | obviously | 21 | 13 |
- | primarily | 18 | 19 |
- | establish | 24 | 21 |
- | education | 19 | 18 |
- | component | 22 | 24 |
- | dependent | 20 | 19 |
- | movements | 22 | 22 |
- | operation | 21 | 20 |
- | equipment | 23 | 21 |
- | political | 14 | 16 |
- | presented | 18 | 12 |
- | indicates | 21 | 17 |
- | standards | 23 | 19 |
- | necessary | 20 | 17 |
- | important | 18 | 18 |
- | advantage | 27 | 19 |
- | reduction | 25 | 22 |
- | resources | 25 | 21 |
- | executive | 14 | 18 |
+ | pollution | 24 | 25 |
+ | desirable | 22 | 22 |
+ | attracted | 19 | 11 |
+ | conflicts | 22 | 22 |
+ | furnished | 23 | 19 |
+ | seriously | 22 | 16 |
+ | preceding | 19 | 19 |
+ | directors | 20 | 20 |
+ | fragments | 25 | 24 |
+ | compounds | 27 | 24 |
+ | synthesis | 28 | 32 |
+ | marketing | 22 | 20 |
+ | candidate | 15 | 13 |
+ | efficient | 26 | 23 |
+ | qualified | 20 | 16 |
+ | integrity | 21 | 22 |
+ | contracts | 22 | 22 |
+ | admission | 24 | 24 |
+ | equations | 28 | 28 |
+ | childhood | 18 | 23 |
 
 Yesterday, the wife of the politician discussed
 
- | health | g: 15 | 1_b: 10 |
+ | health | g: 16 | 1_b: 11 |
 |---|---|---|
- | direct | 17 | 17 |
- | window | 23 | 20 |
- | mental | 16 | 14 |
- | church | 16 | 16 |
- | report | 18 | 19 |
- | future | 14 | 12 |
- | matter | 18 | 18 |
- | useful | 20 | 19 |
- | pretty | 20 | 14 |
- | moving | 14 | 13 |
- | status | 14 | 16 |
- | tables | 20 | 20 |
- | plants | 20 | 17 |
- | thirty | 17 | 20 |
- | limits | 18 | 17 |
- | speech | 18 | 18 |
- | aspect | 18 | 19 |
- | always | 18 | 16 |
- | cotton | 22 | 19 |
- | simple | 19 | 16 |
+ | format | 23 | 22 |
+ | writes | 19 | 18 |
+ | thanks | 15 | 15 |
+ | refuse | 20 | 20 |
+ | ceased | 22 | 23 |
+ | shares | 18 | 15 |
+ | deemed | 20 | 19 |
+ | whilst | 13 | 18 |
+ | serves | 20 | 20 |
+ | desert | 22 | 20 |
+ | behalf | 16 | 16 |
+ | listen | 22 | 23 |
+ | wished | 22 | 20 |
+ | debate | 17 | 18 |
+ | suffer | 22 | 22 |
+ | defeat | 19 | 16 |
+ | brings | 20 | 20 |
+ | afford | 22 | 23 |
+ | closer | 19 | 16 |
+ | extend | 23 | 22 |
 
 Yesterday, the wife of the politician discussed health
 
- | care | g: 3 | 1_b: 1 |
+ | care | g: 3 | 1_b: 2 |
 |---|---|---|
- | area | 15 | 15 |
- | grow | 20 | 21 |
- | once | 15 | 15 |
- | boat | 19 | 20 |
- | kept | 18 | 18 |
- | deep | 19 | 19 |
- | were | 14 | 15 |
- | five | 19 | 17 |
- | over | 13 | 10 |
- | list | 17 | 18 |
- | half | 22 | 18 |
- | days | 13 | 15 |
- | mere | 23 | 21 |
- | very | 15 | 14 |
- | wine | 19 | 20 |
- | took | 16 | 17 |
- | last | 18 | 12 |
- | true | 24 | 20 |
- | hold | 19 | 18 |
- | came | 18 | 17 |
+ | wore | 23 | 22 |
+ | bath | 20 | 24 |
+ | kids | 21 | 18 |
+ | meal | 21 | 22 |
+ | pale | 22 | 22 |
+ | coat | 22 | 26 |
+ | calm | 20 | 22 |
+ | grey | 21 | 22 |
+ | pour | 24 | 25 |
+ | snow | 23 | 22 |
+ | ride | 20 | 22 |
+ | rear | 23 | 25 |
+ | tail | 24 | 24 |
+ | gods | 20 | 22 |
+ | worn | 23 | 23 |
+ | shop | 19 | 18 |
+ | sake | 16 | 25 |
+ | cool | 19 | 23 |
+ | hole | 19 | 22 |
+ | beds | 20 | 20 |
 
 Yesterday, the wife of the politician discussed health care
 
  | with | g: 8 | 1_b: 2 |
 |---|---|---|
- | bear | 20 | 21 |
- | laid | 19 | 17 |
- | sale | 17 | 18 |
- | soon | 15 | 15 |
- | went | 16 | 16 |
- | care | 8 | 11 |
- | soft | 23 | 21 |
- | post | 15 | 19 |
- | thin | 22 | 21 |
- | draw | 18 | 20 |
- | soul | 23 | 23 |
- | hold | 18 | 18 |
- | used | 12 | 15 |
- | your | 21 | 15 |
- | long | 15 | 13 |
- | when | 9 | 8 |
- | dear | 23 | 19 |
- | camp | 13 | 21 |
- | ball | 19 | 20 |
- | film | 14 | 21 |
+ | pale | 23 | 22 |
+ | cook | 17 | 27 |
+ | pipe | 18 | 23 |
+ | tool | 19 | 23 |
+ | bird | 18 | 23 |
+ | plot | 19 | 20 |
+ | chap | -1 | 28 |
+ | peak | 20 | 24 |
+ | crew | 16 | 23 |
+ | busy | 22 | 24 |
+ | pray | 24 | 23 |
+ | wear | 18 | 21 |
+ | bulk | 22 | 25 |
+ | rent | 19 | 21 |
+ | bath | 22 | 28 |
+ | hurt | 18 | 20 |
+ | pole | 18 | 26 |
+ | meal | 18 | 23 |
+ | deny | 24 | 23 |
+ | leaf | 19 | 24 |
 
 Yesterday, the wife of the politician discussed health care with
 
- | old | g: 13 | 1_b: 12 |
+ | old | g: 12 | 1_b: 12 |
 |---|---|---|
- | que | 4 | 22 |
- | by | 16 | 14 |
- | to | 15 | 13 |
- | sky | 21 | 19 |
- | so | 12 | 10 |
- | gas | 16 | 16 |
- | new | 10 | 12 |
- | low | 12 | 15 |
- | all | 9 | 5 |
- | day | 16 | 14 |
- | d' | 4 | 5 |
- | had | 16 | 18 |
- | go | 17 | 17 |
- | an | 6 | 7 |
- | as | 13 | 12 |
- | two | 9 | 9 |
- | en | 19 | 19 |
- | get | 17 | 16 |
- | war | 13 | 14 |
- | oil | 14 | 13 |
+ | gun | 15 | 16 |
+ | win | 19 | 19 |
+ | ex | 17 | 16 |
+ | pen | 16 | 19 |
+ | km | 26 | 27 |
+ | log | 18 | 24 |
+ | se | 26 | 22 |
+ | era | 20 | 21 |
+ | ha | 27 | 22 |
+ | cit | -1 | 26 |
+ | fun | 16 | 16 |
+ | tip | 20 | 21 |
+ | ye | 23 | 21 |
+ | cry | 19 | 20 |
+ | sad | 19 | 18 |
+ | im | 25 | 22 |
+ | hat | 20 | 18 |
+ | leg | 16 | 20 |
+ | den | 21 | 22 |
+ | fee | 17 | 21 |
 
 Yesterday, the wife of the politician discussed health care with old
 
- | people. | g: 4 | 1_b: 14 |
+ | people. | g: 7 | 1_b: 6 |
 |---|---|---|
- | failed. | 4 | 27 |
- | labour. | 4 | 21 |
- | inches. | 4 | 6 |
- | myself. | 4 | 29 |
- | detail. | 4 | 27 |
- | length. | 4 | 28 |
- | change. | 4 | 26 |
- | forest. | 4 | 30 |
- | expect. | 4 | 31 |
- | quoted. | 4 | 6 |
- | horses. | 4 | 24 |
- | argued. | 4 | 6 |
- | simply. | 4 | 6 |
- | tissue. | 4 | 27 |
- | branch. | 4 | 28 |
- | dinner. | 4 | 25 |
- | beauty. | 4 | 23 |
- | moving. | 4 | 29 |
- | battle. | 4 | 27 |
- | little. | 4 | 27 |
+ | topics | 14 | 18 |
+ | allies | 15 | 8 |
+ | affair | 17 | 19 |
+ | owners | 12 | 17 |
+ | assist | 21 | 27 |
+ | favour | 20 | 23 |
+ | thesis | 20 | 19 |
+ | suffer | 20 | 25 |
+ | denied | 22 | 20 |
+ | ethics | 15 | 18 |
+ | absent | 19 | 21 |
+ | thanks | 17 | 20 |
+ | camera | 14 | 14 |
+ | pushed | 23 | 22 |
+ | mostly | 18 | 18 |
+ | ritual | 17 | 20 |
+ | colony | 16 | 20 |
+ | phrase | 17 | 20 |
+ | surely | 25 | 22 |
+ | bought | 18 | 20 |
 
 
 
 The boyfriend of the model was killed in an accident while skiing last week.
 The
 
- | boyfriend | g: 20 | 1_b: 16 |
+ | boyfriend | g: 20 | 1_b: 14 |
 |---|---|---|
- | attaining | 22 | 32 |
- | husbandry | 24 | 32 |
- | attentive | 22 | 27 |
- | welcoming | 20 | 24 |
- | medicinal | 21 | 25 |
- | detriment | 23 | 26 |
- | ascension | 21 | 30 |
- | unnoticed | 24 | 27 |
- | horrified | 20 | 24 |
- | brightest | 17 | 23 |
- | resection | 2 | 34 |
- | perceives | 24 | 34 |
- | underwent | 22 | 26 |
- | paperback | 22 | 19 |
- | favorites | 23 | 21 |
- | anxiously | 2 | 34 |
- | tribunals | 23 | 29 |
- | newcomers | 20 | 22 |
- | checklist | 2 | 22 |
- | reversing | 23 | 29 |
+ | bracelets | 22 | 20 |
+ | biologist | 20 | 20 |
+ | academies | 21 | 22 |
+ | pleadings | -1 | 26 |
+ | fluttered | -1 | 27 |
+ | imparting | 24 | 25 |
+ | battering | 22 | 22 |
+ | reflector | 20 | 29 |
+ | pollutant | 23 | 25 |
+ | nurseries | 24 | 20 |
+ | agreeably | -1 | 25 |
+ | pigmented | -1 | 27 |
+ | mediating | 23 | 29 |
+ | citizenry | 20 | 21 |
+ | rewriting | 23 | 23 |
+ | retainers | 23 | 22 |
+ | examiners | 21 | 20 |
+ | prompting | 21 | 21 |
+ | housework | -1 | 22 |
+ | stratagem | -1 | 22 |
 
 The boyfriend
 
- | of | g: 2 | 1_b: 3 |
+ | of | g: 2 | 1_b: 2 |
 |---|---|---|
- | are | 11 | 10 |
- | him | 16 | 15 |
- | al | 20 | 18 |
- | so | 13 | 10 |
- | us | 22 | 17 |
- | net | 21 | 18 |
- | aid | 21 | 17 |
- | day | 14 | 13 |
- | ill | 22 | 18 |
- | des | 19 | 17 |
- | la | 18 | 20 |
- | lot | 17 | 14 |
- | may | 8 | 11 |
- | act | 16 | 14 |
- | met | 13 | 14 |
- | our | 20 | 15 |
- | du | 19 | 16 |
- | in | 7 | 5 |
- | men | 18 | 14 |
- | que | 5 | 20 |
+ | fee | 19 | 19 |
+ | ray | 22 | 23 |
+ | log | 17 | 22 |
+ | tea | 21 | 19 |
+ | da | 18 | 19 |
+ | pan | 22 | 23 |
+ | egg | 21 | 19 |
+ | gay | 19 | 18 |
+ | row | 19 | 15 |
+ | tip | 20 | 20 |
+ | hat | 17 | 18 |
+ | pen | 19 | 21 |
+ | ml | -1 | 28 |
+ | cat | 18 | 17 |
+ | na | 22 | 24 |
+ | sad | 22 | 20 |
+ | ff | -1 | 27 |
+ | ft | 23 | 25 |
+ | par | 20 | 20 |
+ | fed | 19 | 15 |
 
 The boyfriend of
 
- | the | g: 2 | 1_b: 2 |
+ | the | g: 2 | 1_b: 3 |
 |---|---|---|
- | les | 22 | 21 |
- | due | 18 | 16 |
- | a | 3 | 4 |
- | bit | 18 | 18 |
- | lie | 17 | 20 |
- | bed | 16 | 17 |
- | und | 26 | 25 |
- | at | 13 | 11 |
- | am | 22 | 20 |
- | dog | 13 | 15 |
- | joy | 21 | 19 |
- | we | 17 | 15 |
- | up | 15 | 13 |
- | him | 10 | 11 |
- | en | 22 | 20 |
- | y | 22 | 17 |
- | op | 21 | 20 |
- | arm | 18 | 20 |
- | re | 23 | 20 |
- | per | 19 | 18 |
+ | cap | 20 | 20 |
+ | il | -1 | 23 |
+ | row | 22 | 20 |
+ | ion | 20 | 25 |
+ | sad | 19 | 20 |
+ | fee | 21 | 23 |
+ | mix | 21 | 22 |
+ | odd | 16 | 21 |
+ | ye | 19 | 23 |
+ | bus | 16 | 20 |
+ | das | -1 | 23 |
+ | qui | 23 | 26 |
+ | ray | 21 | 25 |
+ | par | 21 | 24 |
+ | fed | 21 | 21 |
+ | mg | 26 | 32 |
+ | da | 19 | 19 |
+ | era | 20 | 21 |
+ | arc | 21 | 27 |
+ | tea | 17 | 17 |
 
 The boyfriend of the
 
- | model | g: 12 | 1_b: 9 |
+ | model | g: 12 | 1_b: 8 |
 |---|---|---|
- | human | 10 | 12 |
- | drive | 17 | 16 |
- | grand | 12 | 14 |
- | raise | 17 | 20 |
- | joint | 15 | 15 |
- | order | 13 | 15 |
- | units | 18 | 22 |
- | after | 17 | 15 |
- | eight | 14 | 13 |
- | serve | 17 | 19 |
- | times | 17 | 14 |
- | major | 12 | 13 |
- | light | 13 | 13 |
- | level | 14 | 17 |
- | carry | 18 | 19 |
- | grown | 16 | 14 |
- | solid | 19 | 18 |
- | steel | 16 | 16 |
- | going | 16 | 14 |
- | trade | 14 | 14 |
+ | extra | 14 | 15 |
+ | opera | 11 | 15 |
+ | liver | 19 | 18 |
+ | yours | 22 | 20 |
+ | cried | 22 | 20 |
+ | mercy | 18 | 21 |
+ | tears | 20 | 22 |
+ | pride | 18 | 19 |
+ | angry | 14 | 15 |
+ | rough | 16 | 17 |
+ | sheep | 12 | 14 |
+ | tends | 21 | 27 |
+ | anger | 19 | 19 |
+ | boats | 17 | 22 |
+ | teeth | 19 | 19 |
+ | armed | 14 | 17 |
+ | honor | 17 | 18 |
+ | realm | 16 | 18 |
+ | empty | 15 | 15 |
+ | guess | 19 | 23 |
 
 The boyfriend of the model
 
- | was | g: 3 | 1_b: 9 |
+ | was | g: 3 | 1_b: 6 |
 |---|---|---|
- | has | 6 | 9 |
- | non | 19 | 18 |
- | see | 17 | 19 |
- | add | 21 | 20 |
- | men | 15 | 18 |
- | get | 14 | 15 |
- | met | 12 | 14 |
- | go | 13 | 15 |
- | et | 18 | 16 |
- | do | 14 | 14 |
- | his | 14 | 13 |
- | the | 10 | 12 |
- | nor | 19 | 18 |
- | cut | 16 | 17 |
- | let | 16 | 16 |
- | to | 9 | 9 |
- | two | 13 | 13 |
- | que | 6 | 22 |
- | if | 13 | 13 |
- | at | 9 | 9 |
+ | au | 19 | 16 |
+ | hat | 16 | 22 |
+ | wet | 20 | 22 |
+ | aim | 23 | 25 |
+ | row | 19 | 22 |
+ | das | -1 | 27 |
+ | del | 18 | 20 |
+ | odd | 22 | 24 |
+ | via | 14 | 15 |
+ | eds | -1 | 26 |
+ | fee | 21 | 24 |
+ | ne | -1 | 25 |
+ | bag | 18 | 18 |
+ | ff | -1 | 29 |
+ | ll | -1 | 27 |
+ | ml | -1 | 32 |
+ | arc | 18 | 26 |
+ | egg | 18 | 19 |
+ | ha | 22 | 23 |
+ | fly | 18 | 21 |
 
 The boyfriend of the model was
 
- | killed | g: 7 | 1_b: 7 |
+ | killed | g: 7 | 1_b: 6 |
 |---|---|---|
- | unique | 13 | 17 |
- | proved | 15 | 13 |
- | bright | 16 | 15 |
- | become | 14 | 15 |
- | months | 19 | 17 |
- | chosen | 7 | 11 |
- | narrow | 18 | 21 |
- | common | 13 | 15 |
- | oxygen | 20 | 18 |
- | damage | 21 | 19 |
- | parent | 19 | 19 |
- | mother | 14 | 12 |
- | spirit | 19 | 20 |
- | search | 18 | 19 |
- | partly | 15 | 15 |
- | powers | 20 | 23 |
- | volume | 23 | 23 |
- | simple | 15 | 16 |
- | mental | 18 | 17 |
- | chance | 20 | 18 |
+ | listed | 11 | 12 |
+ | driven | 12 | 12 |
+ | dreams | 18 | 21 |
+ | driver | 15 | 18 |
+ | trends | 24 | 25 |
+ | debate | 20 | 21 |
+ | edited | 16 | 17 |
+ | surely | 15 | 12 |
+ | census | 23 | 27 |
+ | whites | 19 | 23 |
+ | budget | 21 | 21 |
+ | pounds | 20 | 19 |
+ | liable | 15 | 17 |
+ | picked | 11 | 11 |
+ | decade | 24 | 23 |
+ | stable | 17 | 17 |
+ | purely | 16 | 19 |
+ | blocks | 21 | 23 |
+ | metals | 24 | 28 |
+ | assets | 21 | 23 |
 
 The boyfriend of the model was killed
 
  | in | g: 2 | 1_b: 2 |
 |---|---|---|
- | al | 25 | 19 |
- | my | 20 | 14 |
- | ed | 25 | 25 |
- | are | 16 | 15 |
- | et | 24 | 19 |
- | few | 19 | 17 |
- | per | 12 | 14 |
- | me | 19 | 14 |
- | age | 20 | 17 |
- | key | 19 | 19 |
- | sea | 21 | 18 |
- | one | 11 | 10 |
- | dry | 20 | 20 |
- | set | 16 | 17 |
- | to | 7 | 6 |
- | ill | 17 | 17 |
- | lay | 22 | 19 |
- | we | 21 | 14 |
- | von | 21 | 23 |
- | its | 17 | 14 |
+ | bag | 25 | 22 |
+ | hat | 24 | 22 |
+ | km | 25 | 25 |
+ | pen | 24 | 24 |
+ | row | 22 | 21 |
+ | fly | 23 | 22 |
+ | ll | -1 | 26 |
+ | hit | 18 | 18 |
+ | mix | 26 | 24 |
+ | im | 26 | 22 |
+ | ex | 22 | 20 |
+ | era | 23 | 24 |
+ | gap | 26 | 24 |
+ | ion | 26 | 23 |
+ | cat | 20 | 20 |
+ | il | -1 | 29 |
+ | cap | 25 | 22 |
+ | gay | 20 | 21 |
+ | bus | 20 | 23 |
+ | sad | 22 | 21 |
 
 The boyfriend of the model was killed in
 
- | an | g: 4 | 1_b: 4 |
+ | an | g: 4 | 1_b: 3 |
 |---|---|---|
- | of | 21 | 16 |
- | or | 15 | 15 |
- | go | 20 | 17 |
- | may | 22 | 19 |
- | s | 23 | 16 |
- | run | 16 | 16 |
- | car | 13 | 10 |
- | fit | 19 | 17 |
- | fat | 19 | 19 |
- | cut | 17 | 17 |
- | co | 6 | 20 |
- | met | 23 | 20 |
- | un | 6 | 20 |
- | but | 17 | 17 |
- | bed | 10 | 9 |
- | end | 18 | 15 |
- | d' | 6 | 6 |
- | m | 26 | 21 |
- | des | 27 | 21 |
- | dry | 16 | 18 |
+ | cat | 20 | 18 |
+ | eds | -1 | 25 |
+ | via | 24 | 20 |
+ | leg | 16 | 17 |
+ | ex | 23 | 21 |
+ | gap | 20 | 25 |
+ | ft | 23 | 28 |
+ | cry | 24 | 27 |
+ | par | 23 | 24 |
+ | guy | 21 | 24 |
+ | au | 24 | 25 |
+ | fee | 23 | 23 |
+ | ray | 22 | 24 |
+ | bag | 22 | 19 |
+ | hit | 15 | 16 |
+ | gay | 19 | 18 |
+ | bus | 17 | 18 |
+ | ear | 20 | 22 |
+ | hat | 23 | 24 |
+ | con | 21 | 23 |
 
 The boyfriend of the model was killed in an
 
  | accident | g: 1 | 1_b: 1 |
 |---|---|---|
- | favorite | 28 | 27 |
- | register | 26 | 24 |
- | eighteen | 22 | 20 |
- | expenses | 22 | 14 |
- | printing | 24 | 25 |
- | released | 22 | 24 |
- | anterior | 18 | 20 |
- | engineer | 16 | 17 |
- | incident | 6 | 7 |
- | facility | 21 | 23 |
- | bacteria | 27 | 26 |
- | inferior | 15 | 18 |
- | belonged | 33 | 29 |
- | studying | 24 | 29 |
- | delivery | 21 | 20 |
- | confused | 22 | 25 |
- | modified | 24 | 29 |
- | isolated | 12 | 15 |
- | innocent | 15 | 14 |
- | striking | 24 | 26 |
+ | centered | 29 | 29 |
+ | treaties | 28 | 28 |
+ | opponent | 17 | 17 |
+ | manifest | 25 | 28 |
+ | ambition | 21 | 17 |
+ | revenues | 31 | 29 |
+ | disposal | 25 | 26 |
+ | clearing | 22 | 24 |
+ | regiment | 26 | 28 |
+ | summoned | 24 | 28 |
+ | instinct | 22 | 19 |
+ | prisoner | 22 | 25 |
+ | autonomy | 26 | 24 |
+ | vascular | 26 | 29 |
+ | entities | 28 | 29 |
+ | claiming | 22 | 22 |
+ | covenant | 27 | 32 |
+ | vicinity | 22 | 26 |
+ | energies | 30 | 31 |
+ | critique | 26 | 28 |
 
 The boyfriend of the model was killed in an accident
 
  | while | g: 4 | 1_b: 5 |
 |---|---|---|
- | would | 19 | 14 |
- | while | 4 | 5 |
- | trial | 17 | 18 |
- | store | 23 | 21 |
- | drugs | 22 | 21 |
- | mouth | 23 | 21 |
- | build | 24 | 23 |
- | lines | 23 | 20 |
- | small | 21 | 20 |
- | seems | 22 | 18 |
- | taste | 28 | 25 |
- | legal | 23 | 20 |
- | walls | 26 | 23 |
- | happy | 24 | 21 |
- | needs | 27 | 18 |
- | block | 18 | 19 |
- | woman | 21 | 20 |
- | house | 20 | 16 |
- | shows | 23 | 17 |
- | signs | 23 | 21 |
+ | realm | 29 | 27 |
+ | sixty | 20 | 20 |
+ | steam | 21 | 25 |
+ | logic | 26 | 26 |
+ | bones | 27 | 25 |
+ | outer | 22 | 26 |
+ | shock | 20 | 23 |
+ | guess | 25 | 25 |
+ | panel | 21 | 21 |
+ | pound | 28 | 23 |
+ | verse | 28 | 23 |
+ | valid | 30 | 25 |
+ | reply | 29 | 26 |
+ | rough | 21 | 20 |
+ | admit | 29 | 24 |
+ | split | 21 | 19 |
+ | video | 21 | 20 |
+ | scope | 28 | 27 |
+ | cried | 25 | 23 |
+ | crops | 31 | 26 |
 
 The boyfriend of the model was killed in an accident while
 
  | skiing | g: 11 | 1_b: 8 |
 |---|---|---|
- | esprit | 5 | 31 |
- | pauper | 5 | 26 |
- | serous | 5 | 30 |
- | shrunk | 23 | 25 |
- | coolly | 5 | 22 |
- | stucco | 26 | 28 |
- | tithes | 28 | 29 |
- | payoff | 27 | 28 |
- | solves | 25 | 27 |
- | creamy | 26 | 26 |
- | testes | 27 | 33 |
- | vestry | 27 | 28 |
- | expire | 30 | 27 |
- | lichen | 25 | 27 |
- | stares | 5 | 25 |
- | brazen | 5 | 20 |
- | uproar | 25 | 24 |
- | frieze | 28 | 32 |
- | steppe | 25 | 31 |
- | lingua | 29 | 31 |
+ | duress | 24 | 28 |
+ | threes | -1 | 27 |
+ | ticked | -1 | 23 |
+ | zygote | 29 | 33 |
+ | taping | 14 | 15 |
+ | crease | 27 | 28 |
+ | pursed | -1 | 26 |
+ | andere | -1 | -1 |
+ | lipped | -1 | 29 |
+ | schist | 27 | 30 |
+ | joists | -1 | 35 |
+ | movers | 23 | 22 |
+ | swivel | 25 | 29 |
+ | diners | 22 | 23 |
+ | lineup | 23 | 26 |
+ | opiate | -1 | 29 |
+ | fibula | 25 | 35 |
+ | pliant | -1 | 28 |
+ | edging | 20 | 17 |
+ | cuando | -1 | 32 |
 
 The boyfriend of the model was killed in an accident while skiing
 
- | last | g: 14 | 1_b: 6 |
+ | last | g: 14 | 1_b: 5 |
 |---|---|---|
- | walk | 22 | 18 |
- | zone | 23 | 20 |
- | live | 17 | 15 |
- | send | 28 | 21 |
- | tone | 26 | 25 |
- | cell | 22 | 22 |
- | bear | 21 | 21 |
- | says | 20 | 17 |
- | mark | 24 | 22 |
- | fear | 23 | 21 |
- | gold | 21 | 16 |
- | foot | 17 | 17 |
- | dear | 23 | 20 |
- | mass | 21 | 20 |
- | band | 16 | 20 |
- | site | 19 | 18 |
- | rest | 19 | 19 |
- | many | 15 | 16 |
- | very | 12 | 13 |
- | sale | 22 | 23 |
+ | beds | 22 | 26 |
+ | jury | 23 | 23 |
+ | tons | 23 | 23 |
+ | dust | 18 | 24 |
+ | clay | 19 | 23 |
+ | busy | 20 | 21 |
+ | trip | 16 | 16 |
+ | arch | 27 | 27 |
+ | deny | 28 | 27 |
+ | bulk | 23 | 26 |
+ | loop | 23 | 25 |
+ | cool | 19 | 23 |
+ | unto | 23 | 28 |
+ | oral | 24 | 27 |
+ | gets | 16 | 18 |
+ | blow | 25 | 22 |
+ | hell | 20 | 22 |
+ | rays | 25 | 27 |
+ | link | 29 | 28 |
+ | sake | 22 | 26 |
 
 The boyfriend of the model was killed in an accident while skiing last
 
- | week. | g: 10 | 1_b: 11 |
+ | week. | g: 6 | 1_b: 2 |
 |---|---|---|
- | soft. | 10 | 30 |
- | term. | 10 | 21 |
- | wind. | 10 | 29 |
- | many. | 10 | 28 |
- | mere. | 10 | 10 |
- | goes. | 10 | 31 |
- | both. | 10 | 32 |
- | self. | 10 | 29 |
- | sure. | 10 | 30 |
- | wife. | 10 | 32 |
- | full. | 10 | 27 |
- | weak. | 10 | 22 |
- | vice. | 10 | 10 |
- | gain. | 10 | 30 |
- | vast. | 10 | 10 |
- | near. | 10 | 10 |
- | debt. | 10 | 31 |
- | fast. | 10 | 27 |
- | soul. | 10 | 33 |
- | foot. | 10 | 27 |
+ | pour | 21 | 26 |
+ | hung | 18 | 27 |
+ | loan | 23 | 25 |
+ | ease | 23 | 28 |
+ | wire | 21 | 26 |
+ | aims | 25 | 29 |
+ | pull | 22 | 25 |
+ | pick | 19 | 24 |
+ | dogs | 17 | 25 |
+ | lips | 28 | 30 |
+ | aged | 13 | 20 |
+ | bulk | 27 | 25 |
+ | nice | 25 | 25 |
+ | dust | 22 | 25 |
+ | guns | 24 | 24 |
+ | bore | 18 | 23 |
+ | drew | 15 | 23 |
+ | kill | 20 | 25 |
+ | fate | 27 | 25 |
+ | diet | 26 | 25 |
 

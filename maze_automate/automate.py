@@ -23,7 +23,6 @@ def get_alternates(word):
     '''given a word, returns candidate buddies'''
     alts=[]
     i=0
-    print(word)
     word_length=len(word)
     if word_length<3:
         word_length=3
@@ -96,7 +95,6 @@ def process_sentences(in_file, out_file):
 def check_lexicon():
     for key in sorted(LEXICON):
         print(key,"\t",len(LEXICON[key]))
-
 process_sentences("input.txt", "output_5.md")
 #process_sentences("intest.txt", "outtest.md")
 #check_lexicon()

@@ -59,7 +59,7 @@ def Surprisal(sentence_input):
         totalsurprisal = 0
         firstword = dictionary_corpus.tokenize_str(dictionary,good_tokens[0][0])[0]
         if good_tokens[0][0] not in dictionary.word2idx:
-            print(good_tokens[0][0]+" in unknown")
+            print("Good word "+good_tokens[0][0]+" in unknown")
         input.fill_(firstword.item())
         output, hidden = model(input,hidden)        
         word_weights = output.squeeze().div(1.0).exp().cpu()
@@ -68,7 +68,7 @@ def Surprisal(sentence_input):
         for j in range(1, len(good_tokens[0])): 
             next_token=dictionary_corpus.tokenize_str(dictionary,good_tokens[0][j])[0]
             if good_tokens[0][j] not in dictionary.word2idx:
-                print(good_tokens[0][j]+" is unknown")
+                print("Good word "+good_tokens[0][j]+" is unknown")
             word_surprisal = word_surprisals[next_token].item()  
             totalsurprisal = word_surprisal + totalsurprisal
             input.fill_(next_token.item())
@@ -85,12 +85,13 @@ def Surprisal(sentence_input):
                 test_token=dictionary_corpus.tokenize_str(dictionary, test_word)[0]
                 if test_word not in dictionary.word2idx:
                     print(test_word+" is unknown")
+                    results[test_word]=-1
                 else:
                     results[test_word]=word_surprisals[test_token].item()
             results_list.append(results)
             good_word=dictionary_corpus.tokenize_str(dictionary,good_tokens[i+1][0])[0]
             if good_tokens[i+1][0] not in dictionary.word2idx:
-                print(good_tokens[i+1][0]+" is unknown")
+                print("Good word "+good_tokens[i+1][0]+" is unknown")
             word_surprisal = word_surprisals[good_word].item()  
             totalsurprisal = word_surprisal + totalsurprisal
             input.fill_(good_word.item())
@@ -101,7 +102,7 @@ def Surprisal(sentence_input):
             for j in range(1, len(good_tokens[i+1])): 
                 next_token=dictionary_corpus.tokenize_str(dictionary,good_tokens[i+1][j])[0]
                 if good_tokens[i+1][j] not in dictionary.word2idx:
-                    print(good_tokens[i+1][j]+" is unknown")
+                    print("Good word "+good_tokens[i+1][j]+" is unknown")
                 word_surprisal = word_surprisals[next_token].item()  
                 totalsurprisal = word_surprisal + totalsurprisal
                 input.fill_(next_token.item())
