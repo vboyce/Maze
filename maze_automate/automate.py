@@ -3,6 +3,7 @@ import gulardova_surprisal as g
 import lexicon_generator
 import random
 import re
+import gulardova_suggest as g_suggest
 
 #Semiuseful notes:
 #probably should use normal case for surprisal
@@ -78,6 +79,17 @@ def output(sentences, g_s, one_b_s, filename):
             f.write("\n")
     f.close()
 
+def output_suggestions(g_results, filename):
+    f.open(filename, "a")
+    for i in range(len(g_results)):
+        f.write("\n\n"+g_results[i][0]+"\n\n")
+        words=split_sentence(g_results[i][0])
+        for j in range(len(words)-1):
+            f.write("\n\n"+" ".join(words[:(j+1)])+"\n\n") # context 
+            for k in range(len(g_results[i][1][j])):
+            f.write(" "+g_results[i][1][j][k])
+    f.close()
+
 def read_sentences(filename):
     f=open(filename, "r")
     sentences =[x.strip() for x in f.readlines()]
@@ -92,10 +104,16 @@ def process_sentences(in_file, out_file):
     one_b_surprisal = one_b.Surprisal(to_test)
     output(sentences, g_surprisal, one_b_surprisal, out_file)
 
+def get_suggestions(in_file, out_file):
+    sentences=read_sentences(in_file)
+    g_results=g_suggest.suggest(sentences)
+    output_suggestions(g_results,out_file)
+
 def check_lexicon():
     for key in sorted(LEXICON):
         print(key,"\t",len(LEXICON[key]))
-process_sentences("input.txt", "output_5.md")
+#process_sentences("input.txt", "output_5.md")
+get_suggestions("input.txt", "output_test.md")
 #process_sentences("intest.txt", "outtest.md")
 #check_lexicon()
 
