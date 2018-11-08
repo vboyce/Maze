@@ -95,7 +95,6 @@ def Surprisal(sentence_input):
                 sample = torch.multinomial(word_weights, 1)[0]
                 suggest.append((dictionary.idx2word[sample]))
             suggest_list.append(suggest)
-            good_word_token=vocab.word_to_id(good_tokens[i+1][0])
             good_word=dictionary_corpus.tokenize_str(dictionary,good_tokens[i+1][0])[0]
             if good_tokens[i+1][0] not in dictionary.word2idx:
                 print("Good word "+good_tokens[i+1][0]+" is unknown")

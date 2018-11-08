@@ -131,7 +131,7 @@ def Surprisal(sentence_input):
             results_list.append(results)
             suggest=[]
             for l in range(5):
-                sample = _SampleSoftmax(softmax[0])
+                sample = min(np.sum(np.cumsum(softmax[0])< np.random.rand()), len(softmax[0]) -1)
                 suggest.append(vocab.id_to_word(sample))
             suggest_list.append(suggest)
             good_word_token=vocab.word_to_id(good_tokens[i+1][0])
