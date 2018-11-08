@@ -25,12 +25,12 @@ Sentences are split into words using .split() (so words correspond to alternates
 
 The model currently is run to return all the results so they can be printed and thought about. 
 
-[ ] Find a better tokenizer choice for google one b
-[ ] Refactor things so it's easier to plug in any model
-[ ] Set them up to run on gpu
-[ ] Algorithm for selecting alternate.
-[ ] Apply matching case, end punctuation to chosen alternate
-[ ] San check that the models are doing what we think they are
+[ ] Find a better tokenizer choice for google one b  
+[ ] Refactor things so it's easier to plug in any model  
+[ ] Set them up to run on gpu  
+[ ] Algorithm for selecting alternate.  
+[ ] Apply matching case, end punctuation to chosen alternate  
+[ ] San check that the models are doing what we think they are  
 
 ## After the model
 
@@ -40,8 +40,8 @@ Right now, do decisions are made, the model just returns a giant pile of surpris
 
 ## Miscellanous wish list items
 
-[ ] Cleaner code with classes, methods, readable code and documentation
-[ ] Command line runnable with options
-[ ] Minimal pair handling
+[ ] Cleaner code with classes, methods, readable code and documentation  
+[ ] Command line runnable with options  
+[ ] Minimal pair handling  
 
 
