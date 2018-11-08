@@ -75,7 +75,7 @@ def output(sentences, g_s, one_b_s, filename):
             f.write("One b suggests: ")
             for l in range(len(one_b_s[i][3][j])):
                 f.write("  "+one_b_s[i][3][j][l])
-            f.write("\nGulardova suggests: ")
+            f.write("\n\nGulardova suggests: ")
             for l in range(len(g_s[i][3][j])):
                 f.write("  "+g_s[i][3][j][l])
             f.write("\n\n | "+words[j+1]+" | g: "+str(int(round(g_s[i][1][j])))+ " | 1_b: "+str(int(round(one_b_s[i][1][j]))) + " |\n")
