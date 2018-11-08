@@ -3,7 +3,6 @@ import gulardova_surprisal as g
 import lexicon_generator
 import random
 import re
-import gulardova_suggest as g_suggest
 
 #Semiuseful notes:
 #probably should use normal case for surprisal

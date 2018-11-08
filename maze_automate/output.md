@@ -4,367 +4,380 @@ The children of the rich man were spoiled, but they were charming and handsome.
 
 The
 
-One b suggests:   (  Beatles  (  (  (
+One b suggests:   New  (  (  (  (
+
 Gulardova suggests:   Collins  <unk>  Storm  Songs  old
 
  | children | g: 15 | 1_b: 24 |
 |---|---|---|
+ | strictly | 21 | 23 |
  | electron | 18 | 42 |
- | dynamics | 19 | 35 |
- | survival | 19 | 28 |
- | interior | 17 | 26 |
- | favorite | 19 | 31 |
- | rejected | 19 | 25 |
- | demanded | 22 | 32 |
- | believes | 22 | 27 |
- | faithful | 17 | 32 |
- | portions | 19 | 24 |
- | pleasant | 20 | 26 |
- | reliable | 19 | 26 |
- | aircraft | 17 | 25 |
- | findings | 18 | 30 |
- | rational | 19 | 26 |
- | dominant | 15 | 28 |
- | medieval | 17 | 25 |
- | precious | 19 | 26 |
- | covering | 20 | 30 |
- | category | 16 | 30 |
+ | merchant | 19 | 26 |
+ | stimulus | 21 | 33 |
+ | currency | 20 | 30 |
+ | minority | 18 | 25 |
+ | offering | 19 | 25 |
+ | exposure | 20 | 32 |
+ | brothers | 14 | 30 |
+ | compound | 18 | 31 |
+ | networks | 20 | 27 |
+ | respects | 24 | 30 |
+ | sympathy | 21 | 32 |
+ | database | 19 | 27 |
+ | employer | 20 | 35 |
+ | monetary | 21 | 30 |
+ | delicate | 20 | 31 |
+ | colonies | 19 | 34 |
+ | probable | 19 | 31 |
+ | dramatic | 18 | 21 |
 
 The children
 
-One b suggests:   's  's  's  's  's
+One b suggests:   's  's  '  's  's
+
 Gulardova suggests:   like  are  of  blended  's
 
  | of | g: 3 | 1_b: 7 |
 |---|---|---|
- | tip | 23 | 20 |
- | era | 18 | 21 |
- | cry | 17 | 15 |
- | bus | 16 | 20 |
- | mg | 23 | 26 |
- | fly | 15 | 16 |
- | fee | 22 | 21 |
- | pen | 20 | 19 |
+ | bag | 19 | 19 |
+ | km | 25 | 25 |
+ | del | 22 | 23 |
+ | aim | 17 | 18 |
+ | ne | -1 | 24 |
+ | ft | 24 | 22 |
+ | tea | 21 | 20 |
+ | ion | 23 | 26 |
+ | min | 24 | 22 |
+ | se | 25 | 24 |
  | ll | -1 | 22 |
- | guy | 19 | 20 |
- | das | -1 | 28 |
- | leg | 18 | 20 |
- | ye | 22 | 25 |
- | gay | 20 | 20 |
- | row | 17 | 19 |
- | si | -1 | 25 |
+ | gap | 15 | 21 |
+ | arc | 20 | 24 |
  | fed | 15 | 17 |
- | win | 16 | 15 |
- | cit | -1 | 27 |
- | raw | 21 | 24 |
+ | ear | 19 | 20 |
+ | fun | 22 | 20 |
+ | hit | 14 | 15 |
+ | au | 21 | 20 |
+ | fly | 15 | 16 |
+ | den | 20 | 22 |
 
 The children of
 
-One b suggests:   R  former  Queen  his  John
+One b suggests:   "  Shane  this  David  Jason
+
 Gulardova suggests:   the  a  Hermann  Toy  Armstrong
 
  | the | g: 2 | 1_b: 4 |
 |---|---|---|
- | sub | 21 | 20 |
- | qui | 25 | 28 |
- | fly | 19 | 19 |
- | das | -1 | 24 |
- | bag | 23 | 23 |
  | del | 20 | 19 |
- | im | 24 | 26 |
- | win | 21 | 20 |
- | log | 21 | 25 |
- | ear | 20 | 28 |
- | cup | 21 | 25 |
- | wet | 18 | 20 |
- | con | 19 | 19 |
  | mg | 25 | 32 |
- | pan | 24 | 24 |
- | hit | 19 | 16 |
- | gap | 25 | 22 |
+ | leg | 22 | 22 |
+ | gay | 13 | 13 |
+ | par | 23 | 27 |
+ | das | -1 | 24 |
+ | log | 21 | 25 |
+ | arc | 23 | 26 |
+ | gun | 18 | 17 |
+ | hat | 22 | 23 |
  | den | 22 | 24 |
- | cap | 23 | 23 |
- | pro | 19 | 15 |
+ | fee | 26 | 26 |
+ | ft | 26 | 28 |
+ | con | 19 | 19 |
+ | cit | -1 | 26 |
+ | fed | 19 | 22 |
+ | ml | -1 | 31 |
+ | bag | 23 | 23 |
+ | ye | 20 | 21 |
+ | ear | 20 | 28 |
 
 The children of the
 
-One b suggests:   film  future  100  dead  <UNK>
+One b suggests:   Prince  aristocracy  oil  Black  Parent
+
 Gulardova suggests:   Trevor  victims  nurses  Civil  community
 
  | rich | g: 11 | 1_b: 4 |
 |---|---|---|
+ | rice | 17 | 17 |
  | bond | 18 | 15 |
- | clay | 17 | 18 |
- | grey | 16 | 13 |
- | loop | 20 | 24 |
- | gets | 23 | 22 |
- | fill | 19 | 23 |
- | vols | -1 | 27 |
- | leaf | 18 | 22 |
- | meal | 18 | 19 |
- | pale | 17 | 18 |
- | desk | 19 | 19 |
- | kill | 19 | 18 |
- | oral | 16 | 18 |
- | seed | 17 | 19 |
- | pick | 19 | 20 |
- | hell | 20 | 18 |
- | inch | 22 | 21 |
- | peak | 16 | 20 |
- | bird | 14 | 17 |
+ | snow | 17 | 15 |
+ | dans | -1 | 31 |
+ | beat | 17 | 17 |
  | beds | 19 | 18 |
+ | leaf | 18 | 22 |
+ | hole | 20 | 16 |
+ | wing | 17 | 20 |
+ | huge | 15 | 15 |
+ | cars | 14 | 15 |
+ | desk | 19 | 19 |
+ | wars | 14 | 14 |
+ | crew | 10 | 12 |
+ | worn | 19 | 19 |
+ | suit | 16 | 19 |
+ | gets | 23 | 22 |
+ | glad | 22 | 23 |
+ | cook | 15 | 18 |
+ | fees | 20 | 20 |
 
 The children of the rich
 
-One b suggests:   and  and  and  <UNK>  are
+One b suggests:   one  put  '  and  who
+
 Gulardova suggests:   are  weavers  ,  <unk>  declared
 
  | man | g: 6 | 1_b: 8 |
 |---|---|---|
- | cup | 21 | 17 |
- | gay | 15 | 15 |
- | egg | 18 | 15 |
- | hat | 16 | 18 |
- | cit | -1 | 25 |
+ | fee | 23 | 20 |
+ | hit | 19 | 13 |
+ | eds | -1 | 23 |
+ | odd | 20 | 20 |
  | ion | 22 | 23 |
- | ex | 19 | 16 |
- | leg | 21 | 18 |
- | est | 20 | 22 |
+ | se | 26 | 22 |
+ | del | 18 | 20 |
+ | sad | 21 | 17 |
+ | fed | 16 | 16 |
+ | via | 16 | 15 |
+ | gay | 15 | 15 |
+ | das | -1 | 23 |
+ | na | 20 | 23 |
  | par | 25 | 20 |
- | row | 19 | 16 |
  | con | 18 | 18 |
- | fly | 13 | 15 |
- | da | 18 | 20 |
- | mix | 16 | 15 |
- | mg | 23 | 26 |
- | win | 19 | 13 |
- | il | -1 | 23 |
- | km | 25 | 25 |
- | aim | 21 | 19 |
+ | bus | 18 | 17 |
+ | ear | 18 | 19 |
+ | ha | 22 | 20 |
+ | wet | 20 | 18 |
+ | pen | 18 | 19 |
 
 The children of the rich man
 
-One b suggests:   !  have  will  and  have
+One b suggests:   and  are  's  (  ,
+
 Gulardova suggests:   under  ,  and  was  Lincoln
 
  | were | g: 5 | 1_b: 7 |
 |---|---|---|
- | kids | 19 | 14 |
- | glad | 21 | 19 |
- | tied | 15 | 14 |
+ | sick | 18 | 16 |
+ | nose | 23 | 19 |
+ | diet | 22 | 19 |
+ | cars | 20 | 17 |
+ | calm | 21 | 19 |
+ | dose | 27 | 21 |
+ | fuel | 23 | 17 |
+ | adds | 19 | 17 |
+ | meal | 22 | 20 |
+ | eggs | 21 | 17 |
+ | sing | 15 | 17 |
+ | vols | -1 | 27 |
+ | puts | 18 | 14 |
+ | hole | 22 | 18 |
+ | gray | 21 | 20 |
+ | disk | 22 | 21 |
+ | cool | 22 | 17 |
+ | tool | 22 | 19 |
  | mile | 23 | 19 |
- | hung | 16 | 17 |
- | roll | 19 | 18 |
- | tale | 20 | 19 |
- | deny | 20 | 16 |
- | pipe | 22 | 20 |
- | meat | 19 | 18 |
- | push | 21 | 17 |
- | lips | 24 | 21 |
- | drew | 13 | 15 |
- | cook | 16 | 18 |
- | yard | 22 | 20 |
- | beds | 21 | 19 |
- | pole | 22 | 19 |
- | gods | 16 | 19 |
- | vary | 17 | 18 |
- | hell | 24 | 17 |
+ | ease | 24 | 20 |
 
 The children of the rich man were
 
-One b suggests:   slightly  no  not  in  burned
+One b suggests:   called  good  approached  passed  never
+
 Gulardova suggests:   confined  previously  able  among  deployed
 
  | spoiled, | g: 13 | 1_b: 13 |
 |---|---|---|
- | subvert | 24 | 25 |
- | admirer | 22 | 25 |
- | avarice | -1 | 24 |
- | panting | -1 | 19 |
- | glamour | 21 | 20 |
- | acrylic | 25 | 25 |
- | flipped | 20 | 17 |
- | whitish | 21 | 27 |
- | tactile | 22 | 21 |
- | addicts | 18 | 17 |
- | banging | 21 | 16 |
- | awfully | -1 | 15 |
- | shorten | 25 | 26 |
- | blooded | -1 | 20 |
- | fosters | 22 | 27 |
- | railing | 22 | 18 |
- | peppers | 21 | 24 |
- | wardens | 20 | 22 |
- | canteen | 24 | 25 |
- | phallic | 19 | 21 |
+ | ignited | 18 | 19 |
+ | sweetly | -1 | 20 |
+ | aphasia | 25 | 24 |
+ | silvery | 19 | 20 |
+ | startup | 25 | 25 |
+ | pendant | 24 | 25 |
+ | breeder | 23 | 23 |
+ | suitors | 19 | 20 |
+ | beaming | -1 | 16 |
+ | sharper | 20 | 16 |
+ | steered | 18 | 17 |
+ | borrows | 24 | 26 |
+ | midwife | 21 | 23 |
+ | voicing | 20 | 18 |
+ | censors | 24 | 22 |
+ | starter | 25 | 21 |
+ | marvels | -1 | 17 |
+ | crashes | 24 | 22 |
+ | unaided | 21 | 23 |
+ | curling | 22 | 19 |
 
 The children of the rich man were spoiled,
 
-One b suggests:   at  but  the  "  as
+One b suggests:   but  because  and  where  putting
+
 Gulardova suggests:   abusive  daughter  very  even  <unk>
 
  | but | g: 6 | 1_b: 4 |
 |---|---|---|
+ | par | 22 | 18 |
+ | leg | 22 | 19 |
+ | gay | 14 | 16 |
+ | via | 18 | 13 |
+ | pro | 22 | 18 |
+ | con | 17 | 19 |
+ | fee | 26 | 19 |
  | im | 24 | 16 |
- | au | 22 | 16 |
- | hat | 24 | 17 |
- | era | 23 | 20 |
- | egg | 20 | 17 |
- | est | 22 | 23 |
  | qui | 23 | 24 |
- | guy | 22 | 19 |
- | ll | -1 | 20 |
- | na | 23 | 21 |
- | sub | 23 | 19 |
- | il | -1 | 18 |
- | cat | 20 | 19 |
- | win | 20 | 15 |
- | den | 20 | 21 |
- | hit | 16 | 13 |
+ | est | 22 | 23 |
+ | arc | 25 | 26 |
+ | km | 32 | 24 |
  | row | 22 | 19 |
- | da | 20 | 19 |
- | bus | 24 | 19 |
- | fun | 16 | 16 |
+ | si | -1 | 20 |
+ | tip | 25 | 20 |
+ | il | -1 | 18 |
+ | cap | 24 | 21 |
+ | pan | 23 | 21 |
+ | das | -1 | 25 |
+ | ft | 27 | 22 |
 
 The children of the rich man were spoiled, but
 
-One b suggests:   this  they  I  they  now
+One b suggests:   he  will  it  you  our
+
 Gulardova suggests:   the  were  '  they  did
 
  | they | g: 3 | 1_b: 5 |
 |---|---|---|
- | vary | 17 | 21 |
- | loud | 15 | 18 |
- | bent | 16 | 20 |
- | huge | 14 | 16 |
- | busy | 17 | 18 |
- | ride | 21 | 19 |
- | mood | 18 | 21 |
- | coat | 23 | 23 |
- | aims | 24 | 20 |
- | sole | 18 | 19 |
- | calm | 15 | 17 |
- | axis | 26 | 25 |
- | dans | -1 | 24 |
- | diet | 20 | 21 |
- | flag | 24 | 23 |
- | sees | 19 | 17 |
- | gray | 16 | 22 |
- | tons | 21 | 19 |
- | bulk | 19 | 21 |
+ | unto | 19 | 20 |
  | nice | 17 | 13 |
+ | card | 20 | 20 |
+ | deny | 18 | 16 |
+ | wear | 17 | 18 |
+ | desk | 25 | 23 |
+ | mill | 20 | 23 |
+ | tour | 22 | 19 |
+ | trip | 21 | 20 |
+ | disk | 23 | 24 |
+ | bare | 19 | 20 |
+ | hole | 21 | 22 |
+ | shop | 19 | 18 |
+ | pole | 27 | 21 |
+ | worn | 17 | 20 |
+ | wage | 21 | 21 |
+ | kill | 17 | 17 |
+ | arch | 24 | 22 |
+ | pale | 15 | 19 |
+ | cars | 18 | 18 |
 
 The children of the rich man were spoiled, but they
 
-One b suggests:   are  were  are  reconciled  offer
+One b suggests:   have  discussed  are  're  establish
+
 Gulardova suggests:   lacked  <unk>  were  fell  believed
 
  | were | g: 2 | 1_b: 3 |
 |---|---|---|
- | beds | 23 | 24 |
- | hell | 25 | 19 |
- | sing | 16 | 14 |
- | wire | 22 | 22 |
- | vain | 19 | 22 |
- | meat | 25 | 23 |
+ | desk | 27 | 25 |
+ | worn | 18 | 20 |
+ | ride | 17 | 16 |
+ | rank | 18 | 14 |
+ | bird | 23 | 23 |
+ | nice | 21 | 18 |
  | kill | 14 | 14 |
+ | eggs | 24 | 24 |
+ | yard | 22 | 24 |
+ | dose | 25 | 22 |
+ | bond | 15 | 18 |
+ | mile | 24 | 24 |
+ | bore | 11 | 13 |
+ | pool | 21 | 19 |
+ | onto | 22 | 24 |
+ | coat | 23 | 21 |
  | sick | 19 | 18 |
- | card | 25 | 23 |
- | peak | 21 | 19 |
- | tale | 23 | 24 |
- | fill | 18 | 14 |
- | sake | 23 | 23 |
- | seed | 21 | 22 |
- | beam | 20 | 21 |
- | hung | 13 | 15 |
- | sees | 20 | 22 |
- | hurt | 13 | 14 |
- | ears | 25 | 24 |
- | chap | -1 | 21 |
+ | vols | -1 | 31 |
+ | dust | 24 | 21 |
+ | diet | 22 | 21 |
 
 The children of the rich man were spoiled, but they were
 
-One b suggests:   marvellous  lives  not  not  driving
+One b suggests:   about  not  free  doing  not
+
 Gulardova suggests:   bitter  alienated  anxious  not  not
 
  | charming | g: 13 | 1_b: 12 |
 |---|---|---|
- | keyboard | 24 | 22 |
- | sterling | 21 | 18 |
- | dilution | 24 | 27 |
- | telegram | 25 | 28 |
- | crushing | 19 | 17 |
- | pursuits | 22 | 23 |
+ | catching | 17 | 16 |
+ | enrolled | 17 | 18 |
+ | unlawful | 19 | 18 |
+ | stricken | 14 | 17 |
  | weakened | 13 | 16 |
- | corridor | 26 | 27 |
- | proposes | 23 | 27 |
- | grounded | 16 | 15 |
- | enabling | 20 | 16 |
- | searches | 22 | 25 |
- | disagree | 22 | 24 |
- | wretched | 15 | 14 |
- | lecturer | 23 | 26 |
- | creditor | 23 | 27 |
- | forestry | 24 | 26 |
- | evenings | 20 | 24 |
- | downtown | 22 | 21 |
- | boarding | 17 | 19 |
+ | stripped | 12 | 14 |
+ | switches | 25 | 24 |
+ | vacation | 21 | 20 |
+ | hearings | 25 | 22 |
+ | builders | 20 | 19 |
+ | thoracic | 26 | 29 |
+ | prevails | 24 | 26 |
+ | ornament | 22 | 24 |
+ | despised | 13 | 14 |
+ | residing | 18 | 19 |
+ | featured | 15 | 15 |
+ | careless | 13 | 14 |
+ | diamonds | 23 | 19 |
+ | averages | 24 | 24 |
+ | arteries | 25 | 23 |
 
 The children of the rich man were spoiled, but they were charming
 
-One b suggests:   princes  and  ,  and  gifts
+One b suggests:   ,  .  ,  ,  ..
+
 Gulardova suggests:   and  enough  in  as  and
 
  | and | g: 1 | 1_b: 2 |
 |---|---|---|
- | min | 26 | 25 |
- | bag | 24 | 23 |
- | gay | 18 | 16 |
- | pen | 24 | 22 |
- | km | 26 | 28 |
- | aim | 23 | 25 |
- | au | 22 | 20 |
- | tip | 24 | 23 |
- | fly | 22 | 22 |
- | ml | -1 | 32 |
- | eds | -1 | 27 |
- | con | 20 | 19 |
- | del | 21 | 24 |
- | tea | 19 | 18 |
- | egg | 21 | 21 |
- | raw | 17 | 18 |
- | na | 23 | 26 |
- | si | -1 | 27 |
- | ion | 28 | 25 |
+ | ex | 18 | 19 |
+ | via | 16 | 15 |
+ | win | 22 | 19 |
+ | ll | -1 | 27 |
+ | se | 24 | 28 |
+ | cat | 21 | 18 |
+ | fee | 27 | 23 |
+ | pro | 19 | 20 |
+ | hit | 20 | 19 |
+ | den | 25 | 24 |
+ | ye | 20 | 22 |
+ | mg | 27 | 29 |
+ | gap | 26 | 22 |
+ | cap | 27 | 25 |
  | qui | 26 | 23 |
+ | im | 24 | 22 |
+ | min | 26 | 25 |
+ | sad | 18 | 17 |
+ | gun | 23 | 22 |
+ | del | 21 | 24 |
 
 The children of the rich man were spoiled, but they were charming and
 
-One b suggests:   resourceful  bright  gracious  enjoying  amusing
+One b suggests:   hospitable  were  too  entertained  high-arched
+
 Gulardova suggests:   proud  graceful  suspicious  seasoned  loyal
 
  | handsome. | g: 7 | 1_b: 8 |
 |---|---|---|
- | investor | 25 | 22 |
- | altitude | 29 | 29 |
- | outlines | 25 | 24 |
- | restless | 10 | 14 |
- | fidelity | 18 | 20 |
- | pathetic | 12 | 13 |
- | mixtures | 24 | 25 |
- | veterans | 18 | 21 |
- | offences | 25 | 24 |
- | ordained | 18 | 19 |
- | adaptive | 19 | 17 |
- | optional | 20 | 18 |
- | tracking | 21 | 20 |
- | searched | 14 | 18 |
- | obsolete | 18 | 22 |
- | inquired | 19 | 19 |
- | outbreak | 27 | 23 |
- | animated | 16 | 12 |
- | sometime | 20 | 19 |
- | restrain | 21 | 23 |
+ | fountain | 22 | 22 |
+ | dragging | 20 | 22 |
+ | fairness | 20 | 18 |
+ | eastward | 24 | 31 |
+ | heartily | -1 | 19 |
+ | formulas | 24 | 27 |
+ | feathers | 22 | 22 |
+ | turnover | 25 | 24 |
+ | shepherd | 19 | 22 |
+ | arterial | 28 | 25 |
+ | tensions | 21 | 21 |
+ | gasoline | 24 | 23 |
+ | detector | 27 | 28 |
+ | grinding | 20 | 20 |
+ | embraced | 14 | 15 |
+ | needless | -1 | 19 |
+ | harmonic | 18 | 23 |
+ | spectral | 24 | 19 |
+ | likeness | 23 | 21 |
+ | inviting | 17 | 11 |
 
 
 
@@ -372,311 +385,322 @@ Yesterday, the wife of the politician discussed health care with old people.
 
 Yesterday,
 
-One b suggests:   "  Premier  and  but  33
+One b suggests:   's  if  and  with  Feldman
+
 Gulardova suggests:   God  and  although  later  but
 
  | the | g: 4 | 1_b: 6 |
 |---|---|---|
- | gay | 18 | 16 |
- | den | 21 | 22 |
- | il | -1 | 18 |
- | guy | 20 | 19 |
+ | wet | 17 | 15 |
+ | ray | 22 | 22 |
+ | da | 16 | 19 |
+ | ml | -1 | 28 |
  | arc | 19 | 26 |
- | pen | 20 | 19 |
- | est | 20 | 22 |
- | si | -1 | 21 |
- | ex | 16 | 16 |
- | tea | 17 | 17 |
- | log | 20 | 18 |
- | con | 19 | 21 |
- | tip | 23 | 20 |
- | fed | 15 | 15 |
- | cry | 19 | 18 |
- | mg | 23 | 26 |
- | fun | 18 | 14 |
+ | min | 21 | 22 |
+ | eds | -1 | 23 |
  | ye | 17 | 16 |
+ | bus | 18 | 19 |
+ | odd | 18 | 17 |
+ | mg | 23 | 26 |
+ | il | -1 | 18 |
+ | egg | 18 | 17 |
+ | gap | 22 | 22 |
+ | gay | 18 | 16 |
+ | tip | 23 | 20 |
+ | ear | 20 | 19 |
+ | ha | 21 | 13 |
  | mix | 18 | 19 |
- | win | 18 | 15 |
+ | den | 21 | 22 |
 
 Yesterday, the
 
-One b suggests:   evening  tape  boys  economy  first-named
+One b suggests:   animals  sleeping  2  Russos  tone
+
 Gulardova suggests:   Order  king  site  long-awaited  same
 
  | wife | g: 11 | 1_b: 10 |
 |---|---|---|
- | kids | 14 | 8 |
- | gods | 13 | 13 |
- | wear | 19 | 17 |
- | dans | -1 | 26 |
- | host | 10 | 12 |
- | fail | 21 | 20 |
- | lips | 20 | 14 |
+ | tour | 11 | 13 |
+ | cars | 15 | 13 |
+ | tons | 19 | 18 |
+ | loud | 14 | 16 |
  | fill | 18 | 19 |
- | hero | 11 | 12 |
- | clay | 19 | 17 |
- | worn | 21 | 18 |
- | mood | 15 | 11 |
- | adds | 21 | 21 |
+ | beds | 21 | 15 |
+ | crop | 18 | 14 |
+ | ears | 17 | 14 |
+ | tiny | 15 | 12 |
  | meat | 14 | 14 |
- | moon | 11 | 14 |
- | rays | 18 | 19 |
- | rear | 17 | 14 |
- | tall | 16 | 13 |
+ | fail | 21 | 20 |
+ | trip | 12 | 13 |
+ | mile | 16 | 17 |
+ | harm | 18 | 17 |
+ | nose | 18 | 14 |
  | plot | 13 | 13 |
- | yard | 17 | 15 |
+ | sick | 14 | 14 |
+ | calm | 16 | 13 |
+ | desk | 17 | 16 |
+ | coat | 15 | 15 |
 
 Yesterday, the wife
 
-One b suggests:   his  of  of  of  of
+One b suggests:   of  of  's  of  who
+
 Gulardova suggests:   and  of  Katharine  of  of
 
  | of | g: 0 | 1_b: 1 |
 |---|---|---|
- | ml | -1 | 30 |
- | ray | 25 | 22 |
- | log | 22 | 24 |
- | cit | -1 | 28 |
- | qui | 23 | 23 |
- | est | 24 | 21 |
- | fed | 18 | 16 |
- | im | 24 | 22 |
- | era | 22 | 21 |
- | se | 26 | 23 |
- | den | 23 | 22 |
- | cap | 21 | 22 |
- | mix | 20 | 19 |
+ | guy | 19 | 20 |
+ | tip | 23 | 20 |
+ | ion | 24 | 25 |
  | au | 19 | 18 |
- | wet | 23 | 20 |
- | ye | 21 | 24 |
- | raw | 21 | 21 |
- | tea | 21 | 19 |
+ | si | -1 | 23 |
+ | row | 21 | 20 |
+ | se | 26 | 23 |
  | egg | 20 | 21 |
- | del | 20 | 21 |
+ | ha | 23 | 20 |
+ | log | 22 | 24 |
+ | mix | 20 | 19 |
+ | ear | 22 | 23 |
+ | eds | -1 | 28 |
+ | odd | 24 | 21 |
+ | den | 23 | 22 |
+ | ll | -1 | 25 |
+ | qui | 23 | 23 |
+ | pro | 15 | 20 |
+ | im | 24 | 22 |
+ | aim | 24 | 24 |
 
 Yesterday, the wife of
 
-One b suggests:   Jo  Paul  the  George  one
+One b suggests:   the  the  the  the  the
+
 Gulardova suggests:   Ed  an  Diana  Lord  a
 
  | the | g: 2 | 1_b: 2 |
 |---|---|---|
- | ha | 27 | 25 |
+ | min | 26 | 26 |
+ | im | 26 | 26 |
+ | hit | 18 | 16 |
  | via | 22 | 21 |
- | se | 25 | 24 |
+ | arc | 24 | 27 |
+ | fed | 18 | 21 |
+ | del | 21 | 19 |
  | mix | 20 | 21 |
- | fly | 18 | 19 |
- | win | 21 | 16 |
- | il | -1 | 21 |
- | est | 23 | 27 |
- | par | 22 | 23 |
- | log | 21 | 24 |
- | km | 28 | 31 |
  | eds | -1 | 26 |
- | qui | 25 | 26 |
  | row | 23 | 19 |
+ | pan | 23 | 23 |
+ | gun | 19 | 20 |
  | ft | 28 | 27 |
- | das | -1 | 23 |
- | odd | 19 | 21 |
- | bus | 19 | 20 |
- | den | 22 | 23 |
- | tip | 22 | 23 |
+ | ll | -1 | 24 |
+ | ray | 24 | 24 |
+ | wet | 18 | 18 |
+ | cap | 23 | 21 |
+ | guy | 20 | 18 |
+ | cat | 17 | 17 |
+ | il | -1 | 21 |
 
 Yesterday, the wife of the
 
-One b suggests:   party  Foreign  kids  ultimate  president
+One b suggests:   king  star  Queen  smartest  political
+
 Gulardova suggests:   celebrated  Ducks  president  former  Australasian
 
  | politician | g: 9 | 1_b: 9 |
 |---|---|---|
- | supervised | 23 | 24 |
- | inhibiting | 26 | 29 |
- | anesthetic | 19 | 28 |
- | persecuted | 18 | 19 |
- | relinquish | 25 | 27 |
- | precaution | 27 | 26 |
- | underlined | 25 | 26 |
- | enrichment | 25 | 22 |
- | refreshing | 21 | 21 |
- | exemptions | 25 | 28 |
- | stationery | 21 | 20 |
- | unreliable | 18 | 20 |
- | assortment | 20 | 21 |
- | rationally | 22 | 27 |
- | strikingly | 20 | 18 |
- | reservoirs | 25 | 24 |
- | divisional | 17 | 19 |
+ | repetitive | 22 | 22 |
+ | healthcare | 20 | 17 |
+ | consonants | 24 | 26 |
+ | transplant | 19 | 19 |
+ | organizers | 18 | 19 |
+ | electorate | 19 | 14 |
+ | magnitudes | 26 | 30 |
  | decisively | 23 | 26 |
- | promotions | 21 | 21 |
- | operatives | 20 | 22 |
+ | dielectric | 22 | 30 |
+ | coalitions | 25 | 27 |
+ | transcript | 22 | 21 |
+ | furnishing | 23 | 23 |
+ | calamities | 24 | 27 |
+ | restraints | 22 | 24 |
+ | thickening | 25 | 25 |
+ | chloroform | 21 | 25 |
+ | dominating | 19 | 19 |
+ | initiating | 21 | 24 |
+ | neglecting | 24 | 25 |
+ | precedence | 23 | 24 |
 
 Yesterday, the wife of the politician
 
-One b suggests:   ,  didn  who  who  who
+One b suggests:   who  Sagula  used  ,  who
+
 Gulardova suggests:   Angela  ,  .  James  Winchell
 
  | discussed | g: 19 | 1_b: 14 |
 |---|---|---|
- | converted | 16 | 15 |
- | wonderful | 22 | 19 |
- | pressures | 21 | 20 |
- | departure | 26 | 23 |
- | chemistry | 24 | 22 |
- | delivered | 18 | 12 |
- | childhood | 18 | 23 |
- | decreased | 25 | 21 |
- | preserved | 20 | 18 |
- | possessed | 17 | 16 |
- | continent | 26 | 26 |
- | arguments | 24 | 21 |
- | interface | 25 | 25 |
- | strategic | 23 | 24 |
- | occurring | 24 | 22 |
- | protected | 18 | 16 |
- | sentences | 25 | 24 |
- | justified | 21 | 17 |
+ | paragraph | 22 | 27 |
+ | displayed | 21 | 15 |
+ | residence | 19 | 21 |
+ | purchased | 18 | 15 |
+ | varieties | 26 | 25 |
+ | exercises | 22 | 21 |
+ | employers | 21 | 22 |
+ | stability | 23 | 23 |
  | construct | 25 | 23 |
- | remainder | 22 | 25 |
+ | somewhere | 20 | 17 |
+ | abandoned | 17 | 15 |
+ | compounds | 27 | 24 |
+ | cognitive | 25 | 25 |
+ | dimension | 24 | 26 |
+ | qualified | 20 | 16 |
+ | pregnancy | 22 | 21 |
+ | disorders | 28 | 26 |
+ | gentlemen | 20 | 20 |
+ | possessed | 17 | 16 |
+ | elaborate | 27 | 24 |
 
 Yesterday, the wife of the politician discussed
 
-One b suggests:   apparently  the  of  her  the
+One b suggests:   in  their  the  his  the
+
 Gulardova suggests:   themselves  at  with  with  before
 
  | health | g: 16 | 1_b: 11 |
 |---|---|---|
- | handed | 21 | 21 |
- | sodium | 23 | 24 |
- | ritual | 19 | 18 |
- | sports | 16 | 14 |
- | orange | 21 | 19 |
- | nobody | 19 | 17 |
- | masses | 24 | 20 |
- | eating | 17 | 13 |
- | sphere | 23 | 26 |
- | stores | 26 | 20 |
- | thrown | 21 | 21 |
- | forget | 23 | 19 |
- | server | 23 | 22 |
- | decade | 23 | 22 |
- | losses | 21 | 17 |
+ | worthy | 18 | 17 |
+ | golden | 21 | 16 |
+ | linear | 21 | 26 |
+ | tongue | 23 | 21 |
+ | domain | 22 | 21 |
+ | beside | 13 | 16 |
+ | serves | 20 | 20 |
+ | bottle | 25 | 19 |
+ | buried | 18 | 18 |
+ | pounds | 22 | 17 |
+ | breath | 26 | 22 |
  | covers | 20 | 21 |
- | repair | 20 | 18 |
- | settle | 22 | 23 |
- | driven | 19 | 21 |
- | census | 22 | 22 |
+ | habits | 23 | 18 |
+ | copper | 22 | 20 |
+ | plenty | 21 | 15 |
+ | throat | 23 | 20 |
+ | intent | 19 | 19 |
+ | visits | 17 | 16 |
+ | scores | 21 | 16 |
+ | ruling | 21 | 18 |
 
 Yesterday, the wife of the politician discussed health
 
-One b suggests:   ,  care  reform  and  ,
+One b suggests:   ,  care  and  concerns  issues
+
 Gulardova suggests:   concerns  issues  issues  issues  by
 
  | care | g: 3 | 1_b: 2 |
 |---|---|---|
- | wars | 20 | 17 |
- | rays | 23 | 24 |
- | beds | 20 | 20 |
- | cool | 19 | 23 |
- | mile | 26 | 25 |
- | pick | 20 | 20 |
- | suit | 18 | 21 |
- | inch | 31 | 26 |
- | gets | 17 | 17 |
- | wage | 17 | 21 |
- | tail | 24 | 24 |
- | tape | 19 | 21 |
- | cars | 15 | 18 |
- | moon | 26 | 25 |
+ | nose | 25 | 23 |
+ | clay | 20 | 25 |
+ | drew | 20 | 21 |
+ | wear | 16 | 18 |
  | thee | 26 | 25 |
- | pull | 22 | 22 |
- | chap | -1 | 27 |
- | guns | 21 | 18 |
- | bond | 17 | 16 |
- | eggs | 20 | 21 |
+ | vain | 24 | 32 |
+ | beam | 22 | 26 |
+ | pale | 22 | 22 |
+ | dogs | 19 | 20 |
+ | tied | 18 | 20 |
+ | worn | 23 | 23 |
+ | mood | 23 | 19 |
+ | fail | 19 | 21 |
+ | rice | 20 | 22 |
+ | peak | 20 | 23 |
+ | hole | 19 | 22 |
+ | bent | 22 | 22 |
+ | puts | 20 | 20 |
+ | meat | 18 | 19 |
+ | disk | 21 | 22 |
 
 Yesterday, the wife of the politician discussed health care
 
-One b suggests:   with  with  ,  reform  and
+One b suggests:   at  with  for  ,  reform
+
 Gulardova suggests:   ,  in  .  system  in
 
  | with | g: 8 | 1_b: 2 |
 |---|---|---|
- | fail | 21 | 22 |
- | glad | 25 | 25 |
- | tons | 23 | 23 |
- | meal | 18 | 23 |
- | ears | 21 | 26 |
- | hole | 17 | 22 |
- | pool | 17 | 22 |
- | guns | 20 | 19 |
- | dogs | 16 | 20 |
- | puts | 18 | 21 |
- | inch | 29 | 24 |
+ | ride | 19 | 23 |
+ | seed | 20 | 22 |
+ | roof | 20 | 22 |
+ | tour | 17 | 21 |
  | yard | 21 | 23 |
- | kill | 24 | 21 |
- | rear | 24 | 24 |
- | pour | 23 | 25 |
- | loan | 16 | 19 |
- | unto | 21 | 24 |
- | loop | 20 | 29 |
- | sole | 22 | 22 |
- | gate | 18 | 25 |
+ | legs | 21 | 24 |
+ | busy | 22 | 24 |
+ | vary | 21 | 24 |
+ | bulk | 22 | 25 |
+ | pick | 23 | 21 |
+ | puts | 18 | 21 |
+ | aims | 13 | 18 |
+ | wore | 23 | 21 |
+ | meal | 18 | 23 |
+ | cook | 17 | 27 |
+ | tape | 18 | 23 |
+ | rain | 24 | 23 |
+ | guns | 20 | 19 |
+ | onto | 20 | 17 |
+ | wing | 19 | 22 |
 
 Yesterday, the wife of the politician discussed health care with
 
-One b suggests:   a  her  her  a  him
+One b suggests:   one  his  a  the  his
+
 Gulardova suggests:   inspiring  the  a  blood  interactions
 
  | old | g: 12 | 1_b: 12 |
 |---|---|---|
- | im | 25 | 22 |
- | log | 18 | 24 |
- | row | 23 | 20 |
- | arc | 24 | 28 |
- | bus | 18 | 17 |
- | na | 22 | 23 |
- | est | 23 | 25 |
- | eds | -1 | 24 |
- | mix | 19 | 22 |
- | das | -1 | 20 |
- | wet | 18 | 20 |
- | pan | 20 | 21 |
- | ft | 27 | 24 |
- | leg | 16 | 20 |
- | aim | 16 | 20 |
+ | win | 19 | 19 |
  | hit | 18 | 18 |
+ | via | 20 | 19 |
+ | fun | 16 | 16 |
+ | hat | 20 | 18 |
+ | par | 19 | 20 |
+ | sub | 19 | 19 |
+ | fed | 18 | 20 |
+ | arc | 24 | 28 |
  | ear | 17 | 19 |
+ | odd | 17 | 17 |
+ | ye | 23 | 21 |
+ | fly | 20 | 20 |
+ | cit | -1 | 26 |
  | tip | 20 | 21 |
- | cry | 19 | 20 |
- | ion | 22 | 24 |
+ | tea | 15 | 12 |
+ | mg | 24 | 29 |
+ | egg | 16 | 15 |
+ | eds | -1 | 24 |
+ | cup | 20 | 19 |
 
 Yesterday, the wife of the politician discussed health care with old
 
-One b suggests:   men  campaigners  friends  mother  friends
+One b suggests:   co-workers  lady  Indians  people  friends
+
 Gulardova suggests:   vested  babies  cottage  life  age
 
  | people. | g: 7 | 1_b: 6 |
 |---|---|---|
+ | honest | 18 | 19 |
+ | afford | 23 | 26 |
+ | steady | 17 | 20 |
+ | sphere | 19 | 23 |
+ | visits | 13 | 21 |
+ | pulled | 21 | 23 |
  | smooth | 18 | 21 |
- | beings | 17 | 22 |
- | pupils | 11 | 15 |
- | attend | 20 | 25 |
- | whilst | 20 | 26 |
- | flower | 18 | 16 |
- | blocks | 15 | 19 |
- | unlike | 25 | 26 |
- | blacks | 18 | 18 |
- | ritual | 17 | 20 |
- | vector | 22 | 26 |
- | behalf | 21 | 24 |
- | stored | 18 | 23 |
- | coffee | 16 | 17 |
- | thanks | 17 | 20 |
- | nodded | -1 | 23 |
- | fruits | 18 | 20 |
- | rubber | 15 | 14 |
- | palace | 18 | 15 |
- | marine | 15 | 18 |
+ | unions | 16 | 17 |
+ | closer | 21 | 21 |
+ | adding | 21 | 24 |
+ | angles | 22 | 23 |
+ | absent | 19 | 21 |
+ | metals | 19 | 21 |
+ | senses | 18 | 25 |
+ | facing | 17 | 20 |
+ | waited | 21 | 24 |
+ | beside | 20 | 22 |
+ | mirror | 18 | 21 |
+ | driven | 20 | 22 |
+ | repair | 18 | 23 |
 
 
 
@@ -684,365 +708,378 @@ The boyfriend of the model was killed in an accident while skiing last week.
 
 The
 
-One b suggests:   media  only  Sun  only  Express
+One b suggests:   stars  Lost  Daily  most  Telegraph
+
 Gulardova suggests:   Collins  <unk>  Storm  Songs  old
 
  | boyfriend | g: 20 | 1_b: 14 |
 |---|---|---|
- | barrister | 20 | 18 |
- | skilfully | -1 | 24 |
- | modulated | 22 | 28 |
- | crocodile | 20 | 16 |
- | mediating | 23 | 29 |
- | assaulted | 23 | 24 |
- | alkaloids | 22 | 29 |
- | exploding | 21 | 21 |
- | eruptions | 20 | 22 |
- | embarrass | 22 | 24 |
- | consigned | 23 | 28 |
- | vibrating | 22 | 22 |
- | insolence | -1 | 24 |
- | matrimony | -1 | 26 |
- | honeymoon | 20 | 16 |
- | imperious | -1 | 19 |
- | brokerage | 24 | 20 |
- | passivity | 23 | 24 |
- | exemplify | 22 | 28 |
- | chaplains | 22 | 22 |
+ | equivocal | -1 | 22 |
+ | stimulant | 21 | 23 |
+ | loosening | 22 | 23 |
+ | imparting | 24 | 25 |
+ | worldview | 23 | 23 |
+ | curtailed | 24 | 24 |
+ | paradoxes | 21 | 22 |
+ | quenching | 23 | 29 |
+ | decadence | 21 | 21 |
+ | diffusing | -1 | 29 |
+ | quiescent | -1 | 25 |
+ | outermost | 19 | 25 |
+ | reputable | 19 | 22 |
+ | commotion | 22 | 20 |
+ | bombarded | 25 | 24 |
+ | nephritis | -1 | 30 |
+ | immutable | 21 | 22 |
+ | disabling | 23 | 23 |
+ | relocated | 20 | 21 |
+ | burgesses | -1 | 27 |
 
 The boyfriend
 
-One b suggests:   spends  is  of  respect  of
+One b suggests:   went  left  of  giveth  ,
+
 Gulardova suggests:   an  's  is  Cargill  of
 
  | of | g: 2 | 1_b: 2 |
 |---|---|---|
- | se | 22 | 23 |
- | ll | -1 | 23 |
- | con | 20 | 19 |
- | log | 17 | 22 |
+ | cup | 19 | 19 |
+ | il | -1 | 26 |
  | tip | 20 | 20 |
- | ff | -1 | 27 |
- | ye | 20 | 23 |
- | ha | 22 | 19 |
- | fee | 19 | 19 |
- | fed | 19 | 15 |
- | sub | 20 | 21 |
- | via | 13 | 16 |
- | qui | 22 | 25 |
- | bus | 18 | 20 |
- | den | 19 | 22 |
- | est | 22 | 23 |
- | ne | -1 | 22 |
- | ear | 18 | 21 |
- | cry | 19 | 17 |
+ | fly | 17 | 20 |
+ | se | 22 | 23 |
  | hit | 14 | 12 |
+ | tea | 21 | 19 |
+ | del | 19 | 22 |
+ | km | 26 | 26 |
+ | fed | 19 | 15 |
+ | den | 19 | 22 |
+ | na | 22 | 24 |
+ | hat | 17 | 18 |
+ | con | 20 | 19 |
+ | ha | 22 | 19 |
+ | raw | 22 | 22 |
+ | gun | 21 | 19 |
+ | sad | 22 | 20 |
+ | ne | -1 | 22 |
+ | sub | 20 | 21 |
 
 The boyfriend of
 
-One b suggests:   the  Harriet  the  Lead  Sarah
+One b suggests:   this  Sarah  Hull  the  the
+
 Gulardova suggests:   the  a  Kennedys  Senior  Part
 
  | the | g: 2 | 1_b: 3 |
 |---|---|---|
- | ray | 21 | 25 |
- | au | 21 | 19 |
- | se | 22 | 25 |
- | log | 22 | 27 |
- | ff | -1 | 28 |
- | eds | -1 | 26 |
- | ear | 18 | 23 |
- | cup | 20 | 23 |
+ | ye | 19 | 23 |
+ | ion | 20 | 25 |
+ | cry | 20 | 20 |
+ | leg | 18 | 21 |
+ | gap | 25 | 22 |
+ | im | 24 | 23 |
  | da | 19 | 19 |
- | tip | 20 | 24 |
- | ll | -1 | 27 |
- | wet | 19 | 18 |
- | aim | 24 | 23 |
- | tea | 17 | 17 |
- | odd | 16 | 21 |
- | pro | 15 | 17 |
- | ha | 24 | 26 |
+ | ne | -1 | 23 |
+ | del | 20 | 22 |
  | par | 21 | 24 |
- | raw | 22 | 19 |
- | cat | 13 | 16 |
+ | hat | 19 | 23 |
+ | si | -1 | 25 |
+ | il | -1 | 23 |
+ | gun | 17 | 19 |
+ | cit | -1 | 29 |
+ | egg | 22 | 18 |
+ | ray | 21 | 25 |
+ | log | 22 | 27 |
+ | hit | 16 | 15 |
+ | row | 22 | 20 |
 
 The boyfriend of the
 
-One b suggests:   woman  woman  jailbird  woman  tabloid
+One b suggests:   woman  husband  UK  Oscar-winner  currently
+
 Gulardova suggests:   CO  bomber  prince  option  defence
 
  | model | g: 12 | 1_b: 8 |
 |---|---|---|
- | falls | 15 | 20 |
- | logic | 19 | 22 |
- | films | 16 | 19 |
- | bones | 20 | 21 |
- | fewer | 21 | 21 |
- | print | 17 | 17 |
+ | basin | 20 | 24 |
+ | uncle | 12 | 15 |
+ | argue | 20 | 24 |
+ | gains | 21 | 24 |
+ | acute | 19 | 20 |
+ | acres | 26 | 23 |
+ | rough | 16 | 17 |
+ | devil | 11 | 11 |
+ | adopt | 21 | 25 |
+ | anger | 19 | 19 |
+ | trend | 19 | 17 |
+ | shock | 16 | 17 |
  | roads | 21 | 20 |
- | holds | 18 | 24 |
- | ended | 19 | 21 |
- | nerve | 19 | 18 |
- | cable | 15 | 17 |
- | wheat | 18 | 22 |
+ | proud | 16 | 15 |
+ | fears | 22 | 22 |
+ | bills | 18 | 18 |
  | alike | 21 | 25 |
- | tired | 19 | 16 |
- | stars | 15 | 15 |
- | mercy | 18 | 21 |
- | stick | 17 | 19 |
- | lying | 17 | 16 |
- | songs | 17 | 21 |
- | worst | 12 | 13 |
+ | acted | 19 | 24 |
+ | panel | 15 | 17 |
+ | modes | 26 | 28 |
 
 The boyfriend of the model
 
-One b suggests:   Samantha  Elle  Lady  and  says
+One b suggests:   truth  ,  is  Angela  Claire
+
 Gulardova suggests:   was  Mann  ,  is  gets
 
  | was | g: 3 | 1_b: 6 |
 |---|---|---|
- | egg | 18 | 19 |
- | cat | 15 | 14 |
- | pan | 20 | 25 |
- | gap | 20 | 23 |
- | era | 15 | 19 |
- | il | -1 | 25 |
- | raw | 20 | 22 |
- | gay | 17 | 17 |
- | tip | 19 | 22 |
- | min | 23 | 25 |
  | ha | 22 | 23 |
- | cry | 19 | 20 |
- | arc | 18 | 26 |
- | cap | 19 | 24 |
+ | bag | 18 | 18 |
+ | ion | 21 | 26 |
+ | ll | -1 | 27 |
+ | mix | 18 | 18 |
+ | hat | 16 | 22 |
+ | ye | 20 | 26 |
+ | ne | -1 | 25 |
+ | odd | 22 | 24 |
  | sad | 21 | 23 |
- | pro | 15 | 19 |
- | das | -1 | 27 |
- | del | 18 | 20 |
- | cup | 17 | 21 |
+ | au | 19 | 16 |
+ | era | 15 | 19 |
+ | ft | 23 | 26 |
+ | pen | 20 | 23 |
+ | ff | -1 | 29 |
+ | sub | 17 | 24 |
+ | ex | 19 | 14 |
+ | fly | 18 | 21 |
  | tea | 18 | 18 |
+ | min | 23 | 25 |
 
 The boyfriend of the model was
 
-One b suggests:   admitted  kissing  well  unfaithful  looking
+One b suggests:   dressed  her  <UNK>  not  given
+
 Gulardova suggests:   Lionel  the  <unk>  placed  ostensibly
 
  | killed | g: 7 | 1_b: 6 |
 |---|---|---|
- | golden | 18 | 17 |
- | enable | 26 | 25 |
- | remote | 18 | 19 |
- | chapel | 23 | 24 |
- | seldom | 16 | 17 |
- | burned | 13 | 11 |
- | brings | 21 | 23 |
- | thesis | 23 | 26 |
- | waited | 18 | 16 |
- | sacred | 19 | 21 |
- | engine | 16 | 22 |
- | expert | 14 | 17 |
- | faster | 16 | 17 |
- | pocket | 21 | 21 |
+ | phrase | 20 | 24 |
+ | lowest | 20 | 20 |
+ | varies | 23 | 30 |
+ | differ | 24 | 29 |
  | masses | 25 | 24 |
- | blacks | 19 | 24 |
- | sodium | 19 | 25 |
- | weekly | 18 | 20 |
- | edited | 16 | 17 |
- | tended | 17 | 16 |
+ | deeper | 20 | 19 |
+ | surely | 15 | 12 |
+ | tribes | 21 | 29 |
+ | repeat | 21 | 20 |
+ | varied | 17 | 22 |
+ | rivers | 23 | 26 |
+ | sports | 16 | 20 |
+ | stones | 19 | 23 |
+ | honest | 17 | 15 |
+ | visits | 18 | 22 |
+ | serves | 19 | 23 |
+ | gently | 15 | 14 |
+ | rarely | 14 | 14 |
+ | artist | 13 | 17 |
+ | dreams | 18 | 21 |
 
 The boyfriend of the model was killed
 
-One b suggests:   by  ,  .  in  in
+One b suggests:   against  last  last  .  and
+
 Gulardova suggests:   by  when  (  as  while
 
  | in | g: 2 | 1_b: 2 |
 |---|---|---|
+ | cat | 20 | 20 |
  | aim | 25 | 26 |
- | hat | 24 | 22 |
- | pro | 20 | 22 |
- | cry | 22 | 23 |
- | den | 27 | 27 |
- | gap | 26 | 24 |
- | row | 22 | 21 |
- | tip | 24 | 24 |
- | leg | 20 | 19 |
- | fly | 23 | 22 |
- | via | 13 | 13 |
- | das | -1 | 31 |
- | sad | 22 | 21 |
- | egg | 24 | 23 |
- | arc | 20 | 29 |
- | ray | 23 | 23 |
  | bag | 25 | 22 |
- | fee | 30 | 25 |
+ | eds | -1 | 30 |
+ | pro | 20 | 22 |
+ | sub | 26 | 24 |
+ | tip | 24 | 24 |
+ | gap | 26 | 24 |
+ | das | -1 | 31 |
  | au | 23 | 20 |
- | ha | 24 | 24 |
+ | il | -1 | 29 |
+ | ne | -1 | 25 |
+ | mg | 26 | 30 |
+ | mix | 26 | 24 |
+ | si | -1 | 27 |
+ | del | 21 | 24 |
+ | cup | 24 | 25 |
+ | bus | 20 | 23 |
+ | gay | 20 | 21 |
+ | na | 27 | 29 |
 
 The boyfriend of the model was killed in
 
-One b suggests:   long  Turkey  1997  a  a
+One b suggests:   an  a  Keamy  scenes  an
+
 Gulardova suggests:   <unk>  a  a  a  the
 
  | an | g: 4 | 1_b: 3 |
 |---|---|---|
- | cit | -1 | 32 |
- | ne | -1 | 23 |
+ | cat | 20 | 18 |
+ | arc | 21 | 26 |
  | sub | 23 | 22 |
- | hat | 23 | 24 |
- | cap | 22 | 20 |
- | par | 23 | 24 |
- | il | -1 | 25 |
- | ex | 23 | 21 |
- | ml | -1 | 30 |
- | se | 22 | 26 |
- | gun | 15 | 15 |
- | sad | 22 | 18 |
- | im | 26 | 27 |
- | pan | 23 | 21 |
- | gap | 20 | 25 |
- | cup | 20 | 22 |
- | au | 24 | 25 |
+ | eds | -1 | 25 |
+ | das | -1 | 29 |
+ | gay | 19 | 18 |
+ | fun | 20 | 17 |
+ | wet | 15 | 19 |
+ | tea | 18 | 18 |
+ | den | 22 | 25 |
  | ha | 29 | 27 |
+ | pen | 19 | 23 |
+ | egg | 21 | 19 |
+ | bus | 17 | 18 |
+ | cup | 20 | 22 |
  | ft | 23 | 28 |
- | win | 19 | 20 |
+ | leg | 16 | 17 |
+ | ff | -1 | 29 |
+ | sad | 22 | 18 |
+ | del | 25 | 23 |
 
 The boyfriend of the model was killed in an
 
-One b suggests:   explosion  accident  accident  accident  accident
+One b suggests:   inventively  accident  auto  auto  accident
+
 Gulardova suggests:   accident  event  accident  accidental  accident
 
  | accident | g: 1 | 1_b: 1 |
 |---|---|---|
- | passions | 26 | 31 |
- | railways | 27 | 26 |
- | husbands | 30 | 24 |
- | deserted | 20 | 25 |
- | chloride | 26 | 34 |
- | persuade | 29 | 33 |
- | specimen | 28 | 29 |
- | speeches | 24 | 27 |
- | supports | 29 | 27 |
- | contacts | 25 | 24 |
+ | vicinity | 22 | 26 |
+ | ignorant | 20 | 18 |
+ | matching | 27 | 27 |
+ | momentum | 29 | 28 |
+ | opposing | 16 | 18 |
  | informal | 15 | 18 |
- | securing | 29 | 28 |
- | carriage | 18 | 23 |
- | checking | 27 | 25 |
- | feedback | 27 | 27 |
- | implicit | 21 | 19 |
- | peaceful | 25 | 25 |
- | floating | 26 | 27 |
+ | pregnant | 24 | 24 |
+ | generals | 26 | 28 |
  | flexible | 26 | 30 |
- | displays | 24 | 27 |
+ | equipped | 21 | 24 |
+ | reliance | 27 | 29 |
+ | baseball | 21 | 24 |
+ | maturity | 29 | 30 |
+ | generous | 28 | 28 |
+ | speakers | 29 | 30 |
+ | literacy | 32 | 28 |
+ | monarchy | 29 | 30 |
+ | salaries | 31 | 30 |
+ | metaphor | 27 | 30 |
+ | dwelling | 24 | 29 |
 
 The boyfriend of the model was killed in an accident
 
-One b suggests:   .  during  with  .  at
+One b suggests:   in  .  at  and  .
+
 Gulardova suggests:   along  on  .  near  while
 
  | while | g: 4 | 1_b: 5 |
 |---|---|---|
- | yours | 27 | 23 |
- | grass | 25 | 25 |
- | stars | 28 | 23 |
- | virus | 22 | 22 |
- | empty | 21 | 23 |
- | newly | 25 | 21 |
- | grave | 23 | 21 |
- | souls | 33 | 28 |
- | smoke | 20 | 22 |
- | reply | 29 | 26 |
- | atoms | 29 | 30 |
- | foods | 31 | 27 |
- | arose | 21 | 23 |
- | reign | 25 | 26 |
- | nerve | 25 | 26 |
- | alike | 26 | 23 |
- | cried | 25 | 23 |
- | kings | 32 | 26 |
- | video | 21 | 20 |
- | cards | 27 | 24 |
+ | dealt | 22 | 19 |
+ | lying | 15 | 17 |
+ | nurse | 24 | 23 |
+ | thank | 25 | 24 |
+ | tired | 24 | 24 |
+ | topic | 25 | 26 |
+ | mercy | 27 | 24 |
+ | enjoy | 27 | 22 |
+ | cloud | 22 | 24 |
+ | liked | 25 | 23 |
+ | sixth | 23 | 22 |
+ | loans | 28 | 24 |
+ | bands | 28 | 26 |
+ | fears | 23 | 20 |
+ | mills | 31 | 32 |
+ | cited | 22 | 18 |
+ | fleet | 24 | 23 |
+ | tends | 24 | 23 |
+ | roles | 26 | 26 |
+ | fault | 22 | 20 |
 
 The boyfriend of the model was killed in an accident while
 
-One b suggests:   they  driving  holidaying  driving  cleaning
+One b suggests:   on  riding  riding  on  at
+
 Gulardova suggests:   retaining  jogging  Bonney  and  in
 
  | skiing | g: 11 | 1_b: 8 |
 |---|---|---|
- | sprout | -1 | 30 |
- | feller | -1 | 29 |
- | hyphae | -1 | 34 |
- | waxing | -1 | 14 |
- | expiry | 27 | 25 |
- | zygote | 29 | 33 |
- | shanty | 25 | 27 |
- | tensed | -1 | 33 |
- | amoeba | -1 | 34 |
- | graver | -1 | 27 |
- | rococo | -1 | 30 |
- | crayon | -1 | 28 |
- | gulped | -1 | 26 |
- | bosoms | -1 | 31 |
- | lookin | -1 | 13 |
- | awning | -1 | 26 |
- | fuming | -1 | 21 |
- | entree | -1 | 27 |
- | logics | 27 | 28 |
- | tedium | -1 | 28 |
+ | setter | -1 | 28 |
+ | keener | -1 | 25 |
+ | podium | 26 | 25 |
+ | formes | -1 | -1 |
+ | fronds | 27 | 29 |
+ | clinch | 26 | 28 |
+ | takers | 25 | 31 |
+ | sprigs | -1 | 29 |
+ | slated | 19 | 22 |
+ | spiced | 24 | 28 |
+ | upsets | 26 | 28 |
+ | graced | 24 | 22 |
+ | lineal | 25 | 35 |
+ | blames | 22 | 24 |
+ | frigid | -1 | 24 |
+ | peuple | -1 | 31 |
+ | cupola | 25 | 35 |
+ | rookie | 14 | 19 |
+ | kingly | -1 | 33 |
+ | sodden | -1 | 24 |
 
 The boyfriend of the model was killed in an accident while skiing
 
-One b suggests:   .  in  in  in  .
+One b suggests:   on  in  on  in  ,
+
 Gulardova suggests:   became  during  at  at  .
 
  | last | g: 14 | 1_b: 5 |
 |---|---|---|
- | roll | 20 | 23 |
- | adds | 26 | 23 |
- | lips | 27 | 27 |
- | mill | 21 | 28 |
- | bore | 19 | 22 |
- | maps | 23 | 25 |
- | shop | 19 | 20 |
- | aims | 23 | 24 |
- | rain | 19 | 21 |
+ | bare | 21 | 22 |
  | rank | 21 | 28 |
- | loud | 23 | 21 |
- | crew | 14 | 22 |
+ | gift | 23 | 22 |
+ | stem | 26 | 27 |
+ | beat | 16 | 20 |
+ | beam | 24 | 25 |
+ | tale | 26 | 28 |
+ | vain | 28 | 28 |
+ | ride | 17 | 19 |
+ | suit | 17 | 20 |
+ | rice | 22 | 25 |
+ | crop | 20 | 26 |
+ | shut | 16 | 18 |
+ | legs | 18 | 21 |
+ | leaf | 19 | 27 |
  | diet | 24 | 23 |
- | axis | 28 | 31 |
- | link | 29 | 28 |
- | kill | 23 | 21 |
- | tiny | 24 | 21 |
- | bent | 20 | 24 |
- | snow | 16 | 16 |
- | busy | 20 | 21 |
+ | push | 25 | 24 |
+ | tour | 17 | 18 |
+ | wage | 21 | 28 |
+ | meal | 21 | 24 |
 
 The boyfriend of the model was killed in an accident while skiing last
 
-One b suggests:   year  week  year  year  summer
+One b suggests:   April  summer  year  week  year
+
 Gulardova suggests:   7  through  months  close  long
 
  | week. | g: 6 | 1_b: 2 |
 |---|---|---|
- | rays | 28 | 28 |
- | rear | 23 | 26 |
- | arch | 24 | 27 |
+ | tall | 19 | 25 |
+ | tied | 17 | 24 |
+ | thee | 29 | 26 |
+ | onto | 16 | 22 |
+ | suit | 18 | 24 |
+ | flag | 20 | 26 |
+ | wear | 19 | 24 |
  | moon | 21 | 25 |
- | hero | 22 | 27 |
- | axis | 27 | 30 |
- | loud | 23 | 28 |
- | push | 23 | 24 |
- | oral | 25 | 28 |
+ | host | 21 | 23 |
+ | shut | 18 | 24 |
+ | ears | 30 | 28 |
  | bath | 19 | 24 |
- | mile | 10 | 18 |
+ | bulk | 27 | 25 |
+ | diet | 26 | 25 |
+ | bore | 18 | 23 |
+ | desk | 22 | 29 |
+ | cook | 19 | 27 |
  | bent | 25 | 26 |
- | sake | 26 | 26 |
- | roll | 21 | 22 |
- | hurt | 15 | 26 |
- | folk | 23 | 27 |
- | rent | 19 | 28 |
- | gate | 18 | 22 |
- | crop | 19 | 23 |
- | meal | 18 | 22 |
+ | beat | 16 | 21 |
+ | nice | 25 | 25 |
 
