@@ -80,14 +80,14 @@ def output(sentences, g_s, one_b_s, filename):
     f.close()
 
 def output_suggestions(g_results, filename):
-    f.open(filename, "a")
+    f=open(filename, "a")
     for i in range(len(g_results)):
         f.write("\n\n"+g_results[i][0]+"\n\n")
         words=split_sentence(g_results[i][0])
         for j in range(len(words)-1):
             f.write("\n\n"+" ".join(words[:(j+1)])+"\n\n") # context 
             for k in range(len(g_results[i][1][j])):
-            f.write(" "+g_results[i][1][j][k])
+                f.write(" "+g_results[i][1][j][k])
     f.close()
 
 def read_sentences(filename):
@@ -106,7 +106,7 @@ def process_sentences(in_file, out_file):
 
 def get_suggestions(in_file, out_file):
     sentences=read_sentences(in_file)
-    g_results=g_suggest.suggest(sentences)
+    g_results=g_suggest.Suggest_Next(sentences)
     output_suggestions(g_results,out_file)
 
 def check_lexicon():

@@ -69,9 +69,11 @@ def Suggest_Next(sentence_input):
             
         results_list=[]
         for i in range(len(good_words)-1):
-            word_weights = output.squeeze().div(args.temperature).exp().cpu()
-            suggest_tokens=torch.multinomial(word_weights, 1)[:5]
-            suggest_words=[dictionary.idx2word[x] for x in suggest_tokens]
+            results=[]
+            for k in range(5):
+                word_weights = output.squeeze().div(1.0).exp().cpu()
+                suggest_token=torch.multinomial(word_weights, 1)[0]
+                results.append(dictionary.idx2word[suggest_token])
             good_word=dictionary_corpus.tokenize_str(dictionary,good_tokens[i+1][0])[0]
             if good_tokens[i+1][0] not in dictionary.word2idx:
                 print("Good word "+good_tokens[i+1][0]+" is unknown")
@@ -83,6 +85,6 @@ def Suggest_Next(sentence_input):
                     print("Good word "+good_tokens[i+1][j]+" is unknown")
                 input.fill_(next_token.item())
                 output, hidden = model(input, hidden)
-            results_list.append(suggest_words)
+            results_list.append(results)
         result.append((sentence, results_list))
     return(result)
