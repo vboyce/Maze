@@ -78,6 +78,7 @@ def Surprisal(sentence_input):
             
         results_list=[]
         good_results=[]
+        suggest_list=[]
         for i in range(len(alts)):
             results={}
             for k in range(len(alts[i])):
@@ -89,6 +90,12 @@ def Surprisal(sentence_input):
                 else:
                     results[test_word]=word_surprisals[test_token].item()
             results_list.append(results)
+            suggest=[]
+            for l in range(5):
+                sample = torch.multinomial(word_weights, 1)[0]
+                suggest.append((dictionary.idx2word[sample]))
+            suggest_list.append(suggest)
+            good_word_token=vocab.word_to_id(good_tokens[i+1][0])
             good_word=dictionary_corpus.tokenize_str(dictionary,good_tokens[i+1][0])[0]
             if good_tokens[i+1][0] not in dictionary.word2idx:
                 print("Good word "+good_tokens[i+1][0]+" is unknown")
@@ -109,5 +116,5 @@ def Surprisal(sentence_input):
                 output, hidden = model(input, hidden)
                 word_weights = output.squeeze().div(1.0).exp().cpu()
                 word_surprisals = -1*torch.log2(word_weights/sum(word_weights))
-        result.append((sentence, good_results, results_list))
+        result.append((sentence, good_results, results_list, suggest_list))
     return(result)

@@ -112,6 +112,7 @@ def Surprisal(sentence_input):
 
         results_list=[]
         good_results=[]
+        suggest_list=[]
         for i in range(len(alts)):
             results={}
             softmax = sess.run(t['softmax_out'],
@@ -128,6 +129,11 @@ def Surprisal(sentence_input):
                 else:
                     results[test_word]=-1 * np.log2(softmax[0][test_token])
             results_list.append(results)
+            suggest=[]
+            for l in range(5):
+                sample = _SampleSoftmax(softmax[0])
+                suggest.append(vocab.id_to_word(sample))
+            suggest_list.append(suggest)
             good_word_token=vocab.word_to_id(good_tokens[i+1][0])
             if good_word_token==vocab.unk:
                 print("Good word "+good_tokens[i+1][0]+" is unknown")
@@ -152,6 +158,6 @@ def Surprisal(sentence_input):
                 inputs[0,0]=next_token
                 char_ids_inputs[0,0,:]=next_token_chars
 
-        result.append((good_sentence,good_results, results_list))
+        result.append((good_sentence,good_results, results_list,suggest_list))
     return(result)
 

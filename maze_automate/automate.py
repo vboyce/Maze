@@ -70,9 +70,15 @@ def output(sentences, g_s, one_b_s, filename):
     for i in range(len(g_s)):
         f.write("\n\n"+sentences[i]+"\n\n")
         words=split_sentence(sentences[i])
-        for j in range(len(g_s[i][1])):
+        for j in range(len(words)-1):
             f.write(" ".join(words[:(j+1)])+"\n\n") # context 
-            f.write(" | "+words[j+1]+" | g: "+str(int(round(g_s[i][1][j])))+ " | 1_b: "+str(int(round(one_b_s[i][1][j]))) + " |\n")
+            f.write("One b suggests: ")
+            for l in range(len(one_b_s[i][3][j])):
+                f.write("  "+one_b_s_[i][3][j][l])
+            f.write("\nGulardova suggests: ")
+            for l in range(len(g_s[i][3][j])):
+                f.write("  "+one_b_s[i][3][j][l])
+            f.write("\n\n | "+words[j+1]+" | g: "+str(int(round(g_s[i][1][j])))+ " | 1_b: "+str(int(round(one_b_s[i][1][j]))) + " |\n")
             f.write("|---|---|---|\n")
             for k in g_s[i][2][j]:
                 f.write(" | "+k+ " | "+str(int(round(g_s[i][2][j][k])))+" | "+str(int(round(one_b_s[i][2][j][k])))+" |\n")
@@ -112,8 +118,8 @@ def get_suggestions(in_file, out_file):
 def check_lexicon():
     for key in sorted(LEXICON):
         print(key,"\t",len(LEXICON[key]))
-#process_sentences("input.txt", "output_5.md")
-get_suggestions("input.txt", "output_test.md")
+process_sentences("input.txt", "output_5.md")
+#get_suggestions("input.txt", "output_test.md")
 #process_sentences("intest.txt", "outtest.md")
 #check_lexicon()
 
