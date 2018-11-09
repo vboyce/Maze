@@ -26,23 +26,26 @@ def get_alternates(word_list):
         length+=len(word)
         freq+=get_unigram_freq(word)
     avg_length=round(length/len(word_list)) #take avg and round
-    avg_freq=round(freq/len(word_list)
+    avg_freq=round(freq/len(word_list))
     if avg_length<3: #adjust length if needed
         avg_length=3
     if avg_length>15:
         avg_length=15
     i=0
-    while len(alts)<50:#if needed try less frequent
-        a=LEXICON.get((word_length, get_unigram_freq(word)-1))
+    while len(alts)<50:#if needed try less/more frequent
+        a=LEXICON.get((avg_length, avg_freq-i))
+        b=LEXICON.get((avg_length, avg_freq+i))
         if a!=None:
             alts.extend(a)
+        if b!=None:
+            alts.extend(b)
         i+=1
     if i>1:
         print("Trouble finding neighbors for "+" ".join(word_list))
     return alts
 
 
-def process_item()
+def process_item():
     pass
 
 
