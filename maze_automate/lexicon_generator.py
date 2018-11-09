@@ -13,9 +13,34 @@ import re
 import json
 from ast import literal_eval
 
+def make_word_list(output, source="words.txt", exclude=None):
+    '''reads in list of words from words.txt (copy of unix dictionary, or specified file), and (optional) list of words to exclude
+writes a json of dictionary with keys = words that are a) in source, b) not in exclude, and c) are all lowercase alpha with possible exception of a capital first letter; value =1 to output'''
+    words={}
+    with open(source, "r") as f:
+        for line in f: 
+            word=line.strip()
+            if re.match("^[A-Z]?[a-z]*$",word):
+                words[word]=1
+    f.close()
+    if exclude!=None:
+        with open(exclude, "r") as f:
+            for line in f: 
+                word=line.strip()
+                words.pop(word, None)
+    f.close()
+    with open(output, "w") as f:
+        json.dump(words, f)
+    return
+
+def load_word_list(filename):
+    '''loads a word_list created by make_word_list'''
+    with open(filename, "r") as f:
+            word_list=json.load(f)
+    return word_list
+
 def good_word(word,count):
-    '''determines whether the "word" is actually a word we want
-    '''
+    '''determines whether the "word" is actually a word we want'''
     threshold=1000
     if count>=threshold: #common enough
         word_fixed=word.split("_")[0]
@@ -58,10 +83,10 @@ def parse_files():
     return(unigram_freq)
         
         
-def make_lexicon(unigram):
-    '''takes the output of parse_files, returns 2 dicts
+def make_lexicon(unigram, word_list):
+    '''takes the output of parse_files and a dictionary of words, returns 2 dicts
     forward lookup is word:floor log2 freq (only words with log2>=13 included)
-    backward lookup is (len,floor log2 freq):[word list] (same cutoffs)
+    backward lookup is (len,floor log2 freq):[word list] (only words with log2>=13 that are also in the word_list are included)
     '''
     uni_good={}
     lexicon={}
@@ -82,10 +107,11 @@ def make_lexicon(unigram):
             freq=25
         if freq>=13:
             uni_good[common_form]=freq
-            if (word_length,freq) in lexicon:
-                lexicon[(word_length,freq)].append(common_form)
-            else:
-                lexicon[(word_length,freq)]=[common_form]
+            if common_form in word_list:
+                if (word_length,freq) in lexicon:
+                    lexicon[(word_length,freq)].append(common_form)
+                else:
+                    lexicon[(word_length,freq)]=[common_form]
     return(lexicon,uni_good)
     
 
@@ -93,7 +119,7 @@ def make_lexicon(unigram):
 def save_things(filename1, filename2):
     '''builds a lexicon as a dictionary and
 saves it as a  json file to filename'''
-    lexicon, unigram_freq=make_lexicon(parse_files())
+    lexicon, unigram_freq=make_lexicon(parse_files(), load_word_list("word_list.json"))
     with open(filename1, "w") as f:
         json.dump({str(k):v for k, v in lexicon.items()}, f)
     with open(filename2, "w") as f:
@@ -112,3 +138,4 @@ def load_unigram(filename):
     with open(filename, "r") as f:
         unigram=json.load(f)
     return unigram
+

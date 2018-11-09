@@ -4,10 +4,6 @@ import lexicon_generator
 import random
 import re
 
-#Semiuseful notes:
-#probably should use normal case for surprisal
-#will need to deal with reparsing punctuation for everything at some point
-
 UNIGRAM_FREQ=lexicon_generator.load_unigram('unigram.json')
 LEXICON=lexicon_generator.load_lexicon('lexicon.json')
 
@@ -19,23 +15,36 @@ def get_unigram_freq(word):
     else:
         print (word+" is not in dictionary")
 
-def get_alternates(word):
-    '''given a word, returns candidate buddies'''
+def get_alternates(word_list):
+    '''given a list of words, returns candidate buddies
+    buddies = match the average length, frequency bin of word list'''
     alts=[]
+    length=0
+    freq=0
+    for w in range(len(word_list)): #find individual length, freq
+        word=word_list[w]
+        length+=len(word)
+        freq+=get_unigram_freq(word)
+    avg_length=round(length/len(word_list)) #take avg and round
+    avg_freq=round(freq/len(word_list)
+    if avg_length<3: #adjust length if needed
+        avg_length=3
+    if avg_length>15:
+        avg_length=15
     i=0
-    word_length=len(word)
-    if word_length<3:
-        word_length=3
-    if word_length>15:
-        word_length=15
-    while len(alts)<50:
+    while len(alts)<50:#if needed try less frequent
         a=LEXICON.get((word_length, get_unigram_freq(word)-1))
         if a!=None:
             alts.extend(a)
         i+=1
     if i>1:
-        print("Trouble finding neighbors for "+word)
+        print("Trouble finding neighbors for "+" ".join(word_list))
     return alts
+
+
+def process_item()
+    pass
+
 
 def split_sentence(sentence):
     '''takes sentence, returns list of word-units. one day might do parsing with punctuation'''
@@ -51,7 +60,7 @@ def pre_surprisal(sentences):
             word=words[i]
             if word[-1] in [".",",","!", "?"]:
                 word=word[:-1]
-            alts=get_alternates(word)
+            alts=get_alternates([word])
             alts_to_use=[]
             for i in range(50):
                 if len(alts_to_use)>19:
@@ -84,16 +93,7 @@ def output(sentences, g_s, one_b_s, filename):
             f.write("\n")
     f.close()
 
-def output_suggestions(g_results, filename):
-    f=open(filename, "a")
-    for i in range(len(g_results)):
-        f.write("\n\n"+g_results[i][0]+"\n\n")
-        words=split_sentence(g_results[i][0])
-        for j in range(len(words)-1):
-            f.write("\n\n"+" ".join(words[:(j+1)])+"\n\n") # context 
-            for k in range(len(g_results[i][1][j])):
-                f.write(" "+g_results[i][1][j][k])
-    f.close()
+
 
 def read_sentences(filename):
     f=open(filename, "r")
@@ -109,10 +109,6 @@ def process_sentences(in_file, out_file):
     one_b_surprisal = one_b.Surprisal(to_test)
     output(sentences, g_surprisal, one_b_surprisal, out_file)
 
-def get_suggestions(in_file, out_file):
-    sentences=read_sentences(in_file)
-    g_results=g_suggest.Suggest_Next(sentences)
-    output_suggestions(g_results,out_file)
 
 def check_lexicon():
     for key in sorted(LEXICON):
