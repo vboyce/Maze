@@ -20,7 +20,7 @@ writes a json of dictionary with keys = words that are a) in source, b) not in e
     with open(source, "r") as f:
         for line in f: 
             word=line.strip()
-            if re.match("^[A-Z]?[a-z]*$",word):
+            if re.match("^[a-z]*$",word):
                 words[word]=1
     f.close()
     if exclude!=None:
@@ -139,3 +139,5 @@ def load_unigram(filename):
         unigram=json.load(f)
     return unigram
 
+#make_word_list("word_list.json", "words.txt", "exclude.txt")
+#save_things("lexicon.json", "unigram.json")
