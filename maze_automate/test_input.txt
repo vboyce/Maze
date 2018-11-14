@@ -1,5 +1,4 @@
-blah1,1,"The girl who hated the boy went to the party."
-blah2,1,"The boy who hated the girl went to the party."
-blah3,2,"The dog ran around the block five times."
-blah4,2,"The cat ran around the block seven times."
-blah5,3,"Yesterday, the woman dyed her hair."
+"adverb_high"; 72; Kim will display the photos she took next month, but she won't show all of them.
+"adverb_high"; 71; Bob will complete the project he started next month, but Fred won't finish his.
+"adverb_high"; 70; John hired the clerk he will promote last month, but he fired another employee.
+"adverb_high"; 69; Jim painted the picture he will display last month, but he isn't happy with it.

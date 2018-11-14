@@ -73,16 +73,16 @@ def save_output(outfile,item_to_info, end_result):
     with open(outfile, 'w') as f:
         for key in item_to_info:
             for i in range(len(item_to_info[key][1])):
-                f.write('"'+item_to_info[key][0][i]+'",')
-                f.write('"'+key+'",')
-                f.write('"'+item_to_info[key][1][i]+'",')
+                f.write('"'+item_to_info[key][0][i]+'";')
+                f.write('"'+key+'";')
+                f.write('"'+item_to_info[key][1][i]+'";')
                 f.write('"'+end_result[item_to_info[key][1][i]]+'"\n')
 
 def read_input(filename):
     '''file should be csv format with first column "tag" (any info that should stay associated with the sentence such as condition etc (it will be copied to eventual output), item number (sentences that share item num will get same distractors, and *Must* have same # of words, and sentence'''
     item_to_info={}
     with open(filename, 'r') as tsv:
-        f = csv.reader(tsv, delimiter=",", quotechar='"')
+        f = csv.reader(tsv, delimiter=";", quotechar='"')
         for row in f:
             if row[1] in item_to_info:
                 item_to_info[row[1]][0].append(row[0])
@@ -209,7 +209,7 @@ def do_sentence_set_gula(sentence_set, model, device, dictionary, ntokens):
             output[i], hidden[i], surprisals[i] = update_sentence_gula(words[i][j], input[i], model, hidden[i], dictionary)
             word_list.append(words[i][j+1])
         alts=get_alts(word_list)
-        bad_word=find_bad_enough_gula(50, 25, alts, surprisals, dictionary)
+        bad_word=find_bad_enough_gula(100, 23, alts, surprisals, dictionary)
         cap=word_list[0][0].isupper()
         if cap:
             bad_word=bad_word[0].upper()+bad_word[1:]
@@ -350,7 +350,7 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
     bad_sentence=" ".join(bad_words)
     return(bad_sentence)
 #####
-mainish("test_input.txt", "output.txt", "gula")   
+mainish("test_input.txt", "output.txt", "one_b")   
 
 #check_lexicon()
 
