@@ -42,10 +42,21 @@ def strip_end_punct(word):
         return (word[:-1],word[-1])
     return(word, "")
 
-def get_alts(word_list):
+def get_alts(length, freq):
     '''given a list of words, returns candidate buddies
     buddies = match the average length, frequency bin of word list'''
-    alts=[]
+    if length<3: #adjust length if needed
+        length=3
+    if length>15:
+        length=15
+    alts=LEXICON.get((length, freq))
+    if alts==None:
+        print("Trouble finding neighbors for "+" ".join(word_list))
+    else:
+        random.shuffle(alts)
+    return alts
+
+def get_alt_nums(word_list):
     length=0
     freq=0
     for w in range(len(word_list)): #find individual length, freq
@@ -54,20 +65,7 @@ def get_alts(word_list):
         freq+=get_unigram_freq(word)
     avg_length=round(length/len(word_list)) #take avg and round
     avg_freq=round(freq/len(word_list))
-    if avg_length<3: #adjust length if needed
-        avg_length=3
-    if avg_length>15:
-        avg_length=15
-    i=0
-    while len(alts)<50:#if needed try less frequent
-        a=LEXICON.get((avg_length, avg_freq-i))
-        if a!=None:
-            alts.extend(a)
-        i+=1
-    if i>1:
-        print("Trouble finding neighbors for "+" ".join(word_list))
-    random.shuffle(alts)
-    return alts
+    return(avg_length, avg_freq)
 
 def save_output(outfile,item_to_info, end_result):
     with open(outfile, 'w') as f:
@@ -161,7 +159,7 @@ def get_surprisal_gula(surprisals, dictionary, word):
     else:
         return surprisals[token].item() #numeric value of word's surprisal
 
-def find_bad_enough_gula(num_to_test, minimum, options_list, surprisals_list, dictionary):
+def find_bad_enough_gula(num_to_test, minimum, word_list, surprisals_list, dictionary):
     '''will return the word that is at least minimum surprisal for all sentences. if goes through num_to_test words
     without finding a bad enough, returns the worst it's seen (worst= highest min)
     pass
@@ -169,12 +167,23 @@ def find_bad_enough_gula(num_to_test, minimum, options_list, surprisals_list, di
     surprisals_list = list of surprisal distributions'''    
     best_word=""
     best_surprisal=0
-    if len(options_list)<num_to_test:
-        num_to_test=len(options_list)
-        print("Not enough options")
-    for i in range(num_to_test):
+    length, freq=get_alt_nums(word_list)
+    options_list=None
+    i=0
+    k=0
+    while options_list==None:
+        options_list=get_alts(length, freq+i)
+        i+=1
+    while best_surprisal==0 or k<num_to_test:
         min_surprisal=100
-        word=options_list[i]
+        if k==len(options_list):
+            new_options=None
+            while new_options==None:
+                new_options=get_alts(length, freq+i)
+                i+=1
+            options_list.extend(new_options)
+        word=options_list[k]
+        k+=1
         for j in range(len(surprisals_list)):
             surprisal=get_surprisal_gula(surprisals_list[j], dictionary, word)
             min_surprisal=min(min_surprisal, surprisal)
@@ -208,8 +217,7 @@ def do_sentence_set_gula(sentence_set, model, device, dictionary, ntokens):
         for i in range(len(sentence_set)):
             output[i], hidden[i], surprisals[i] = update_sentence_gula(words[i][j], input[i], model, hidden[i], dictionary)
             word_list.append(words[i][j+1])
-        alts=get_alts(word_list)
-        bad_word=find_bad_enough_gula(100, 23, alts, surprisals, dictionary)
+        bad_word=find_bad_enough_gula(100, 23, word_list, surprisals, dictionary)
         cap=word_list[0][0].isupper()
         if cap:
             bad_word=bad_word[0].upper()+bad_word[1:]
@@ -293,7 +301,7 @@ def get_surprisal_one_b(softmax, vocab, word):
     else:
         return -1 * np.log2(softmax[0][token]) #numeric value of word's surprisal
 
-def find_bad_enough_one_b(num_to_test, minimum, options_list, surprisals_list, vocab):
+def find_bad_enough_one_b(num_to_test, minimum, word_list, surprisals_list, vocab):
     '''will return the word that is at least minimum surprisal for all sentences. if goes through num_to_test words
     without finding a bad enough, returns the worst it's seen (worst= highest min)
     pass
@@ -301,12 +309,23 @@ def find_bad_enough_one_b(num_to_test, minimum, options_list, surprisals_list, v
     surprisals_list = list of surprisal distributions'''    
     best_word=""
     best_surprisal=0
-    if len(options_list)<num_to_test:
-        num_to_test=len(options_list)
-        print("Not enough options")
-    for i in range(num_to_test):
+    length, freq=get_alt_nums(word_list)
+    options_list=None
+    i=0
+    k=0
+    while options_list==None:
+        options_list=get_alts(length, freq+i)
+        i+=1
+    while best_surprisal==0 or k<num_to_test:
         min_surprisal=100
-        word=options_list[i]
+        if k==len(options_list):
+            new_options=None
+            while new_options==None:
+                new_options=get_alts(length, freq+i)
+                i+=1
+            options_list.extend(new_options)
+        word=options_list[k]
+        k+=1
         for j in range(len(surprisals_list)):
             surprisal=get_surprisal_one_b(surprisals_list[j], vocab, word)
             min_surprisal=min(min_surprisal, surprisal)
@@ -340,8 +359,7 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
         for i in range(len(sentence_set)):
             targets[i], weights[i], softmaxes[i] = update_sentence_one_b(words[i][j], inputs[i], char_ids_inputs[i], sess, t, targets[i], weights[i], vocab)
             word_list.append(words[i][j+1])
-        alts=get_alts(word_list)
-        bad_word=find_bad_enough_one_b(50, 25, alts, softmaxes, vocab)
+        bad_word=find_bad_enough_one_b(100, 23, word_list, softmaxes, vocab)
         cap=word_list[0][0].isupper()
         if cap:
             bad_word=bad_word[0].upper()+bad_word[1:]
@@ -350,7 +368,11 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
     bad_sentence=" ".join(bad_words)
     return(bad_sentence)
 #####
-mainish("test_input.txt", "output.txt", "one_b")   
+#mainish("test_input.txt", "output2.txt", "one_b")   
 
 #check_lexicon()
-
+print(get_unigram_freq("won't"))
+print(get_unigram_freq("isn't"))
+print(get_unigram_freq("is"))
+print(get_unigram_freq("can't"))
+print(get_unigram_freq("will"))
