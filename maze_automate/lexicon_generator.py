@@ -33,6 +33,15 @@ writes a json of dictionary with keys = words that are a) in source, b) not in e
         json.dump(words, f)
     return
 
+def override_freq(filename=None):
+    '''reads in some preprocessed (log base 2) frequencies for words that the usual process gets wrong (i.e. contractions)'''
+    words={}
+    if filename!=None:
+        with open(filename, "r") as f:
+            for row in csv.reader(f, delimiter=","):
+                words[row[0]]=row[1]
+    return words
+            
 def load_word_list(filename):
     '''loads a word_list created by make_word_list'''
     with open(filename, "r") as f:
@@ -83,7 +92,7 @@ def parse_files():
     return(unigram_freq)
         
         
-def make_lexicon(unigram, word_list):
+def make_lexicon(unigram, word_list, alterations):
     '''takes the output of parse_files and a dictionary of words, returns 2 dicts
     forward lookup is word:floor log2 freq (only words with log2>=13 included)
     backward lookup is (len,floor log2 freq):[word list] (only words with log2>=13 that are also in the word_list are included)
@@ -112,6 +121,8 @@ def make_lexicon(unigram, word_list):
                     lexicon[(word_length,freq)].append(common_form)
                 else:
                     lexicon[(word_length,freq)]=[common_form]
+    for key in alterations: #overwrite dictionary with contraction's correct frequencies
+        uni_good[key]=alterations[key]
     return(lexicon,uni_good)
     
 
@@ -119,7 +130,7 @@ def make_lexicon(unigram, word_list):
 def save_things(filename1, filename2):
     '''builds a lexicon as a dictionary and
 saves it as a  json file to filename'''
-    lexicon, unigram_freq=make_lexicon(parse_files(), load_word_list("word_list.json"))
+    lexicon, unigram_freq=make_lexicon(parse_files(), load_word_list("word_list.json"), override_freq("contractions.csv"))
     with open(filename1, "w") as f:
         json.dump({str(k):v for k, v in lexicon.items()}, f)
     with open(filename2, "w") as f:

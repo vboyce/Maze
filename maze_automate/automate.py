@@ -277,8 +277,14 @@ def new_sentence_one_b(vocab):
     char_ids_inputs = np.zeros( [1, 1, vocab.max_word_length], np.int32)
     return (targets, weights, inputs, char_ids_inputs)       
 
+def tokenize_one_b(word):
+    new_string=re.sub("([.,?!])", r" \1 ", word)
+    newer_string=re.sub("'", " '", new_string)
+    tokens=newer_string.split()
+    return tokens
+    
 def update_sentence_one_b(word, inputs, char_ids_inputs, sess, t, targets, weights, vocab):
-    parts=word_tokenize(word) #get list of tokens
+    parts=tokenize_one_b(word) #get list of tokens
     for part in parts:
         token = vocab.word_to_id(part)#get id of token
         char_tokens=vocab.word_to_char_ids(part) #get char ids
@@ -368,11 +374,15 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
     bad_sentence=" ".join(bad_words)
     return(bad_sentence)
 #####
-#mainish("test_input.txt", "output2.txt", "one_b")   
-
+mainish("test_input.txt", "output2.txt", "one_b")   
+mainish("test_input.txt", "output1.txt", "gula")
 #check_lexicon()
-print(get_unigram_freq("won't"))
-print(get_unigram_freq("isn't"))
-print(get_unigram_freq("is"))
-print(get_unigram_freq("can't"))
-print(get_unigram_freq("will"))
+#print(get_unigram_freq("won't"))
+#print(get_unigram_freq("isn't"))
+#print(get_unigram_freq("is"))
+#print(get_unigram_freq("can't"))
+#print(get_unigram_freq("will"))
+#print(get_unigram_freq("bird"))
+#print(get_unigram_freq("neonate"))
+#print(get_unigram_freq("dribble"))
+#print(tokenize_one_b("can't."))
