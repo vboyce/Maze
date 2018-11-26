@@ -32,6 +32,7 @@ LEXICON=lexicon_generator.load_lexicon('lexicon.json')
 def get_unigram_freq(word):
     '''takes word, returns unigram frequency'''
     freq=UNIGRAM_FREQ.get(word)
+    #print(type(freq))
     if freq!=None:
         return freq
     else:
@@ -62,6 +63,7 @@ def get_alt_nums(word_list):
     for w in range(len(word_list)): #find individual length, freq
         word=strip_end_punct(word_list[w])[0]
         length+=len(word)
+        #print(type(freq))
         freq+=get_unigram_freq(word)
     avg_length=round(length/len(word_list)) #take avg and round
     avg_freq=round(freq/len(word_list))
@@ -376,6 +378,7 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
 #####
 mainish("test_input.txt", "output2.txt", "one_b")   
 mainish("test_input.txt", "output1.txt", "gula")
+#print(type(get_unigram_freq("can't")))
 #check_lexicon()
 #print(get_unigram_freq("won't"))
 #print(get_unigram_freq("isn't"))

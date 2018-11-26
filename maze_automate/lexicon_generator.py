@@ -39,7 +39,7 @@ def override_freq(filename=None):
     if filename!=None:
         with open(filename, "r") as f:
             for row in csv.reader(f, delimiter=","):
-                words[row[0]]=row[1]
+                words[row[0]]=int(row[1])
     return words
             
 def load_word_list(filename):
