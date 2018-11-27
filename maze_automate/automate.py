@@ -83,7 +83,7 @@ def save_ibex_format(outfile, item_to_info, end_result):
         for key in item_to_info:
             for i in range(len(item_to_info[key][1])):
                 f.write('[["'+item_to_info[key][0][i]+'", ')
-                f.write(key+'], "Maze", {s: ')
+                f.write(key+'], "Maze", {s:')
                 f.write('"'+item_to_info[key][1][i]+'", a:')
                 f.write('"'+end_result[item_to_info[key][1][i]]+'"}],\n')
 
@@ -100,7 +100,7 @@ def read_input(filename):
                 item_to_info[row[1]]=[[row[0]],[row[2]]]
     sentences=[]
     for item in sorted(item_to_info):
-        sentences.append(item_to_info[item][1])
+        sentences.append(item_to_info[item][1].strip())
     return (item_to_info, sentences)
 
 def mainish(infile, outfile, lang_model="gula", out_format="basic"):
