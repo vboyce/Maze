@@ -1,0 +1,4 @@
+[["adverb_high",  72], "Maze", {s: " Kim will display the photos she took next month, but she won't show all of them.", a:"x-x-x help village am agrees joy fine drop walls, sin sky ideas evil eat sit star."}],
+[["adverb_high",  71], "Maze", {s: " Bob will complete the project he started next month, but Fred won't finish his.", a:"x-x-x rate examples lie neither sit aspects root girls, eye Dare solid blocks sin."}],
+[["adverb_high",  70], "Maze", {s: " John hired the clerk he will promote last month, but he fired another employee.", a:"x-x-x elder map yards age word voltage tube banks, ago sun shirt discuss expanded."}],
+[["adverb_high",  69], "Maze", {s: " Jim painted the picture he will display last month, but he isn't happy with it.", a:"x-x-x counsel am towards joy sons nations lady staff, ago thy weeks apply coal led."}],
