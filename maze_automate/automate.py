@@ -95,12 +95,12 @@ def read_input(filename):
         for row in f:
             if row[1] in item_to_info:
                 item_to_info[row[1]][0].append(row[0])
-                item_to_info[row[1]][1].append(row[2])
+                item_to_info[row[1]][1].append(row[2].strip())
             else:
-                item_to_info[row[1]]=[[row[0]],[row[2]]]
+                item_to_info[row[1]]=[[row[0]],[row[2].strip()]]
     sentences=[]
     for item in sorted(item_to_info):
-        sentences.append(item_to_info[item][1].strip())
+        sentences.append(item_to_info[item][1])
     return (item_to_info, sentences)
 
 def mainish(infile, outfile, lang_model="gula", out_format="basic"):
