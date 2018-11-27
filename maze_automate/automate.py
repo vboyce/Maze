@@ -78,6 +78,15 @@ def save_output(outfile,item_to_info, end_result):
                 f.write('"'+item_to_info[key][1][i]+'";')
                 f.write('"'+end_result[item_to_info[key][1][i]]+'"\n')
 
+def save_ibex_format(outfile, item_to_info, end_result):
+    with open(outfile, 'w') as f:
+        for key in item_to_info:
+            for i in range(len(item_to_info[key][1])):
+                f.write('[["'+item_to_info[key][0][i]+'", ')
+                f.write(key+'], "Maze", {s: ')
+                f.write('"'+item_to_info[key][1][i]+'", a:')
+                f.write('"'+end_result[item_to_info[key][1][i]]+'"}],\n')
+
 def read_input(filename):
     '''file should be csv format with first column "tag" (any info that should stay associated with the sentence such as condition etc (it will be copied to eventual output), item number (sentences that share item num will get same distractors, and *Must* have same # of words, and sentence'''
     item_to_info={}
@@ -94,7 +103,7 @@ def read_input(filename):
         sentences.append(item_to_info[item][1])
     return (item_to_info, sentences)
 
-def mainish(infile, outfile, lang_model="gula"):
+def mainish(infile, outfile, lang_model="gula", out_format="basic"):
     item_to_info, sentences=read_input(infile)
     end_result={}
     if lang_model=="gula":
@@ -111,14 +120,19 @@ def mainish(infile, outfile, lang_model="gula"):
             bad=do_sentence_set_one_b(sentences[i],sess, t, vocab)
             for j in range(len(sentences[i])):
                 end_result[sentences[i][j]]=bad
-    save_output(outfile,item_to_info, end_result)
+    if out_format=="ibex":
+        save_ibex_format(outfile, item_to_info, end_result)
+    else:
+        save_output(outfile,item_to_info, end_result)
 
 
 def check_lexicon():
-    for key in sorted(LEXICON):
-        if key[0]==3:
-            for i in LEXICON[key]:
-                print(i)
+    #for key in sorted(LEXICON):
+     #   if key[0]==3:
+      #      for i in LEXICON[key]:
+       #         print(i)
+    for i in LEXICON[(3,25)]:
+        print(i)
 
 #### Gulardova specific ####
 def load_model_gula():
@@ -219,7 +233,7 @@ def do_sentence_set_gula(sentence_set, model, device, dictionary, ntokens):
         for i in range(len(sentence_set)):
             output[i], hidden[i], surprisals[i] = update_sentence_gula(words[i][j], input[i], model, hidden[i], dictionary)
             word_list.append(words[i][j+1])
-        bad_word=find_bad_enough_gula(100, 23, word_list, surprisals, dictionary)
+        bad_word=find_bad_enough_gula(100, 21, word_list, surprisals, dictionary)
         cap=word_list[0][0].isupper()
         if cap:
             bad_word=bad_word[0].upper()+bad_word[1:]
@@ -367,7 +381,7 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
         for i in range(len(sentence_set)):
             targets[i], weights[i], softmaxes[i] = update_sentence_one_b(words[i][j], inputs[i], char_ids_inputs[i], sess, t, targets[i], weights[i], vocab)
             word_list.append(words[i][j+1])
-        bad_word=find_bad_enough_one_b(100, 23, word_list, softmaxes, vocab)
+        bad_word=find_bad_enough_one_b(100, 21, word_list, softmaxes, vocab)
         cap=word_list[0][0].isupper()
         if cap:
             bad_word=bad_word[0].upper()+bad_word[1:]
@@ -376,8 +390,8 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
     bad_sentence=" ".join(bad_words)
     return(bad_sentence)
 #####
-mainish("test_input.txt", "output2.txt", "one_b")   
-mainish("test_input.txt", "output1.txt", "gula")
+mainish("test_input.txt", "output2.txt", "one_b", "ibex")   
+mainish("test_input.txt", "output1.txt", "gula", "ibex")
 #print(type(get_unigram_freq("can't")))
 #check_lexicon()
 #print(get_unigram_freq("won't"))
