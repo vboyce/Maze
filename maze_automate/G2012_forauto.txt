@@ -82,7 +82,7 @@
 "filler";119;Megan got angry with her boss and sued him for discrimination last month.
 "filler";118;The father of the pretty girl cleaned up the house all by himself last week.
 "adverb_high";69;Jim painted the picture he will display last month, but he isn't happy with it.
-"filler";117;Bill will quit his job next month to take care of his kids and step-children.
+"filler";117;Bill will quit his job next month to take care of his kids and stepchildren.
 "filler";116;The thief noticed the boy and the girl watching him from the upstairs window.
 "filler";115;The boy who was wearing a blue cap went missing on his way home last week.
 "filler";114;Hugh took too long to propose, and his girlfriend decided to marry someone else.
