@@ -37,6 +37,14 @@ def get_unigram_freq(word):
         return freq
     else:
         print (word+" is not in dictionary")
+        test_freq=UNIGRAM_FREQ.get(word.lower())
+        if test_freq!=None:
+            print("Using "+word.lower()+" instead")
+            return test_freq
+        test_freq=UNIGRAM_FREQ.get(word.capitalize())
+        if test_freq!=None:
+            print("Using "+word.capitalize()+" instead")
+            return test_freq
 
 def strip_end_punct(word):
     if word[-1] in [".",",","!", "?"]:
