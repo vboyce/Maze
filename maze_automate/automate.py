@@ -398,9 +398,9 @@ def do_sentence_set_one_b(sentence_set, sess, t, vocab):
     bad_sentence=" ".join(bad_words)
     return(bad_sentence)
 #####
-#mainish("G2012_forauto.txt", "output_one_b.txt", "one_b", "ibex")   
+mainish("G2012_forauto.txt", "output_one_b.txt", "one_b", "ibex")   
 #mainish("G2012_forauto.txt", "output_gula.txt", "gula", "ibex")
-print((get_unigram_freq("Prince")))
+#print((get_unigram_freq("Prince")))
 #check_lexicon()
 #print(get_unigram_freq("won't"))
 #print(get_unigram_freq("isn't"))
