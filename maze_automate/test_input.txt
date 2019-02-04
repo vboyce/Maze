@@ -1,4 +1,5 @@
 "adverb_high"; 72; Kim will display the photos she took next month, but she won't show all of them.
-"adverb_high"; 71; Bob will complete the project he started next month, but Fred won't finish his.
+"adverb_low"; 72; Kim will display the photos she took last month, but she won't show all of them.
 "adverb_high"; 70; John hired the clerk he will promote last month, but he fired another employee.
-"adverb_high"; 69; Jim painted the picture he will display last month, but he isn't happy with it.
+"adverb_low"; 70; John hired the clerk he will promote next month, but he fired another employee.
+"filler"; 5; The roses that Jessica likes grow on the other side of the street. 
