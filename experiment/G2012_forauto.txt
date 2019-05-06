@@ -174,5 +174,3 @@
 "relative_low";22;The sister of the boy who taught himself advanced mathematics was very smart.
 "relative_low";23;The aunt of the waiter who trained himself to cook wanted to own a restaurant.
 "relative_low";24;The niece of the butler who scolded himself for losing the key was very upset.
-
-
