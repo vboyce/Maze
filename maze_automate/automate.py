@@ -97,7 +97,7 @@ def run_gulordava(sentences):
     for i, _ in enumerate(sentences): #process all the sentences
         bad = gulordava.do_sentence_set(sentences[i], model, device, dictionary, ntokens)
         for j, _ in enumerate(sentences[i]): #record results
-            end_result[sentences[i][j]] = bad
+            end_result[sentences[i][j]] = bad[j]
     return end_result
 
 def run_one_b(sentences):
@@ -113,7 +113,7 @@ def run_one_b(sentences):
     for i, _ in enumerate(sentences): #process all the sentences
         bad = one_b.do_sentence_set(sentences[i], sess, t, dictionary)
         for j, _ in enumerate(sentences[i]): #record results
-            end_result[sentences[i][j]] = bad
+            end_result[sentences[i][j]] = bad[j]
     return end_result
 
 '''Takes input, generates distractors, writes to output file

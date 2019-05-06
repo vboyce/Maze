@@ -4,6 +4,8 @@ Code provided here takes experimental materials (such as used for SPR) and gener
 
 Distractor words are selected to be roughly length and frequency matched with the good word in the sentence (or if matching multiple, the average for the good words), but have high surprisal in the context or contexts, as determined by the model. They are not necessarily ungrammatical (but often are). 
 
+Distractors will have end punctuation and capitalization that matches their good word. (In the rare case of minimal pair sentences that in part differ in punctuation and capitalization, distractors will match indiviual words, and thus differ across sentences, but only in punctuation and capitalization.)
+
 ## Set up
 Depending on which model you plan on running, you will need different things installed. 
 

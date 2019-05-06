@@ -148,10 +148,11 @@ def do_sentence_set(sentence_set, sess, t, dictionary):
     sess, t = from load_model
     dictionary = from load_dictionary
     returns a sentence format string of the distractors'''
-    bad_words = ["x-x-x"]
+    bad_words = []
     words = []
     sentence_length = len(sentence_set[0].split()) # length of each sentence
     for i, _ in enumerate(sentence_set):
+        bad_words.append(["x-x-x"])
         sentence = sentence_set[i]
         sent_words = sentence.split() # turn sentence into words
         if len(sent_words) != sentence_length: # complain if there are inconsistent lengths
@@ -170,10 +171,15 @@ def do_sentence_set(sentence_set, sess, t, dictionary):
             targets[i], weights[i], softmaxes[i] = update_sentence(words[i][j], inputs[i], char_ids_inputs[i], sess, t, targets[i], weights[i], dictionary) # add a word to the sentence
             word_list.append(words[i][j+1]) # make a list of the 'good' next words
         bad_word = find_bad_enough(100, 21, word_list, softmaxes, dictionary) # for a distractor word for that position, using the probability distributions and the good words. Try 100 options, aim for surprisal of at least 21
-        cap = word_list[0][0].isupper() #is the first character of the first good word capitalized
-        if cap: #make distractor word match capitalization
-            bad_word = bad_word[0].upper()+bad_word[1:]
-        bad_word = bad_word+strip_end_punct(word_list[0])[1] #match end punctuation
-        bad_words.append(bad_word) # add distractor to list
-    bad_sentence = " ".join(bad_words) # turn list of distractors into a sentence
-    return bad_sentence
+        for l, _ in enumerate(sentence_set):
+                cap=word_list[l][0].isupper() # what is capitization of good word in ith sentence
+                if cap: #capitalize it
+                    mod_bad_word=bad_word[0].upper()+bad_word[1:]
+                else: #keep lower case
+                    mod_bad_word=bad_word
+                mod_bad_word = mod_bad_word+strip_end_punct(word_list[l])[1] #match end punctuation
+                bad_words[l].append(mod_bad_word) # add the fixed bad word to a running list for that sentence
+    bad_sentences=[]
+    for i, _ in enumerate(bad_words):
+        bad_sentences.append(" ".join(bad_words[i]))
+    return bad_sentences # and return
