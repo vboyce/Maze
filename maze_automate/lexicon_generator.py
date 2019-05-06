@@ -202,6 +202,14 @@ def get_freq(word_list, unigram):
         else:
             print(i+ " is not in the lexicon")
 
+def check():
+    distractor_dict=load_lexicon("lexicon.json")
+    for key in distractor_dict:
+        if len(distractor_dict[key])<100:
+            print(str(key)+" : "+str(len(distractor_dict[key])))
+    print(len(distractor_dict))
+     
+#check()
 #parse_files()
 #make_word_list()
 #save_things()
