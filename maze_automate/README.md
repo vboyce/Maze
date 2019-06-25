@@ -25,14 +25,39 @@ Create a folder one_b_code and download https://github.com/tensorflow/models/blo
 
 Create a folder one_b_data and download the sharded checkpoints, the model graphdef file, the vocab file,  from https://github.com/tensorflow/models/blob/master/research/lm_1b/README.md
 
+## Frequency data sources
+
+There are two options for where to get word frequency information (used for matching distractors to real words) from. Either the 'original' sum up counts from the google ngrams unigrams list method, or a new option that just uses wordfreq (https://pypi.org/project/wordfreq/).
+
+### Ngrams options
+Downsides:
+ - contraction frequencies were read off of google ngrams viewer and entered manually
+ - overestimates the frequency of old words ('thy' etc.) and therefore will choose these as frequent distractors
+ - Can't handle OOV items at all (All words in your materials need to be in the overall dictionary (built from google ngrams). If they are not, you should consider fixing them (for compound words, try without hyphens).)
+ 
+Upside:
+ - Forthcoming paper used this method, so it's been tested and works
+ 
+### Wordfreq options
+Downsides:
+ - Need to install wordfreq (see https://pypi.org/project/wordfreq/ for instructions)
+ - Corpus includes modern texts like Reddit, so it thinks expletives (and slang) are high frequency, and will choose them as frequent distractors (to keep words from showing up as distractors, add them to exclude_wf.txt, then from lexicon_generator_wf.py, uncomment and run the two lines at the bottom) (Alternatively, find a bowdlerized word list to use in place of words.txt)
+ - Untested
+ 
+Upsides:
+ - Generation is quick, so it's easy to change bin sizes or add more words to the exclude list (if you change bin sizes, also change corresponding look-up calculations in helper_wf.py)
+ - More representative distribution of words taken from more sources
+ - Handles OOV words well (read https://pypi.org/project/wordfreq/ for how frequencies are extrapolated)
+
 ## Running
 First, you need to make automate.py executable. In a terminal chmod +x automate.py.
 Then can be run as ./automate.py . Note that, especially the one_b model, is computationally expensive to run, and you may want to use a computational cluster. Testing a couple sentences worth on a laptop will probably work okay. 
 
 Arguments:
- input (required) -- file with materials
- output (required) -- file to write output to
- model (default: gulordava) -- which model to use (either gulordava or one_b)
+ - input (required) -- file with materials
+ - output (required) -- file to write output to
+ - model (default: gulordava) -- which model to use (either gulordava or one_b)
+ - freq (default: ngrams) -- which source of frequency information to use either ngrams (counts processed out of google ngrams unigrams files) or wordfreq (uses python module wordfreq)
  format (default: basic) -- which format to write results in; either basic for semicolon delimited (like the input file, but with an extra column for the distractors) or ibex (ready to copy into a .js ibex experiment file)
 
 ### Material format
@@ -47,7 +72,7 @@ If you're running maze with ibex (using code provided in this repo), you will wa
 ## Making adjustments
 
 ### Problems with the lexicon
-All words in your materials need to be in the overall dictionary (built from google ngrams). If they are not, you should consider fixing them (for compound words, try without hyphens). The models will run reasonably even if their dictionaries (i.e, their training data) do not contain all the words; however when writing new materials, it might be worth sticking to their dictionaries.
+ The models will run reasonably even if their dictionaries (i.e, their training data) do not contain all the words; however when writing new materials, it might be worth sticking to their dictionaries.
 
 You may need to rebuild the lexicons if:
  - words are showing up as distractors that you don't want/don't think are words
