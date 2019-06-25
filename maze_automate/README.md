@@ -58,7 +58,7 @@ Arguments:
  - output (required) -- file to write output to
  - model (default: gulordava) -- which model to use (either gulordava or one_b)
  - freq (default: ngrams) -- which source of frequency information to use either ngrams (counts processed out of google ngrams unigrams files) or wordfreq (uses python module wordfreq)
- format (default: basic) -- which format to write results in; either basic for semicolon delimited (like the input file, but with an extra column for the distractors) or ibex (ready to copy into a .js ibex experiment file)
+ - format (default: basic) -- which format to write results in; either basic for semicolon delimited (like the input file, but with an extra column for the distractors) or ibex (ready to copy into a .js ibex experiment file)
 
 ### Material format
 See test_input.txt for a sample. Materials should be in semi-colon delimited format. 
