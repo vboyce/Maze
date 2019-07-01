@@ -1,0 +1,218 @@
+---
+title: "Error Rates"
+output: github_document
+---
+
+# Code
+
+```{r setup, include=F}
+library(tidyverse)
+library(stringr)
+library(brms)
+library(rstan)
+library(gtools)
+knitr::opts_chunk$set(echo = FALSE, warning=F)
+options(knitr.table.format = "html")
+library(knitr)
+library(lme4)
+library(xtable)
+```
+Functions: 
+
+ - process - reads in data, does participant exclusions
+ 
+```{r more_set_up}
+
+process <- function(source){
+  #source = .rds file location of data
+  #returns tibble of data after participant removal, and with only correct answers
+  data <- read_rds(source)
+  data_filtered <- data %>% 
+  filter(citizen=="yes" & native=="yes" & resident=="yes")
+
+message("Removed ", format(100-100*nrow(data_filtered)/nrow(data), digits=2), "% participants who are not citizens, native speakers, or residents of the US.")
+
+message("We have ", length(unique(data_filtered$subject)), " participants left.")
+
+#filter out and adjust bad data points
+
+#remove na points that participants didn't see
+data_no_na<- data_filtered %>% 
+  filter(!(is.na(rt)))
+  
+
+message("Removed ", format(100-100*nrow(data_no_na)/nrow(data_filtered), digits=2), "% of the data for being na (after a mistake).")
+
+
+data_no_na
+}
+
+
+
+
+```
+
+ - error_rate - Preps data for looking for sentences/word_positions/distractor combinations where there were high errors (usage: View(error_rate(g_maze))) will show searchable/filterable view)
+ - error_pos_grouped - Used to set up for graph
+```{r}
+
+error_rate <- function(data){
+  data2 <- data %>% select(experiment, type, group, word_num, correct, word, distractor, sentence) %>% mutate(error.numeric=ifelse(correct=="no", 1, 0)) %>% 
+group_by(experiment, type, group, word_num, word, distractor, sentence) %>% 
+summarize(pct_error=sum(error.numeric)/n(),
+          error_count=sum(error.numeric),
+          total =n()) %>% 
+    arrange(desc(pct_error))
+  
+  data2
+}
+
+error_pos_grouped <- function(data){
+  data2 <-data %>% select(experiment, type, group, word_num, correct, word, distractor, sentence) %>% mutate(error.numeric=ifelse(correct=="no", 1, 0)) %>% 
+group_by(experiment, type, group, word_num, word, distractor, sentence) %>% 
+summarize(pct_error=sum(error.numeric)/n(),
+          error_count=sum(error.numeric)) %>% 
+    select(experiment, pct_error, word_num) %>% 
+    group_by(experiment, word_num) %>% 
+    summarize(sem=sd(pct_error)/sqrt(n()),
+              pct_error=sum(pct_error)/n()
+              )
+  
+  data2
+}
+
+g_maze <- process("../Data/Processed/g_maze.rds") %>% mutate(experiment="g_maze") %>% select(experiment, type, group, word_num, correct, word, distractor, sentence)
+
+l_maze <-process("../Data/Processed/l_maze.rds") %>% mutate(experiment="l_maze")%>% select(experiment, type, group, word_num, correct, word, distractor, sentence)
+
+gulo_maze <-process("../Data/Processed/gulo_maze.rds") %>% mutate(experiment="gulo_maze")%>% select(experiment, type, group, word_num, correct, word, distractor, sentence)
+
+one_b_maze <-process("../Data/Processed/one_b_maze.rds") %>% mutate(experiment="one_b_maze")%>% select(experiment, type, group, word_num, correct, word, distractor, sentence)
+
+g_lab <- read_rds("../Witzel/G_data.rds") %>% mutate(experiment="g_lab")%>% select(experiment, type, group, word_num, correct, word, distractor, sentence)
+
+l_lab <- read_rds("../Witzel/L_data.rds") %>% mutate(experiment="l_lab")%>% select(experiment, type, group, word_num, correct, word, distractor, sentence)
+
+```
+# Graphs from paper 
+
+```{r, fig.width=6, fig.height=2}
+
+all <- g_maze %>% union_all(gulo_maze) %>% union_all(one_b_maze) %>% union_all(g_lab) %>% mutate(experiment=factor(experiment, levels=c("g_lab", "g_maze", "gulo_maze", "one_b_maze"),  labels=c( "Lab G-maze","Web G-maze", "Web A-maze Gulordava", "Web A-maze Jozefowicz" )))
+
+all_error <- all %>% error_pos_grouped()
+
+ggplot(all_error, aes(word_num+1, pct_error, color=experiment))+geom_point()+geom_line()+
+  #geom_errorbar(aes(x=word_num+1, ymin=pct_error-sem, ymax=pct_error+sem))+
+   scale_y_continuous(limits=c(0,.2), breaks=c(0, .05, .1, .15, .2), labels=c("0%", "5%", "10%", "15%", "20%"))+
+labs(y="Error rate", x="Word number")+theme_bw()+theme(legend.position="right", legend.title=element_blank(), text = element_text(size = 13, colour="black"))+  scale_color_manual(values=c("blue3", "skyblue3", "darkorchid2", "hotpink2"))
+
+ggsave("../graph_errors.pdf")
+```
+
+```{r, fig.width=8, fig.height=2}
+get_part_error <- function(data){
+error <- data%>% 
+  select(subject, type, group, word_num, correct, rt) %>% 
+  filter(!is.na(rt)) %>% 
+  select(-rt) %>% 
+  filter(correct=="no") %>% 
+  mutate(error_loc=word_num) %>% 
+  select(subject, type, group, error_loc) %>% filter(type!="practice")
+  
+correct <- data %>% 
+  select(subject, type, group, word_num, correct, rt) %>% 
+  filter(!is.na(rt)) %>% 
+  select(-rt) %>% 
+  mutate(err_num=ifelse(correct=="yes", 0,1)) %>% 
+  group_by(subject, type, group) %>% 
+  summarize(error=sum(err_num)) %>% 
+  filter(type!="practice") %>% 
+  left_join(error, by=c("subject", "type", "group")) %>% 
+  group_by(subject) %>% 
+  summarize(count_corr=(96-sum(error))/96) %>% arrange(desc(count_corr))
+  
+correct}
+
+g_err <- process("../Data/Processed/g_maze.rds") %>% get_part_error() %>% mutate(experiment="g_maze")
+gulo_err <- process("../Data/Processed/gulo_maze.rds")%>% get_part_error()%>% mutate(experiment="gulo_maze")
+one_b_err <- process("../Data/Processed/one_b_maze.rds")%>% get_part_error()%>% mutate(experiment="one_b_maze")
+g_lab_err <- read_rds("../Witzel/G_data.rds") %>% get_part_error()%>% mutate(experiment="g_lab")
+
+all <- g_err  %>% union(gulo_err) %>% union(one_b_err) %>% union(g_lab_err) %>% mutate(experiment=factor(experiment, levels=c("g_lab", "g_maze", "gulo_maze", "one_b_maze"),  labels=c( "Lab G-maze","Web G-maze", "Web A-maze\nGulordava", "Web A-maze\nJozefowicz" )))
+
+ggplot(all)+
+  geom_histogram(aes(x=count_corr,y=(..count..*x*96), fill=experiment), binwidth=.125, center=.0625)+
+  coord_cartesian(xlim=c(0,1), ylim=c(0,1500), expand=T)+
+  facet_grid(.~experiment)+
+  scale_x_continuous(breaks=seq(0, 1, by=.25), labels=c(" 0", ".25", ".5", ".75", "1 "))+
+  labs(x="Fraction sentences completed correctly", y="Complete sentences")+theme_bw()+theme(legend.position="none", text = element_text(size = 13, colour="black"))+  scale_fill_manual(values=c("blue3", "skyblue3", "darkorchid2", "hotpink2"))
+
+ggsave("../sent_quality.pdf")
+
+
+ggplot(all)+
+  geom_histogram(aes(x=count_corr, fill=experiment), binwidth=.125, center=.0625)+
+  facet_grid(.~experiment)+
+    scale_x_continuous(breaks=seq(0, 1, by=.25), labels=c(" 0", ".25", ".5", ".75", "1 "))+
+coord_cartesian(xlim=c(0,1), ylim=c(0,20), expand=T)+labs(x="Fraction sentences completed correctly", y="Participants")+theme_bw()+theme(legend.position="none",  text = element_text(size = 13, colour="black"))+  scale_fill_manual(values=c("blue3", "skyblue3", "darkorchid2", "hotpink2"))
+# not sure best way of graphing this -- clearly there's a number of "good" participants, and most data will come from them.
+ggsave("../part_quality.pdf")
+
+```
+
+# Differences in condition
+
+
+```{r  fig.width=6, fig.height=4}
+
+error_pos_grouped_type <- function(data){
+  data2 <-data %>% select(experiment, type, group, mod_word_number, correct, word, distractor, sentence) %>% mutate(error.numeric=ifelse(correct=="no", 1, 0)) %>% 
+group_by(experiment, type, group, mod_word_number, word, distractor, sentence) %>% 
+summarize(pct_error=sum(error.numeric)/n(),
+          error_count=sum(error.numeric)) %>% 
+    select(experiment, pct_error, mod_word_number, type) %>% 
+    group_by(experiment, mod_word_number, type) %>% 
+    summarize(sem=sd(pct_error)/sqrt(n()),
+              pct_error=sum(pct_error)/n()
+              )
+  
+  data2
+}
+noun_labelled <- read_rds("../Labelled/noun_clause_labelled.rds")
+
+all_svnp <- g_maze %>% union_all(gulo_maze) %>% union_all(one_b_maze) %>% union_all(g_lab) %>% mutate(experiment=factor(experiment, levels=c("g_lab", "g_maze", "gulo_maze", "one_b_maze"),  labels=c( "Lab G-maze","Web G-maze", "Web A-maze Gulordava", "Web A-maze Jozefowicz" ))) %>% filter(type=="and_comma"|type=="and_no_comma") %>%
+  left_join(noun_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num"))
+
+all_error_svnp <- all_svnp %>% error_pos_grouped_type()
+
+rel_labelled <- read_rds("../Labelled/rel_clause_labelled.rds")
+
+all_rel <- g_maze %>% union_all(gulo_maze) %>% union_all(one_b_maze) %>% union_all(g_lab) %>% mutate(experiment=factor(experiment, levels=c("g_lab", "g_maze", "gulo_maze", "one_b_maze"),  labels=c( "Lab G-maze","Web G-maze", "Web A-maze Gulordava", "Web A-maze Jozefowicz" ))) %>% filter(type=="relative_high"|type=="relative_low") %>%
+  left_join(rel_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) 
+
+all_error_rel <- all_rel %>% error_pos_grouped_type()
+
+adv_labelled <- read_rds("../Labelled/adv_clause_labelled.rds")
+
+all_adv <- g_maze %>% union_all(gulo_maze) %>% union_all(one_b_maze) %>% union_all(g_lab) %>% mutate(experiment=factor(experiment, levels=c("g_lab", "g_maze", "gulo_maze", "one_b_maze"),  labels=c( "Lab G-maze","Web G-maze", "Web A-maze Gulordava", "Web A-maze Jozefowicz" ))) %>% filter(type=="adverb_low"|type=="adverb_high") %>%
+  left_join(adv_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) 
+
+all_error_adv <- all_adv %>% error_pos_grouped_type()
+
+all_error <- all_error_svnp %>% union(all_error_rel) %>% union(all_error_adv) %>% mutate(type=factor(type,levels=c("relative_high", "relative_low", "adverb_high", "adverb_low", "and_no_comma","and_comma"), labels=c("Relative - High", "Relative - Low", "Adverb - High", "Adverb - Low", "S v NP - No comma", "S v NP - Comma"))) %>% filter(mod_word_number>-4 & mod_word_number<4)
+
+ggplot(all_error, aes(mod_word_number, pct_error, color=experiment))+
+  geom_point()+
+  geom_line()+
+  scale_y_continuous(limits=c(0,.1), breaks=c(0, .05, .1), labels=c("0%", "5%", "10%"))+
+  #geom_errorbar(aes(x=mod_word_number, ymin=pct_error-sem, ymax=pct_error+sem))+
+labs(y="Error rate", x="Position relative to disambiguating word")+theme_bw()+
+  theme(legend.position="right", legend.title=element_blank(), text = element_text(size = 13, colour="black"))+  scale_color_manual(values=c("blue3", "skyblue3", "darkorchid2", "hotpink2"))+facet_wrap(~type, nrow=3)
+
+ggsave("../condition_err.pdf")
+  ```
+
+
+
+

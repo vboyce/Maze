@@ -1,0 +1,394 @@
+---
+title: "Power Analysis"
+output: github_document
+---
+
+# Code
+```{r setup, include=F}
+library(tidyverse)
+library(stringr)
+library(brms)
+library(rstan)
+library(gtools)
+knitr::opts_chunk$set(echo = FALSE, warning=F)
+options(knitr.table.format = "html")
+library(knitr)
+library(lme4)
+library(xtable)
+```
+
+```{r data_locations}
+g <- read_rds("../Data/Processed/g_maze.rds") %>%  filter(citizen=="yes" & native=="yes" & resident=="yes")
+l <- read_rds("../Data/Processed/l_maze.rds") %>% filter(citizen=="yes" & native=="yes" & resident=="yes")
+gulo <- read_rds("../Data/Processed/gulo_maze.rds") %>% filter(citizen=="yes" & native=="yes" & resident=="yes")
+one_b <- read_rds("../Data/Processed/one_b_maze.rds") %>% filter(citizen=="yes" & native=="yes" & resident=="yes")
+spr <- read_rds("../Data/Processed/spr.rds") %>% filter(citizen=="yes" & native=="yes" & resident=="yes")
+lab_g <- read_rds("../Witzel/G_data.rds")
+lab_l <-  read_rds("../Witzel/L_data.rds")
+lab_spr <-  read_rds("../Witzel/SPR_data.rds")
+```
+
+# Get more accurate error rates
+For the purpose of power analysis, we want to know a) how much possible data existed at the critical word and b) how close to evenly distributed it was (by participant, by item)
+
+For our data, NA's filled in, so can count up correct/total
+Their data only has yes/no (not filled with NA from earlier mistake), so have to hand calculate total -- subject count * 72 items
+
+```{r error_rate}
+prep_error <- function(data){
+rel_labelled <- read_rds("../Labelled/rel_clause_labelled.rds")
+adv_labelled <- read_rds("../Labelled/adv_clause_labelled.rds")
+noun_labelled <- read_rds("../Labelled/noun_clause_labelled.rds")
+
+data_rel <- data %>% 
+  filter(type=="relative_high"| type=="relative_low") %>% 
+  inner_join(rel_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+  select(type, group, mod_word_number, word, distractor, correct, sentence, subject)
+
+data_adv<- data %>% 
+  filter(type=="adverb_high"|type=="adverb_low") %>% 
+  inner_join(adv_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+  mutate(mod_word_number=ifelse(multi_word=="yes"&mod_word_number>0, mod_word_number-1, mod_word_number)) %>% 
+  select(type, group, mod_word_number, word, distractor, correct, sentence, subject)
+
+data_noun <- data%>% 
+  filter(type=="and_no_comma"|type=="and_comma") %>% 
+  inner_join(noun_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+  select(type, group, mod_word_number, word, distractor, correct, sentence, subject)
+
+all <- data_rel %>% union(data_adv) %>% union(data_noun) %>% filter(mod_word_number==0) %>% mutate(corr.num=ifelse(correct=="yes", 1,0))
+
+all}
+
+
+
+overall_err <- function(data){
+data %>% summarize(success_rate= sum(corr.num)/n())}
+
+
+prep_error(lab_g) %>% summarize(success_rate =sum(corr.num)/(32*88))
+prep_error(lab_l) %>%  summarize(success_rate =sum(corr.num)/(32*88))#32 participants, 88 critical words (double counting two word regions)
+prep_error(g) %>% overall_err()
+prep_error(l) %>% overall_err()
+prep_error(gulo) %>% overall_err()
+prep_error(one_b) %>% overall_err()
+
+
+by_item_err <- function(data){
+  data %>% group_by(group) %>% summarize(success_rate=sum(corr.num)/n()) %>% summarize(avg=mean(success_rate), sd=sd(success_rate))
+}
+
+prep_error(g) %>% by_item_err()
+prep_error(l) %>% by_item_err()
+prep_error(gulo) %>% by_item_err()
+prep_error(one_b) %>% by_item_err()
+
+by_part_err <- function(data){
+  data %>% group_by(subject) %>% summarize(success_rate=sum(corr.num)/n()) %>% summarize(avg=mean(success_rate), sd=sd(success_rate))
+}
+
+prep_error(g) %>% by_part_err()
+prep_error(l) %>% by_part_err()
+prep_error(gulo) %>% by_part_err()
+prep_error(one_b) %>% by_part_err()
+prep_error(lab_g) %>% group_by(subject) %>% summarize(success_rate=sum(corr.num)/88) %>% summarize(avg=mean(success_rate), sd=sd(success_rate)) # 88 critical words
+prep_error(lab_l) %>% group_by(subject) %>% summarize(success_rate=sum(corr.num)/88) %>% summarize(avg=mean(success_rate), sd=sd(success_rate)) # 88 critical words
+
+
+```
+
+Used error rates & sd:
+- Web G-maze: 
+
+Set-up section (copied from results.Rmd)
+
+ - process_data - reads in data and does exclusions 
+ - process_spr - reads in SPR data and does exclusions
+ - for_model - relabels for word position, selects one type of sentence
+ 
+
+```{r more_set_up}
+
+process_data <- function(data){
+  #source = .rds file location of data
+  #returns tibble of data after participant removal, and with only correct answers
+
+#filter out and adjust bad data points
+
+#remove na points that participants didn't see
+data_clean<- data %>% 
+  filter(!(is.na(rt))) %>% 
+   filter(correct=="yes") %>% 
+   select(-correct) %>% 
+  filter(rt!=0)
+
+
+data_clean
+}
+
+process_spr <- function(source){
+  #source = .rds file location of data
+  #returns tibble of data after participant removal, and with only correct answers
+  data <- source %>% 
+    mutate(word_num=word_num-1) %>% 
+  filter(accuracy>.8) %>% 
+  filter(!(is.na(rt))) %>% 
+  filter(rt!=0)
+
+data
+}
+
+for_model <- function(data, type){
+  #data is tibble of data (output of process_data), type is "rel", "adv", or "noun"
+
+rel_labelled <- read_rds("../Labelled/rel_clause_labelled.rds")
+adv_labelled <- read_rds("../Labelled/adv_clause_labelled.rds")
+noun_labelled <- read_rds("../Labelled/noun_clause_labelled.rds")
+
+if(type=="rel"){
+data_rel <- data %>% 
+  filter(type=="relative_high"| type=="relative_low") %>% 
+  left_join(rel_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+   mutate(item.factor=as.factor(group),
+         type.numeric=ifelse(type=="relative_low", 0, 1)) #treatment code expected as 0, unusual as 1
+
+return(data_rel)}
+
+if(type=="adv"){
+data_adv<- data %>% 
+  filter(type=="adverb_high"|type=="adverb_low") %>% 
+  left_join(adv_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+  mutate(mod_word_number=ifelse(multi_word=="yes"&mod_word_number>0, mod_word_number-1, mod_word_number)) %>% 
+  group_by(subject, group, mod_word_number, type) %>% 
+  summarize(rt=mean(rt)) %>% 
+  mutate(item.factor=as.factor(group),
+         type.numeric=ifelse(type=="adverb_low", 0, 1)) #treatment code expected as 0, unusual as 1
+
+return(data_adv)}
+if(type=="noun"){
+data_noun <- data%>% 
+  filter(type=="and_no_comma"|type=="and_comma") %>% 
+  left_join(noun_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+   mutate(item.factor=as.factor(group),
+         type.numeric=ifelse(type=="and_comma", 0, 1)) #treatment code expected as 0, unusual as 1
+
+return(data_noun)
+}
+
+}
+
+```
+
+Power analysis functions:
+
+- get_sided_log_power_est - runs a maximal lmer model; then 500 times, simulates data from the posterior, runs model on fake data and checks for significance in desired direction
+- for_power - filters data for critical word position
+- for_spr_power - sums 0-3 word region for SPR
+
+```{r }
+
+
+for_power <- function(data){
+  data2 <- data %>% filter(mod_word_number==0) %>% select(subject, rt, type.numeric, item.factor)
+  
+  data2
+}
+
+for_spr_power <- function(data){
+  data2 <- data %>%  filter(mod_word_number>-1) %>% filter(mod_word_number<4) %>% 
+    select(subject, rt, mod_word_number, type.numeric, item.factor) %>% 
+    group_by(subject, type.numeric, item.factor) %>% 
+    summarize(summed_rt=sum(rt)) %>% 
+    rename(rt=summed_rt)
+  
+  data2
+}
+```
+
+
+
+# Running analysis
+Error rates:
+
+- our G-maze - .4 data loss, .36 sd
+- our Gulordava - .42 data loss, .37 sd
+- our one-b - .5 data loss, .38 sd
+- our L-maze - .29 data loss, .27 sd
+- our SPR (0 error, exclude .25 of participants)
+- their G-maze - .15 loss, .07 sd
+- their L-maze  .15 loss, .11 sd
+- their SPR (0 error, no exclusions)
+```{r}
+power_est <- function(d,subject_count, err_rate, err_sd,type){
+   #d is (original) data frome, 
+  #subject count is number of fake subjects to make, 
+  #err_rate is the average fraction of data to exclude per participant (to mimic errors leading to data discarding),
+  # err_sd is sd of fraction of data to exclude per participant (we assume this is normally distrubuted, even though it probably isn't)
+  #type = what type of data (hence which items) to model
+  
+  #item range depends on type
+   if(type=="rel"){item_range<- 1:24}
+    if(type=="adv"){item_range <- 49:72}
+    if(type=="noun"){item_range <- 25:48}
+  
+  #make a model
+m <- brm(log(rt) ~ type.numeric + (type.numeric|subject) +(type.numeric|item.factor), data=d)
+  
+
+#set counter
+j <- 0
+#simulate data a bunch
+for (i in 0:499){
+fake_data <- tibble(subject=factor(rep(100:(100+subject_count-1), each=length(item_range))), #subject numbers
+                    subject_error=(rep(rnorm(subject_count,err_rate,err_sd), each=length(item_range))), # assign subjects error rates from normal distribution
+                    item.factor=factor(rep(item_range, times=subject_count)), #all items/participant
+                    type.numeric=sample(0:1, subject_count*length(item_range), replace=T), #randomly choose which version of the sentences
+                    error=runif(subject_count*length(item_range), 0, 1)) %>% #pick random values between 0 and 1 for each
+  filter(error>subject_error) %>% #remove those items where the randomly generated number was less than by participant error rate (note this means out of range error rates (<0, >1, are equivalent to 0,1)
+  select(-error, -subject_error) 
+
+a <- posterior_predict(m, newdata=fake_data, nsamples=1, allow_new_levels=T) %>% exp() # all 4000 rows
+
+fake_data$rt <- t(a)
+
+
+m_fake <- lmer(log(rt) ~ type.numeric + (type.numeric|subject) +(type.numeric|item.factor), data=fake_data)
+if (coef(summary(m_fake))[,"t value"][2]>2){
+  j <- j+1 #count how many times it would be significant
+}}
+print(j/500)
+return(j/500)}
+```
+
+```{r, cache=T, include=F} 
+source <- g %>%process_data() 
+ a <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10, 20, 30, 40, 50, 60)){
+      a <- add_row(a, task="G-maze", type=j, count=k, 
+                   power=power_est(for_power(for_model(source, j)), k, .4, .36, j) ) 
+    }
+  }
+
+
+```
+
+```{r, cache=T, include=F} 
+ source <- l %>% process_data()
+
+ b <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10, 20, 30, 40, 50, 60)){
+      b <- add_row(b, task="L-maze", type=j, count=k, 
+                   power=power_est(for_power(for_model(source, j)), k, .29, .27, j) ) 
+    }
+  }
+
+```
+
+```{r, cache=T, include=F} 
+ source <- gulo %>% process_data()
+ c <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c( 20, 30, 40, 50, 60)){
+      c <- add_row(c, task="A-maze \n Gulordava", type=j, count=k, 
+                   power=power_est(for_power(for_model(source, j)), k, .42, .37, j) ) 
+    }
+  }
+
+```
+
+```{r, cache=T, include=F} 
+ source <- one_b %>% process_data()
+ d <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10, 20, 30, 40, 50, 60)){
+      d <- add_row(d, task="A-maze \n Jozefowicz", type=j, count=k, 
+                   power=power_est(for_power(for_model(source, j)), k, .5, .38, j) ) 
+    }
+  }
+
+```
+
+```{r, cache=T, include=F} 
+ source <- lab_g %>%  filter(correct=="yes")
+ e <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10, 20, 30, 40, 50, 60)){
+      e <- add_row(e, task="Lab \n  G-maze", type=j, count=k, 
+                   power=power_est(for_power(for_model(source, j)), k, .15, .07, j) ) 
+    }
+  }
+
+```
+```{r, cache=T, include=F} 
+ source <- lab_l%>% filter(correct=="yes")
+
+ f <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10, 20, 30, 40, 50, 60)){
+      f <- add_row(f, task="Lab \n L-maze", type=j, count=k, 
+                   power=power_est(for_power(for_model(source, j)), k, .15, .11, j) ) 
+    }
+  }
+
+```
+```{r, cache=T, include=F} 
+ source <- spr %>% process_spr()
+
+ g <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10, 20, 30, 40, 50, 60)){
+      g <- add_row(g, task="SPR", type=j, count=k, 
+                   power=power_est(for_spr_power(for_model(source, j)), ceiling(k*.75), 0,0, j) ) 
+    }
+  }
+
+```
+
+```{r, cache=T, include=F} 
+ source <- lab_spr %>% filter(!(is.na(rt))) %>% 
+  filter(rt!=0)
+
+ h <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10, 20, 30, 40, 50, 60)){
+      h <- add_row(h, task="Lab \n SPR", type=j, count=k, 
+                   power=power_est(for_spr_power(for_model(source, j)), k, 0,0, j) ) 
+    }
+  }
+
+ blah <- (for_model(source,"rel"))
+```
+
+```{r, cache=T, include=F} 
+ source <- gulo %>% process_data()
+ c_2 <- tibble(task=NA, type=NA, count=NA, power=NA)
+
+  for (j in c("rel", "adv", "noun")){
+    for (k in c(10)){
+      c_2 <- add_row(c_2, task="A-maze \n Gulordava", type=j, count=k,
+                   power=power_est(for_power(for_model(source, j)), k, .42, .37, j) )
+    }
+  }
+
+```
+# Make graph
+
+```{r blah, fig.width=6, fig.height=2}
+all_power <- a %>% union(b) %>% union(c) %>% union(d) %>% union(e) %>%  union(f) %>% union(g) %>% union(h) %>% union(c_2) %>%  filter(!is.na(task)) %>% mutate(task=factor(task, levels=c("Lab \n SPR","Lab \n L-maze", "Lab \n  G-maze","SPR", "L-maze","G-maze", "A-maze \n Gulordava", "A-maze \n Jozefowicz"),  labels=c("Lab SPR", "Lab L-maze", "Lab G-maze","Web SPR", "Web L-maze","Web G-maze", "Web A-maze Gulordava", "Web A-maze Jozefowicz" )),
+                  type=factor(type, levels=c("rel", "adv", "noun"),labels=c("Relative","Adverb", "S v NP")))
+
+ggplot(all_power)+geom_point(aes(x=count, y=power, color=task))+
+  geom_line(aes(x=count, y=power, color=task))+facet_grid(~type)+geom_hline(yintercept=.8)+coord_cartesian(xlim=c(0,60))+labs(y="Power estimate", x="Simulated participant count")+theme_bw()+theme(legend.position="right", legend.title=element_blank(), text = element_text(size = 13, colour="black"))+  scale_color_manual(values=c("tan4", "springgreen4", "blue3", "tan2", "palegreen3", "skyblue3", "darkorchid2", "hotpink2"))
+
+ggsave("../graph_for_cuny2.pdf")
+```

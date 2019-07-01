@@ -1,0 +1,504 @@
+---
+title: "Main Analysis"
+output: github_document
+---
+
+# Analysis code
+
+```{r setup, include=F}
+library(tidyverse)
+library(stringr)
+library(brms)
+library(rstan)
+library(gtools)
+knitr::opts_chunk$set(echo = FALSE, warning=F)
+options(knitr.table.format = "html")
+library(knitr)
+library(lme4)
+library(xtable)
+```
+
+Functions:
+
+ - process_data - reads in data and does exclusions 
+ - process_spr - reads in SPR data and does exclusions
+ - for_model - relabels for word position, selects one type of sentence
+ - brm_modelling - does actual modelling
+ 
+```{r more_set_up}
+
+process_data <- function(source){
+  #source = .rds file location of data
+  #returns tibble of data after participant removal, and with only correct answers
+  data <- read_rds(source)
+  data_filtered <- data %>% 
+  filter(citizen=="yes" & native=="yes" & resident=="yes")
+
+message("Removed ", format(100-100*nrow(data_filtered)/nrow(data), digits=2), "% participants who are not citizens, native speakers, or residents of the US.")
+
+message("We have ", length(unique(data_filtered$subject)), " participants left.")
+
+#filter out and adjust bad data points
+
+#remove na points that participants didn't see
+data_no_na<- data_filtered %>% 
+  filter(!(is.na(rt)))
+  
+
+message("Removed ", format(100-100*nrow(data_no_na)/nrow(data_filtered), digits=2), "% of the data for being na (after a mistake).")
+
+#remove mistakes
+ data_cleaned <- data_no_na %>% 
+   filter(correct=="yes") %>% 
+   select(-correct)
+
+message("Removed ", format(100-100*nrow(data_cleaned)/nrow(data_no_na), digits=2), "% of the data for not having correct answer.")
+
+message(format(100*nrow(data_cleaned)/nrow(data_filtered), digits=2), "% of possible data is left" )
+data_no_0 <-  data_cleaned %>% 
+  filter(rt!=0)
+
+message("Removed ", format(100-100*nrow(data_no_0)/nrow(data_cleaned), digits=2), "% of the data for having a RT of 0.")
+
+data_no_0
+}
+
+process_spr <- function(source){
+  #source = .rds file location of data
+  #returns tibble of data after participant removal, and with only correct answers
+  data <- read_rds(source)
+  data_filtered <- data %>% 
+  filter(citizen=="yes" & native=="yes" & resident=="yes") %>% 
+    mutate(word_num=word_num-1)
+
+message("Removed ", format(100-100*nrow(data_filtered)/nrow(data), digits=2), "% participants who are not citizens, native speakers, or residents of the US.")
+
+message("We have ", length(unique(data_filtered$subject)), " participants left.")
+
+data_accurate <- data_filtered %>% 
+  filter(accuracy>.8)
+
+message("Removed ", format(100-100*nrow(data_accurate)/nrow(data_filtered), digits=2), "% participants who did not get at least 80% of comprehension questions correct.")
+
+message("We have ", length(unique(data_accurate$subject)), " participants left.")
+#filter out and adjust bad data points
+
+#remove na points that participants didn't see
+data_no_na<- data_accurate %>% 
+  filter(!(is.na(rt)))
+
+message("Removed ", format(100-100*nrow(data_no_na)/nrow(data_accurate), digits=2), "% of the data for being na.")
+
+data_no_0 <-  data_no_na %>% 
+  filter(rt!=0)
+
+message("Removed ", format(100-100*nrow(data_no_0)/nrow(data_no_na), digits=2), "% of the data for having a RT of 0.")
+
+data_no_0
+}
+
+for_model <- function(data, type){
+  #data is tibble of data (output of process_data), type is "rel", "adv", or "noun"
+
+rel_labelled <- read_rds("../Labelled/rel_clause_labelled.rds")
+adv_labelled <- read_rds("../Labelled/adv_clause_labelled.rds")
+noun_labelled <- read_rds("../Labelled/noun_clause_labelled.rds")
+
+if(type=="rel"){
+data_rel <- data %>% 
+  filter(type=="relative_high"| type=="relative_low") %>% 
+  left_join(rel_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+   mutate(item.factor=as.factor(group),
+         type.numeric=ifelse(type=="relative_low", 0, 1)) #treatment code expected as 0, unusual as 1
+
+return(data_rel)}
+
+if(type=="adv"){
+data_adv<- data %>% 
+  filter(type=="adverb_high"|type=="adverb_low") %>% 
+  left_join(adv_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+  mutate(mod_word_number=ifelse(multi_word=="yes"&mod_word_number>0, mod_word_number-1, mod_word_number)) %>% 
+  group_by(subject, group, mod_word_number, type) %>% 
+  summarize(rt=mean(rt)) %>% 
+  mutate(item.factor=as.factor(group),
+         type.numeric=ifelse(type=="adverb_low", 0, 1)) #treatment code expected as 0, unusual as 1
+
+return(data_adv)}
+if(type=="noun"){
+data_noun <- data%>% 
+  filter(type=="and_no_comma"|type=="and_comma") %>% 
+  left_join(noun_labelled, by=c("word_num", "sentence", "type", "word", "group"="item_num")) %>% 
+   mutate(item.factor=as.factor(group),
+         type.numeric=ifelse(type=="and_comma", 0, 1)) #treatment code expected as 0, unusual as 1
+
+return(data_noun)
+}
+
+}
+
+brm_modelling <- function(data){
+  results <- tibble(mod_word_num=NA, mean=NA, low=NA, high=NA, above=NA, intercept=NA)
+for (i in (-5:5)){
+  data_test <- data %>% filter(mod_word_number==i)
+
+system.time(model_test <- brm(log(rt) ~ type.numeric +(type.numeric|item.factor)+(type.numeric|subject), data_test))
+fe <- fixef(model_test)
+above <- mean(extract(model_test$fit, "b_type.numeric")[[1]]>0)
+results <- add_row(results, "mod_word_num"=i, "mean"=fe[2], "low"=fe[6], "high"=fe[8], "above"=above, "intercept"=fe[1])
+}
+results_fixed <- results %>% mutate(pval_equiv = signif(2*pmin(above,1-above), digits=2)) %>% 
+  filter(!is.na(mod_word_num)) %>% 
+  mutate(mean_ms=exp(mean+intercept)-exp(intercept),
+         low_ms=exp(low+intercept)-exp(intercept),
+         high_ms=exp(high+intercept)-exp(intercept))
+
+results_fixed
+}
+
+```
+
+ Run analysis for relative clauses
+ 
+```{r g_rel_plot, echo=F, cache=T, include=F}
+rel_g <- process_data("../Data/Processed/g_maze.rds") %>% 
+  for_model("rel")
+
+rel_g_results <- brm_modelling(rel_g)
+
+
+```
+
+```{r l_rel_plot, echo=F, cache=T, include=F}
+rel_l <- process_data("../Data/Processed/l_maze.rds") %>% 
+  for_model("rel")
+
+rel_l_results <- brm_modelling(rel_l)
+
+```
+
+
+```{r spr_rel_plot, echo=F, cache=T, include=F}
+rel_spr <- process_spr("../Data/Processed/spr.rds") %>% 
+  for_model("rel")
+
+rel_spr_results <- brm_modelling(rel_spr)
+
+
+```
+```{r gulo_rel_plot, echo=F, cache=T, include=F}
+rel_gulo <- process_data("../Data/Processed/gulo_maze.rds") %>% 
+  for_model("rel")
+
+rel_gulo_results <- brm_modelling(rel_gulo)
+
+
+```
+```{r one_b_rel_plot, echo=F, cache=T, include=F}
+rel_one_b <- process_data("../Data/Processed/one_b_maze.rds") %>% 
+  for_model("rel")
+
+rel_one_b_results <- brm_modelling(rel_one_b)
+
+
+```
+
+Run analysis for adverbs
+
+```{r g_adv_plot, echo=F, cache=T, include=F}
+adv_g <- process_data("../Data/Processed/g_maze.rds") %>% 
+  for_model("adv")
+
+adv_g_results <- brm_modelling(adv_g)
+
+```
+
+```{r l_adv_plot, echo=F, cache=T, include=F}
+adv_l <- process_data("../Data/Processed/l_maze.rds") %>% 
+  for_model("adv")
+
+adv_l_results <- brm_modelling(adv_l)
+
+```
+
+```{r spr_adv_plot, echo=F, cache=T, include=F}
+adv_spr <- process_spr("../Data/Processed/spr.rds") %>% 
+  for_model("adv")
+
+adv_spr_results <- brm_modelling(adv_spr)
+
+
+```
+
+```{r gulo_adv_plot, echo=F, cache=T, include=F}
+adv_gulo <- process_data("../Data/Processed/gulo_maze.rds") %>% 
+  for_model("adv")
+
+adv_gulo_results <- brm_modelling(adv_gulo)
+
+```
+
+```{r one_b_adv_plot, echo=F, cache=T, include=F}
+adv_one_b <- process_data("../Data/Processed/one_b_maze.rds") %>% 
+  for_model("adv")
+
+adv_one_b_results <- brm_modelling(adv_one_b)
+
+```
+
+Run analysis for NP v S
+
+```{r np_plot_g, echo=F, message=F, cache=T, include=F}
+
+noun_g <- process_data("../Data/Processed/g_maze.rds") %>% 
+  for_model("noun")
+
+noun_g_results <- brm_modelling(noun_g)
+```
+
+
+```{r np_plot_l, echo=F, message=F, cache=T, include=F}
+
+noun_l <- process_data("../Data/Processed/l_maze.rds") %>% 
+  for_model("noun") 
+
+noun_l_results <- brm_modelling(noun_l)
+
+
+```
+
+```{r np_plot_spr, echo=F, message=F, cache=T, include=F}
+
+noun_spr <- process_spr("../Data/Processed/spr.rds") %>% 
+  for_model("noun")
+
+noun_spr_results <- brm_modelling(noun_spr)
+
+```
+```{r np_plot_gulo, echo=F, message=F, cache=T, include=F}
+
+noun_gulo <- process_data("../Data/Processed/gulo_maze.rds") %>% 
+  for_model("noun")
+
+noun_gulo_results <- brm_modelling(noun_gulo)
+```
+
+```{r np_plot_one_b, echo=F, message=F, cache=T, include=F}
+
+noun_one_b <- process_data("../Data/Processed/one_b_maze.rds") %>% 
+  for_model("noun")
+
+noun_one_b_results <- brm_modelling(noun_one_b)
+```
+
+Re-analyse Witzel data
+
+```{r set_up_witzel, include=F}
+
+g_lab <- read_rds("../Witzel/G_data.rds") %>%  filter(correct=="yes")
+
+l_lab <- read_rds("../Witzel/L_data.rds") %>% filter(correct=="yes")
+
+spr_lab <- read_rds("../Witzel/SPR_data.rds") %>%   filter(accuracy>.8)
+```
+
+```{r, include=F, cache=T}
+rel_g_lab <- g_lab %>% 
+  for_model("rel")
+
+rel_g_lab_results <- brm_modelling(rel_g_lab)
+```
+
+```{r, include=F, cache=T}
+rel_l_lab <- l_lab %>% 
+  for_model("rel")
+
+rel_l_lab_results <- brm_modelling(rel_l_lab)
+```
+
+```{r, include=F, cache=T}
+rel_spr_lab <- spr_lab %>% 
+  for_model("rel")
+
+rel_spr_lab_results <- brm_modelling(rel_spr_lab)
+```
+
+```{r, include=F, cache=T}
+adv_g_lab <- g_lab %>% 
+  for_model("adv")
+
+adv_g_lab_results <- brm_modelling(adv_g_lab)
+```
+
+```{r, include=F, cache=T}
+adv_l_lab <- l_lab %>% 
+  for_model("adv")
+
+adv_l_lab_results <- brm_modelling(adv_l_lab)
+```
+
+```{r, include=F, cache=T}
+adv_spr_lab <- spr_lab %>% 
+  for_model("adv")
+
+adv_spr_lab_results <- brm_modelling(adv_spr_lab)
+```
+
+```{r, include=F, cache=T}
+noun_g_lab <- g_lab %>% 
+  for_model("noun")
+
+noun_g_lab_results <- brm_modelling(noun_g_lab)
+```
+
+```{r, include=F, cache=T}
+noun_l_lab <- l_lab %>% 
+  for_model("noun")
+
+noun_l_lab_results <- brm_modelling(noun_l_lab)
+```
+
+```{r, include=F, cache=T}
+noun_spr_lab <- spr_lab %>% 
+  for_model("noun")
+
+noun_spr_lab_results <- brm_modelling(noun_spr_lab)
+```
+
+# Graph for paper 
+
+```{r prep}
+rel_g_results <- rel_g_results %>% mutate(type="Web\nG-maze")
+rel_l_results <- rel_l_results %>% mutate(type="Web\nL-maze")
+rel_spr_results <- rel_spr_results %>% mutate(type="Web\nSPR")
+rel_gulo_results <- rel_gulo_results %>% mutate(type="Web A-maze\nGulordava")
+rel_one_b_results <- rel_one_b_results %>% mutate(type="Web A-maze\nJozefowicz")
+rel_g_lab_results <- rel_g_lab_results %>% mutate(type="Lab\nG-maze")
+rel_l_lab_results <- rel_l_lab_results %>% mutate(type="Lab\nL-maze")
+rel_spr_lab_results <- rel_spr_lab_results %>% mutate(type="Lab\nSPR")
+rel_all <- rel_g_results %>% union(rel_l_results) %>% union(rel_spr_results) %>%  union(rel_gulo_results) %>% union(rel_one_b_results) %>% union(rel_l_lab_results) %>% union(rel_g_lab_results) %>% union(rel_spr_lab_results) %>% mutate(topic="Relative")
+
+adv_g_results <- adv_g_results %>% mutate(type="Web\nG-maze")
+adv_l_results <- adv_l_results %>% mutate(type="Web\nL-maze")
+adv_spr_results <- adv_spr_results %>% mutate(type="Web\nSPR")
+adv_gulo_results <- adv_gulo_results %>% mutate(type="Web A-maze\nGulordava")
+adv_one_b_results <- adv_one_b_results %>% mutate(type="Web A-maze\nJozefowicz")
+adv_g_lab_results <- adv_g_lab_results %>% mutate(type="Lab\nG-maze")
+adv_l_lab_results <- adv_l_lab_results %>% mutate(type="Lab\nL-maze")
+adv_spr_lab_results <- adv_spr_lab_results %>% mutate(type="Lab\nSPR")
+adv_all <- adv_g_results %>% union(adv_l_results) %>% union(adv_spr_results)%>% union(adv_gulo_results) %>% union(adv_one_b_results) %>%union(adv_l_lab_results) %>% union(adv_g_lab_results) %>% union(adv_spr_lab_results) %>%  mutate(topic="Adverb")
+
+noun_g_results <- noun_g_results %>% mutate(type="Web\nG-maze")
+noun_l_results <- noun_l_results %>% mutate(type="Web\nL-maze")
+noun_spr_results <- noun_spr_results %>% mutate(type="Web\nSPR")
+noun_gulo_results <- noun_gulo_results %>% mutate(type="Web A-maze\nGulordava")
+noun_one_b_results <- noun_one_b_results %>% mutate(type="Web A-maze\nJozefowicz")
+noun_g_lab_results <- noun_g_lab_results %>% mutate(type="Lab\nG-maze")
+noun_l_lab_results <- noun_l_lab_results %>% mutate(type="Lab\nL-maze")
+noun_spr_lab_results <- noun_spr_lab_results %>% mutate(type="Lab\nSPR")
+noun_all <- noun_g_results %>% union(noun_l_results) %>% union(noun_spr_results)%>% union(noun_gulo_results) %>%  union(noun_one_b_results)%>%union(noun_l_lab_results) %>% union(noun_g_lab_results) %>% union(noun_spr_lab_results) %>% mutate(topic="S v NP")
+
+all <- rel_all %>% union(adv_all) %>% union(noun_all) %>% mutate(type=factor(type, levels=c("Lab\nSPR","Lab\nL-maze", "Lab\nG-maze","Web\nSPR", "Web\nL-maze","Web\nG-maze", "Web A-maze\nGulordava", "Web A-maze\nJozefowicz" )),
+                  topic=factor(topic, levels=c("Relative","Adverb", "S v NP"))) 
+
+```
+
+```{r stuff, fig.height=8, fig.width=7}
+all2 <- all %>% filter(mod_word_num>-2) %>% filter(mod_word_num<5)
+ggplot(all2)+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept=0)+
+  scale_x_continuous(limits = c(-.5,3.5), breaks=c(0,1,2,3), labels=c("0","1","2","3"))+
+  geom_point(aes(x=mod_word_num, y=mean_ms, color=type))+
+  geom_errorbar(aes(x=mod_word_num, ymin=low_ms, ymax=high_ms), direction="y", width=.2)+
+  geom_line(aes(mod_word_num, mean_ms, color=type))+
+ geom_text(aes(x=case_when(
+   pval_equiv==0~ mod_word_num+.50,
+   (mod_word_num==1 & type=="Web\nSPR") ~ mod_word_num-.25,
+   (mod_word_num==2 & type=="Lab\nG-maze") ~ mod_word_num+.5,
+   (mod_word_num==0 & type=="Web\nG-maze") ~ mod_word_num+.55,
+   (mod_word_num==0 & topic=="Relative") ~ mod_word_num+.6,
+   mod_word_num==0 ~ mod_word_num+.55, 
+   mod_word_num==1 ~ mod_word_num+.4,
+   TRUE ~ mod_word_num+.25),
+   y=case_when(
+     pval_equiv==0~ mean_ms+20,
+     (mod_word_num==1 & type=="Lab\nG-maze")~mean_ms+100,
+     (mod_word_num==2 & topic=="Relative")~mean_ms+150,
+     TRUE ~ mean_ms+70)
+   , label=case_when(
+     (pval_equiv==0)&(mod_word_num>-1) ~"< 0.001",
+    (pval_equiv<=.05)&(mod_word_num>-1) ~ as.character(signif(pval_equiv,2)),
+     TRUE ~ ""
+   )), size=4)+
+  facet_grid(type~topic, scales="free_y", space="free_y")+
+  coord_cartesian(xlim=c(0,3))+
+  labs(title="Penalty for high attachment or no comma conditions", y="Difference in ms", x="Word position: 0=disambiguating word")+
+  theme_bw()+geom_blank(aes(y=150))+geom_blank( aes(y=-50))+
+  theme(legend.position="none", text = element_text(size = 12, colour="black"), panel.grid.minor.x = element_blank())+
+  scale_y_continuous(breaks=c(-100, 0, 100, 200))+
+  scale_color_manual(values=c("tan4", "springgreen4", "blue3", "tan2", "palegreen3", "skyblue3", "darkorchid2", "hotpink2"))
+
+
+ggsave("../graph_for_cuny.pdf")
+```
+
+
+
+
+# Fuller results
+For each word position, from -5 to 5 (disambiguating/critical word is 0). Estimated effect size in ms (of dispreferred - preferred). P-value equivalent given in parentheses. 
+
+```{r}
+table_data <- all %>% select(mean_ms, mod_word_num, type, topic, pval_equiv) %>%
+  mutate(mean_ms=round(mean_ms), 
+         pval_equiv=signif(pval_equiv, 2), 
+         "Word\nPosition"=factor(mod_word_num, levels=c("-5","-4","-3","-2","-1","0","1","2","3","4","5")),
+         combined=str_c(mean_ms, " (", pval_equiv, ")")) %>% select(-pval_equiv, -mean_ms, -mod_word_num) %>% spread(type, combined)
+
+write_rds(all, "summ.rds")
+
+table_rel <- table_data %>% filter(topic=="Relative") %>% select(-topic)
+table_adv <- table_data %>% filter(topic=="Adverb") %>% select(-topic)
+
+table_noun <- table_data %>% filter(topic=="S v NP") %>% select(-topic)
+```
+
+## Relative Clause Results
+Relative clause attatchment: (always using reflexive pronouns)
+
+  - The son of the actress who shot *herself* on the set was under investigation. (low attachment) versus
+  - The son of the actress who shot *himself* on the set was under investigation. (high attatchment)
+
+Here word position is measured off of where the reflexive it was. So 'herself' or 'himself' is 0, the following word is 1, the preceding word is -1 etc.
+
+```{r}
+kable(table_rel)
+```
+
+## Adverb Results 
+Adverb attatchment: (always temporal adverbs)
+
+ - Susan bought the wine she will drink *next week*, but she didn't buy any cheese. (low attachment) versus
+ - Susan bought the wine she will drink *last week*, but she didn't buy any cheese. (high attachment)
+
+Here word position is measured by  how many words after the temporal adjective it was. So 'last' 'next', 'week', and 'tomorrow' would all be 0, 'but' is 1 etc.
+
+```{r}
+kable(table_adv)
+```
+
+## S v NP conjunction Results
+NP/S coordination: 
+
+ - the robber shot the jeweler, and the salesman *reported* the crime to the police. (unambiguous due to comma) versus
+ - the robber shot the jeweler and the salesman *reported* the crime to the police. (ambiguous)
+ 
+Here position is sentence is measured relative to the second verb (disambiguation). So 'reported' is 0, 'the' is 1 etc.
+
+```{r}
+kable(table_noun)
+
+
+```
+
+
