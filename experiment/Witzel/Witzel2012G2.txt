@@ -1,0 +1,1999 @@
+<fd 50> <cr> <d 0> <vg 1000> <s 96> <nfb> <vm 640,480,16,100> <id pio12> <t 10000000>
+
+$0"Press the footpedal for the next screen.";
+0 "You will be given two words",<ln 1>"side by side. Press the Right or Left key", <ln 2>" to indicate which word best continues the sentence.";
+0 "Select the best word as quickly as you can,", <ln 1> "but without making too many errors.";
+0 "The following items are for practice." <SetCounter Counter1=0>;
+
+=101000  %75"READY"/ *"The   x-x-x" c;
++101001  *"everyone   husband"<biw 101251> c;
++101002  *"were   of"<biw 101251> c;
+-101003  *"the   bother"<biw 101251> c;
++101004  *"leave   beautiful"<biw 101251> c;
+-101005  *"woman   what"<biw 101251> c;
+-101006  *"bought   click"<biw 101251> c;
+-101007  *"her   door"<biw 101251> c;
++101008  *"forget   roses"<biw 101251> c;
+-101009  *"and   prompts"<biw 101251> c;
+-101010  *"candy   cancel"<biw 101251> c;
++101011  *"beast   for"<biw 101251> c;
+-101012  *"her   walk"<biw 101251> c;
+-101013  *"birthday.   striped."<biw 101251> c;
+101000 "CORRECT"/<branch 101250> ;
+101251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+101250  c;
+
+
+=102000  %75"READY"/ *"The   x-x-x" c;
++102001  *"own   patient"<biw 102251> c;
+-102002  *"who   be"<biw 102251> c;
++102003  *"what   the"<biw 102251> c;
++102004  *"of   doctor"<biw 102251> c;
+-102005  *"treated   release"<biw 102251> c;
+-102006  *"became   dream"<biw 102251> c;
++102007  *"they   better"<biw 102251> c;
++102008  *"director   after"<biw 102251> c;
++102009  *"conviction   only"<biw 102251> c;
+-102010  *"a   piano"<biw 102251> c;
++102011  *"apart   few"<biw 102251> c;
++102012  *"just.   treatments."<biw 102251> c;
+102000 "CORRECT"/<branch 102250> ;
+102251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+102250  c;
+
+
+=103000  %75"READY"/ *"Maya   x-x-x" c;
+-103001  *"played   us"<biw 103251> c;
+-103002  *"with   was"<biw 103251> c;
++103003  *"lift   the"<biw 103251> c;
++103004  *"onto   blocks"<biw 103251> c;
+-103005  *"and   write"<biw 103251> c;
+-103006  *"the   include"<biw 103251> c;
++103007  *"reportedly,   balls,"<biw 103251> c;
++103008  *"him   but"<biw 103251> c;
++103009  *"and   she"<biw 103251> c;
+-103010  *"soon   resident"<biw 103251> c;
+-103011  *"got   house"<biw 103251> c;
+-103012  *"bored   resorted"<biw 103251> c;
+-103013  *"with   pray"<biw 103251> c;
++103014  *"left.   them."<biw 103251> c;
+103000 "CORRECT"/<branch 103250> ;
+103251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+103250  c;
+
+
+=104000  %75"READY"/ *"The   x-x-x" c;
++104001  *"since   therapist"<biw 104251> c;
++104002  *"think   set"<biw 104251> c;
++104003  *"study   up"<biw 104251> c;
++104004  *"recommend   a"<biw 104251> c;
+-104005  *"meeting   things"<biw 104251> c;
+-104006  *"with   them"<biw 104251> c;
+-104007  *"the   lodge"<biw 104251> c;
++104008  *"that   upset"<biw 104251> c;
++104009  *"with   woman"<biw 104251> c;
++104010  *"would   and"<biw 104251> c;
+-104011  *"her   jump"<biw 104251> c;
++104012  *"finish   husband"<biw 104251> c;
++104013  *"north.   yesterday."<biw 104251> c;
+104000 "CORRECT"/<branch 104250> ;
+104251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+104250  c;
+
+
+=105000  %75"READY"/ *"The   x-x-x" c;
+-105001  *"reporter   according"<biw 105251> c;
+-105002  *"had   are"<biw 105251> c;
+-105003  *"dinner   save"<biw 105251> c;
++105004  *"myself   yesterday"<biw 105251> c;
+-105005  *"with   tank"<biw 105251> c;
+-105006  *"the   go"<biw 105251> c;
++105007  *"take   baseball"<biw 105251> c;
+-105008  *"player   pose"<biw 105251> c;
+-105009  *"who   speak"<biw 105251> c;
++105010  *"body   Kevin"<biw 105251> c;
+-105011  *"admired.   guys."<biw 105251> c;
+105000 "CORRECT"/<branch 105250> ;
+105251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+105250  c;
+
+
+=106000  %75"READY"/ *"The   x-x-x" c;
+-106001  *"visitors   maybe"<biw 106251> c;
+-106002  *"at   us"<biw 106251> c;
+-106003  *"the   might"<biw 106251> c;
++106004  *"that   zoo"<biw 106251> c;
++106005  *"why   watched"<biw 106251> c;
+-106006  *"the   dig"<biw 106251> c;
+-106007  *"zookeeper   them"<biw 106251> c;
++106008  *"been   who"<biw 106251> c;
++106009  *"where   the"<biw 106251> c;
+-106010  *"monkeys   on"<biw 106251> c;
+-106011  *"and   hiker"<biw 106251> c;
+-106012  *"apes   but"<biw 106251> c;
+-106013  *"teased.   because."<biw 106251> c;
+106000 "CORRECT"/<branch 106250> ;
+106251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+106250  c;
+
+
+=107000  %75"READY"/ *"The   x-x-x" c;
++107001  *"who   mother"<biw 107251> c;
+-107002  *"of   celebrate"<biw 107251> c;
+-107003  *"the   when"<biw 107251> c;
+-107004  *"prisoner   saying"<biw 107251> c;
++107005  *"fail   sent"<biw 107251> c;
+-107006  *"him   save"<biw 107251> c;
+-107007  *"packages   add"<biw 107251> c;
+-107008  *"that   yells"<biw 107251> c;
+-107009  *"contained   prefer"<biw 107251> c;
+-107010  *"cookies   stare"<biw 107251> c;
++107011  *"college   and"<biw 107251> c;
+-107012  *"novels.   dressed."<biw 107251> c;
+107000 "CORRECT"/<branch 107250> ;
+107251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+107250  c;
+
+
+=108000  %75"READY"/ *"The   x-x-x" c;
++108001  *"said   semester"<biw 108251> c;
++108002  *"are   will"<biw 108251> c;
++108003  *"that   start"<biw 108251> c;
++108004  *"prize   next"<biw 108251> c;
+-108005  *"week,   first,"<biw 108251> c;
++108006  *"of   but"<biw 108251> c;
++108007  *"them   the"<biw 108251> c;
++108008  *"since   students"<biw 108251> c;
++108009  *"draws   and"<biw 108251> c;
++108010  *"which   teachers"<biw 108251> c;
++108011  *"us   are"<biw 108251> c;
+-108012  *"not   televise"<biw 108251> c;
++108013  *"lunch.   ready."<biw 108251> c;
+108000 "CORRECT"/<branch 108250> ;
+108251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+108250  c;
+
+
+0 "End of practice. Press the footpedal to continue.";$
+
+=111000  %75"READY"/ *"The   x-x-x" c;
++111001  *"if   infant"<biw 111251> c;
+-111002  *"was   consult"<biw 111251> c;
++111003  *"slopes   able"<biw 111251> c;
+-111004  *"to   economic"<biw 111251> c;
+-111005  *"stand   spirits"<biw 111251> c;
++111006  *"had   by"<biw 111251> c;
+-111007  *"himself   boost"<biw 111251> c;
++111008  *"students   for"<biw 111251> c;
+-111009  *"the   decided"<biw 111251> c;
++111010  *"approximately   first"<biw 111251> c;
++111011  *"worth   time"<biw 111251> c;
++111012  *"be   last"<biw 111251> c;
++111013  *"offers.   week."<biw 111251> c;
+111000 "CORRECT"/<branch 111250> ;
+111251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+111250  c;
+
+
+=112000  %75"READY"/ *"Jane   x-x-x" c;
+-112001  *"and   have"<biw 112251> c;
++112002  *"was   John"<biw 112251> c;
++112003  *"perverse   studied"<biw 112251> c;
++112004  *"kept   math"<biw 112251> c;
++112005  *"hikes   and"<biw 112251> c;
++112006  *"repeats   history"<biw 112251> c;
++112007  *"white,   yesterday,"<biw 112251> c;
+-112008  *"but   him"<biw 112251> c;
+-112009  *"they   or"<biw 112251> c;
+-112010  *"failed   shoulders"<biw 112251> c;
+-112011  *"the   enlarge"<biw 112251> c;
+-112012  *"exams.   rough."<biw 112251> c;
+112000 "CORRECT"/<branch 112250> ;
+112251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+112250  c;
+
+
+=113000  %75"READY"/ *"The   x-x-x" c;
+-113001  *"old   this"<biw 113251> c;
+-113002  *"man   gone"<biw 113251> c;
++113003  *"because   amused"<biw 113251> c;
++113004  *"increased   himself"<biw 113251> c;
+-113005  *"by   can"<biw 113251> c;
+-113006  *"gossiping   at"<biw 113251> c;
+-113007  *"with   ever"<biw 113251> c;
+-113008  *"his   judge"<biw 113251> c;
++113009  *"ours   children"<biw 113251> c;
+-113010  *"and   were"<biw 113251> c;
++113011  *"little.   friends."<biw 113251> c;
+113000 "CORRECT"/<branch 113250> ;
+113251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+113250  c;
+
+
+=114000  %75"READY"/ *"Hugh   x-x-x" c;
++114001  *"use   took"<biw 114251> c;
+-114002  *"too   why"<biw 114251> c;
+-114003  *"long   court"<biw 114251> c;
++114004  *"did   to"<biw 114251> c;
+-114005  *"propose,   reasonable,"<biw 114251> c;
++114006  *"say   and"<biw 114251> c;
++114007  *"but   his"<biw 114251> c;
+-114008  *"girlfriend   our"<biw 114251> c;
++114009  *"castle   decided"<biw 114251> c;
++114010  *"us   to"<biw 114251> c;
+-114011  *"marry   agent"<biw 114251> c;
++114012  *"creep   someone"<biw 114251> c;
++114013  *"jump.   else."<biw 114251> c;
+114000 "CORRECT"/<branch 114250> ;
+114251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+114250  c;
+
+
+=115000  %75"READY"/ *"The   x-x-x" c;
++115001  *"include   boy"<biw 115251> c;
++115002  *"him   who"<biw 115251> c;
++115003  *"chair   was"<biw 115251> c;
++115004  *"clinics   wearing"<biw 115251> c;
++115005  *"speak   a"<biw 115251> c;
+-115006  *"blue   memories"<biw 115251> c;
++115007  *"we   cap"<biw 115251> c;
+-115008  *"went   seem"<biw 115251> c;
++115009  *"knew   missing"<biw 115251> c;
+-115010  *"on   seek"<biw 115251> c;
++115011  *"suddenly   his"<biw 115251> c;
+-115012  *"way   hers"<biw 115251> c;
+-115013  *"home   other"<biw 115251> c;
++115014  *"new   last"<biw 115251> c;
+-115015  *"week.   untouched."<biw 115251> c;
+115000 "CORRECT"/<branch 115250> ;
+115251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+115250  c;
+
+
+=116000  %75"READY"/ *"The   x-x-x" c;
+-116001  *"thief   heard"<biw 116251> c;
++116002  *"run   noticed"<biw 116251> c;
++116003  *"happened   the"<biw 116251> c;
+-116004  *"boy   toward"<biw 116251> c;
++116005  *"criticize   and"<biw 116251> c;
+-116006  *"the   were"<biw 116251> c;
+-116007  *"girl   about"<biw 116251> c;
+-116008  *"watching   mountain"<biw 116251> c;
+-116009  *"him   start"<biw 116251> c;
++116010  *"staffers   from"<biw 116251> c;
++116011  *"for   the"<biw 116251> c;
+-116012  *"upstairs   come"<biw 116251> c;
+-116013  *"window.   towering."<biw 116251> c;
+116000 "CORRECT"/<branch 116250> ;
+116251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+116250  c;
+
+
+=117000  %75"READY"/ *"Bill   x-x-x" c;
+-117001  *"will   house"<biw 117251> c;
++117002  *"turquoise   quit"<biw 117251> c;
+-117003  *"his   percent"<biw 117251> c;
+-117004  *"job   that"<biw 117251> c;
++117005  *"strap   next"<biw 117251> c;
++117006  *"on   month"<biw 117251> c;
+-117007  *"to   cute"<biw 117251> c;
+-117008  *"take   outfits"<biw 117251> c;
++117009  *"they   care"<biw 117251> c;
++117010  *"pants   of"<biw 117251> c;
++117011  *"and   his"<biw 117251> c;
++117012  *"remove   kids"<biw 117251> c;
+-117013  *"and   have"<biw 117251> c;
+-117014  *"step-children.   soar."<biw 117251> c;
+117000 "CORRECT"/<branch 117250> ;
+117251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+117250  c;
+
+
+=118000  %75"READY"/ *"The   x-x-x" c;
+-118001  *"father   a"<biw 118251> c;
++118002  *"percent   of"<biw 118251> c;
++118003  *"from   the"<biw 118251> c;
++118004  *"an   pretty"<biw 118251> c;
++118005  *"have   girl"<biw 118251> c;
++118006  *"punish   cleaned"<biw 118251> c;
++118007  *"shared   up"<biw 118251> c;
+-118008  *"the   qualify"<biw 118251> c;
++118009  *"there   house"<biw 118251> c;
++118010  *"hear   all"<biw 118251> c;
++118011  *"executive   by"<biw 118251> c;
+-118012  *"himself   rather"<biw 118251> c;
++118013  *"identical   last"<biw 118251> c;
++118014  *"celebrating.   week."<biw 118251> c;
+118000 "CORRECT"/<branch 118250> ;
+118251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+118250  c;
+
+
+=119000  %75"READY"/ *"Megan   x-x-x" c;
++119001  *"much   got"<biw 119251> c;
++119002  *"never   angry"<biw 119251> c;
+-119003  *"with   hop"<biw 119251> c;
++119004  *"sees   her"<biw 119251> c;
+-119005  *"boss   liked"<biw 119251> c;
+-119006  *"and   month"<biw 119251> c;
++119007  *"but   sued"<biw 119251> c;
+-119008  *"him   added"<biw 119251> c;
++119009  *"bars   for"<biw 119251> c;
++119010  *"he   discrimination"<biw 119251> c;
+-119011  *"last   have"<biw 119251> c;
+-119012  *"month.   neighbors."<biw 119251> c;
+119000 "CORRECT"/<branch 119250> ;
+119251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+119250  c;
+
+
+=120000  %75"READY"/ *"The   x-x-x" c;
+-120001  *"pilot   believe"<biw 120251> c;
++120002  *"reach   will"<biw 120251> c;
+-120003  *"fly   smiles"<biw 120251> c;
++120004  *"continue   a"<biw 120251> c;
++120005  *"got   new"<biw 120251> c;
+-120006  *"airplane   less"<biw 120251> c;
+-120007  *"to   implicate"<biw 120251> c;
+-120008  *"Europe   reports"<biw 120251> c;
+-120009  *"and   secretary"<biw 120251> c;
+-120010  *"back   maid"<biw 120251> c;
++120011  *"parents   beginning"<biw 120251> c;
++120012  *"rate   next"<biw 120251> c;
++120013  *"land.   week."<biw 120251> c;
+120000 "CORRECT"/<branch 120250> ;
+120251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+120250  c;
+
+
+=121000  %75"READY"/ *"The   x-x-x" c;
+-121001  *"nurse   to"<biw 121251> c;
++121002  *"be   took"<biw 121251> c;
++121003  *"wait   care"<biw 121251> c;
++121004  *"natural   of"<biw 121251> c;
+-121005  *"the   own"<biw 121251> c;
+-121006  *"old   a"<biw 121251> c;
+-121007  *"lady   been"<biw 121251> c;
+-121008  *"who   can"<biw 121251> c;
++121009  *"why   could"<biw 121251> c;
+-121010  *"not   incident"<biw 121251> c;
+-121011  *"take   released"<biw 121251> c;
++121012  *"use   care"<biw 121251> c;
+-121013  *"of   are"<biw 121251> c;
+-121014  *"herself.   after."<biw 121251> c;
+121000 "CORRECT"/<branch 121250> ;
+121251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+121250  c;
+
+
+=122000  %75"READY"/ *"Cindy   x-x-x" c;
++122001  *"everyone   treated"<biw 122251> c;
+-122002  *"herself   said"<biw 122251> c;
++122003  *"another   to"<biw 122251> c;
+-122004  *"a   once"<biw 122251> c;
+-122005  *"vacation   eggs"<biw 122251> c;
+-122006  *"in   was"<biw 122251> c;
++122007  *"match   China"<biw 122251> c;
++122008  *"high-tech   and"<biw 122251> c;
++122009  *"do   several"<biw 122251> c;
+-122010  *"other   few"<biw 122251> c;
++122011  *"wisdom   Asian"<biw 122251> c;
++122012  *"fast.   countries."<biw 122251> c;
+122000 "CORRECT"/<branch 122250> ;
+122251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+122250  c;
+
+$0 "End of block. 7 blocks left. Continue when ready.";$
+
+=123000  %75"READY"/ *"Margo   x-x-x" c;
++123001  *"annual   will"<biw 123251> c;
++123002  *"bouncing   open"<biw 123251> c;
+-123003  *"bakeries   enjoy"<biw 123251> c;
+-123004  *"in   seem"<biw 123251> c;
++123005  *"during   Chicago"<biw 123251> c;
+-123006  *"and   future"<biw 123251> c;
+-123007  *"New   carve"<biw 123251> c;
+-123008  *"York   she"<biw 123251> c;
++123009  *"skeptical   after"<biw 123251> c;
++123010  *"are   getting"<biw 123251> c;
+-123011  *"a   been"<biw 123251> c;
++123012  *"her   loan"<biw 123251> c;
+-123013  *"next   focus"<biw 123251> c;
+-123014  *"year.   resolutely."<biw 123251> c;
+123000 "CORRECT"/<branch 123250> ;
+123251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+123250  c;
+
+
+=124000  %75"READY"/ *"Sara   x-x-x" c;
++124001  *"event   and"<biw 124251> c;
+-124002  *"her   dump"<biw 124251> c;
+-124003  *"mother   not"<biw 124251> c;
++124004  *"lifts   had"<biw 124251> c;
++124005  *"mental,   steak,"<biw 124251> c;
++124006  *"most,   potatoes,"<biw 124251> c;
+-124007  *"and   count"<biw 124251> c;
++124008  *"but   green"<biw 124251> c;
+-124009  *"beans   if"<biw 124251> c;
+-124010  *"for   TV"<biw 124251> c;
+-124011  *"dinner   supports"<biw 124251> c;
++124012  *"stands   last"<biw 124251> c;
++124013  *"chatter.   night."<biw 124251> c;
+124000 "CORRECT"/<branch 124250> ;
+124251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+124250  c;
+
+
+=125000  %75"READY"/ *"The   x-x-x" c;
+-125001  *"gardener   join"<biw 125251> c;
+-125002  *"was   think"<biw 125251> c;
+-125003  *"happy   place"<biw 125251> c;
+-125004  *"with   pigtails"<biw 125251> c;
++125005  *"is   the"<biw 125251> c;
++125006  *"all,   flowers,"<biw 125251> c;
++125007  *"watch   but"<biw 125251> c;
+-125008  *"the   or"<biw 125251> c;
++125009  *"you   owner"<biw 125251> c;
++125010  *"banner   of"<biw 125251> c;
++125011  *"move   the"<biw 125251> c;
+-125012  *"house   their"<biw 125251> c;
+-125013  *"was   playing"<biw 125251> c;
+-125014  *"not.   end."<biw 125251> c;
+125000 "CORRECT"/<branch 125250> ;
+125251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+125250  c;
+
+
+=126000  %75"READY"/ *"Judy   x-x-x" c;
+-126001  *"cooked   consume"<biw 126251> c;
++126002  *"speak   in"<biw 126251> c;
++126003  *"were   the"<biw 126251> c;
+-126004  *"kitchen,   unlike,"<biw 126251> c;
++126005  *"is   and"<biw 126251> c;
++126006  *"do   Richard"<biw 126251> c;
++126007  *"one   barbecued"<biw 126251> c;
+-126008  *"outside   check"<biw 126251> c;
+-126009  *"in   women"<biw 126251> c;
+-126010  *"the   disturb"<biw 126251> c;
++126011  *"honestly.   yard."<biw 126251> c;
+126000 "CORRECT"/<branch 126250> ;
+126251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+126250  c;
+
+
+=127000  %75"READY"/ *"The   x-x-x" c;
++127001  *"been   student"<biw 127251> c;
++127002  *"but   who"<biw 127251> c;
+-127003  *"was   drink"<biw 127251> c;
++127004  *"office   running"<biw 127251> c;
+-127005  *"out   breast"<biw 127251> c;
+-127006  *"of   snowboard"<biw 127251> c;
+-127007  *"money   found"<biw 127251> c;
++127008  *"them   gave"<biw 127251> c;
++127009  *"deciding   himself"<biw 127251> c;
++127010  *"own   a"<biw 127251> c;
++127011  *"could   haircut"<biw 127251> c;
+-127012  *"last   choke"<biw 127251> c;
+-127013  *"week.   previous."<biw 127251> c;
+127000 "CORRECT"/<branch 127250> ;
+127251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+127250  c;
+
+
+=128000  %75"READY"/ *"Julie   x-x-x" c;
++128001  *"wooden   dated"<biw 128251> c;
++128002  *"thrill   Adam"<biw 128251> c;
+-128003  *"and   file"<biw 128251> c;
+-128004  *"Andy,   bear,"<biw 128251> c;
++128005  *"ridge   but"<biw 128251> c;
++128006  *"and   she"<biw 128251> c;
+-128007  *"married   front"<biw 128251> c;
++128008  *"age   Jeff"<biw 128251> c;
++128009  *"school   in"<biw 128251> c;
+-128010  *"Las   against"<biw 128251> c;
+-128011  *"Vegas   notably"<biw 128251> c;
+-128012  *"last   dismiss"<biw 128251> c;
++128013  *"heart.   month."<biw 128251> c;
+128000 "CORRECT"/<branch 128250> ;
+128251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+128250  c;
+
+
+=129000  %75"READY"/ *"Todd   x-x-x" c;
+-129001  *"wanted   glimpse"<biw 129251> c;
+-129002  *"to   has"<biw 129251> c;
++129003  *"proclaimed   be"<biw 129251> c;
+-129004  *"a   are"<biw 129251> c;
++129005  *"told,   barber,"<biw 129251> c;
+-129006  *"but   image"<biw 129251> c;
+-129007  *"his   us"<biw 129251> c;
++129008  *"up   shaky"<biw 129251> c;
++129009  *"south   hands"<biw 129251> c;
++129010  *"what   prevented"<biw 129251> c;
+-129011  *"him   endure"<biw 129251> c;
+-129012  *"from   are"<biw 129251> c;
+-129013  *"becoming   at"<biw 129251> c;
++129014  *"lunch.   one."<biw 129251> c;
+129000 "CORRECT"/<branch 129250> ;
+129251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+129250  c;
+
+
+=130000  %75"READY"/ *"The   x-x-x" c;
++130001  *"those   writer"<biw 130251> c;
++130002  *"ride   of"<biw 130251> c;
++130003  *"is   the"<biw 130251> c;
++130004  *"sat   novels"<biw 130251> c;
+-130005  *"thought   them"<biw 130251> c;
++130006  *"served   himself"<biw 130251> c;
+-130007  *"to   question"<biw 130251> c;
++130008  *"reported   be"<biw 130251> c;
++130009  *"boot   a"<biw 130251> c;
++130010  *"rather,   genius,"<biw 130251> c;
++130011  *"what   but"<biw 130251> c;
++130012  *"pay   he"<biw 130251> c;
+-130013  *"wasn't.   phone."<biw 130251> c;
+130000 "CORRECT"/<branch 130250> ;
+130251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+130250  c;
+
+
+=131000  %75"READY"/ *"The   x-x-x" c;
+-131001  *"cute   reflects"<biw 131251> c;
++131002  *"at   girl"<biw 131251> c;
+-131003  *"who   how"<biw 131251> c;
++131004  *"meals   was"<biw 131251> c;
+-131005  *"on   threw"<biw 131251> c;
++131006  *"mansion   the"<biw 131251> c;
+-131007  *"cover   held"<biw 131251> c;
+-131008  *"of   slay"<biw 131251> c;
+-131009  *"the   cost"<biw 131251> c;
++131010  *"citing   magazine"<biw 131251> c;
++131011  *"grow   became"<biw 131251> c;
+-131012  *"a   peaks"<biw 131251> c;
+-131013  *"famous   feel"<biw 131251> c;
+-131014  *"doctor.   healthy."<biw 131251> c;
+131000 "CORRECT"/<branch 131250> ;
+131251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+131250  c;
+
+
+=132000  %75"READY"/ *"The   x-x-x" c;
+-132001  *"boyfriend   she"<biw 132251> c;
++132002  *"gone   of"<biw 132251> c;
++132003  *"out   the"<biw 132251> c;
++132004  *"among   model"<biw 132251> c;
+-132005  *"was   be"<biw 132251> c;
+-132006  *"killed   house"<biw 132251> c;
++132007  *"angry   in"<biw 132251> c;
+-132008  *"an   forever"<biw 132251> c;
+-132009  *"accident   seven"<biw 132251> c;
++132010  *"hen   while"<biw 132251> c;
+-132011  *"skiing   drank"<biw 132251> c;
++132012  *"hers   last"<biw 132251> c;
+-132013  *"week.   emanating."<biw 132251> c;
+132000 "CORRECT"/<branch 132250> ;
+132251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+132250  c;
+
+
+=133000  %75"READY"/ *"Yesterday   x-x-x" c;
++133001  *"try   the"<biw 133251> c;
++133002  *"when   wife"<biw 133251> c;
++133003  *"phrases   of"<biw 133251> c;
+-133004  *"the   for"<biw 133251> c;
+-133005  *"politician   conclude"<biw 133251> c;
+-133006  *"discussed   plan"<biw 133251> c;
+-133007  *"health   hear"<biw 133251> c;
+-133008  *"care   city"<biw 133251> c;
+-133009  *"with   image"<biw 133251> c;
+-133010  *"old   I"<biw 133251> c;
++133011  *"cute.   people."<biw 133251> c;
+133000 "CORRECT"/<branch 133250> ;
+133251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+133250  c;
+
+
+=134000  %75"READY"/ *"The   x-x-x" c;
++134001  *"of   children"<biw 134251> c;
+-134002  *"of   is"<biw 134251> c;
++134003  *"were   the"<biw 134251> c;
+-134004  *"rich   an"<biw 134251> c;
++134005  *"same   man"<biw 134251> c;
++134006  *"lawsuit   were"<biw 134251> c;
++134007  *"reservation,   spoiled,"<biw 134251> c;
++134008  *"unison   but"<biw 134251> c;
+-134009  *"they   door"<biw 134251> c;
++134010  *"researchers   were"<biw 134251> c;
+-134011  *"charming   are"<biw 134251> c;
++134012  *"they   and"<biw 134251> c;
++134013  *"atmosphere.   handsome."<biw 134251> c;
+134000 "CORRECT"/<branch 134250> ;
+134251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+134250  c;
+
+
+
+$0 "End of block. 6 blocks left. Continue when ready.";$
+
+=1000  %75"READY"/ *"The   x-x-x" c;
+-1001  *"son   an"<biw 1251> c;
+-1002  *"of   him"<biw 1251> c;
+-1003  *"the   over"<biw 1251> c;
+-1004  *"actress   since"<biw 1251> c;
++1005  *"be   who"<biw 1251> c;
++1006  *"them   shot"<biw 1251> c;
++1007  *"grow   himself"<biw 1251> c;
+-1008  *"on   skirt"<biw 1251> c;
+-1009  *"the   risk"<biw 1251> c;
++1010  *"have   set"<biw 1251> c;
+-1011  *"was   slip"<biw 1251> c;
+-1012  *"under   women"<biw 1251> c;
+-1013  *"investigation.   secure."<biw 1251> c;
+1000 "CORRECT"/<branch 1250> ;
+1251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+1250  c;
+
+
+=2000  %75"READY"/ *"The   x-x-x" c;
+-2001  *"brother   including"<biw 2251> c;
++2002  *"have   of"<biw 2251> c;
+-2003  *"the   laugh"<biw 2251> c;
+-2004  *"bride   after"<biw 2251> c;
+-2005  *"who   go"<biw 2251> c;
++2006  *"below   embarrassed"<biw 2251> c;
++2007  *"comforted   himself"<biw 2251> c;
+-2008  *"at   his"<biw 2251> c;
++2009  *"bottle   the"<biw 2251> c;
++2010  *"exhale   wedding"<biw 2251> c;
+-2011  *"felt   tail"<biw 2251> c;
++2012  *"building.   ashamed."<biw 2251> c;
+2000 "CORRECT"/<branch 2250> ;
+2251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+2250  c;
+
+
+=3000  %75"READY"/ *"The   x-x-x" c;
+-3001  *"uncle   liked"<biw 3251> c;
+-3002  *"of   surprise"<biw 3251> c;
++3003  *"look   the"<biw 3251> c;
++3004  *"inflate   waitress"<biw 3251> c;
++3005  *"pay   who"<biw 3251> c;
+-3006  *"hurt   say"<biw 3251> c;
++3007  *"netted   himself"<biw 3251> c;
++3008  *"silver   was"<biw 3251> c;
+-3009  *"shocked   were"<biw 3251> c;
++3010  *"intend   by"<biw 3251> c;
+-3011  *"the   on"<biw 3251> c;
+-3012  *"accident.   that."<biw 3251> c;
+3000 "CORRECT"/<branch 3250> ;
+3251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+3250  c;
+
+
+=4000  %75"READY"/ *"The   x-x-x" c;
++4001  *"may   son"<biw 4251> c;
+-4002  *"of   dismiss"<biw 4251> c;
+-4003  *"the   named"<biw 4251> c;
++4004  *"yearn   lady"<biw 4251> c;
++4005  *"invest   who"<biw 4251> c;
++4006  *"near   politely"<biw 4251> c;
+-4007  *"introduced   average"<biw 4251> c;
+-4008  *"himself   tracked"<biw 4251> c;
+-4009  *"was   bankrupt"<biw 4251> c;
+-4010  *"popular   could"<biw 4251> c;
++4011  *"exit   at"<biw 4251> c;
+-4012  *"the   rated"<biw 4251> c;
+-4013  *"party.   seldom."<biw 4251> c;
+4000 "CORRECT"/<branch 4250> ;
+4251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+4250  c;
+
+
+=5000  %75"READY"/ *"The   x-x-x" c;
+-5001  *"brother   does"<biw 5251> c;
+-5002  *"of   month"<biw 5251> c;
++5003  *"not   the"<biw 5251> c;
++5004  *"hold   schoolgirl"<biw 5251> c;
+-5005  *"who   plan"<biw 5251> c;
++5006  *"reporter   burned"<biw 5251> c;
++5007  *"year   himself"<biw 5251> c;
++5008  *"yours   was"<biw 5251> c;
+-5009  *"usually   experts"<biw 5251> c;
++5010  *"love   very"<biw 5251> c;
++5011  *"explore.   careful."<biw 5251> c;
+5000 "CORRECT"/<branch 5250> ;
+5251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+5250  c;
+
+
+=6000  %75"READY"/ *"The   x-x-x" c;
++6001  *"appeared   grandfather"<biw 6251> c;
++6002  *"meet   of"<biw 6251> c;
+-6003  *"the   be"<biw 6251> c;
++6004  *"than   woman"<biw 6251> c;
++6005  *"watch   who"<biw 6251> c;
++6006  *"where   killed"<biw 6251> c;
++6007  *"store   himself"<biw 6251> c;
+-6008  *"last   everything"<biw 6251> c;
++6009  *"inches   summer"<biw 6251> c;
+-6010  *"had   unbelievable"<biw 6251> c;
++6011  *"lick   been"<biw 6251> c;
++6012  *"chair   to"<biw 6251> c;
+-6013  *"prison.   five."<biw 6251> c;
+6000 "CORRECT"/<branch 6250> ;
+6251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+6250  c;
+
+
+=7000  %75"READY"/ *"The   x-x-x" c;
+-7001  *"grandma   off"<biw 7251> c;
++7002  *"enter   of"<biw 7251> c;
++7003  *"buy   the"<biw 7251> c;
++7004  *"lasts   fireman"<biw 7251> c;
++7005  *"liver   who"<biw 7251> c;
+-7006  *"criticized   which"<biw 7251> c;
+-7007  *"herself   when"<biw 7251> c;
++7008  *"been   far"<biw 7251> c;
+-7009  *"too   stories"<biw 7251> c;
++7010  *"find   often"<biw 7251> c;
+-7011  *"was   candle"<biw 7251> c;
++7012  *"beyond.   anxious."<biw 7251> c;
+7000 "CORRECT"/<branch 7250> ;
+7251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+7250  c;
+
+
+=8000  %75"READY"/ *"The   x-x-x" c;
+-8001  *"aunt   for"<biw 8251> c;
+-8002  *"of   tow"<biw 8251> c;
++8003  *"can   the"<biw 8251> c;
++8004  *"in   schoolboy"<biw 8251> c;
+-8005  *"who   stay"<biw 8251> c;
++8006  *"result   hurt"<biw 8251> c;
+-8007  *"herself   surrounded"<biw 8251> c;
++8008  *"sons   was"<biw 8251> c;
+-8009  *"concerned   and"<biw 8251> c;
+-8010  *"about   bet"<biw 8251> c;
++8011  *"since   the"<biw 8251> c;
+-8012  *"injury.   up."<biw 8251> c;
+8000 "CORRECT"/<branch 8250> ;
+8251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+8250  c;
+
+
+=9000  %75"READY"/ *"The   x-x-x" c;
+-9001  *"daughter   said"<biw 9251> c;
++9002  *"am   of"<biw 9251> c;
++9003  *"egg   the"<biw 9251> c;
+-9004  *"man   develop"<biw 9251> c;
+-9005  *"who   do"<biw 9251> c;
++9006  *"well   complimented"<biw 9251> c;
+-9007  *"herself   of"<biw 9251> c;
+-9008  *"in   children"<biw 9251> c;
++9009  *"toward   public"<biw 9251> c;
++9010  *"getting   was"<biw 9251> c;
++9011  *"returns.   beautiful."<biw 9251> c;
+9000 "CORRECT"/<branch 9250> ;
+9251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+9250  c;
+
+
+=10000  %75"READY"/ *"The   x-x-x" c;
++10001  *"my   sister"<biw 10251> c;
++10002  *"buy   of"<biw 10251> c;
++10003  *"are   the"<biw 10251> c;
++10004  *"their   salesman"<biw 10251> c;
++10005  *"me   who"<biw 10251> c;
+-10006  *"made   feeling"<biw 10251> c;
+-10007  *"a   won"<biw 10251> c;
++10008  *"nothing   fool"<biw 10251> c;
++10009  *"alcohol   of"<biw 10251> c;
++10010  *"clears   herself"<biw 10251> c;
+-10011  *"at   good"<biw 10251> c;
+-10012  *"work   daiquiri"<biw 10251> c;
++10013  *"been   was"<biw 10251> c;
+-10014  *"very   skiers"<biw 10251> c;
++10015  *"climb.   angry."<biw 10251> c;
+10000 "CORRECT"/<branch 10250> ;
+10251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+10250  c;
+
+
+=11000  %75"READY"/ *"The   x-x-x" c;
+-11001  *"daughter   in "<biw 11251> c;
+-11002  *"of   knee"<biw 11251> c;
+-11003  *"the   moment"<biw 11251> c;
++11004  *"them   actor"<biw 11251> c;
+-11005  *"who   been"<biw 11251> c;
+-11006  *"hated   what"<biw 11251> c;
+-11007  *"herself   suppose"<biw 11251> c;
+-11008  *"for   forensic"<biw 11251> c;
++11009  *"whale   failing"<biw 11251> c;
++11010  *"lounge   always"<biw 11251> c;
++11011  *"far   seemed"<biw 11251> c;
+-11012  *"unhappy.   civilize."<biw 11251> c;
+11000 "CORRECT"/<branch 11250> ;
+11251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+11250  c;
+
+
+=12000  %75"READY"/ *"The   x-x-x" c;
+-12001  *"sister   she"<biw 12251> c;
+-12002  *"of   where"<biw 12251> c;
++12003  *"attorney   the"<biw 12251> c;
+-12004  *"prince   ventured"<biw 12251> c;
+-12005  *"who   but"<biw 12251> c;
++12006  *"taken   injured"<biw 12251> c;
+-12007  *"herself   baffle"<biw 12251> c;
+-12008  *"falling   attention"<biw 12251> c;
++12009  *"inching   off"<biw 12251> c;
+-12010  *"a   cater"<biw 12251> c;
++12011  *"others   roof"<biw 12251> c;
+-12012  *"was   do"<biw 12251> c;
++12013  *"survey   still"<biw 12251> c;
++12014  *"sang.   sad."<biw 12251> c;
+12000 "CORRECT"/<branch 12250> ;
+12251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+12250  c;
+
+
+$0 "End of block. 5 blocks left. Continue when ready.";$
+
+=13000  %75"READY"/ *"The   x-x-x" c;
++13001  *"such   son"<biw 13251> c;
++13002  *"how   of"<biw 13251> c;
++13003  *"since   the"<biw 13251> c;
+-13004  *"princess   make"<biw 13251> c;
+-13005  *"who   matter"<biw 13251> c;
+-13006  *"scratched   wrestle"<biw 13251> c;
+-13007  *"herself   execute"<biw 13251> c;
++13008  *"them   in"<biw 13251> c;
+-13009  *"public   helps"<biw 13251> c;
++13010  *"what   was"<biw 13251> c;
++13011  *"play   awfully"<biw 13251> c;
+-13012  *"embarrassed.   already."<biw 13251> c;
+13000 "CORRECT"/<branch 13250> ;
+13251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+13250  c;
+
+
+=14000  %75"READY"/ *"The   x-x-x" c;
+-14001  *"brother   with"<biw 14251> c;
+-14002  *"of   clean"<biw 14251> c;
+-14003  *"the   gives"<biw 14251> c;
++14004  *"where   ballerina"<biw 14251> c;
++14005  *"week   who"<biw 14251> c;
+-14006  *"found   be"<biw 14251> c;
+-14007  *"herself   was"<biw 14251> c;
+-14008  *"in   sell"<biw 14251> c;
+-14009  *"a   appear"<biw 14251> c;
++14010  *"for   lot"<biw 14251> c;
+-14011  *"of   dare"<biw 14251> c;
++14012  *"later   trouble"<biw 14251> c;
+-14013  *"phoned   discuss"<biw 14251> c;
+-14014  *"home.   release."<biw 14251> c;
+14000 "CORRECT"/<branch 14250> ;
+14251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+14250  c;
+
+
+=15000  %75"READY"/ *"The   x-x-x" c;
+-15001  *"nephew   learn"<biw 15251> c;
+-15002  *"of   been"<biw 15251> c;
++15003  *"understand   the"<biw 15251> c;
+-15004  *"maid   be"<biw 15251> c;
++15005  *"keeping   who"<biw 15251> c;
++15006  *"map   cut"<biw 15251> c;
++15007  *"remembered   herself"<biw 15251> c;
++15008  *"meal   with"<biw 15251> c;
++15009  *"we   the"<biw 15251> c;
++15010  *"of   knife"<biw 15251> c;
++15011  *"wife   called"<biw 15251> c;
++15012  *"brought   the"<biw 15251> c;
++15013  *"broader.   doctor."<biw 15251> c;
+15000 "CORRECT"/<branch 15250> ;
+15251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+15250  c;
+
+
+=16000  %75"READY"/ *"The   x-x-x" c;
++16001  *"from   grandfather"<biw 16251> c;
+-16002  *"of   hear"<biw 16251> c;
+-16003  *"the   could"<biw 16251> c;
++16004  *"around   policewoman"<biw 16251> c;
+-16005  *"who   percent"<biw 16251> c;
+-16006  *"treated   when"<biw 16251> c;
++16007  *"else   herself"<biw 16251> c;
+-16008  *"so   what"<biw 16251> c;
++16009  *"work   badly"<biw 16251> c;
+-16010  *"was   officers"<biw 16251> c;
+-16011  *"troubled.   anniversary."<biw 16251> c;
+16000 "CORRECT"/<branch 16250> ;
+16251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+16250  c;
+
+
+=17000  %75"READY"/ *"The   x-x-x" c;
+-17001  *"nephew   all"<biw 17251> c;
+-17002  *"of   else"<biw 17251> c;
+-17003  *"the   allowed"<biw 17251> c;
++17004  *"fell   queen"<biw 17251> c;
+-17005  *"who   have"<biw 17251> c;
+-17006  *"praised   opening"<biw 17251> c;
+-17007  *"herself   start"<biw 17251> c;
+-17008  *"all   police"<biw 17251> c;
++17009  *"fright   the"<biw 17251> c;
+-17010  *"time   make"<biw 17251> c;
++17011  *"widows   was"<biw 17251> c;
++17012  *"want   very"<biw 17251> c;
++17013  *"away.   rude."<biw 17251> c;
+17000 "CORRECT"/<branch 17250> ;
+17251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+17250  c;
+
+
+=18000  %75"READY"/ *"The   x-x-x" c;
+-18001  *"uncle   their"<biw 18251> c;
+-18002  *"of   own"<biw 18251> c;
++18003  *"were   the"<biw 18251> c;
+-18004  *"girl   seem"<biw 18251> c;
+-18005  *"who   them"<biw 18251> c;
++18006  *"which   prepared"<biw 18251> c;
+-18007  *"herself   discovered"<biw 18251> c;
++18008  *"okay   for"<biw 18251> c;
++18009  *"also   the"<biw 18251> c;
+-18010  *"race   this"<biw 18251> c;
+-18011  *"was   gone"<biw 18251> c;
+-18012  *"a   Wednesday"<biw 18251> c;
++18013  *"affected   great"<biw 18251> c;
+-18014  *"athlete.   here."<biw 18251> c;
+18000 "CORRECT"/<branch 18250> ;
+18251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+18250  c;
+
+
+=19000  %75"READY"/ *"The   x-x-x" c;
+-19001  *"grandma   expect"<biw 19251> c;
+-19002  *"of   but"<biw 19251> c;
+-19003  *"the   blew"<biw 19251> c;
++19004  *"their   policeman"<biw 19251> c;
++19005  *"done   who"<biw 19251> c;
++19006  *"him   educated"<biw 19251> c;
+-19007  *"himself   climb"<biw 19251> c;
++19008  *"been   at"<biw 19251> c;
++19009  *"would   night"<biw 19251> c;
++19010  *"ghostly   became"<biw 19251> c;
++19011  *"before   a"<biw 19251> c;
++19012  *"enlarge.   teacher."<biw 19251> c;
+19000 "CORRECT"/<branch 19250> ;
+19251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+19250  c;
+
+
+=20000  %75"READY"/ *"The   x-x-x" c;
+-20001  *"niece   was"<biw 20251> c;
+-20002  *"of   are"<biw 20251> c;
++20003  *"obey   the"<biw 20251> c;
+-20004  *"fisherman   yelled"<biw 20251> c;
++20005  *"open   who"<biw 20251> c;
++20006  *"us   got"<biw 20251> c;
++20007  *"judge   himself"<biw 20251> c;
++20008  *"complain   a"<biw 20251> c;
+-20009  *"sailboat   strangers"<biw 20251> c;
+-20010  *"learned   theirs"<biw 20251> c;
++20011  *"founded   to"<biw 20251> c;
+-20012  *"sail.   reports."<biw 20251> c;
+20000 "CORRECT"/<branch 20250> ;
+20251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+20250  c;
+
+
+=21000  %75"READY"/ *"The   x-x-x" c;
+-21001  *"daughter   consisting"<biw 21251> c;
++21002  *"but   of"<biw 21251> c;
+-21003  *"the   keep"<biw 21251> c;
++21004  *"from   king"<biw 21251> c;
+-21005  *"who   move"<biw 21251> c;
+-21006  *"devoted   why"<biw 21251> c;
+-21007  *"himself   worked"<biw 21251> c;
+-21008  *"to   world"<biw 21251> c;
++21009  *"case   the"<biw 21251> c;
+-21010  *"kingdom   like"<biw 21251> c;
+-21011  *"was   loving"<biw 21251> c;
+-21012  *"never   winnings"<biw 21251> c;
++21013  *"instantly.   emotional."<biw 21251> c;
+21000 "CORRECT"/<branch 21250> ;
+21251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+21250  c;
+
+
+=22000  %75"READY"/ *"The   x-x-x" c;
++22001  *"know   sister"<biw 22251> c;
++22002  *"deposit   of"<biw 22251> c;
++22003  *"await   the"<biw 22251> c;
++22004  *"have   boy"<biw 22251> c;
++22005  *"done   who"<biw 22251> c;
+-22006  *"taught   about"<biw 22251> c;
++22007  *"been   himself"<biw 22251> c;
++22008  *"she   advanced"<biw 22251> c;
++22009  *"raise   mathematics"<biw 22251> c;
++22010  *"upscale   was"<biw 22251> c;
++22011  *"slopes   very"<biw 22251> c;
++22012  *"instantly.   smart."<biw 22251> c;
+22000 "CORRECT"/<branch 22250> ;
+22251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+22250  c;
+
+
+=23000  %75"READY"/ *"The   x-x-x" c;
+-23001  *"aunt   sing"<biw 23251> c;
++23002  *"what   of"<biw 23251> c;
++23003  *"counter   the"<biw 23251> c;
+-23004  *"waiter   contains"<biw 23251> c;
+-23005  *"who   although"<biw 23251> c;
+-23006  *"trained   been"<biw 23251> c;
++23007  *"excite   himself"<biw 23251> c;
+-23008  *"to   ours"<biw 23251> c;
++23009  *"startled   cook"<biw 23251> c;
++23010  *"they   wanted"<biw 23251> c;
+-23011  *"to   whom"<biw 23251> c;
+-23012  *"own   points"<biw 23251> c;
++23013  *"after   a"<biw 23251> c;
++23014  *"spraying.   restaurant."<biw 23251> c;
+23000 "CORRECT"/<branch 23250> ;
+23251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+23250  c;
+
+
+=24000  %75"READY"/ *"The   x-x-x" c;
++24001  *"without   niece"<biw 24251> c;
++24002  *"invite   of"<biw 24251> c;
++24003  *"here   the"<biw 24251> c;
++24004  *"a   butler"<biw 24251> c;
+-24005  *"who   gainful"<biw 24251> c;
+-24006  *"scolded   and"<biw 24251> c;
++24007  *"type   himself"<biw 24251> c;
++24008  *"anyone   for"<biw 24251> c;
+-24009  *"losing   drank"<biw 24251> c;
+-24010  *"the   option"<biw 24251> c;
++24011  *"but   key"<biw 24251> c;
++24012  *"sturdy   was"<biw 24251> c;
+-24013  *"very   faith"<biw 24251> c;
++24014  *"obtain.   upset."<biw 24251> c;
+24000 "CORRECT"/<branch 24250> ;
+24251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+24250  c;
+
+
+$0 "End of block. 4 blocks left. Continue when ready.";$
+
+=25000  %75"READY"/ *"The   x-x-x" c;
++25001  *"around   nurse"<biw 25251> c;
++25002  *"way   examined"<biw 25251> c;
+-25003  *"the   wing"<biw 25251> c;
+-25004  *"mother   held"<biw 25251> c;
+-25005  *"and   menu"<biw 25251> c;
++25006  *"rate   the"<biw 25251> c;
+-25007  *"child   received"<biw 25251> c;
++25008  *"why   played"<biw 25251> c;
++25009  *"guarantee   quietly"<biw 25251> c;
+-25010  *"in   administration"<biw 25251> c;
+-25011  *"the   people"<biw 25251> c;
+-25012  *"corner.   against."<biw 25251> c;
+25000 "CORRECT"/<branch 25250> ;
+25251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+25250  c;
+
+
+=26000  %75"READY"/ *"The   x-x-x" c;
++26001  *"has   swimmer"<biw 26251> c;
++26002  *"encounter   disappointed"<biw 26251> c;
++26003  *"saw   her"<biw 26251> c;
+-26004  *"coach   remain"<biw 26251> c;
+-26005  *"and   uphill"<biw 26251> c;
+-26006  *"her   do"<biw 26251> c;
++26007  *"has   mother"<biw 26251> c;
++26008  *"locals   tried"<biw 26251> c;
++26009  *"claimed   to"<biw 26251> c;
+-26010  *"console   likewise"<biw 26251> c;
+-26011  *"her.   never."<biw 26251> c;
+26000 "CORRECT"/<branch 26250> ;
+26251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+26250  c;
+
+
+=27000  %75"READY"/ *"The   x-x-x" c;
+-27001  *"tourist   develop"<biw 27251> c;
++27002  *"be   photographed"<biw 27251> c;
+-27003  *"the   optimize"<biw 27251> c;
+-27004  *"swimmer   say"<biw 27251> c;
+-27005  *"and   involve"<biw 27251> c;
++27006  *"but   the"<biw 27251> c;
+-27007  *"runner   their"<biw 27251> c;
++27008  *"us   got"<biw 27251> c;
++27009  *"bringing   ready"<biw 27251> c;
+-27010  *"for   swallows"<biw 27251> c;
+-27011  *"the   teach"<biw 27251> c;
+-27012  *"race.   classify."<biw 27251> c;
+27000 "CORRECT"/<branch 27250> ;
+27251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+27250  c;
+
+
+=28000  %75"READY"/ *"The   x-x-x" c;
++28001  *"like   little"<biw 28251> c;
+-28002  *"girl   confirm"<biw 28251> c;
++28003  *"were   fed"<biw 28251> c;
+-28004  *"her   believe"<biw 28251> c;
++28005  *"keep   pet"<biw 28251> c;
++28006  *"explode   cat"<biw 28251> c;
+-28007  *"and   single"<biw 28251> c;
++28008  *"done   her"<biw 28251> c;
+-28009  *"dog   be"<biw 28251> c;
++28010  *"release   wanted"<biw 28251> c;
+-28011  *"a   having"<biw 28251> c;
++28012  *"enter   can"<biw 28251> c;
++28013  *"move   of"<biw 28251> c;
++28014  *"trip,   food,"<biw 28251> c;
+-28015  *"too.   leave."<biw 28251> c;
+28000 "CORRECT"/<branch 28250> ;
+28251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+28250  c;
+
+
+=29000  %75"READY"/ *"The   x-x-x" c;
++29001  *"the   ranger"<biw 29251> c;
+-29002  *"gave   what"<biw 29251> c;
++29003  *"emerge   matches"<biw 29251> c;
+-29004  *"to   foot"<biw 29251> c;
+-29005  *"the   goes"<biw 29251> c;
+-29006  *"camper   where"<biw 29251> c;
++29007  *"lose   and"<biw 29251> c;
+-29008  *"his   of"<biw 29251> c;
++29009  *"as   friend"<biw 29251> c;
+-29010  *"made   homes"<biw 29251> c;
+-29011  *"a   can"<biw 29251> c;
+-29012  *"fire   intimidate"<biw 29251> c;
++29013  *"peep   by"<biw 29251> c;
+-29014  *"the   tag"<biw 29251> c;
++29015  *"before.   tent."<biw 29251> c;
+29000 "CORRECT"/<branch 29250> ;
+29251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+29250  c;
+
+
+=30000  %75"READY"/ *"Jim   x-x-x" c;
++30001  *"be   listened"<biw 30251> c;
+-30002  *"to   park"<biw 30251> c;
++30003  *"because   the"<biw 30251> c;
+-30004  *"pianist   goes"<biw 30251> c;
+-30005  *"and   avoid"<biw 30251> c;
+-30006  *"the   ways"<biw 30251> c;
+-30007  *"singer   seem"<biw 30251> c;
+-30008  *"watched   buy"<biw 30251> c;
+-30009  *"the   have"<biw 30251> c;
+-30010  *"organist   as"<biw 30251> c;
++30011  *"did   at"<biw 30251> c;
++30012  *"grudge   the"<biw 30251> c;
+-30013  *"concert.   searched."<biw 30251> c;
+30000 "CORRECT"/<branch 30250> ;
+30251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+30250  c;
+
+
+=31000  %75"READY"/ *"The   x-x-x" c;
+-31001  *"audience   your"<biw 31251> c;
++31002  *"incessant   applauded"<biw 31251> c;
+-31003  *"the   enter"<biw 31251> c;
++31004  *"however   guitarist"<biw 31251> c;
+-31005  *"and   meet"<biw 31251> c;
+-31006  *"the   done"<biw 31251> c;
++31007  *"bought   band"<biw 31251> c;
+-31008  *"cheered   them"<biw 31251> c;
++31009  *"meal   for"<biw 31251> c;
+-31010  *"him   off"<biw 31251> c;
+-31011  *"very   researchers"<biw 31251> c;
++31012  *"things.   loudly."<biw 31251> c;
+31000 "CORRECT"/<branch 31250> ;
+31251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+31250  c;
+
+
+=32000  %75"READY"/ *"The   x-x-x" c;
+-32001  *"producer   he"<biw 32251> c;
++32002  *"been   replaced"<biw 32251> c;
++32003  *"were   the"<biw 32251> c;
++32004  *"themselves   actor"<biw 32251> c;
++32005  *"eat   and"<biw 32251> c;
+-32006  *"the   raise"<biw 32251> c;
++32007  *"would   actress"<biw 32251> c;
++32008  *"have   quit"<biw 32251> c;
+-32009  *"the   helps"<biw 32251> c;
++32010  *"speak   movie"<biw 32251> c;
+-32011  *"after   ski"<biw 32251> c;
++32012  *"be   the"<biw 32251> c;
++32013  *"hopped.   fight."<biw 32251> c;
+32000 "CORRECT"/<branch 32250> ;
+32251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+32250  c;
+
+
+=33000  %75"READY"/ *"Diane   x-x-x" c;
++33001  *"biting   hugged"<biw 33251> c;
+-33002  *"her   outnumber"<biw 33251> c;
++33003  *"ours   boyfriend"<biw 33251> c;
+-33004  *"and   be"<biw 33251> c;
+-33005  *"her   but"<biw 33251> c;
+-33006  *"friend   this"<biw 33251> c;
++33007  *"social   felt"<biw 33251> c;
++33008  *"would   uncomfortable"<biw 33251> c;
++33009  *"pleased   watching"<biw 33251> c;
+-33010  *"them.   following."<biw 33251> c;
+33000 "CORRECT"/<branch 33250> ;
+33251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+33250  c;
+
+
+=34000  %75"READY"/ *"The   x-x-x" c;
+-34001  *"woman   we"<biw 34251> c;
+-34002  *"dressed   bring"<biw 34251> c;
++34003  *"convict   her"<biw 34251> c;
+-34004  *"baby   lived"<biw 34251> c;
+-34005  *"and   him"<biw 34251> c;
++34006  *"shop   her"<biw 34251> c;
+-34007  *"son   no"<biw 34251> c;
++34008  *"statement   got"<biw 34251> c;
+-34009  *"his   are"<biw 34251> c;
+-34010  *"clothes   breathed"<biw 34251> c;
++34011  *"health   from"<biw 34251> c;
+-34012  *"the   room"<biw 34251> c;
+-34013  *"dresser.   spilled."<biw 34251> c;
+34000 "CORRECT"/<branch 34250> ;
+34251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+34250  c;
+
+
+=35000  %75"READY"/ *"The   x-x-x" c;
+-35001  *"juggler   get"<biw 35251> c;
++35002  *"cancel   entertained"<biw 35251> c;
++35003  *"jump   the"<biw 35251> c;
+-35004  *"children   choose"<biw 35251> c;
+-35005  *"and   him"<biw 35251> c;
++35006  *"be   their"<biw 35251> c;
++35007  *"that   parents"<biw 35251> c;
++35008  *"taken   drank"<biw 35251> c;
+-35009  *"wine   bump"<biw 35251> c;
+-35010  *"at   hard-core"<biw 35251> c;
+-35011  *"the   stomping"<biw 35251> c;
+-35012  *"party.   favorite."<biw 35251> c;
+35000 "CORRECT"/<branch 35250> ;
+35251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+35250  c;
+
+
+=36000  %75"READY"/ *"The   x-x-x" c;
+-36001  *"crowd   not"<biw 36251> c;
++36002  *"because   cheered"<biw 36251> c;
++36003  *"wipe   for"<biw 36251> c;
++36004  *"desk   the"<biw 36251> c;
+-36005  *"model   describe"<biw 36251> c;
++36006  *"do   and"<biw 36251> c;
+-36007  *"the   into"<biw 36251> c;
++36008  *"this   designer"<biw 36251> c;
+-36009  *"took   worst"<biw 36251> c;
++36010  *"seem   a"<biw 36251> c;
+-36011  *"bow   habits"<biw 36251> c;
+-36012  *"after   dig"<biw 36251> c;
+-36013  *"the   turns"<biw 36251> c;
++36014  *"subsequent.   show."<biw 36251> c;
+36000 "CORRECT"/<branch 36250> ;
+36251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+36250  c;
+
+
+$0 "End of block. 3 blocks left. Continue when ready.";$
+
+=37000  %75"READY"/ *"The   x-x-x" c;
++37001  *"from   teacher"<biw 37251> c;
++37002  *"what   praised"<biw 37251> c;
++37003  *"accept   the"<biw 37251> c;
+-37004  *"girl,   yours,"<biw 37251> c;
+-37005  *"and   turn"<biw 37251> c;
+-37006  *"her   wearing"<biw 37251> c;
++37007  *"blames   family"<biw 37251> c;
+-37008  *"was   little"<biw 37251> c;
+-37009  *"proud   lack"<biw 37251> c;
++37010  *"detail   of"<biw 37251> c;
+-37011  *"her   bless"<biw 37251> c;
++37012  *"would   good"<biw 37251> c;
++37013  *"choked.   grades."<biw 37251> c;
+37000 "CORRECT"/<branch 37250> ;
+37251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+37250  c;
+
+
+=38000  %75"READY"/ *"Bobby   x-x-x" c;
+-38001  *"yelled   garden"<biw 38251> c;
++38002  *"covered   at"<biw 38251> c;
++38003  *"are   the"<biw 38251> c;
+-38004  *"teacher,   him,"<biw 38251> c;
+-38005  *"and   did"<biw 38251> c;
++38006  *"are   the"<biw 38251> c;
++38007  *"grew   principal"<biw 38251> c;
+-38008  *"asked   us"<biw 38251> c;
+-38009  *"his   alleges"<biw 38251> c;
++38010  *"sell   parents"<biw 38251> c;
++38011  *"them   for"<biw 38251> c;
++38012  *"stand   a"<biw 38251> c;
+-38013  *"meeting.   cheap."<biw 38251> c;
+38000 "CORRECT"/<branch 38250> ;
+38251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+38250  c;
+
+
+=39000  %75"READY"/ *"The   x-x-x" c;
++39001  *"disturb   woman"<biw 39251> c;
++39002  *"me   could"<biw 39251> c;
+-39003  *"not   among"<biw 39251> c;
+-39004  *"find   organization"<biw 39251> c;
+-39005  *"Bill,   behind,"<biw 39251> c;
++39006  *"grin   and"<biw 39251> c;
+-39007  *"his   see"<biw 39251> c;
++39008  *"flaunted   girlfriend"<biw 39251> c;
++39009  *"were   became"<biw 39251> c;
++39010  *"adjust   nervous"<biw 39251> c;
++39011  *"provide   and"<biw 39251> c;
++39012  *"science.   upset."<biw 39251> c;
+39000 "CORRECT"/<branch 39250> ;
+39251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+39250  c;
+
+
+=40000  %75"READY"/ *"The   x-x-x" c;
++40001  *"sold   customer"<biw 40251> c;
+-40002  *"complained   meet"<biw 40251> c;
++40003  *"take   about"<biw 40251> c;
+-40004  *"the   been"<biw 40251> c;
++40005  *"have,   waiter,"<biw 40251> c;
+-40006  *"and   could"<biw 40251> c;
+-40007  *"the   bring"<biw 40251> c;
+-40008  *"chef   puts"<biw 40251> c;
++40009  *"hoop   gave"<biw 40251> c;
++40010  *"collection   him"<biw 40251> c;
++40011  *"were   a"<biw 40251> c;
++40012  *"they   free"<biw 40251> c;
++40013  *"ours.   dessert."<biw 40251> c;
+40000 "CORRECT"/<branch 40250> ;
+40251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+40250  c;
+
+
+=41000  %75"READY"/ *"The   x-x-x" c;
+-41001  *"knight   their"<biw 41251> c;
+-41002  *"greeted   because"<biw 41251> c;
++41003  *"conducts   the"<biw 41251> c;
+-41004  *"king,   he,"<biw 41251> c;
+-41005  *"and   crush"<biw 41251> c;
+-41006  *"the   but"<biw 41251> c;
++41007  *"through   queen"<biw 41251> c;
++41008  *"what   waved"<biw 41251> c;
+-41009  *"to   says"<biw 41251> c;
+-41010  *"her   they"<biw 41251> c;
++41011  *"pour   people"<biw 41251> c;
++41012  *"judge   at"<biw 41251> c;
++41013  *"father   the"<biw 41251> c;
++41014  *"speak.   feast."<biw 41251> c;
+41000 "CORRECT"/<branch 41250> ;
+41251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+41250  c;
+
+
+=42000  %75"READY"/ *"The   x-x-x" c;
++42001  *"some   police"<biw 42251> c;
++42002  *"into   arrested"<biw 42251> c;
+-42003  *"the   been"<biw 42251> c;
+-42004  *"burglar,   believes,"<biw 42251> c;
+-42005  *"and   can"<biw 42251> c;
++42006  *"why   his"<biw 42251> c;
+-42007  *"brother   insist"<biw 42251> c;
+-42008  *"phoned   accent"<biw 42251> c;
++42009  *"feel   a"<biw 42251> c;
+-42010  *"lawyer   our"<biw 42251> c;
+-42011  *"for   tell"<biw 42251> c;
++42012  *"off.   help."<biw 42251> c;
+42000 "CORRECT"/<branch 42250> ;
+42251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+42250  c;
+
+
+=43000  %75"READY"/ *"Sam   x-x-x" c;
+-43001  *"hired   raffle"<biw 43251> c;
++43002  *"asked   the"<biw 43251> c;
++43003  *"seem,   plumber,"<biw 43251> c;
++43004  *"insure   and"<biw 43251> c;
+-43005  *"the   dig"<biw 43251> c;
++43006  *"becomes   carpenter"<biw 43251> c;
+-43007  *"ordered   biggest"<biw 43251> c;
++43008  *"got   the"<biw 43251> c;
+-43009  *"materials   plead"<biw 43251> c;
++43010  *"see   for"<biw 43251> c;
++43011  *"have   the"<biw 43251> c;
++43012  *"over.   house."<biw 43251> c;
+43000 "CORRECT"/<branch 43250> ;
+43251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+43250  c;
+
+
+=44000  %75"READY"/ *"The   x-x-x" c;
+-44001  *"actress   began"<biw 44251> c;
+-44002  *"yelled   sneeze"<biw 44251> c;
+-44003  *"at   been"<biw 44251> c;
+-44004  *"the   for"<biw 44251> c;
++44005  *"took,   cameraman,"<biw 44251> c;
++44006  *"them   and"<biw 44251> c;
++44007  *"but   the"<biw 44251> c;
++44008  *"another   director"<biw 44251> c;
++44009  *"allow   hurried"<biw 44251> c;
+-44010  *"out   became"<biw 44251> c;
++44011  *"population   of"<biw 44251> c;
+-44012  *"the   please"<biw 44251> c;
++44013  *"only.   room."<biw 44251> c;
+44000 "CORRECT"/<branch 44250> ;
+44251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+44250  c;
+
+
+=45000  %75"READY"/ *"The   x-x-x" c;
+-45001  *"journalist   having"<biw 45251> c;
++45002  *"deduce   criticized"<biw 45251> c;
+-45003  *"Nick,   click,"<biw 45251> c;
+-45004  *"and   hear"<biw 45251> c;
+-45005  *"Sam   from"<biw 45251> c;
++45006  *"friend   called"<biw 45251> c;
+-45007  *"the   downturn"<biw 45251> c;
++45008  *"never   newspaper"<biw 45251> c;
++45009  *"worry   to"<biw 45251> c;
++45010  *"pretension.   complain."<biw 45251> c;
+45000 "CORRECT"/<branch 45250> ;
+45251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+45250  c;
+
+
+=46000  %75"READY"/ *"The   x-x-x" c;
+-46001  *"robber   not"<biw 46251> c;
+-46002  *"shot   sleep"<biw 46251> c;
++46003  *"came   the"<biw 46251> c;
+-46004  *"jeweler,   make,"<biw 46251> c;
+-46005  *"and   are"<biw 46251> c;
+-46006  *"the   have"<biw 46251> c;
+-46007  *"salesman   would"<biw 46251> c;
++46008  *"them   reported"<biw 46251> c;
+-46009  *"the   studied"<biw 46251> c;
+-46010  *"crime   is"<biw 46251> c;
+-46011  *"to   describe"<biw 46251> c;
+-46012  *"the   theirs"<biw 46251> c;
++46013  *"before.   police."<biw 46251> c;
+46000 "CORRECT"/<branch 46250> ;
+46251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+46250  c;
+
+
+=47000  %75"READY"/ *"Jenny   x-x-x" c;
+-47001  *"talked   when"<biw 47251> c;
++47002  *"get   to"<biw 47251> c;
++47003  *"for   the"<biw 47251> c;
++47004  *"could,   reporter,"<biw 47251> c;
+-47005  *"and   were"<biw 47251> c;
+-47006  *"the   but"<biw 47251> c;
++47007  *"they   photographer"<biw 47251> c;
+-47008  *"took   share"<biw 47251> c;
++47009  *"because   pictures"<biw 47251> c;
+-47010  *"of   be"<biw 47251> c;
++47011  *"did   the"<biw 47251> c;
++47012  *"ourselves.   scene."<biw 47251> c;
+47000 "CORRECT"/<branch 47250> ;
+47251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+47250  c;
+
+
+=48000  %75"READY"/ *"The   x-x-x" c;
+-48001  *"witness   and"<biw 48251> c;
++48002  *"skimp   identified"<biw 48251> c;
++48003  *"of   the"<biw 48251> c;
++48004  *"then,   man,"<biw 48251> c;
++48005  *"knew   and"<biw 48251> c;
++48006  *"been   his"<biw 48251> c;
+-48007  *"wife   about"<biw 48251> c;
+-48008  *"ran   speak"<biw 48251> c;
+-48009  *"away   toughest"<biw 48251> c;
++48010  *"theirs   from"<biw 48251> c;
+-48011  *"the   to"<biw 48251> c;
++48012  *"again   police"<biw 48251> c;
+-48013  *"station.   live."<biw 48251> c;
+48000 "CORRECT"/<branch 48250> ;
+48251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+48250  c;
+
+
+$0 "End of block. 2 blocks left. Continue when ready.";$
+
+=49000  %75"READY"/ *"Anne   x-x-x" c;
++49001  *"executive   will"<biw 49251> c;
++49002  *"would   serve"<biw 49251> c;
+-49003  *"the   stop"<biw 49251> c;
+-49004  *"apples   another"<biw 49251> c;
++49005  *"shred   she"<biw 49251> c;
+-49006  *"picked   necessity"<biw 49251> c;
++49007  *"tire,   tomorrow,"<biw 49251> c;
+-49008  *"but   us"<biw 49251> c;
+-49009  *"she   him"<biw 49251> c;
+-49010  *"won't   grotesque"<biw 49251> c;
+-49011  *"serve   information "<biw 49251> c;
+-49012  *"the   anticipate"<biw 49251> c;
+-49013  *"plums.   typically."<biw 49251> c;
+49000 "CORRECT"/<branch 49250> ;
+49251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+49250  c;
+
+
+=50000  %75"READY"/ *"Robert   x-x-x" c;
+-50001  *"will   talk"<biw 50251> c;
+-50002  *"meet   serving"<biw 50251> c;
+-50003  *"the   compared"<biw 50251> c;
+-50004  *"friend   your"<biw 50251> c;
+-50005  *"he   visit"<biw 50251> c;
+-50006  *"phoned   any"<biw 50251> c;
++50007  *"city,   tomorrow,"<biw 50251> c;
+-50008  *"but   why"<biw 50251> c;
+-50009  *"he   do"<biw 50251> c;
+-50010  *"doesn't   attributable"<biw 50251> c;
+-50011  *"want   sending"<biw 50251> c;
++50012  *"was.   to."<biw 50251> c;
+50000 "CORRECT"/<branch 50250> ;
+50251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+50250  c;
+
+
+=51000  %75"READY"/ *"David   x-x-x" c;
++51001  *"wild   caught"<biw 51251> c;
+-51002  *"the   paced"<biw 51251> c;
+-51003  *"fish   afford"<biw 51251> c;
+-51004  *"he   did "<biw 51251> c;
++51005  *"hike   will"<biw 51251> c;
+-51006  *"cook   is"<biw 51251> c;
++51007  *"ask,   yesterday,"<biw 51251> c;
+-51008  *"but   bellow"<biw 51251> c;
++51009  *"best   it"<biw 51251> c;
++51010  *"he   is"<biw 51251> c;
++51011  *"mock   not"<biw 51251> c;
++51012  *"add   his"<biw 51251> c;
+-51013  *"favorite   sue"<biw 51251> c;
+-51014  *"kind.   finish."<biw 51251> c;
+51000 "CORRECT"/<branch 51250> ;
+51251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+51250  c;
+
+
+=52000  %75"READY"/ *"Sue   x-x-x" c;
++52001  *"bar   insulted"<biw 52251> c;
++52002  *"remains   the"<biw 52251> c;
+-52003  *"candidate   every"<biw 52251> c;
++52004  *"moved   she"<biw 52251> c;
+-52005  *"will   margaritas"<biw 52251> c;
++52006  *"kids   debate"<biw 52251> c;
+-52007  *"yesterday,   horrible,"<biw 52251> c;
++52008  *"send   but"<biw 52251> c;
++52009  *"slung   she"<biw 52251> c;
+-52010  *"wishes   it"<biw 52251> c;
+-52011  *"she   has"<biw 52251> c;
++52012  *"even.   hadn't."<biw 52251> c;
+52000 "CORRECT"/<branch 52250> ;
+52251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+52250  c;
+
+
+=53000  %75"READY"/ *"Jane   x-x-x" c;
+-53001  *"prepared   first"<biw 53251> c;
++53002  *"tram   the"<biw 53251> c;
+-53003  *"lecture   because"<biw 53251> c;
++53004  *"invest   she"<biw 53251> c;
+-53005  *"will   sandwich"<biw 53251> c;
++53006  *"skis   give"<biw 53251> c;
++53007  *"earn   last"<biw 53251> c;
+-53008  *"week,   behind,"<biw 53251> c;
++53009  *"prepares   but"<biw 53251> c;
++53010  *"and   still"<biw 53251> c;
+-53011  *"needs   option"<biw 53251> c;
++53012  *"should   to"<biw 53251> c;
+-53013  *"review   taking"<biw 53251> c;
+-53014  *"it.   launch."<biw 53251> c;
+53000 "CORRECT"/<branch 53250> ;
+53251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+53250  c;
+
+
+=54000  %75"READY"/ *"Joseph   x-x-x" c;
+-54001  *"brewed   police"<biw 54251> c;
++54002  *"traveled   the"<biw 54251> c;
+-54003  *"beer   make"<biw 54251> c;
+-54004  *"he   frighten"<biw 54251> c;
+-54005  *"will   officials"<biw 54251> c;
++54006  *"unconvinced   serve"<biw 54251> c;
++54007  *"yours   last"<biw 54251> c;
++54008  *"moderate,   week,"<biw 54251> c;
+-54009  *"but   gone"<biw 54251> c;
++54010  *"us   it"<biw 54251> c;
++54011  *"condition   is"<biw 54251> c;
+-54012  *"not   meals"<biw 54251> c;
++54013  *"daughter   very"<biw 54251> c;
++54014  *"moth.   tasty."<biw 54251> c;
+54000 "CORRECT"/<branch 54250> ;
+54251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+54250  c;
+
+
+=55000  %75"READY"/ *"Tom   x-x-x" c;
+-55001  *"will   nights"<biw 55251> c;
++55002  *"stomping   plant"<biw 55251> c;
++55003  *"miss   the"<biw 55251> c;
+-55004  *"tree   and"<biw 55251> c;
+-55005  *"he   ride"<biw 55251> c;
+-55006  *"bought   steep"<biw 55251> c;
+-55007  *"next   violate"<biw 55251> c;
++55008  *"here,   week,"<biw 55251> c;
++55009  *"him   but"<biw 55251> c;
++55010  *"them   he"<biw 55251> c;
++55011  *"stickers   isn't"<biw 55251> c;
++55012  *"city   sure"<biw 55251> c;
++55013  *"floored   where"<biw 55251> c;
+-55014  *"to   expect"<biw 55251> c;
+-55015  *"put   along"<biw 55251> c;
+-55016  *"it.   freeze."<biw 55251> c;
+55000 "CORRECT"/<branch 55250> ;
+55251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+55250  c;
+
+
+=56000  %75"READY"/ *"Lisa   x-x-x" c;
+-56001  *"will   end"<biw 56251> c;
++56002  *"the   change"<biw 56251> c;
++56003  *"were   the"<biw 56251> c;
+-56004  *"plans   before"<biw 56251> c;
++56005  *"yourself   she"<biw 56251> c;
++56006  *"record   made"<biw 56251> c;
+-56007  *"next   am"<biw 56251> c;
++56008  *"lightest,   week,"<biw 56251> c;
++56009  *"been   but"<biw 56251> c;
+-56010  *"she   and"<biw 56251> c;
+-56011  *"won't   drinking"<biw 56251> c;
++56012  *"inspired   cancel"<biw 56251> c;
+-56013  *"any   want"<biw 56251> c;
++56014  *"employ   of"<biw 56251> c;
+-56015  *"them.   fewer."<biw 56251> c;
+56000 "CORRECT"/<branch 56250> ;
+56251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+56250  c;
+
+
+=57000  %75"READY"/ *"Jeff   x-x-x" c;
++57001  *"evening   planned"<biw 57251> c;
+-57002  *"the   came"<biw 57251> c;
+-57003  *"party   as"<biw 57251> c;
+-57004  *"he   classify"<biw 57251> c;
+-57005  *"will   moderate"<biw 57251> c;
++57006  *"different   hold"<biw 57251> c;
+-57007  *"last   have"<biw 57251> c;
++57008  *"easier,   month,"<biw 57251> c;
+-57009  *"but   us"<biw 57251> c;
++57010  *"am   he"<biw 57251> c;
++57011  *"terrain   hasn't"<biw 57251> c;
++57012  *"bathroom   sent"<biw 57251> c;
++57013  *"ample.   invitations."<biw 57251> c;
+57000 "CORRECT"/<branch 57250> ;
+57251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+57250  c;
+
+
+=58000  %75"READY"/ *"Dan   x-x-x" c;
++58001  *"youngest   wrote"<biw 58251> c;
+-58002  *"the   beckoned"<biw 58251> c;
++58003  *"fill   speech"<biw 58251> c;
++58004  *"travel   he"<biw 58251> c;
++58005  *"meet   will"<biw 58251> c;
++58006  *"heard   deliver"<biw 58251> c;
+-58007  *"last   did"<biw 58251> c;
+-58008  *"month,   down,"<biw 58251> c;
+-58009  *"but   me"<biw 58251> c;
++58010  *"and   he"<biw 58251> c;
+-58011  *"hasn't   top"<biw 58251> c;
++58012  *"parade   practiced"<biw 58251> c;
++58013  *"admit   it"<biw 58251> c;
++58014  *"respond.   yet."<biw 58251> c;
+58000 "CORRECT"/<branch 58250> ;
+58251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+58250  c;
+
+
+=59000  %75"READY"/ *"Paul   x-x-x" c;
++59001  *"bowl   will"<biw 59251> c;
+-59002  *"marry   taken"<biw 59251> c;
++59003  *"seem   the"<biw 59251> c;
+-59004  *"woman   myself"<biw 59251> c;
++59005  *"them   he"<biw 59251> c;
++59006  *"death   just"<biw 59251> c;
+-59007  *"met   president"<biw 59251> c;
+-59008  *"next   view"<biw 59251> c;
+-59009  *"month,   but,"<biw 59251> c;
++59010  *"were   but"<biw 59251> c;
+-59011  *"the   have"<biw 59251> c;
++59012  *"again   wedding"<biw 59251> c;
++59013  *"realize   will"<biw 59251> c;
+-59014  *"be   left"<biw 59251> c;
+-59015  *"small.   by."<biw 59251> c;
+59000 "CORRECT"/<branch 59250> ;
+59251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+59250  c;
+
+
+=60000  %75"READY"/ *"Amy   x-x-x" c;
++60001  *"number   will"<biw 60251> c;
+-60002  *"visit   bumper"<biw 60251> c;
++60003  *"had   the"<biw 60251> c;
+-60004  *"man   their"<biw 60251> c;
+-60005  *"she   what"<biw 60251> c;
+-60006  *"worked   members"<biw 60251> c;
++60007  *"laid   with"<biw 60251> c;
++60008  *"aren't   next"<biw 60251> c;
++60009  *"sometimes,   month,"<biw 60251> c;
++60010  *"am   but"<biw 60251> c;
++60011  *"were   she"<biw 60251> c;
+-60012  *"is   whopping"<biw 60251> c;
++60013  *"been   nervous"<biw 60251> c;
++60014  *"frustrate   about"<biw 60251> c;
+-60015  *"it.   like."<biw 60251> c;
+60000 "CORRECT"/<branch 60250> ;
+60251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+60250  c;
+
+
+$0 "End of block. Only one block left! Continue when ready.";$
+
+=61000  %75"READY"/ *"Linda   x-x-x" c;
++61001  *"it   will"<biw 61251> c;
+-61002  *"wear   must"<biw 61251> c;
++61003  *"metabolize   the"<biw 61251> c;
++61004  *"getting   sweater"<biw 61251> c;
+-61005  *"she   week"<biw 61251> c;
+-61006  *"washed   mountain"<biw 61251> c;
++61007  *"say,   yesterday,"<biw 61251> c;
+-61008  *"but   were"<biw 61251> c;
+-61009  *"she   them"<biw 61251> c;
+-61010  *"won't   alternative"<biw 61251> c;
++61011  *"word   wear"<biw 61251> c;
+-61012  *"her   adore"<biw 61251> c;
++61013  *"that.   skirt."<biw 61251> c;
+61000 "CORRECT"/<branch 61250> ;
+61251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+61250  c;
+
+
+=62000  %75"READY"/ *"James   x-x-x" c;
+-62001  *"will   rest"<biw 62251> c;
++62002  *"panting   fix"<biw 62251> c;
+-62003  *"the   remind"<biw 62251> c;
++62004  *"about   car"<biw 62251> c;
+-62005  *"he   could"<biw 62251> c;
+-62006  *"drove   physician"<biw 62251> c;
++62007  *"consumption,   yesterday,"<biw 62251> c;
+-62008  *"but   me"<biw 62251> c;
+-62009  *"he   or"<biw 62251> c;
+-62010  *"will   million"<biw 62251> c;
++62011  *"has   need"<biw 62251> c;
++62012  *"believe   some"<biw 62251> c;
+-62013  *"help.   definite."<biw 62251> c;
+62000 "CORRECT"/<branch 62250> ;
+62251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+62250  c;
+
+
+=63000  %75"READY"/ *"Mary   x-x-x" c;
++63001  *"move   called"<biw 63251> c;
++63002  *"ones   the"<biw 63251> c;
++63003  *"turned   applicant"<biw 63251> c;
+-63004  *"she   cancer"<biw 63251> c;
++63005  *"two   will"<biw 63251> c;
++63006  *"winter   interview"<biw 63251> c;
+-63007  *"tomorrow,   of,"<biw 63251> c;
++63008  *"theirs   but"<biw 63251> c;
+-63009  *"there   and"<biw 63251> c;
++63010  *"without   was"<biw 63251> c;
+-63011  *"no   serve"<biw 63251> c;
++63012  *"whose.   answer."<biw 63251> c;
+63000 "CORRECT"/<branch 63250> ;
+63251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+63250  c;
+
+
+=64000  %75"READY"/ *"Mike   x-x-x" c;
+-64001  *"watered   notebook"<biw 64251> c;
+-64002  *"the   will"<biw 64251> c;
+-64003  *"flower   create"<biw 64251> c;
++64004  *"try   he"<biw 64251> c;
+-64005  *"will   wrinkle"<biw 64251> c;
++64006  *"as   sell"<biw 64251> c;
+-64007  *"tomorrow,   come,"<biw 64251> c;
++64008  *"are   but"<biw 64251> c;
+-64009  *"he   us"<biw 64251> c;
+-64010  *"forgot   mean"<biw 64251> c;
+-64011  *"to   visited"<biw 64251> c;
+-64012  *"water   by"<biw 64251> c;
++64013  *"despise   the"<biw 64251> c;
++64014  *"their.   bush."<biw 64251> c;
+64000 "CORRECT"/<branch 64250> ;
+64251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+64250  c;
+
+
+=65000  %75"READY"/ *"Susan   x-x-x" c;
+-65001  *"bought   bottle"<biw 65251> c;
++65002  *"been   the"<biw 65251> c;
++65003  *"nothing   wine"<biw 65251> c;
+-65004  *"she   is"<biw 65251> c;
++65005  *"style   will"<biw 65251> c;
+-65006  *"drink   meals"<biw 65251> c;
++65007  *"flame   next"<biw 65251> c;
++65008  *"lobby,   week,"<biw 65251> c;
++65009  *"aren't   but"<biw 65251> c;
+-65010  *"she   or"<biw 65251> c;
+-65011  *"didn't   raffle"<biw 65251> c;
++65012  *"mounting   buy"<biw 65251> c;
++65013  *"disregard   any"<biw 65251> c;
+-65014  *"cheese.   pulled."<biw 65251> c;
+65000 "CORRECT"/<branch 65250> ;
+65251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+65250  c;
+
+
+=66000  %75"READY"/ *"Chris   x-x-x" c;
+-66001  *"cleaned   interview"<biw 66251> c;
++66002  *"find   the"<biw 66251> c;
+-66003  *"bookcase   on"<biw 66251> c;
++66004  *"what   he"<biw 66251> c;
++66005  *"guy   will"<biw 66251> c;
++66006  *"leased   sell"<biw 66251> c;
+-66007  *"next   tricycle"<biw 66251> c;
++66008  *"albeit,   week,"<biw 66251> c;
++66009  *"hers   but"<biw 66251> c;
+-66010  *"it   them"<biw 66251> c;
++66011  *"powder   is"<biw 66251> c;
+-66012  *"still   would"<biw 66251> c;
+-66013  *"very   swaps"<biw 66251> c;
+-66014  *"dusty.   exactly."<biw 66251> c;
+66000 "CORRECT"/<branch 66250> ;
+66251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+66250  c;
+
+
+=67000  %75"READY"/ *"Mark   x-x-x" c;
++67001  *"swirl   will"<biw 67251> c;
+-67002  *"answer   feet"<biw 67251> c;
++67003  *"pay   the"<biw 67251> c;
+-67004  *"email   her"<biw 67251> c;
+-67005  *"he   have"<biw 67251> c;
++67006  *"tradition   got"<biw 67251> c;
+-67007  *"last   lodge"<biw 67251> c;
+-67008  *"week,   milk,"<biw 67251> c;
+-67009  *"but   me"<biw 67251> c;
+-67010  *"he   been"<biw 67251> c;
++67011  *"it   doesn't"<biw 67251> c;
+-67012  *"know   as"<biw 67251> c;
++67013  *"insure   what"<biw 67251> c;
++67014  *"run   to"<biw 67251> c;
+-67015  *"write.   several."<biw 67251> c;
+67000 "CORRECT"/<branch 67250> ;
+67251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+67250  c;
+
+
+=68000  %75"READY"/ *"Cathy   x-x-x" c;
++68001  *"sort   will"<biw 68251> c;
+-68002  *"burn   small"<biw 68251> c;
+-68003  *"the   are"<biw 68251> c;
++68004  *"in   wood"<biw 68251> c;
++68005  *"ask   she"<biw 68251> c;
++68006  *"shoppers   gathered"<biw 68251> c;
++68007  *"instituted   last"<biw 68251> c;
+-68008  *"week,   prizes,"<biw 68251> c;
+-68009  *"but   theirs"<biw 68251> c;
+-68010  *"she   them"<biw 68251> c;
+-68011  *"will   in"<biw 68251> c;
+-68012  *"save   seeing"<biw 68251> c;
++68013  *"sing   some"<biw 68251> c;
++68014  *"could   of"<biw 68251> c;
+-68015  *"it.   along."<biw 68251> c;
+68000 "CORRECT"/<branch 68250> ;
+68251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+68250  c;
+
+
+=69000  %75"READY"/ *"Jim   x-x-x" c;
++69001  *"denim   painted"<biw 69251> c;
++69002  *"do   the"<biw 69251> c;
+-69003  *"picture   across"<biw 69251> c;
++69004  *"play   he"<biw 69251> c;
++69005  *"policy   will"<biw 69251> c;
++69006  *"surfaced   display"<biw 69251> c;
++69007  *"fellow   next"<biw 69251> c;
+-69008  *"month,   blame,"<biw 69251> c;
+-69009  *"but   am"<biw 69251> c;
+-69010  *"he   and"<biw 69251> c;
++69011  *"traverse   isn't"<biw 69251> c;
++69012  *"announced   happy"<biw 69251> c;
++69013  *"hear   with"<biw 69251> c;
++69014  *"report.   it."<biw 69251> c;
+69000 "CORRECT"/<branch 69250> ;
+69251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+69250  c;
+
+
+=70000  %75"READY"/ *"John   x-x-x" c;
+-70001  *"hired   rain"<biw 70251> c;
+-70002  *"the   run"<biw 70251> c;
++70003  *"had   clerk"<biw 70251> c;
+-70004  *"he   feel"<biw 70251> c;
++70005  *"living   will"<biw 70251> c;
+-70006  *"promote   against"<biw 70251> c;
+-70007  *"next   had"<biw 70251> c;
++70008  *"fuel,   month,"<biw 70251> c;
+-70009  *"but   him"<biw 70251> c;
+-70010  *"he   us"<biw 70251> c;
+-70011  *"fired   at"<biw 70251> c;
+-70012  *"another   chew"<biw 70251> c;
+-70013  *"employee.   drinks."<biw 70251> c;
+70000 "CORRECT"/<branch 70250> ;
+70251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+70250  c;
+
+
+=71000  %75"READY"/ *"Bob   x-x-x" c;
++71001  *"bring   will"<biw 71251> c;
+-71002  *"complete   charges"<biw 71251> c;
++71003  *"fail   the"<biw 71251> c;
+-71004  *"project   put"<biw 71251> c;
+-71005  *"he   them"<biw 71251> c;
+-71006  *"started   table"<biw 71251> c;
+-71007  *"last   figment"<biw 71251> c;
++71008  *"determined,   month,"<biw 71251> c;
++71009  *"theirs   but"<biw 71251> c;
+-71010  *"Fred   been"<biw 71251> c;
++71011  *"next   won't"<biw 71251> c;
++71012  *"will   finish"<biw 71251> c;
++71013  *"roast.   his."<biw 71251> c;
+71000 "CORRECT"/<branch 71250> ;
+71251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+71250  c;
+
+
+=72000  %75"READY"/ *"Kim   x-x-x" c;
++72001  *"time   will"<biw 72251> c;
+-72002  *"display   riding"<biw 72251> c;
++72003  *"of   the"<biw 72251> c;
++72004  *"know   photos"<biw 72251> c;
++72005  *"decide   she"<biw 72251> c;
++72006  *"dining   took"<biw 72251> c;
++72007  *"thought   last"<biw 72251> c;
++72008  *"only,   month,"<biw 72251> c;
+-72009  *"but   largest"<biw 72251> c;
++72010  *"done   she"<biw 72251> c;
++72011  *"address   won't"<biw 72251> c;
++72012  *"researches   show"<biw 72251> c;
++72013  *"poke   all"<biw 72251> c;
++72014  *"suffer   of"<biw 72251> c;
+-72015  *"them.   without."<biw 72251> c;
+72000 "CORRECT"/<branch 72250> ;
+72251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+72250  c;
+
+
+$0 "That's the end. Thank you.";$

@@ -1,0 +1,2002 @@
+<fd 50> <cr> <d 0> <vg 1000> <s 96> <nfb> <vm 640,480,16,100> <id pio12> <t 10000000>
+
+$0"Press the footpedal for the next screen.";
+0 "You will be given a word and a nonword",<ln 1>"side by side. Press the Right or Left key", <ln 2>" to indicate where the word was.";
+0 "The words will make a sentence.";
+0 "The following items are for practice." <SetCounter Counter1=0>;
+
+=101000  %75"READY"/ *"The   x-x-x" c;
+-101001  *"husband   claits"<biw 101251> c;
+-101002  *"of   voved"<biw 101251> c;
++101003  *"zesk   the"<biw 101251> c;
++101004  *"thwush   beautiful"<biw 101251> c;
+-101005  *"woman   doads"<biw 101251> c;
+-101006  *"bought   skoo"<biw 101251> c;
++101007  *"sholl   her"<biw 101251> c;
++101008  *"dreece   roses"<biw 101251> c;
+-101009  *"and   bemps"<biw 101251> c;
+-101010  *"candy   strube"<biw 101251> c;
++101011  *"solfs   for"<biw 101251> c;
++101012  *"slisque   her"<biw 101251> c;
++101013  *"crup.   birthday."<biw 101251> c;
+101000 "CORRECT"/<branch 101250> ;
+101251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+101250  c;
+
+
+=102000  %75"READY"/ *"The   x-x-x" c;
+-102001  *"patient   twics"<biw 102251> c;
+-102002  *"who   plulp"<biw 102251> c;
+-102003  *"the   rums"<biw 102251> c;
++102004  *"scoove   doctor"<biw 102251> c;
+-102005  *"treated   sweich"<biw 102251> c;
++102006  *"shruts   became"<biw 102251> c;
++102007  *"plomps   better"<biw 102251> c;
++102008  *"stelf   after"<biw 102251> c;
+-102009  *"only   phrich"<biw 102251> c;
++102010  *"chaunch   a"<biw 102251> c;
+-102011  *"few   nubes"<biw 102251> c;
++102012  *"clumed.   treatments."<biw 102251> c;
+102000 "CORRECT"/<branch 102250> ;
+102251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+102250  c;
+
+
+=103000  %75"READY"/ *"Maya   x-x-x" c;
++103001  *"pleeve   played"<biw 103251> c;
+-103002  *"with   glorps"<biw 103251> c;
+-103003  *"the   korb"<biw 103251> c;
+-103004  *"blocks   twekked"<biw 103251> c;
+-103005  *"and   thaph"<biw 103251> c;
++103006  *"plap   the"<biw 103251> c;
+-103007  *"balls,   pooge,"<biw 103251> c;
+-103008  *"but   grawp"<biw 103251> c;
++103009  *"phleff   she"<biw 103251> c;
++103010  *"pleil   soon"<biw 103251> c;
+-103011  *"got   gergs"<biw 103251> c;
+-103012  *"bored   grogs"<biw 103251> c;
++103013  *"malf   with"<biw 103251> c;
++103014  *"strie.   them."<biw 103251> c;
+103000 "CORRECT"/<branch 103250> ;
+103251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+103250  c;
+
+
+=104000  %75"READY"/ *"The   x-x-x" c;
++104001  *"japped   therapist"<biw 104251> c;
+-104002  *"set   shreese"<biw 104251> c;
+-104003  *"up   gracked"<biw 104251> c;
++104004  *"vagues   a"<biw 104251> c;
+-104005  *"meeting   huct"<biw 104251> c;
++104006  *"clourth   with"<biw 104251> c;
+-104007  *"the   toofed"<biw 104251> c;
+-104008  *"upset   rance"<biw 104251> c;
+-104009  *"woman   psoch"<biw 104251> c;
+-104010  *"and   wasks"<biw 104251> c;
++104011  *"zilk   her"<biw 104251> c;
+-104012  *"husband   glede"<biw 104251> c;
+-104013  *"yesterday.   gwects."<biw 104251> c;
+104000 "CORRECT"/<branch 104250> ;
+104251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+104250  c;
+
+
+=105000  %75"READY"/ *"The   x-x-x" c;
++105001  *"cleel   reporter"<biw 105251> c;
++105002  *"karc   had"<biw 105251> c;
+-105003  *"dinner   flacts"<biw 105251> c;
+-105004  *"yesterday   dwirts"<biw 105251> c;
+-105005  *"with   plorce"<biw 105251> c;
+-105006  *"the   sprysts"<biw 105251> c;
++105007  *"glikes   baseball"<biw 105251> c;
++105008  *"rerch   player"<biw 105251> c;
++105009  *"gloards   who"<biw 105251> c;
+-105010  *"Kevin   baughts"<biw 105251> c;
++105011  *"ghan.   admired."<biw 105251> c;
+105000 "CORRECT"/<branch 105250> ;
+105251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+105250  c;
+
+
+=106000  %75"READY"/ *"The   x-x-x" c;
++106001  *"bymphs   visitors"<biw 106251> c;
+-106002  *"at   purb"<biw 106251> c;
++106003  *"blode   the"<biw 106251> c;
++106004  *"skusts   zoo"<biw 106251> c;
+-106005  *"watched   yisks"<biw 106251> c;
++106006  *"knim   the"<biw 106251> c;
+-106007  *"zookeeper   varl"<biw 106251> c;
++106008  *"chade   who"<biw 106251> c;
++106009  *"gruile   the"<biw 106251> c;
++106010  *"clarn   monkeys"<biw 106251> c;
++106011  *"tweaf   and"<biw 106251> c;
++106012  *"twonze   apes"<biw 106251> c;
+-106013  *"teased.   shryx."<biw 106251> c;
+106000 "CORRECT"/<branch 106250> ;
+106251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+106250  c;
+
+
+=107000  %75"READY"/ *"The   x-x-x" c;
++107001  *"gove   mother"<biw 107251> c;
+-107002  *"of   drouge"<biw 107251> c;
++107003  *"streche   the"<biw 107251> c;
+-107004  *"prisoner   spraim"<biw 107251> c;
++107005  *"gwapes   sent"<biw 107251> c;
++107006  *"snaid   him"<biw 107251> c;
++107007  *"blouls   packages"<biw 107251> c;
+-107008  *"that   blaps"<biw 107251> c;
+-107009  *"contained   splinge"<biw 107251> c;
+-107010  *"cookies   cleik"<biw 107251> c;
+-107011  *"and   thwache"<biw 107251> c;
++107012  *"pim.   novels."<biw 107251> c;
+107000 "CORRECT"/<branch 107250> ;
+107251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+107250  c;
+
+
+=108000  %75"READY"/ *"The   x-x-x" c;
++108001  *"shunes   semester"<biw 108251> c;
++108002  *"woil   will"<biw 108251> c;
++108003  *"skonths   start"<biw 108251> c;
+-108004  *"next   dwaits"<biw 108251> c;
++108005  *"kied,   week,"<biw 108251> c;
++108006  *"thwarr   but"<biw 108251> c;
++108007  *"sloans   the"<biw 108251> c;
++108008  *"strunts   students"<biw 108251> c;
++108009  *"kneight   and"<biw 108251> c;
++108010  *"doof   teachers"<biw 108251> c;
++108011  *"prach   are"<biw 108251> c;
+-108012  *"not   thwist"<biw 108251> c;
++108013  *"deaved.   ready."<biw 108251> c;
+108000 "CORRECT"/<branch 108250> ;
+108251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+108250  c;
+
+
+0 "End of practice. Press the footpedal to continue.";$
+
+=111000  %75"READY"/ *"The   x-x-x" c;
++111001  *"brensed   infant"<biw 111251> c;
++111002  *"sprald   was"<biw 111251> c;
++111003  *"mised   able"<biw 111251> c;
+-111004  *"to   zaised"<biw 111251> c;
+-111005  *"stand   shonx"<biw 111251> c;
++111006  *"fruce   by"<biw 111251> c;
++111007  *"swaim   himself"<biw 111251> c;
+-111008  *"for   vined"<biw 111251> c;
++111009  *"knubed   the"<biw 111251> c;
+-111010  *"first   rhadd"<biw 111251> c;
++111011  *"swempts   time"<biw 111251> c;
++111012  *"plaff   last"<biw 111251> c;
+-111013  *"week.   gugues."<biw 111251> c;
+111000 "CORRECT"/<branch 111250> ;
+111251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+111250  c;
+
+
+=112000  %75"READY"/ *"Jane   x-x-x" c;
++112001  *"tolts   and"<biw 112251> c;
++112002  *"trelp   John"<biw 112251> c;
+-112003  *"studied   ghobe"<biw 112251> c;
+-112004  *"math   dralse"<biw 112251> c;
++112005  *"spoice   and"<biw 112251> c;
++112006  *"kung   history"<biw 112251> c;
+-112007  *"yesterday,   raired"<biw 112251> c;
++112008  *"splish   but"<biw 112251> c;
++112009  *"spaub   they"<biw 112251> c;
+-112010  *"failed   clig"<biw 112251> c;
++112011  *"shrales   the"<biw 112251> c;
+-112012  *"exams.   scrult."<biw 112251> c;
+112000 "CORRECT"/<branch 112250> ;
+112251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+112250  c;
+
+
+=113000  %75"READY"/ *"The   x-x-x" c;
++113001  *"yeint   old"<biw 113251> c;
++113002  *"crirds   man"<biw 113251> c;
++113003  *"deves   amused"<biw 113251> c;
++113004  *"frurr   himself"<biw 113251> c;
++113005  *"swer   by"<biw 113251> c;
++113006  *"thuips   gossiping"<biw 113251> c;
+-113007  *"with   spiscs"<biw 113251> c;
++113008  *"plurb   his"<biw 113251> c;
+-113009  *"children   shonge"<biw 113251> c;
+-113010  *"and   phlalp"<biw 113251> c;
+-113011  *"friends.   fimpse."<biw 113251> c;
+113000 "CORRECT"/<branch 113250> ;
+113251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+113250  c;
+
+
+=114000  %75"READY"/ *"Hugh   x-x-x" c;
+-114001  *"took   swawp"<biw 114251> c;
++114002  *"gnerge   too"<biw 114251> c;
+-114003  *"long   stothed"<biw 114251> c;
++114004  *"holls   to"<biw 114251> c;
++114005  *"calbs,   propose,"<biw 114251> c;
++114006  *"yurts   and"<biw 114251> c;
+-114007  *"his   hoise"<biw 114251> c;
++114008  *"zelk   girlfriend"<biw 114251> c;
++114009  *"yods   decided"<biw 114251> c;
++114010  *"plave   to"<biw 114251> c;
++114011  *"trun   marry"<biw 114251> c;
+-114012  *"someone   splict"<biw 114251> c;
++114013  *"lounce.   else."<biw 114251> c;
+114000 "CORRECT"/<branch 114250> ;
+114251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+114250  c;
+
+
+=115000  %75"READY"/ *"The   x-x-x" c;
+-115001  *"boy   swib"<biw 115251> c;
+-115002  *"who   gnurg"<biw 115251> c;
++115003  *"glifts   was"<biw 115251> c;
+-115004  *"wearing   plawks"<biw 115251> c;
+-115005  *"a   creans"<biw 115251> c;
++115006  *"tweefs   blue"<biw 115251> c;
++115007  *"flursed   cap"<biw 115251> c;
+-115008  *"went   cleight"<biw 115251> c;
+-115009  *"missing   phrurn"<biw 115251> c;
++115010  *"frerb   on"<biw 115251> c;
+-115011  *"his   dwurn"<biw 115251> c;
+-115012  *"way   dwaved"<biw 115251> c;
++115013  *"grieled   home"<biw 115251> c;
+-115014  *"last   kanse"<biw 115251> c;
++115015  *"froque.   week."<biw 115251> c;
+115000 "CORRECT"/<branch 115250> ;
+115251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+115250  c;
+
+
+=116000  %75"READY"/ *"The   x-x-x" c;
++116001  *"trymph   thief"<biw 116251> c;
+-116002  *"noticed   bleuths"<biw 116251> c;
+-116003  *"the   gulge"<biw 116251> c;
++116004  *"fric   boy"<biw 116251> c;
++116005  *"bleams   and"<biw 116251> c;
+-116006  *"the   slords"<biw 116251> c;
+-116007  *"girl   psown"<biw 116251> c;
++116008  *"wulked   watching"<biw 116251> c;
++116009  *"scrask   him"<biw 116251> c;
+-116010  *"from   clatch"<biw 116251> c;
+-116011  *"the   strocks"<biw 116251> c;
++116012  *"weeked   upstairs"<biw 116251> c;
+-116013  *"window.   scrurr."<biw 116251> c;
+116000 "CORRECT"/<branch 116250> ;
+116251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+116250  c;
+
+
+=117000  %75"READY"/ *"Bill   x-x-x" c;
++117001  *"strunes   will"<biw 117251> c;
+-117002  *"quit   stoasts"<biw 117251> c;
+-117003  *"his   shrey"<biw 117251> c;
++117004  *"spreens   job"<biw 117251> c;
++117005  *"silked   next"<biw 117251> c;
+-117006  *"month   nisc"<biw 117251> c;
++117007  *"gheaps   to"<biw 117251> c;
++117008  *"rodge   take"<biw 117251> c;
++117009  *"garce   care"<biw 117251> c;
++117010  *"zates   of"<biw 117251> c;
+-117011  *"his   stived"<biw 117251> c;
++117012  *"wraubs   kids"<biw 117251> c;
++117013  *"bess   and"<biw 117251> c;
++117014  *"blolk.   step-children."<biw 117251> c;
+117000 "CORRECT"/<branch 117250> ;
+117251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+117250  c;
+
+
+=118000  %75"READY"/ *"The   x-x-x" c;
++118001  *"glinns   father"<biw 118251> c;
++118002  *"kilch   of"<biw 118251> c;
++118003  *"splipt   the"<biw 118251> c;
+-118004  *"pretty   kouthed"<biw 118251> c;
++118005  *"pouged   girl"<biw 118251> c;
+-118006  *"cleaned   thweigh"<biw 118251> c;
+-118007  *"up   lorled"<biw 118251> c;
++118008  *"gept   the"<biw 118251> c;
++118009  *"dweve   house"<biw 118251> c;
++118010  *"jurt   all"<biw 118251> c;
+-118011  *"by   wrafed"<biw 118251> c;
++118012  *"gimp   himself"<biw 118251> c;
++118013  *"vimped   last"<biw 118251> c;
++118014  *"smoint.   week."<biw 118251> c;
+118000 "CORRECT"/<branch 118250> ;
+118251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+118250  c;
+
+
+=119000  %75"READY"/ *"Megan   x-x-x" c;
++119001  *"kabes   got"<biw 119251> c;
++119002  *"knork   angry"<biw 119251> c;
+-119003  *"with   epes"<biw 119251> c;
+-119004  *"her   frarbed"<biw 119251> c;
++119005  *"jeeve   boss"<biw 119251> c;
+-119006  *"and   yert"<biw 119251> c;
++119007  *"thymph   sued"<biw 119251> c;
+-119008  *"him   skubed"<biw 119251> c;
+-119009  *"for   relp"<biw 119251> c;
++119010  *"runked   discrimination"<biw 119251> c;
+-119011  *"last   gwoons"<biw 119251> c;
++119012  *"julfs.   month."<biw 119251> c;
+119000 "CORRECT"/<branch 119250> ;
+119251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+119250  c;
+
+
+=120000  %75"READY"/ *"The   x-x-x" c;
+-120001  *"pilot   whurps"<biw 120251> c;
++120002  *"gnymed   will"<biw 120251> c;
++120003  *"yurfed   fly"<biw 120251> c;
++120004  *"psushed   a"<biw 120251> c;
++120005  *"draith   new"<biw 120251> c;
++120006  *"floud   airplane"<biw 120251> c;
+-120007  *"to   thend"<biw 120251> c;
++120008  *"psooped   Europe"<biw 120251> c;
++120009  *"stritch   and"<biw 120251> c;
+-120010  *"back   dasks"<biw 120251> c;
+-120011  *"beginning   therch"<biw 120251> c;
+-120012  *"next   frunk"<biw 120251> c;
+-120013  *"week.   jurned."<biw 120251> c;
+120000 "CORRECT"/<branch 120250> ;
+120251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+120250  c;
+
+
+=121000  %75"READY"/ *"The   x-x-x" c;
++121001  *"fralp   nurse"<biw 121251> c;
++121002  *"wrooves   took"<biw 121251> c;
++121003  *"praut   care"<biw 121251> c;
++121004  *"deathe   of"<biw 121251> c;
+-121005  *"the   gwinn"<biw 121251> c;
+-121006  *"old   gerve"<biw 121251> c;
++121007  *"gnulf   lady"<biw 121251> c;
+-121008  *"who   mouled"<biw 121251> c;
+-121009  *"could   gwebes"<biw 121251> c;
+-121010  *"not   bleald"<biw 121251> c;
+-121011  *"take   unch"<biw 121251> c;
+-121012  *"care   phreald"<biw 121251> c;
+-121013  *"of   scalk"<biw 121251> c;
++121014  *"smorde.   herself."<biw 121251> c;
+121000 "CORRECT"/<branch 121250> ;
+121251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+121250  c;
+
+
+=122000  %75"READY"/ *"Cindy   x-x-x" c;
++122001  *"stobe   treated"<biw 122251> c;
+-122002  *"herself   gworks"<biw 122251> c;
++122003  *"tholl   to"<biw 122251> c;
++122004  *"dwiest   a"<biw 122251> c;
+-122005  *"vacation   thrurse"<biw 122251> c;
+-122006  *"in   spache"<biw 122251> c;
++122007  *"deiled   China"<biw 122251> c;
+-122008  *"and   glelf"<biw 122251> c;
+-122009  *"several   scrests"<biw 122251> c;
++122010  *"clurn   other"<biw 122251> c;
++122011  *"drirth   Asian"<biw 122251> c;
++122012  *"yedes.   countries."<biw 122251> c;
+122000 "CORRECT"/<branch 122250> ;
+122251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+122250  c;
+
+
+$0 "End of block. 7 blocks left. Continue when ready.";$
+
+=123000  %75"READY"/ *"Margo   x-x-x" c;
++123001  *"taff   will"<biw 123251> c;
+-123002  *"open   couse"<biw 123251> c;
+-123003  *"bakeries   doot"<biw 123251> c;
++123004  *"whulf   in"<biw 123251> c;
+-123005  *"Chicago   swects"<biw 123251> c;
++123006  *"sarbed   and"<biw 123251> c;
+-123007  *"New   brus"<biw 123251> c;
+-123008  *"York   scraim"<biw 123251> c;
++123009  *"chense   after"<biw 123251> c;
+-123010  *"getting   sweint"<biw 123251> c;
++123011  *"keant   a"<biw 123251> c;
++123012  *"wroffs   loan"<biw 123251> c;
++123013  *"twels   next"<biw 123251> c;
+-123014  *"year.   gweafs."<biw 123251> c;
+123000 "CORRECT"/<branch 123250> ;
+123251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+123250  c;
+
+
+=124000  %75"READY"/ *"Sara   x-x-x" c;
+-124001  *"and   ghilts"<biw 124251> c;
+-124002  *"her   skothed"<biw 124251> c;
++124003  *"vemp   mother"<biw 124251> c;
++124004  *"frymphs   had"<biw 124251> c;
++124005  *"zepe,   steak,"<biw 124251> c;
++124006  *"leph,   potatoes,"<biw 124251> c;
++124007  *"gnongs   and"<biw 124251> c;
++124008  *"gnurbed   green"<biw 124251> c;
++124009  *"clagues   beans"<biw 124251> c;
++124010  *"rherks   for"<biw 124251> c;
+-124011  *"dinner   swekes"<biw 124251> c;
+-124012  *"last   cloign"<biw 124251> c;
++124013  *"bebes.   night."<biw 124251> c;
+124000 "CORRECT"/<branch 124250> ;
+124251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+124250  c;
+
+
+=125000  %75"READY"/ *"The   x-x-x" c;
+-125001  *"gardener   skapse"<biw 125251> c;
++125002  *"shench   was"<biw 125251> c;
++125003  *"phrabe   happy"<biw 125251> c;
++125004  *"truzzed   with"<biw 125251> c;
++125005  *"glor   the"<biw 125251> c;
++125006  *"gnulps,   flowers,"<biw 125251> c;
++125007  *"kimmed   but"<biw 125251> c;
++125008  *"pav   the"<biw 125251> c;
+-125009  *"owner   peps"<biw 125251> c;
++125010  *"dwarked   of"<biw 125251> c;
++125011  *"gwide   the"<biw 125251> c;
++125012  *"pames   house"<biw 125251> c;
+-125013  *"was   snerk"<biw 125251> c;
++125014  *"threfs.   not."<biw 125251> c;
+125000 "CORRECT"/<branch 125250> ;
+125251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+125250  c;
+
+
+=126000  %75"READY"/ *"Judy   x-x-x" c;
++126001  *"snev   cooked"<biw 126251> c;
+-126002  *"in   clalbs"<biw 126251> c;
++126003  *"grinced   the"<biw 126251> c;
++126004  *"phlouth,   kitchen,"<biw 126251> c;
++126005  *"talph   and"<biw 126251> c;
++126006  *"snuice   Richard"<biw 126251> c;
+-126007  *"barbecued   plask"<biw 126251> c;
++126008  *"spliln   outside"<biw 126251> c;
++126009  *"braugh   in"<biw 126251> c;
++126010  *"snighs   the"<biw 126251> c;
++126011  *"shalp.   yard."<biw 126251> c;
+126000 "CORRECT"/<branch 126250> ;
+126251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+126250  c;
+
+
+=127000  %75"READY"/ *"The   x-x-x" c;
++127001  *"chowled   student"<biw 127251> c;
++127002  *"swompts   who"<biw 127251> c;
++127003  *"sleuds   was"<biw 127251> c;
+-127004  *"running   doms"<biw 127251> c;
+-127005  *"out   preich"<biw 127251> c;
+-127006  *"of   kymph"<biw 127251> c;
+-127007  *"money   rurned"<biw 127251> c;
+-127008  *"gave   twert"<biw 127251> c;
++127009  *"whar   himself"<biw 127251> c;
++127010  *"hoobs   a"<biw 127251> c;
++127011  *"brebs   haircut"<biw 127251> c;
++127012  *"ghurped   last"<biw 127251> c;
++127013  *"bames.   week."<biw 127251> c;
+127000 "CORRECT"/<branch 127250> ;
+127251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+127250  c;
+
+
+=128000  %75"READY"/ *"Julie   x-x-x" c;
++128001  *"deaks   dated"<biw 128251> c;
+-128002  *"Adam   thwop"<biw 128251> c;
+-128003  *"and   phoof"<biw 128251> c;
+-128004  *"Andy,   sneggs,"<biw 128251> c;
+-128005  *"but   crurr"<biw 128251> c;
+-128006  *"she   creint"<biw 128251> c;
++128007  *"yeem   married"<biw 128251> c;
+-128008  *"Jeff   scrops"<biw 128251> c;
++128009  *"gacked   in"<biw 128251> c;
+-128010  *"Portland  ecked"<biw 128251> c;
+-128011  *"last   brorks"<biw 128251> c;
++128012  *"sprike.   month."<biw 128251> c;
+128000 "CORRECT"/<branch 128250> ;
+128251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+128250  c;
+
+
+=129000  %75"READY"/ *"Todd   x-x-x" c;
+-129001  *"wanted   sninths"<biw 129251> c;
++129002  *"printh   to"<biw 129251> c;
++129003  *"dwulped   be"<biw 129251> c;
++129004  *"sanch   a"<biw 129251> c;
+-129005  *"barber,   smeet,"<biw 129251> c;
+-129006  *"but   julch"<biw 129251> c;
++129007  *"jick   his"<biw 129251> c;
+-129008  *"shaky   spos"<biw 129251> c;
+-129009  *"hands   bleers"<biw 129251> c;
++129010  *"shreign   prevented"<biw 129251> c;
++129011  *"lumbs   him"<biw 129251> c;
+-129012  *"from   gweethe"<biw 129251> c;
++129013  *"psaunts   becoming"<biw 129251> c;
++129014  *"veints.   one."<biw 129251> c;
+129000 "CORRECT"/<branch 129250> ;
+129251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+129250  c;
+
+
+=130000  %75"READY"/ *"The   x-x-x" c;
+-130001  *"writer   pumes"<biw 130251> c;
++130002  *"dwarls   of"<biw 130251> c;
+-130003  *"the   prunk"<biw 130251> c;
++130004  *"twaide   novels"<biw 130251> c;
++130005  *"gloap   thought"<biw 130251> c;
++130006  *"scurds   himself"<biw 130251> c;
+-130007  *"to   slolt"<biw 130251> c;
+-130008  *"be   flenes"<biw 130251> c;
+-130009  *"a   meeked"<biw 130251> c;
++130010  *"phrumbs,   genius,"<biw 130251> c;
+-130011  *"but   tince"<biw 130251> c;
++130012  *"tissed   he"<biw 130251> c;
++130013  *"shrurs.   wasn't."<biw 130251> c;
+130000 "CORRECT"/<branch 130250> ;
+130251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+130250  c;
+
+
+=131000  %75"READY"/ *"The   x-x-x" c;
++131001  *"hoads   cute"<biw 131251> c;
++131002  *"smoarse   girl"<biw 131251> c;
+-131003  *"who   scombed"<biw 131251> c;
++131004  *"heached   was"<biw 131251> c;
+-131005  *"on   thox"<biw 131251> c;
+-131006  *"the   gwogs"<biw 131251> c;
+-131007  *"cover   flalved"<biw 131251> c;
++131008  *"bope   of"<biw 131251> c;
++131009  *"gheaf   the"<biw 131251> c;
++131010  *"broosed   magazine"<biw 131251> c;
+-131011  *"became   keeled"<biw 131251> c;
+-131012  *"a   splord"<biw 131251> c;
+-131013  *"famous   thoop"<biw 131251> c;
++131014  *"skushed.   doctor."<biw 131251> c;
+131000 "CORRECT"/<branch 131250> ;
+131251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+131250  c;
+
+
+=132000  %75"READY"/ *"The   x-x-x" c;
+-132001  *"boyfriend   crinks"<biw 132251> c;
+-132002  *"of   shraft"<biw 132251> c;
++132003  *"rhons   the"<biw 132251> c;
+-132004  *"model   floile"<biw 132251> c;
+-132005  *"was   dwuit"<biw 132251> c;
++132006  *"slutch   killed"<biw 132251> c;
++132007  *"gherm   in"<biw 132251> c;
++132008  *"phalm   an"<biw 132251> c;
++132009  *"glirge   accident"<biw 132251> c;
++132010  *"nached   while"<biw 132251> c;
+-132011  *"skiing   truge"<biw 132251> c;
+-132012  *"last   keads"<biw 132251> c;
+-132013  *"week.   smeum."<biw 132251> c;
+132000 "CORRECT"/<branch 132250> ;
+132251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+132250  c;
+
+
+=133000  %75"READY"/ *"Yesterday   x-x-x" c;
++133001  *"phrodge   the"<biw 133251> c;
++133002  *"clipts   wife"<biw 133251> c;
++133003  *"blopped   of"<biw 133251> c;
++133004  *"frouls   the"<biw 133251> c;
+-133005  *"politician   hompts"<biw 133251> c;
+-133006  *"discussed   grouts"<biw 133251> c;
++133007  *"pev   health"<biw 133251> c;
+-133008  *"care   dakes"<biw 133251> c;
+-133009  *"with   thremps"<biw 133251> c;
++133010  *"grekked   old"<biw 133251> c;
++133011  *"brelms.   people."<biw 133251> c;
+133000 "CORRECT"/<branch 133250> ;
+133251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+133250  c;
+
+
+=134000  %75"READY"/ *"The   x-x-x" c;
++134001  *"ghogged   children"<biw 134251> c;
+-134002  *"of   byme"<biw 134251> c;
+-134003  *"the   galph"<biw 134251> c;
++134004  *"sloafs   rich"<biw 134251> c;
+-134005  *"man   panc"<biw 134251> c;
++134006  *"smebes   were"<biw 134251> c;
++134007  *"plurl,   spoiled,"<biw 134251> c;
+-134008  *"but   shath"<biw 134251> c;
+-134009  *"they   wroothe"<biw 134251> c;
++134010  *"henth   were"<biw 134251> c;
+-134011  *"charming   swoved"<biw 134251> c;
++134012  *"dwevved   and"<biw 134251> c;
++134013  *"scaged.   handsome."<biw 134251> c;
+134000 "CORRECT"/<branch 134250> ;
+134251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+134250  c;
+
+
+
+$0 "End of block. 6 blocks left. Continue when ready.";$
+
+=1000  %75"READY"/ *"The   x-x-x" c;
++1001  *"sminds   son"<biw 1251> c;
+-1002  *"of   chonde"<biw 1251> c;
+-1003  *"the   grusp"<biw 1251> c;
+-1004  *"actress   shrulls"<biw 1251> c;
+-1005  *"who   throofs"<biw 1251> c;
+-1006  *"shot   throsts"<biw 1251> c;
++1007  *"sprinse   herself"<biw 1251> c;
+-1008  *"on   pronks"<biw 1251> c;
++1009  *"und   the"<biw 1251> c;
+-1010  *"set   bleafed"<biw 1251> c;
++1011  *"whumf   was"<biw 1251> c;
+-1012  *"under   moached"<biw 1251> c;
++1013  *"phrarb.   investigation."<biw 1251> c;
+1000 "CORRECT"/<branch 1250> ;
+1251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+1250  c;
+
+
+=2000  %75"READY"/ *"The   x-x-x" c;
++2001  *"thwure   brother"<biw 2251> c;
++2002  *"floves   of"<biw 2251> c;
+-2003  *"the   spoobs"<biw 2251> c;
++2004  *"smitch   bride"<biw 2251> c;
+-2005  *"who   threpe"<biw 2251> c;
+-2006  *"embarrassed   phooped"<biw 2251> c;
++2007  *"wrorks   herself"<biw 2251> c;
+-2008  *"at   cathed"<biw 2251> c;
++2009  *"brote   the"<biw 2251> c;
+-2010  *"wedding   brorge"<biw 2251> c;
+-2011  *"felt   keech"<biw 2251> c;
+-2012  *"ashamed.   drolfs."<biw 2251> c;
+2000 "CORRECT"/<branch 2250> ;
+2251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+2250  c;
+
+
+=3000  %75"READY"/ *"The   x-x-x" c;
+-3001  *"uncle   skoint"<biw 3251> c;
+-3002  *"of   prurps"<biw 3251> c;
+-3003  *"the   qurned"<biw 3251> c;
+-3004  *"waitress   zilge"<biw 3251> c;
+-3005  *"who   phlurg"<biw 3251> c;
+-3006  *"hurt   shrazed"<biw 3251> c;
+-3007  *"herself   tiege"<biw 3251> c;
++3008  *"vaun   was"<biw 3251> c;
++3009  *"gromp   shocked"<biw 3251> c;
+-3010  *"by   shrirl"<biw 3251> c;
++3011  *"dweafed   the"<biw 3251> c;
+-3012  *"accident.   arsh."<biw 3251> c;
+3000 "CORRECT"/<branch 3250> ;
+3251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+3250  c;
+
+
+=4000  %75"READY"/ *"The   x-x-x" c;
++4001  *"droosed   son"<biw 4251> c;
+-4002  *"of   whised"<biw 4251> c;
++4003  *"croused   the"<biw 4251> c;
+-4004  *"lady   herged"<biw 4251> c;
+-4005  *"who   scaubed"<biw 4251> c;
++4006  *"fruib   politely"<biw 4251> c;
+-4007  *"introduced   reet"<biw 4251> c;
++4008  *"snan   herself"<biw 4251> c;
+-4009  *"was   psarks"<biw 4251> c;
+-4010  *"popular   scimed"<biw 4251> c;
++4011  *"gux   at"<biw 4251> c;
++4012  *"cloost   the"<biw 4251> c;
+-4013  *"party.   twuiff."<biw 4251> c;
+4000 "CORRECT"/<branch 4250> ;
+4251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+4250  c;
+
+
+=5000  %75"READY"/ *"The   x-x-x" c;
+-5001  *"brother   murves"<biw 5251> c;
+-5002  *"of   ralc"<biw 5251> c;
++5003  *"soch   the"<biw 5251> c;
++5004  *"molfs   schoolgirl"<biw 5251> c;
++5005  *"vay   who"<biw 5251> c;
++5006  *"gloute   burned"<biw 5251> c;
+-5007  *"herself   gurze"<biw 5251> c;
++5008  *"vegg   was"<biw 5251> c;
++5009  *"phloofs   usually"<biw 5251> c;
+-5010  *"very   chelte"<biw 5251> c;
+-5011  *"careful.   zarch."<biw 5251> c;
+5000 "CORRECT"/<branch 5250> ;
+5251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+5250  c;
+
+
+=6000  %75"READY"/ *"The   x-x-x" c;
++6001  *"jursts   grandfather"<biw 6251> c;
+-6002  *"of   zoch"<biw 6251> c;
++6003  *"psunes   the"<biw 6251> c;
++6004  *"spirls   woman"<biw 6251> c;
++6005  *"rhished   who"<biw 6251> c;
++6006  *"yilks   killed"<biw 6251> c;
++6007  *"grepths   herself"<biw 6251> c;
++6008  *"yoafs   last"<biw 6251> c;
++6009  *"sploche   summer"<biw 6251> c;
++6010  *"froaths   had"<biw 6251> c;
++6011  *"skeeked   been"<biw 6251> c;
++6012  *"spelks   to"<biw 6251> c;
+-6013  *"prison.   plarbs."<biw 6251> c;
+6000 "CORRECT"/<branch 6250> ;
+6251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+6250  c;
+
+
+=7000  %75"READY"/ *"The   x-x-x" c;
+-7001  *"grandma   trell"<biw 7251> c;
+-7002  *"of   streath"<biw 7251> c;
+-7003  *"the   knauled"<biw 7251> c;
++7004  *"shralps   fireman"<biw 7251> c;
+-7005  *"who   plick"<biw 7251> c;
+-7006  *"criticized   blese"<biw 7251> c;
+-7007  *"himself   dworned"<biw 7251> c;
+-7008  *"far   swiffs"<biw 7251> c;
++7009  *"plured   too"<biw 7251> c;
++7010  *"flauk   often"<biw 7251> c;
++7011  *"zawns   was"<biw 7251> c;
+-7012  *"anxious.   skoach."<biw 7251> c;
+7000 "CORRECT"/<branch 7250> ;
+7251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+7250  c;
+
+
+=8000  %75"READY"/ *"The   x-x-x" c;
+-8001  *"aunt   mirls"<biw 8251> c;
++8002  *"twords   of"<biw 8251> c;
++8003  *"slyles   the"<biw 8251> c;
+-8004  *"schoolboy   falbs"<biw 8251> c;
++8005  *"jage   who"<biw 8251> c;
++8006  *"thiffs   hurt"<biw 8251> c;
+-8007  *"himself   ner"<biw 8251> c;
++8008  *"blusque   was"<biw 8251> c;
+-8009  *"concerned   brorned"<biw 8251> c;
++8010  *"shext   about"<biw 8251> c;
++8011  *"scryped   the"<biw 8251> c;
+-8012  *"injury.   dirl."<biw 8251> c;
+8000 "CORRECT"/<branch 8250> ;
+8251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+8250  c;
+
+
+=9000  %75"READY"/ *"The   x-x-x" c;
+-9001  *"daughter   frepped"<biw 9251> c;
+-9002  *"of   wesks"<biw 9251> c;
+-9003  *"the   fauche"<biw 9251> c;
++9004  *"clorgue   man"<biw 9251> c;
+-9005  *"who   snoast"<biw 9251> c;
++9006  *"fic   complimented"<biw 9251> c;
+-9007  *"himself   yeath"<biw 9251> c;
+-9008  *"in   jerth"<biw 9251> c;
++9009  *"trelks   public"<biw 9251> c;
++9010  *"pronth   was"<biw 9251> c;
+-9011  *"beautiful.   thalks."<biw 9251> c;
+9000 "CORRECT"/<branch 9250> ;
+9251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+9250  c;
+
+
+=10000  %75"READY"/ *"The   x-x-x" c;
++10001  *"thwaugh   sister"<biw 10251> c;
++10002  *"flurp   of"<biw 10251> c;
+-10003  *"the   whease"<biw 10251> c;
+-10004  *"salesman   swonths"<biw 10251> c;
++10005  *"nelched   who"<biw 10251> c;
+-10006  *"made   ploob"<biw 10251> c;
++10007  *"zauge   a"<biw 10251> c;
+-10008  *"fool   suzzed"<biw 10251> c;
+-10009  *"of   throosh"<biw 10251> c;
++10010  *"ghobbed   himself"<biw 10251> c;
++10011  *"goc   at"<biw 10251> c;
++10012  *"flebe   work"<biw 10251> c;
+-10013  *"was   wreant"<biw 10251> c;
++10014  *"wrint   very"<biw 10251> c;
++10015  *"ciews.   angry."<biw 10251> c;
+10000 "CORRECT"/<branch 10250> ;
+10251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+10250  c;
+
+
+=11000  %75"READY"/ *"The   x-x-x" c;
++11001  *"trurze   daughter"<biw 11251> c;
++11002  *"yass   of"<biw 11251> c;
++11003  *"carks   the"<biw 11251> c;
++11004  *"dwoax   actor"<biw 11251> c;
++11005  *"splyst   who"<biw 11251> c;
++11006  *"drilth   hated"<biw 11251> c;
++11007  *"spleace   himself"<biw 11251> c;
++11008  *"bloared   for"<biw 11251> c;
++11009  *"palked   failing"<biw 11251> c;
+-11010  *"always   kyme"<biw 11251> c;
+-11011  *"seemed   shrisc"<biw 11251> c;
+-11012  *"unhappy.   scoaped."<biw 11251> c;
+11000 "CORRECT"/<branch 11250> ;
+11251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+11250  c;
+
+
+=12000  %75"READY"/ *"The   x-x-x" c;
++12001  *"strawse   sister"<biw 12251> c;
++12002  *"floled   of"<biw 12251> c;
++12003  *"broint   the"<biw 12251> c;
+-12004  *"prince   yopes"<biw 12251> c;
++12005  *"nince   who"<biw 12251> c;
+-12006  *"injured   grurs"<biw 12251> c;
++12007  *"shabbed   himself"<biw 12251> c;
++12008  *"clook   falling"<biw 12251> c;
+-12009  *"off   stautch"<biw 12251> c;
++12010  *"dwend   a"<biw 12251> c;
+-12011  *"roof   gwoosh"<biw 12251> c;
+-12012  *"was   wralt"<biw 12251> c;
++12013  *"rirped   still"<biw 12251> c;
++12014  *"smekes.   sad."<biw 12251> c;
+12000 "CORRECT"/<branch 12250> ;
+12251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+12250  c;
+
+
+$0 "End of block. 5 blocks left. Continue when ready.";$
+
+=13000  %75"READY"/ *"The   x-x-x" c;
+-13001  *"son   puced"<biw 13251> c;
++13002  *"crybe   of"<biw 13251> c;
+-13003  *"the   bluke"<biw 13251> c;
+-13004  *"princess   fluped"<biw 13251> c;
+-13005  *"who   wroiled"<biw 13251> c;
+-13006  *"scratched   rhurged"<biw 13251> c;
+-13007  *"himself   thwoaps"<biw 13251> c;
++13008  *"lawped   in"<biw 13251> c;
++13009  *"pourge   public"<biw 13251> c;
+-13010  *"was   chinse"<biw 13251> c;
++13011  *"foute   awfully"<biw 13251> c;
++13012  *"juffed.   embarrassed."<biw 13251> c;
+13000 "CORRECT"/<branch 13250> ;
+13251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+13250  c;
+
+
+=14000  %75"READY"/ *"The   x-x-x" c;
++14001  *"cludes   brother"<biw 14251> c;
++14002  *"yaths   of"<biw 14251> c;
+-14003  *"the   gwutch"<biw 14251> c;
++14004  *"froose   ballerina"<biw 14251> c;
+-14005  *"who   howsed"<biw 14251> c;
++14006  *"slurb   found"<biw 14251> c;
++14007  *"shube   himself"<biw 14251> c;
++14008  *"proped   in"<biw 14251> c;
++14009  *"brarped   a"<biw 14251> c;
++14010  *"alph   lot"<biw 14251> c;
++14011  *"gwuite   of"<biw 14251> c;
++14012  *"strades   trouble"<biw 14251> c;
+-14013  *"phoned   phenes"<biw 14251> c;
+-14014  *"home.   cruite."<biw 14251> c;
+14000 "CORRECT"/<branch 14250> ;
+14251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+14250  c;
+
+
+=15000  %75"READY"/ *"The   x-x-x" c;
+-15001  *"nephew   psirled"<biw 15251> c;
+-15002  *"of   rauve"<biw 15251> c;
++15003  *"thrimes   the"<biw 15251> c;
++15004  *"trudes   maid"<biw 15251> c;
+-15005  *"who   gloobs"<biw 15251> c;
+-15006  *"cut   wruge"<biw 15251> c;
+-15007  *"himself   datch"<biw 15251> c;
+-15008  *"with   gneum"<biw 15251> c;
+-15009  *"the   trolts"<biw 15251> c;
+-15010  *"knife   chince"<biw 15251> c;
++15011  *"smacts   called"<biw 15251> c;
++15012  *"phrorse   the"<biw 15251> c;
++15013  *"rhogged.   doctor."<biw 15251> c;
+15000 "CORRECT"/<branch 15250> ;
+15251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+15250  c;
+
+
+=16000  %75"READY"/ *"The   x-x-x" c;
++16001  *"splalts   grandfather"<biw 16251> c;
+-16002  *"of   spluild"<biw 16251> c;
++16003  *"swawns   the"<biw 16251> c;
++16004  *"frerved   policewoman"<biw 16251> c;
++16005  *"wal   who"<biw 16251> c;
++16006  *"chease   treated"<biw 16251> c;
++16007  *"stronde   himself"<biw 16251> c;
++16008  *"dild   so"<biw 16251> c;
++16009  *"thowned   badly"<biw 16251> c;
+-16010  *"was   tilge"<biw 16251> c;
+-16011  *"troubled.   scugues."<biw 16251> c;
+16000 "CORRECT"/<branch 16250> ;
+16251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+16250  c;
+
+
+=17000  %75"READY"/ *"The   x-x-x" c;
++17001  *"ciew   nephew"<biw 17251> c;
++17002  *"smipt   of"<biw 17251> c;
+-17003  *"the   idge"<biw 17251> c;
++17004  *"broor   queen"<biw 17251> c;
++17005  *"florch   who"<biw 17251> c;
++17006  *"gnurch   praised"<biw 17251> c;
+-17007  *"himself   smols"<biw 17251> c;
+-17008  *"all   ghilmed"<biw 17251> c;
++17009  *"scouths   the"<biw 17251> c;
++17010  *"psef   time"<biw 17251> c;
++17011  *"ghelps   was"<biw 17251> c;
++17012  *"prilks   very"<biw 17251> c;
+-17013  *"rude.   choules."<biw 17251> c;
+17000 "CORRECT"/<branch 17250> ;
+17251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+17250  c;
+
+
+=18000  %75"READY"/ *"The   x-x-x" c;
+-18001  *"uncle   yerve"<biw 18251> c;
++18002  *"sneft   of"<biw 18251> c;
++18003  *"thorms   the"<biw 18251> c;
++18004  *"thwobed   girl"<biw 18251> c;
+-18005  *"who   wems"<biw 18251> c;
++18006  *"thrypes   prepared"<biw 18251> c;
+-18007  *"himself   scibs"<biw 18251> c;
++18008  *"treast   for"<biw 18251> c;
+-18009  *"the   regs"<biw 18251> c;
+-18010  *"race   smert"<biw 18251> c;
++18011  *"goms   was"<biw 18251> c;
++18012  *"twalds   a"<biw 18251> c;
+-18013  *"great   shron"<biw 18251> c;
++18014  *"haff.   athlete."<biw 18251> c;
+18000 "CORRECT"/<branch 18250> ;
+18251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+18250  c;
+
+
+=19000  %75"READY"/ *"The   x-x-x" c;
+-19001  *"grandma   bepth"<biw 19251> c;
++19002  *"japhs   of"<biw 19251> c;
+-19003  *"the   shroed"<biw 19251> c;
++19004  *"floath   policeman"<biw 19251> c;
++19005  *"thonds   who"<biw 19251> c;
++19006  *"kuint   educated"<biw 19251> c;
++19007  *"shane   herself"<biw 19251> c;
++19008  *"clands   at"<biw 19251> c;
++19009  *"swites   night"<biw 19251> c;
++19010  *"phlowns   became"<biw 19251> c;
++19011  *"yache   a"<biw 19251> c;
+-19012  *"teacher.   blulp."<biw 19251> c;
+19000 "CORRECT"/<branch 19250> ;
+19251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+19250  c;
+
+
+=20000  %75"READY"/ *"The   x-x-x" c;
+-20001  *"niece   corged"<biw 20251> c;
+-20002  *"of   lounds"<biw 20251> c;
+-20003  *"the   knike"<biw 20251> c;
++20004  *"shecks   fisherman"<biw 20251> c;
+-20005  *"who   scroned"<biw 20251> c;
++20006  *"gugs   got"<biw 20251> c;
+-20007  *"herself   yeb"<biw 20251> c;
+-20008  *"a   fralk"<biw 20251> c;
+-20009  *"sailboat   neched"<biw 20251> c;
+-20010  *"learned   phoid"<biw 20251> c;
++20011  *"gonts   to"<biw 20251> c;
++20012  *"cang.   sail."<biw 20251> c;
+20000 "CORRECT"/<branch 20250> ;
+20251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+20250  c;
+
+
+=21000  %75"READY"/ *"The   x-x-x" c;
+-21001  *"daughter   yabe"<biw 21251> c;
++21002  *"timpsed   of"<biw 21251> c;
++21003  *"blowned   the"<biw 21251> c;
++21004  *"blarn   king"<biw 21251> c;
+-21005  *"who   cims"<biw 21251> c;
++21006  *"rhurp   devoted"<biw 21251> c;
++21007  *"rhunked   herself"<biw 21251> c;
+-21008  *"to   sperps"<biw 21251> c;
++21009  *"gerps   the"<biw 21251> c;
++21010  *"orn   kingdom"<biw 21251> c;
+-21011  *"was   smanes"<biw 21251> c;
++21012  *"smasque   never"<biw 21251> c;
+-21013  *"emotional.   heathe."<biw 21251> c;
+21000 "CORRECT"/<branch 21250> ;
+21251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+21250  c;
+
+
+=22000  %75"READY"/ *"The   x-x-x" c;
+-22001  *"sister   brarch"<biw 22251> c;
+-22002  *"of   smawk"<biw 22251> c;
+-22003  *"the   glerm"<biw 22251> c;
+-22004  *"boy   blop"<biw 22251> c;
++22005  *"gneined   who"<biw 22251> c;
++22006  *"mieked   taught"<biw 22251> c;
+-22007  *"herself   blorb"<biw 22251> c;
++22008  *"thwurps   advanced"<biw 22251> c;
++22009  *"flalked   mathematics"<biw 22251> c;
++22010  *"snarmth   was"<biw 22251> c;
++22011  *"bups   very"<biw 22251> c;
+-22012  *"smart.   flourns."<biw 22251> c;
+22000 "CORRECT"/<branch 22250> ;
+22251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+22250  c;
+
+
+=23000  %75"READY"/ *"The   x-x-x" c;
+-23001  *"aunt   thang"<biw 23251> c;
+-23002  *"of   sloke"<biw 23251> c;
++23003  *"shogs   the"<biw 23251> c;
+-23004  *"waiter   sprates"<biw 23251> c;
+-23005  *"who   brized"<biw 23251> c;
+-23006  *"trained   snurps"<biw 23251> c;
+-23007  *"herself   phopts"<biw 23251> c;
++23008  *"phouns   to"<biw 23251> c;
+-23009  *"cook   dwague"<biw 23251> c;
++23010  *"sply   wanted"<biw 23251> c;
+-23011  *"to   thised"<biw 23251> c;
+-23012  *"own   scronch"<biw 23251> c;
+-23013  *"a   yope"<biw 23251> c;
+-23014  *"restaurant.   vave."<biw 23251> c;
+23000 "CORRECT"/<branch 23250> ;
+23251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+23250  c;
+
+
+=24000  %75"READY"/ *"The   x-x-x" c;
+-24001  *"niece   crurbed"<biw 24251> c;
++24002  *"urts   of"<biw 24251> c;
++24003  *"skelped   the"<biw 24251> c;
++24004  *"flaint   butler"<biw 24251> c;
+-24005  *"who   huints"<biw 24251> c;
++24006  *"wrizzed   scolded"<biw 24251> c;
++24007  *"tharm   herself"<biw 24251> c;
+-24008  *"for   tawned"<biw 24251> c;
+-24009  *"losing   whelf"<biw 24251> c;
+-24010  *"the   slien"<biw 24251> c;
+-24011  *"key   plusp"<biw 24251> c;
++24012  *"zeached   was"<biw 24251> c;
++24013  *"splikes   very"<biw 24251> c;
++24014  *"slothed.   upset."<biw 24251> c;
+24000 "CORRECT"/<branch 24250> ;
+24251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+24250  c;
+
+
+
+$0 "End of block. 4 blocks left. Continue when ready.";$
+
+=25000  %75"READY"/ *"The   x-x-x" c;
+-25001  *"nurse   bliffs"<biw 25251> c;
+-25002  *"examined   phubs"<biw 25251> c;
++25003  *"ghonze   the"<biw 25251> c;
+-25004  *"mother,   dwuss,"<biw 25251> c;
+-25005  *"and   pherds"<biw 25251> c;
++25006  *"jodged   the"<biw 25251> c;
++25007  *"screps   child"<biw 25251> c;
+-25008  *"played   nith"<biw 25251> c;
++25009  *"skuct   quietly"<biw 25251> c;
++25010  *"honch   in"<biw 25251> c;
++25011  *"ghof   the"<biw 25251> c;
+-25012  *"corner.   ghorth."<biw 25251> c;
+25000 "CORRECT"/<branch 25250> ;
+25251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+25250  c;
+
+
+=26000  %75"READY"/ *"The   x-x-x" c;
+-26001  *"swimmer   starb"<biw 26251> c;
++26002  *"chirt   disappointed"<biw 26251> c;
+-26003  *"her   shriths"<biw 26251> c;
++26004  *"thead,   coach,"<biw 26251> c;
+-26005  *"and   dute"<biw 26251> c;
++26006  *"blongs   her"<biw 26251> c;
++26007  *"vost   mother"<biw 26251> c;
+-26008  *"tried   glunce"<biw 26251> c;
+-26009  *"to   wharks"<biw 26251> c;
++26010  *"nalled   console"<biw 26251> c;
++26011  *"imbed.   her."<biw 26251> c;
+26000 "CORRECT"/<branch 26250> ;
+26251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+26250  c;
+
+
+=27000  %75"READY"/ *"The   x-x-x" c;
++27001  *"phove   tourist"<biw 27251> c;
++27002  *"brup   photographed"<biw 27251> c;
++27003  *"dwict   the"<biw 27251> c;
+-27004  *"swimmer,   spawped,"<biw 27251> c;
++27005  *"fror   and"<biw 27251> c;
++27006  *"sproans   the"<biw 27251> c;
++27007  *"bleave   runner"<biw 27251> c;
+-27008  *"got   thrales"<biw 27251> c;
+-27009  *"ready   trought"<biw 27251> c;
+-27010  *"for   phloob"<biw 27251> c;
++27011  *"zourds   the"<biw 27251> c;
++27012  *"ghurned.   race."<biw 27251> c;
+27000 "CORRECT"/<branch 27250> ;
+27251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+27250  c;
+
+
+=28000  %75"READY"/ *"The   x-x-x" c;
+-28001  *"little   farred"<biw 28251> c;
+-28002  *"girl   trulked"<biw 28251> c;
+-28003  *"fed   spilts"<biw 28251> c;
+-28004  *"her   phoffs"<biw 28251> c;
++28005  *"knooved   pet"<biw 28251> c;
+-28006  *"cat,   twinked,"<biw 28251> c;
+-28007  *"and   thempt"<biw 28251> c;
++28008  *"yiefed   her"<biw 28251> c;
++28009  *"jaimed   dog"<biw 28251> c;
++28010  *"draides   wanted"<biw 28251> c;
+-28011  *"a   lilked"<biw 28251> c;
+-28012  *"can   frard"<biw 28251> c;
+-28013  *"of   norgues"<biw 28251> c;
++28014  *"scrulbs   food,"<biw 28251> c;
++28015  *"sprunts.   too."<biw 28251> c;
+28000 "CORRECT"/<branch 28250> ;
+28251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+28250  c;
+
+
+=29000  %75"READY"/ *"The   x-x-x" c;
++29001  *"nurps   ranger"<biw 29251> c;
+-29002  *"gave   snawl"<biw 29251> c;
++29003  *"duts   matches"<biw 29251> c;
+-29004  *"to   dwurg"<biw 29251> c;
+-29005  *"the   thukes"<biw 29251> c;
++29006  *"ralked,   camper,"<biw 29251> c;
++29007  *"gliked   and"<biw 29251> c;
+-29008  *"his   splerth"<biw 29251> c;
+-29009  *"friend   jumf"<biw 29251> c;
+-29010  *"made   jilch"<biw 29251> c;
+-29011  *"a   froined"<biw 29251> c;
+-29012  *"fire   clalked"<biw 29251> c;
++29013  *"clergs   by"<biw 29251> c;
++29014  *"slifths   the"<biw 29251> c;
++29015  *"swoasts.   tent."<biw 29251> c;
+29000 "CORRECT"/<branch 29250> ;
+29251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+29250  c;
+
+
+=30000  %75"READY"/ *"Jim   x-x-x" c;
+-30001  *"listened   snarm"<biw 30251> c;
+-30002  *"to   swoap"<biw 30251> c;
++30003  *"thilge   the"<biw 30251> c;
++30004  *"glights,   pianist,"<biw 30251> c;
+-30005  *"and   sprarsh"<biw 30251> c;
++30006  *"stinn   the"<biw 30251> c;
+-30007  *"singer   skeths"<biw 30251> c;
++30008  *"blieled   watched"<biw 30251> c;
++30009  *"glies   the"<biw 30251> c;
++30010  *"gop   organist"<biw 30251> c;
+-30011  *"at   slawled"<biw 30251> c;
++30012  *"brorm   the"<biw 30251> c;
+-30013  *"concert.   thwoff."<biw 30251> c;
+30000 "CORRECT"/<branch 30250> ;
+30251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+30250  c;
+
+
+=31000  %75"READY"/ *"The   x-x-x" c;
+-31001  *"audience   melps"<biw 31251> c;
++31002  *"plife   applauded"<biw 31251> c;
+-31003  *"the   chote"<biw 31251> c;
+-31004  *"guitarist,   knase,"<biw 31251> c;
+-31005  *"and   wouns"<biw 31251> c;
+-31006  *"the   prans"<biw 31251> c;
++31007  *"spleke   band"<biw 31251> c;
+-31008  *"cheered   wreans"<biw 31251> c;
++31009  *"swaunch   for"<biw 31251> c;
+-31010  *"him   phlikes"<biw 31251> c;
+-31011  *"very   fulch"<biw 31251> c;
++31012  *"gwount.   loudly."<biw 31251> c;
+31000 "CORRECT"/<branch 31250> ;
+31251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+31250  c;
+
+
+=32000  %75"READY"/ *"The   x-x-x" c;
++32001  *"zend   producer"<biw 32251> c;
+-32002  *"replaced   clurrs"<biw 32251> c;
++32003  *"croofed   the"<biw 32251> c;
+-32004  *"actor,   vambs,"<biw 32251> c;
+-32005  *"and   twiln"<biw 32251> c;
+-32006  *"the   throy"<biw 32251> c;
+-32007  *"actress   dwatt"<biw 32251> c;
++32008  *"gnintz   quit"<biw 32251> c;
++32009  *"gnungs   the"<biw 32251> c;
+-32010  *"movie   prue"<biw 32251> c;
++32011  *"clage   after"<biw 32251> c;
+-32012  *"the   swelved"<biw 32251> c;
+-32013  *"fight.   gnodge."<biw 32251> c;
+32000 "CORRECT"/<branch 32250> ;
+32251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+32250  c;
+
+
+=33000  %75"READY"/ *"Diane   x-x-x" c;
++33001  *"gwalc   hugged"<biw 33251> c;
++33002  *"sweuce   her"<biw 33251> c;
+-33003  *"boyfriend,   blolfed,"<biw 33251> c;
++33004  *"slouged   and"<biw 33251> c;
+-33005  *"her   fonged"<biw 33251> c;
+-33006  *"friend   tirls"<biw 33251> c;
++33007  *"thatt   felt"<biw 33251> c;
+-33008  *"uncomfortable   knelved"<biw 33251> c;
++33009  *"zerd   watching"<biw 33251> c;
+-33010  *"them.   dworps."<biw 33251> c;
+33000 "CORRECT"/<branch 33250> ;
+33251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+33250  c;
+
+
+=34000  %75"READY"/ *"The   x-x-x" c;
++34001  *"ploch   woman"<biw 34251> c;
+-34002  *"dressed   thway"<biw 34251> c;
+-34003  *"her   basps"<biw 34251> c;
++34004  *"tweald,   baby,"<biw 34251> c;
++34005  *"sploust   and"<biw 34251> c;
+-34006  *"her   lype"<biw 34251> c;
+-34007  *"son   phiffed"<biw 34251> c;
++34008  *"swarb   got"<biw 34251> c;
++34009  *"kniend   his"<biw 34251> c;
+-34010  *"clothes   yeich"<biw 34251> c;
+-34011  *"from   skuled"<biw 34251> c;
+-34012  *"the   glupes"<biw 34251> c;
+-34013  *"dresser.   thruin."<biw 34251> c;
+34000 "CORRECT"/<branch 34250> ;
+34251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+34250  c;
+
+
+=35000  %75"READY"/ *"The   x-x-x" c;
+-35001  *"juggler   smuys"<biw 35251> c;
+-35002  *"entertained   plures"<biw 35251> c;
+-35003  *"the   boused"<biw 35251> c;
++35004  *"twome,   children,"<biw 35251> c;
++35005  *"shrunes   and"<biw 35251> c;
+-35006  *"their   phieked"<biw 35251> c;
+-35007  *"parents   skubes"<biw 35251> c;
++35008  *"kniefed   drank"<biw 35251> c;
++35009  *"scraun   wine"<biw 35251> c;
+-35010  *"at   skulfs"<biw 35251> c;
++35011  *"sneel   the"<biw 35251> c;
++35012  *"knimed.   party."<biw 35251> c;
+35000 "CORRECT"/<branch 35250> ;
+35251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+35250  c;
+
+
+=36000  %75"READY"/ *"The   x-x-x" c;
++36001  *"spemps   crowd"<biw 36251> c;
+-36002  *"cheered   pince"<biw 36251> c;
++36003  *"phlinse   for"<biw 36251> c;
+-36004  *"the   cloled"<biw 36251> c;
++36005  *"twoaths,   model,"<biw 36251> c;
++36006  *"rilge   and"<biw 36251> c;
+-36007  *"the   aive"<biw 36251> c;
+-36008  *"designer   flewd"<biw 36251> c;
+-36009  *"took   slet"<biw 36251> c;
++36010  *"charves   a"<biw 36251> c;
+-36011  *"bow   drulch"<biw 36251> c;
++36012  *"hoat   after"<biw 36251> c;
++36013  *"ghuped   the"<biw 36251> c;
++36014  *"skald.   show."<biw 36251> c;
+36000 "CORRECT"/<branch 36250> ;
+36251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+36250  c;
+
+
+
+$0 "End of block. 3 blocks left. Continue when ready.";$
+
+=37000  %75"READY"/ *"The   x-x-x" c;
+-37001  *"teacher   scage"<biw 37251> c;
++37002  *"speves   praised"<biw 37251> c;
++37003  *"spithed   the"<biw 37251> c;
+-37004  *"girl   hoomed"<biw 37251> c;
+-37005  *"and   vols"<biw 37251> c;
+-37006  *"her   gnate"<biw 37251> c;
+-37007  *"family   poads"<biw 37251> c;
++37008  *"gweize   was"<biw 37251> c;
++37009  *"tweague   proud"<biw 37251> c;
+-37010  *"of   psamn"<biw 37251> c;
++37011  *"rhonze   her"<biw 37251> c;
++37012  *"ralls   good"<biw 37251> c;
+-37013  *"grades.   phroice."<biw 37251> c;
+37000 "CORRECT"/<branch 37250> ;
+37251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+37250  c;
+
+
+=38000  %75"READY"/ *"Bobby   x-x-x" c;
+-38001  *"yelled   houche"<biw 38251> c;
++38002  *"phrorce   at"<biw 38251> c;
+-38003  *"the   shoun"<biw 38251> c;
+-38004  *"teacher   unked"<biw 38251> c;
+-38005  *"and   plorl"<biw 38251> c;
+-38006  *"the   dempts"<biw 38251> c;
++38007  *"souch   principal"<biw 38251> c;
++38008  *"nength   asked"<biw 38251> c;
+-38009  *"his   shez"<biw 38251> c;
+-38010  *"parents   thregg"<biw 38251> c;
++38011  *"phleen   for"<biw 38251> c;
+-38012  *"a   visk"<biw 38251> c;
++38013  *"bloards.   meeting."<biw 38251> c;
+38000 "CORRECT"/<branch 38250> ;
+38251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+38250  c;
+
+
+=39000  %75"READY"/ *"The   x-x-x" c;
++39001  *"thrauve   woman"<biw 39251> c;
++39002  *"heethed   could"<biw 39251> c;
+-39003  *"not   snoosed"<biw 39251> c;
++39004  *"sprurze   find"<biw 39251> c;
+-39005  *"Bill   crekked"<biw 39251> c;
++39006  *"therb   and"<biw 39251> c;
+-39007  *"his   psolk"<biw 39251> c;
++39008  *"treethe   girlfriend"<biw 39251> c;
+-39009  *"became   zax"<biw 39251> c;
++39010  *"tosque   nervous"<biw 39251> c;
+-39011  *"and   slusp"<biw 39251> c;
+-39012  *"upset.   spooze."<biw 39251> c;
+39000 "CORRECT"/<branch 39250> ;
+39251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+39250  c;
+
+
+=40000  %75"READY"/ *"The   x-x-x" c;
+-40001  *"customer   skesks"<biw 40251> c;
+-40002  *"complained   vanned"<biw 40251> c;
++40003  *"jotch   about"<biw 40251> c;
+-40004  *"the   dungs"<biw 40251> c;
+-40005  *"waiter   yaffs"<biw 40251> c;
++40006  *"glulge   and"<biw 40251> c;
+-40007  *"the   spucked"<biw 40251> c;
++40008  *"skached   chef"<biw 40251> c;
+-40009  *"gave   sprests"<biw 40251> c;
+-40010  *"him   rhern"<biw 40251> c;
++40011  *"gweshed   a"<biw 40251> c;
++40012  *"dwiel   free"<biw 40251> c;
++40013  *"kniffs.   dessert."<biw 40251> c;
+40000 "CORRECT"/<branch 40250> ;
+40251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+40250  c;
+
+
+=41000  %75"READY"/ *"The   x-x-x" c;
+-41001  *"knight   dirrs"<biw 41251> c;
++41002  *"gnourge   greeted"<biw 41251> c;
+-41003  *"the   snizz"<biw 41251> c;
+-41004  *"king   knoths"<biw 41251> c;
++41005  *"praul   and"<biw 41251> c;
+-41006  *"the   sprids"<biw 41251> c;
+-41007  *"queen   sproals"<biw 41251> c;
++41008  *"dwerks   waved"<biw 41251> c;
++41009  *"wriln   to"<biw 41251> c;
+-41010  *"her   jodds"<biw 41251> c;
+-41011  *"people   stirm"<biw 41251> c;
+-41012  *"at   rhieze"<biw 41251> c;
++41013  *"gloff   the"<biw 41251> c;
+-41014  *"feast.   reuce."<biw 41251> c;
+41000 "CORRECT"/<branch 41250> ;
+41251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+41250  c;
+
+
+=42000  %75"READY"/ *"The   x-x-x" c;
+-42001  *"police   scolled"<biw 42251> c;
+-42002  *"arrested   ghede"<biw 42251> c;
+-42003  *"the   thald"<biw 42251> c;
+-42004  *"burglar   ghoop"<biw 42251> c;
++42005  *"brerp   and"<biw 42251> c;
+-42006  *"his   swoaped"<biw 42251> c;
++42007  *"gnarbed   brother"<biw 42251> c;
++42008  *"gneens   phoned"<biw 42251> c;
++42009  *"brodes   a"<biw 42251> c;
+-42010  *"lawyer   phopes"<biw 42251> c;
++42011  *"gratch   for"<biw 42251> c;
+-42012  *"help.   yoove."<biw 42251> c;
+42000 "CORRECT"/<branch 42250> ;
+42251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+42250  c;
+
+
+=43000  %75"READY"/ *"Sam   x-x-x" c;
++43001  *"splutch   hired"<biw 43251> c;
++43002  *"slowled   the"<biw 43251> c;
++43003  *"scracts   plumber"<biw 43251> c;
++43004  *"spodds   and"<biw 43251> c;
++43005  *"kecked   the"<biw 43251> c;
+-43006  *"carpenter   gnouth"<biw 43251> c;
+-43007  *"ordered   gourned"<biw 43251> c;
+-43008  *"the   screlt"<biw 43251> c;
+-43009  *"materials   prelte"<biw 43251> c;
++43010  *"drask   for"<biw 43251> c;
+-43011  *"the   gneized"<biw 43251> c;
+-43012  *"house.   jalph."<biw 43251> c;
+43000 "CORRECT"/<branch 43250> ;
+43251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+43250  c;
+
+
+=44000  %75"READY"/ *"The   x-x-x" c;
+-44001  *"actress   stromed"<biw 44251> c;
+-44002  *"yelled   proed"<biw 44251> c;
++44003  *"psopts   at"<biw 44251> c;
++44004  *"sliece   the"<biw 44251> c;
+-44005  *"cameraman   thrazz"<biw 44251> c;
+-44006  *"and   dranged"<biw 44251> c;
++44007  *"pruce   the"<biw 44251> c;
+-44008  *"director   prools"<biw 44251> c;
++44009  *"eemed   hurried"<biw 44251> c;
+-44010  *"out   psof"<biw 44251> c;
+-44011  *"of   splypts"<biw 44251> c;
+-44012  *"the   glerse"<biw 44251> c;
+-44013  *"room.   reuths."<biw 44251> c;
+44000 "CORRECT"/<branch 44250> ;
+44251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+44250  c;
+
+
+=45000  %75"READY"/ *"The   x-x-x" c;
++45001  *"ghoy   journalist"<biw 45251> c;
+-45002  *"criticized   gnumf"<biw 45251> c;
++45003  *"grurped   Nick"<biw 45251> c;
+-45004  *"and   drulge"<biw 45251> c;
+-45005  *"Sam   zooled"<biw 45251> c;
+-45006  *"called   dwink"<biw 45251> c;
+-45007  *"the   glurked"<biw 45251> c;
++45008  *"jorn   newspaper"<biw 45251> c;
++45009  *"zied   to"<biw 45251> c;
+-45010  *"complain.   swipped."<biw 45251> c;
+45000 "CORRECT"/<branch 45250> ;
+45251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+45250  c;
+
+
+=46000  %75"READY"/ *"The   x-x-x" c;
++46001  *"fouths   robber"<biw 46251> c;
++46002  *"phuth   shot"<biw 46251> c;
+-46003  *"the   goaned"<biw 46251> c;
+-46004  *"jeweler   whoth"<biw 46251> c;
++46005  *"throoms   and"<biw 46251> c;
++46006  *"lof   the"<biw 46251> c;
+-46007  *"salesman   gwacks"<biw 46251> c;
+-46008  *"reported   poathe"<biw 46251> c;
+-46009  *"the   scawls"<biw 46251> c;
++46010  *"lucked   crime"<biw 46251> c;
++46011  *"splerch   to"<biw 46251> c;
++46012  *"shryths   the"<biw 46251> c;
++46013  *"chilts.   police."<biw 46251> c;
+46000 "CORRECT"/<branch 46250> ;
+46251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+46250  c;
+
+
+=47000  %75"READY"/ *"Jenny   x-x-x" c;
+-47001  *"talked   ponzed"<biw 47251> c;
+-47002  *"to   gwarc"<biw 47251> c;
++47003  *"gwurp   the"<biw 47251> c;
+-47004  *"reporter   wrooge"<biw 47251> c;
+-47005  *"and   gnalt"<biw 47251> c;
++47006  *"flelts   the"<biw 47251> c;
+-47007  *"photographer   freft"<biw 47251> c;
+-47008  *"took   pruds"<biw 47251> c;
+-47009  *"pictures   twepped"<biw 47251> c;
+-47010  *"of   vints"<biw 47251> c;
++47011  *"smarns   the"<biw 47251> c;
+-47012  *"scene.   ghog."<biw 47251> c;
+47000 "CORRECT"/<branch 47250> ;
+47251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+47250  c;
+
+
+=48000  %75"READY"/ *"The   x-x-x" c;
++48001  *"gwibs   witness"<biw 48251> c;
++48002  *"resks   identified"<biw 48251> c;
++48003  *"spawk   the"<biw 48251> c;
++48004  *"phlived   man"<biw 48251> c;
+-48005  *"and   yensed"<biw 48251> c;
++48006  *"rauled   his"<biw 48251> c;
++48007  *"splen   wife"<biw 48251> c;
+-48008  *"ran   glimmed"<biw 48251> c;
++48009  *"swoam   away"<biw 48251> c;
++48010  *"thwaive   from"<biw 48251> c;
++48011  *"tweeze   the"<biw 48251> c;
+-48012  *"police   gwuise"<biw 48251> c;
+-48013  *"station.   croll."<biw 48251> c;
+48000 "CORRECT"/<branch 48250> ;
+48251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+48250  c;
+
+
+
+$0 "End of block. 2 blocks left. Continue when ready.";$
+
+=49000  %75"READY"/ *"Anne   x-x-x" c;
+-49001  *"will   splaste"<biw 49251> c;
+-49002  *"serve   trelped"<biw 49251> c;
++49003  *"knorge   the"<biw 49251> c;
+-49004  *"apples   flepped"<biw 49251> c;
++49005  *"tryths   she"<biw 49251> c;
++49006  *"twulked   picked"<biw 49251> c;
++49007  *"froaped,   yesterday,"<biw 49251> c;
++49008  *"strolks   but"<biw 49251> c;
++49009  *"flerms   she"<biw 49251> c;
++49010  *"prunged   won't"<biw 49251> c;
+-49011  *"serve   puch"<biw 49251> c;
+-49012  *"the   flabs"<biw 49251> c;
+-49013  *"plums.   ghalm."<biw 49251> c;
+49000 "CORRECT"/<branch 49250> ;
+49251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+49250  c;
+
+
+=50000  %75"READY"/ *"Robert   x-x-x" c;
+-50001  *"will   doasts"<biw 50251> c;
++50002  *"drys   meet"<biw 50251> c;
++50003  *"plealed   the"<biw 50251> c;
++50004  *"floved   friend"<biw 50251> c;
+-50005  *"he   gwised"<biw 50251> c;
++50006  *"yim   phoned"<biw 50251> c;
++50007  *"rhythed,   yesterday,"<biw 50251> c;
+-50008  *"but   rouch"<biw 50251> c;
+-50009  *"he   splyle"<biw 50251> c;
++50010  *"sprorde   doesn't"<biw 50251> c;
++50011  *"skaubs   want"<biw 50251> c;
++50012  *"snarf.   to."<biw 50251> c;
+50000 "CORRECT"/<branch 50250> ;
+50251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+50250  c;
+
+
+=51000  %75"READY"/ *"David   x-x-x" c;
+-51001  *"caught   loosts"<biw 51251> c;
+-51002  *"the   thensed"<biw 51251> c;
++51003  *"saths   fish"<biw 51251> c;
+-51004  *"he   phulked"<biw 51251> c;
++51005  *"hoob   will"<biw 51251> c;
++51006  *"psawled   cook"<biw 51251> c;
++51007  *"psauche,   tomorrow,"<biw 51251> c;
++51008  *"fralc   but"<biw 51251> c;
+-51009  *"it   spreeps"<biw 51251> c;
++51010  *"dax   is"<biw 51251> c;
++51011  *"splung   not"<biw 51251> c;
++51012  *"scoun   his"<biw 51251> c;
+-51013  *"favorite   mubes"<biw 51251> c;
++51014  *"glins.   kind."<biw 51251> c;
+51000 "CORRECT"/<branch 51250> ;
+51251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+51250  c;
+
+
+=52000  %75"READY"/ *"Sue   x-x-x" c;
++52001  *"ghops   insulted"<biw 52251> c;
++52002  *"gleeled   the"<biw 52251> c;
+-52003  *"candidate   tweathe"<biw 52251> c;
++52004  *"skurped   she"<biw 52251> c;
++52005  *"snorth   will"<biw 52251> c;
++52006  *"sploins   debate"<biw 52251> c;
+-52007  *"tomorrow,   gwop,"<biw 52251> c;
++52008  *"pels   but"<biw 52251> c;
++52009  *"smeight   she"<biw 52251> c;
+-52010  *"wishes   squay"<biw 52251> c;
+-52011  *"she   arbs"<biw 52251> c;
+-52012  *"hadn't.   geace."<biw 52251> c;
+52000 "CORRECT"/<branch 52250> ;
+52251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+52250  c;
+
+
+=53000  %75"READY"/ *"Jane   x-x-x" c;
+-53001  *"prepared   splilch"<biw 53251> c;
+-53002  *"the   gromps"<biw 53251> c;
+-53003  *"lecture   froofed"<biw 53251> c;
+-53004  *"she   sploist"<biw 53251> c;
+-53005  *"will   shegged"<biw 53251> c;
++53006  *"yugged   give"<biw 53251> c;
+-53007  *"next   blebbs"<biw 53251> c;
+-53008  *"week,   gwoffed,"<biw 53251> c;
+-53009  *"but   knef"<biw 53251> c;
+-53010  *"still   looves"<biw 53251> c;
+-53011  *"needs   thwoes"<biw 53251> c;
++53012  *"splups   to"<biw 53251> c;
++53013  *"zoaf   review"<biw 53251> c;
+-53014  *"it.   phrists."<biw 53251> c;
+53000 "CORRECT"/<branch 53250> ;
+53251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+53250  c;
+
+
+=54000  %75"READY"/ *"Joseph   x-x-x" c;
+-54001  *"brewed   trien"<biw 54251> c;
+-54002  *"the   glemmed"<biw 54251> c;
+-54003  *"beer   cens"<biw 54251> c;
+-54004  *"he   saunt"<biw 54251> c;
++54005  *"dweeved   will"<biw 54251> c;
++54006  *"phloys   serve"<biw 54251> c;
++54007  *"gneths   next"<biw 54251> c;
+-54008  *"week,   smulled,"<biw 54251> c;
+-54009  *"but   thwang"<biw 54251> c;
++54010  *"mav   it"<biw 54251> c;
+-54011  *"is   phurnt"<biw 54251> c;
+-54012  *"not   plelp"<biw 54251> c;
++54013  *"gwanns   very"<biw 54251> c;
++54014  *"phliff.   tasty."<biw 54251> c;
+54000 "CORRECT"/<branch 54250> ;
+54251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+54250  c;
+
+
+=55000  %75"READY"/ *"Tom   x-x-x" c;
++55001  *"whuts   will"<biw 55251> c;
++55002  *"nimbed   plant"<biw 55251> c;
+-55003  *"the   rurred"<biw 55251> c;
+-55004  *"tree   trurnt"<biw 55251> c;
++55005  *"slafes   he"<biw 55251> c;
++55006  *"twears   bought"<biw 55251> c;
++55007  *"swirch   last"<biw 55251> c;
+-55008  *"week,   trurves,"<biw 55251> c;
+-55009  *"but   siel"<biw 55251> c;
++55010  *"swinse   he"<biw 55251> c;
++55011  *"ghinse   isn't"<biw 55251> c;
+-55012  *"sure   thwoars"<biw 55251> c;
++55013  *"oot   where"<biw 55251> c;
++55014  *"spoaps   to"<biw 55251> c;
++55015  *"smyne   put"<biw 55251> c;
+-55016  *"it.   smibed."<biw 55251> c;
+55000 "CORRECT"/<branch 55250> ;
+55251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+55250  c;
+
+
+=56000  %75"READY"/ *"Lisa   x-x-x" c;
++56001  *"spromps   will"<biw 56251> c;
+-56002  *"change   kerch"<biw 56251> c;
++56003  *"cronth   the"<biw 56251> c;
++56004  *"slize   plans"<biw 56251> c;
+-56005  *"she   duint"<biw 56251> c;
++56006  *"sciews   made"<biw 56251> c;
++56007  *"zanc   last"<biw 56251> c;
+-56008  *"week,   wulge,"<biw 56251> c;
+-56009  *"but   slomb"<biw 56251> c;
++56010  *"thate   she"<biw 56251> c;
++56011  *"scraned   won't"<biw 56251> c;
++56012  *"skoust   cancel"<biw 56251> c;
+-56013  *"any   gholt"<biw 56251> c;
++56014  *"clorled   of"<biw 56251> c;
+-56015  *"them.   salf."<biw 56251> c;
+56000 "CORRECT"/<branch 56250> ;
+56251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+56250  c;
+
+
+=57000  %75"READY"/ *"Jeff   x-x-x" c;
++57001  *"prafes   planned"<biw 57251> c;
+-57002  *"the   mogs"<biw 57251> c;
++57003  *"clelled   party"<biw 57251> c;
++57004  *"dwosque   he"<biw 57251> c;
++57005  *"gleasts   will"<biw 57251> c;
++57006  *"shruge   hold"<biw 57251> c;
++57007  *"hished   next"<biw 57251> c;
++57008  *"kibbed,   month,"<biw 57251> c;
+-57009  *"but   skends"<biw 57251> c;
++57010  *"hurged   he"<biw 57251> c;
+-57011  *"hasn't   sleched"<biw 57251> c;
++57012  *"thruth   sent"<biw 57251> c;
+-57013  *"invitations.   fromes."<biw 57251> c;
+57000 "CORRECT"/<branch 57250> ;
+57251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+57250  c;
+
+
+=58000  %75"READY"/ *"Dan   x-x-x" c;
+-58001  *"wrote   wauche"<biw 58251> c;
++58002  *"tragues   the"<biw 58251> c;
+-58003  *"speech   swax"<biw 58251> c;
++58004  *"plesh   he"<biw 58251> c;
++58005  *"drare   will"<biw 58251> c;
++58006  *"nourns   deliver"<biw 58251> c;
+-58007  *"next   cez"<biw 58251> c;
+-58008  *"month,   scroch,"<biw 58251> c;
+-58009  *"but   swammed"<biw 58251> c;
+-58010  *"he   yerd"<biw 58251> c;
++58011  *"ghusque   hasn't"<biw 58251> c;
++58012  *"soof   practiced"<biw 58251> c;
+-58013  *"it   drelks"<biw 58251> c;
+-58014  *"yet.   wached."<biw 58251> c;
+58000 "CORRECT"/<branch 58250> ;
+58251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+58250  c;
+
+
+=59000  %75"READY"/ *"Paul   x-x-x" c;
+-59001  *"will   ghouths"<biw 59251> c;
++59002  *"crerve   marry"<biw 59251> c;
+-59003  *"the   knerfs"<biw 59251> c;
+-59004  *"woman   stright"<biw 59251> c;
++59005  *"spopped   he"<biw 59251> c;
+-59006  *"just   glanes"<biw 59251> c;
++59007  *"twipped   met"<biw 59251> c;
+-59008  *"last   pluiced"<biw 59251> c;
++59009  *"smapes,   month,"<biw 59251> c;
+-59010  *"but   danked"<biw 59251> c;
++59011  *"sorms   the"<biw 59251> c;
++59012  *"glarsh   wedding"<biw 59251> c;
+-59013  *"will   crerts"<biw 59251> c;
++59014  *"fodged   be"<biw 59251> c;
+-59015  *"small.   trarb."<biw 59251> c;
+59000 "CORRECT"/<branch 59250> ;
+59251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+59250  c;
+
+
+=60000  %75"READY"/ *"Amy   x-x-x" c;
+-60001  *"will   fime"<biw 60251> c;
++60002  *"skifths   visit"<biw 60251> c;
+-60003  *"the   rhonned"<biw 60251> c;
+-60004  *"man   lilns"<biw 60251> c;
++60005  *"pirths   she"<biw 60251> c;
+-60006  *"worked   whouth"<biw 60251> c;
+-60007  *"with   scuss"<biw 60251> c;
++60008  *"gnaints   last"<biw 60251> c;
+-60009  *"month,   dwauche,"<biw 60251> c;
+-60010  *"but   rurched"<biw 60251> c;
+-60011  *"she   jede"<biw 60251> c;
+-60012  *"is   groked"<biw 60251> c;
++60013  *"spurp   nervous"<biw 60251> c;
++60014  *"clys   about"<biw 60251> c;
+-60015  *"it.   jeks."<biw 60251> c;
+60000 "CORRECT"/<branch 60250> ;
+60251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+60250  c;
+
+
+
+$0 "End of block. Only one block left! Continue when ready.";$
+
+=61000  %75"READY"/ *"Linda   x-x-x" c;
+-61001  *"will   frurls"<biw 61251> c;
++61002  *"scrief   wear"<biw 61251> c;
+-61003  *"the   virms"<biw 61251> c;
+-61004  *"sweater   zourged"<biw 61251> c;
+-61005  *"she   swals"<biw 61251> c;
+-61006  *"washed   twoaxed"<biw 61251> c;
++61007  *"thon,   tomorrow,"<biw 61251> c;
++61008  *"tolk   but"<biw 61251> c;
++61009  *"thwound   she"<biw 61251> c;
+-61010  *"won't   scroops"<biw 61251> c;
++61011  *"thuised   wear"<biw 61251> c;
++61012  *"prurds   her"<biw 61251> c;
++61013  *"beeped.   skirt."<biw 61251> c;
+61000 "CORRECT"/<branch 61250> ;
+61251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+61250  c;
+
+
+=62000  %75"READY"/ *"James   x-x-x" c;
++62001  *"sprudes   will"<biw 62251> c;
++62002  *"fubbed   fix"<biw 62251> c;
+-62003  *"the   flowsed"<biw 62251> c;
++62004  *"crazz   car"<biw 62251> c;
++62005  *"slauds   he"<biw 62251> c;
++62006  *"snown   drove"<biw 62251> c;
+-62007  *"tomorrow,   scrowse,"<biw 62251> c;
++62008  *"glic   but"<biw 62251> c;
++62009  *"snulbs   he"<biw 62251> c;
+-62010  *"will   winths"<biw 62251> c;
+-62011  *"need   fatch"<biw 62251> c;
+-62012  *"some   brirks"<biw 62251> c;
++62013  *"smolf.   help."<biw 62251> c;
+62000 "CORRECT"/<branch 62250> ;
+62251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+62250  c;
+
+
+=63000  %75"READY"/ *"Mary   x-x-x" c;
+-63001  *"called   troule"<biw 63251> c;
++63002  *"skurled   the"<biw 63251> c;
++63003  *"scoths   applicant"<biw 63251> c;
+-63004  *"she   snirled"<biw 63251> c;
+-63005  *"will   frue"<biw 63251> c;
++63006  *"whilks   interview"<biw 63251> c;
++63007  *"pridged,   yesterday,"<biw 63251> c;
+-63008  *"but   fleeled"<biw 63251> c;
+-63009  *"there   gwoosed"<biw 63251> c;
+-63010  *"was   sploun"<biw 63251> c;
+-63011  *"no   phleaks"<biw 63251> c;
++63012  *"faunch.   answer."<biw 63251> c;
+63000 "CORRECT"/<branch 63250> ;
+63251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+63250  c;
+
+
+=64000  %75"READY"/ *"Mike   x-x-x" c;
+-64001  *"watered   lurred"<biw 64251> c;
+-64002  *"the   streas"<biw 64251> c;
+-64003  *"flower   citch"<biw 64251> c;
++64004  *"pell   he"<biw 64251> c;
++64005  *"vapsed   will"<biw 64251> c;
+-64006  *"sell   rebe"<biw 64251> c;
++64007  *"durred,   yesterday,"<biw 64251> c;
+-64008  *"but   knebbed"<biw 64251> c;
++64009  *"flimmed   he"<biw 64251> c;
++64010  *"thwilks   forgot"<biw 64251> c;
+-64011  *"to   splirst"<biw 64251> c;
++64012  *"rolfs   water"<biw 64251> c;
++64013  *"thyp   the"<biw 64251> c;
+-64014  *"bush.   crare."<biw 64251> c;
+64000 "CORRECT"/<branch 64250> ;
+64251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+64250  c;
+
+
+=65000  %75"READY"/ *"Susan   x-x-x" c;
+-65001  *"bought   menth"<biw 65251> c;
+-65002  *"the   fript"<biw 65251> c;
+-65003  *"wine   phlum"<biw 65251> c;
++65004  *"frurrs   she"<biw 65251> c;
+-65005  *"will   reased"<biw 65251> c;
++65006  *"frambs   drink"<biw 65251> c;
++65007  *"irps   last"<biw 65251> c;
++65008  *"croared,   week,"<biw 65251> c;
+-65009  *"but   smepths"<biw 65251> c;
++65010  *"cresh   she"<biw 65251> c;
+-65011  *"didn't   snots"<biw 65251> c;
++65012  *"trald   buy"<biw 65251> c;
++65013  *"plauls   any"<biw 65251> c;
++65014  *"snulged.   cheese."<biw 65251> c;
+65000 "CORRECT"/<branch 65250> ;
+65251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+65250  c;
+
+
+=66000  %75"READY"/ *"Chris   x-x-x" c;
++66001  *"scoiled   cleaned"<biw 66251> c;
+-66002  *"the   swerths"<biw 66251> c;
++66003  *"rhog   bookcase"<biw 66251> c;
++66004  *"homps   he"<biw 66251> c;
+-66005  *"will   groles"<biw 66251> c;
++66006  *"squ   sell"<biw 66251> c;
++66007  *"mies   last"<biw 66251> c;
+-66008  *"week,   wouth,"<biw 66251> c;
++66009  *"ghigns   but"<biw 66251> c;
++66010  *"crunge   it"<biw 66251> c;
++66011  *"kurg   is"<biw 66251> c;
+-66012  *"still   yumb"<biw 66251> c;
++66013  *"shiefed   very"<biw 66251> c;
++66014  *"scoins.   dusty."<biw 66251> c;
+66000 "CORRECT"/<branch 66250> ;
+66251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+66250  c;
+
+
+=67000  %75"READY"/ *"Mark   x-x-x" c;
++67001  *"drurns   will"<biw 67251> c;
+-67002  *"answer   thweep"<biw 67251> c;
++67003  *"knoft   the"<biw 67251> c;
++67004  *"bly   email"<biw 67251> c;
+-67005  *"he   segg"<biw 67251> c;
+-67006  *"got   foove"<biw 67251> c;
+-67007  *"next   smeds"<biw 67251> c;
+-67008  *"week,   shoshed,"<biw 67251> c;
++67009  *"dwarns   but"<biw 67251> c;
++67010  *"vamn   he"<biw 67251> c;
++67011  *"arfs   doesn't"<biw 67251> c;
+-67012  *"know   spath"<biw 67251> c;
+-67013  *"what   spaunch"<biw 67251> c;
+-67014  *"to   chepped"<biw 67251> c;
++67015  *"thrern.   write."<biw 67251> c;
+67000 "CORRECT"/<branch 67250> ;
+67251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+67250  c;
+
+
+=68000  %75"READY"/ *"Cathy   x-x-x" c;
+-68001  *"will   scumps"<biw 68251> c;
+-68002  *"burn   grybe"<biw 68251> c;
+-68003  *"the   prift"<biw 68251> c;
++68004  *"thwolfs   wood"<biw 68251> c;
++68005  *"shaged   she"<biw 68251> c;
+-68006  *"gathered   scir"<biw 68251> c;
++68007  *"twobe   next"<biw 68251> c;
++68008  *"zerp,   week,"<biw 68251> c;
+-68009  *"but   sared"<biw 68251> c;
++68010  *"drise   she"<biw 68251> c;
+-68011  *"will   joasts"<biw 68251> c;
++68012  *"thralm   save"<biw 68251> c;
++68013  *"pives   some"<biw 68251> c;
+-68014  *"of   zonds"<biw 68251> c;
+-68015  *"it.   smadge."<biw 68251> c;
+68000 "CORRECT"/<branch 68250> ;
+68251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+68250  c;
+
+
+=69000  %75"READY"/ *"Jim   x-x-x" c;
++69001  *"gern   painted"<biw 69251> c;
+-69002  *"the   ploose"<biw 69251> c;
++69003  *"smaph   picture"<biw 69251> c;
+-69004  *"he   vewth"<biw 69251> c;
+-69005  *"will   grons"<biw 69251> c;
+-69006  *"display   skerm"<biw 69251> c;
++69007  *"whacts   last"<biw 69251> c;
++69008  *"gnalked,   month,"<biw 69251> c;
++69009  *"skugs   but"<biw 69251> c;
+-69010  *"he   crail"<biw 69251> c;
+-69011  *"isn't   shrap"<biw 69251> c;
++69012  *"traphed   happy"<biw 69251> c;
+-69013  *"with   weefs"<biw 69251> c;
++69014  *"smoard.   it."<biw 69251> c;
+69000 "CORRECT"/<branch 69250> ;
+69251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+69250  c;
+
+
+=70000  %75"READY"/ *"John   x-x-x" c;
++70001  *"nidge   hired"<biw 70251> c;
++70002  *"gnunds   the"<biw 70251> c;
++70003  *"wrarve   clerk"<biw 70251> c;
+-70004  *"he   kursts"<biw 70251> c;
++70005  *"smonged   will"<biw 70251> c;
+-70006  *"promote   spords"<biw 70251> c;
++70007  *"gnools   last"<biw 70251> c;
+-70008  *"month,   yits,"<biw 70251> c;
+-70009  *"but   codged"<biw 70251> c;
+-70010  *"he   bloard"<biw 70251> c;
++70011  *"frase   fired"<biw 70251> c;
+-70012  *"another   spurves"<biw 70251> c;
++70013  *"wugged.   employee."<biw 70251> c;
+70000 "CORRECT"/<branch 70250> ;
+70251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+70250  c;
+
+
+=71000  %75"READY"/ *"Bob   x-x-x" c;
+-71001  *"will   glorks"<biw 71251> c;
++71002  *"smicked   complete"<biw 71251> c;
++71003  *"snoon   the"<biw 71251> c;
++71004  *"slance   project"<biw 71251> c;
++71005  *"blained   he"<biw 71251> c;
++71006  *"slaffs   started"<biw 71251> c;
+-71007  *"next   scunce"<biw 71251> c;
+-71008  *"month,   thwech,"<biw 71251> c;
++71009  *"glished   but"<biw 71251> c;
++71010  *"twach   Fred"<biw 71251> c;
+-71011  *"won't   gefs"<biw 71251> c;
+-71012  *"finish   clourds"<biw 71251> c;
+-71013  *"his.   blouch."<biw 71251> c;
+71000 "CORRECT"/<branch 71250> ;
+71251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+71250  c;
+
+
+=72000  %75"READY"/ *"Kim   x-x-x" c;
+-72001  *"will   streint"<biw 72251> c;
++72002  *"slun   display"<biw 72251> c;
+-72003  *"the   screks"<biw 72251> c;
++72004  *"brut   photos"<biw 72251> c;
++72005  *"dirths   she"<biw 72251> c;
++72006  *"shrasp   took"<biw 72251> c;
++72007  *"kagues   next"<biw 72251> c;
+-72008  *"month,   stimbs,"<biw 72251> c;
+-72009  *"but   crort"<biw 72251> c;
+-72010  *"she   funt"<biw 72251> c;
+-72011  *"won't   zanks"<biw 72251> c;
++72012  *"lautch   show"<biw 72251> c;
+-72013  *"all   thoods"<biw 72251> c;
++72014  *"zebs   of"<biw 72251> c;
++72015  *"splorld.   them."<biw 72251> c;
+72000 "CORRECT"/<branch 72250> ;
+72251   %40 "< <  error  > >"/@2 "Please proceed to the next item.";
+72250  c;
+
+$0 "That's the end. Thank you.";$
