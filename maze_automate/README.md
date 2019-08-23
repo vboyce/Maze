@@ -15,7 +15,7 @@ In either case, you need to make automate.py executable (chmod +x automate.py).
 You will need to install some packages. For the Gulordava model, you will need [pytorch](https://pytorch.org/)  and [NLTK](https://www.nltk.org/install.html) (install for Python 3, use pip3 and not pip). In a python shell, run 
 
 ```
-import ntlk
+import nltk
 nltk.download('punkt')
 ```
 
