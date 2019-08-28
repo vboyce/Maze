@@ -166,7 +166,7 @@ elif args.model == "one_b": #for one b model
     if args.freq == "wordfreq":
         end_result = run_one_b_wf(sentences)
     elif args.freq == "ngrams":
-        end_result == run_one_b(sentences)
+        end_result = run_one_b(sentences)
 if args.format == "ibex": #save output
     save_ibex_format(args.output, item_to_info, end_result)
 elif args.format =="basic": # save output
