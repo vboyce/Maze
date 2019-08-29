@@ -7,7 +7,7 @@ This code takes experimental materials (sets of sentences, such as for SPR) and 
 ## Set up
 
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
-2. Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password. 
+2. Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password). 
 ```
 sudo apt-get install python3
 sudo apt update
