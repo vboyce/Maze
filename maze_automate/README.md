@@ -5,7 +5,30 @@
 This code takes experimental materials (sets of sentences, such as for SPR) and generates distractors words for each position, returning A-maze materials. Distractor words are guaranteed to be (roughly) length- and frequency-matched to the target word(s); they are also guaranteed to be high surprisal under the language model. This will often mean they are ungrammatical or otherwise obvious mismatches to the context, but it's not guaranteed. 
 
 ## Set up
+### Windows
+1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
+2. Install python3 and pip3 by going to https://www.python.org/downloads/windows/ and selecting under Stable Releases > (latest Python 3 version) > "Download Windows x86-64 executable installer" for 64-bit computers or "Download Windows x86 executable installer" for 32-bit computers. Run the installer and complete the installation.
 
+IMPORTANT: make sure the box that says "Add Python 3.X to PATH" is checked, otherwise you may not be able to use the python/python3 command in the command prompt.
+
+To check if pip3 is installed on the computer, open command prompt and type either of the following:
+```
+pip --version
+pip3 --version
+```
+3. Install needed packages, depending on what model and frequency source you're using.
+If you're going to use the Gulordava model (recommended):
+```
+pip3 install nltk
+pip3 install torch===1.2.0 torchvision===0.4.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
+The command for downloading torch depends on the versions you're using and going to install, look here for more details: https://pytorch.org/get-started/locally/.
+If you're going to use the Jozefowicz model (called one_b in the code):
+```
+pip3 install tensorflow
+```
+(TODO: continue)
+### Linux
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
 2. Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password). 
 ```
