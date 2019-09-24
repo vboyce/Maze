@@ -72,7 +72,7 @@ chmod +x set_up.py
 chmod +x automate.py
 ```
 5. Download model files and complete installation
-From the maze_automate directory, run the appropriate command. For Windows, ignore the ```./``` part of the commands.
+From the maze_automate directory, run the appropriate command. For Windows, ignore the ```./``` part of the commands and use ```python ...``` instead.
 For Gulordava model only:
 ```
 ./set_up.py
