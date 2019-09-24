@@ -18,7 +18,7 @@ class Dictionary(object):
 
         vocab_path = os.path.join(path, 'vocab.txt')
         try:
-            vocab = open(vocab_path).read()
+            vocab = open(vocab_path, encoding="utf-8").read()
             self.word2idx = {w: i for i, w in enumerate(vocab.split())}
             self.idx2word = [w for w in vocab.split()]
             self.vocab_file_exists = True
