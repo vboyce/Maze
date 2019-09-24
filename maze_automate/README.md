@@ -16,6 +16,10 @@ To check if pip3 is installed on the computer, open command prompt and type eith
 pip --version
 pip3 --version
 ```
+Make sure pip3 is updated to the latest version, which could be done using the following command:
+```
+python3 -m pip install --upgrade pip
+```
 3. Install needed packages, depending on what model and frequency source you're using.
 If you're going to use the Gulordava model (recommended):
 ```
@@ -27,7 +31,11 @@ If you're going to use the Jozefowicz model (called one_b in the code):
 ```
 pip3 install tensorflow
 ```
-(TODO: continue)
+If you're going to use [wordfreq](https://pypi.org/project/wordfreq/) for word frequencies:
+```
+pip3 install wordfreq
+```
+Continue step 4 in All Operating Systems.
 ### Linux
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
 2. Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password). 
@@ -50,11 +58,13 @@ If you're going to use [wordfreq](https://pypi.org/project/wordfreq/) for word f
 ```
 pip3 install wordfreq
 ```
+Continue step 4 in All Operating Systems.
+### All Operating Systems
 4. Make commands executable
 Navigate into the maze_automate folder (command will differ depending on where you put the folder; use cd to move into a folder and ls to see the contents)
 Example
 ```
-cd Research/Maze/maze_automate
+cd (where the repository is stored)/Maze/maze_automate
 ```
 Make files exectutable
 ```
@@ -62,7 +72,7 @@ chmod +x set_up.py
 chmod +x automate.py
 ```
 5. Download model files and complete installation
-From the maze_automate directory, run the appropriate command.
+From the maze_automate directory, run the appropriate command. For Windows, ignore the ```./``` part of the commands.
 For Gulordava model only:
 ```
 ./set_up.py
