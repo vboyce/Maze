@@ -18,6 +18,11 @@ If you're not, these are the available arguments and specifications.
 * s: Required. The correct sentence, either as a string or an array of words/chunks (same format as for spr). Usually starts with "The"
 * a: Required. The alternative (distractor) options. Can be either a string or an array of words/chunks, needs to have the same number of words/chunks as s. Usually starts with "x-x-x". 
 * order: An array of 0's and 1's, the same length as s. Indicates whether the correct answer should be the left (0) or right (1) of the two options. If unspecified, will be 0 followed by a pseudorandom order of 0s and 1s (this constrains the first pair to be "The x-x-x" followed by random). Note: the default options means that different participants will see different orders. If you want them to all see the same order, you should specify. 
+* redo: Default is false. If redo is true, then the sentences do not terminate on errors, but instead show an error message ("Incorrect. Please try again.") until the correct key is selected. This mode is intended for researchers who want to check materials (and therefore want to see the whole sentence, regardless of mistakes). The time recorded in results is till the first press, so it may be useable on participants as well. It can be toggled on for an entire set of items by adding
+
+> var defaults = ["Maze", {redo: true}];
+
+to the top of the data file. (Note that to check *all* experimental items, you may need to relabel the types of sentences to override Latin square behavior.)
 
 ### Passing results to next item:
 When a participant makes an incorrect selection, maze will record the time it took them to do so, but then it will stop that sentence, and pass "failed" to the next element. It is recommended to use "followEachWith" for maze items to follow each with a separator saying whether it was correct or not, so participants know when a new sentence is starting. 

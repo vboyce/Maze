@@ -80,6 +80,18 @@
      
 }
 
+.error {
+     background-color: white;
+     color: red;
+     width: 40%;
+     padding-top: 20px;
+     padding-bottom: 0%;
+     display: inline-block;
+     margin-left: 20%;
+     margin-right: 20%;
+     font-size: 150%;
+     
+}
 .parent {
 	background: gray;
   /* inline-block hack */

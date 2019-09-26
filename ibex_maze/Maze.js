@@ -37,6 +37,9 @@ jqueryWidget: {
 	    for (i = 0; i < this.words.length; ++i){
             assert(defaultOrder[i]==1||defaultOrder[i]==0, "elements of 'order' must be 0 or 1.");
         }
+        
+        this.redo=dget(this.options, "redo", false);
+        assert(typeof(this.redo)===typeof(true), "Bad value for 'redo', must be true or false.");
  
         this.currentWord = 0;
 
@@ -48,6 +51,7 @@ jqueryWidget: {
         this.wordSpan=$("<div>").addClass(this.cssPrefix + 'words');
         this.leftWord=$("<div>").addClass(this.cssPrefix + 'lword');
         this.rightWord=$("<div>").addClass(this.cssPrefix + 'rword');
+        this.error=$("<div>").addClass(this.cssPrefix + 'error');
         this.mainDiv= $("<div>");
         this.element.append(this.mainDiv);
 
@@ -72,6 +76,7 @@ jqueryWidget: {
             this.alts[this.currentWord]:this.words[this.currentWord]);
         this.larrow.html("e");
         this.rarrow.html("i");
+        this.error.html("");
         var x = this.utils.getValueFromPreviousElement("counter");
         if (x) this.wordsSoFar=x;
         else this.wordsSoFar=0;
@@ -84,8 +89,10 @@ jqueryWidget: {
         this.mainDiv.append(this.counter);
         this.mainDiv.append(this.wordSpan);
         this.mainDiv.append(this.arrow);
+        this.mainDiv.append(this.error);
         
         var t = this;
+        var repeat = false;
         this.safeBind($(document), 'keydown', function(event) {
             var time = new Date().getTime();
             var code = event.keyCode;
@@ -95,17 +102,30 @@ jqueryWidget: {
                 if (word <= t.stoppingPoint) {
 		            t.correct[word]=((code==69 && t.order[word]==0)||
 		                (code==73 && t.order[word]==1)) ? "yes" : "no";
-		            var rs = t.mazeResults[word];
+	                if (!repeat){
+		                var rs = t.mazeResults[word];
 		                rs[0] = time;
                         rs[1] = t.previousTime;
-		            if (t.correct[word]=="no"){
+                        }
+		            if (t.correct[word]=="no" & t.redo){
+		                t.error.html("Incorrect. Please try again.");
+		                repeat = true;
+		                return true;
+		                }
+		            else if (t.correct[word]=="no"){
 		                t.utils.setValueForNextElement("failed", true);
 		                t.utils.setValueForNextElement("counter", t.wordsSoFar);
 		                t.processMazeResults();
 		                t.finishedCallback(t.resultsLines);
 		                return true;
-		            }
+		                }
+	                if (t.correct[word] =="yes") {
+	                    t.error.html("");
+	                    repeat=false;
+	                    }
+		            
                 }
+                
                 t.previousTime = time;
                 ++(t.currentWord);
                 if (t.currentWord >= t.stoppingPoint) {
