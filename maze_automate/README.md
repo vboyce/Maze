@@ -36,6 +36,9 @@ If you're going to use [wordfreq](https://pypi.org/project/wordfreq/) for word f
 pip3 install wordfreq
 ```
 Continue step 4 in All Operating Systems.
+### Mac OS X
+1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
+2. Install python3 and pip3 by going to https://www.python.org/downloads/mac-osx/ and selecting under Stable Releases > (latest Python 3 version) > "Download macOS 64-bit installer" for 64-bit computers or "Download macOS 64-bit/32-bit installer" for 32-bit computers. Run the installer and complete the installation.
 ### Linux
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
 2. Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password). 
