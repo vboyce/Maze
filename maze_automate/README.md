@@ -39,6 +39,30 @@ Continue step 4 in All Operating Systems.
 ### Mac OS X
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
 2. Install python3 and pip3 by going to https://www.python.org/downloads/mac-osx/ and selecting under Stable Releases > (latest Python 3 version) > "Download macOS 64-bit installer" for 64-bit computers or "Download macOS 64-bit/32-bit installer" for 32-bit computers. Run the installer and complete the installation.
+To check if pip3 is installed on the computer, open command prompt and type the following:
+```
+pip3 --version
+```
+Make sure pip3 is updated to the latest version, which could be done using the following command:
+```
+python3 -m pip install --upgrade pip
+```
+3. Install needed packages, depending on what model and frequency source you're using.
+If you're going to use the Gulordava model (recommended):
+```
+pip3 install nltk
+pip3 install torch
+```
+If you're going to use the Jozefowicz model (called one_b in the code):
+```
+pip3 install tensorflow
+```
+If you're going to use [wordfreq](https://pypi.org/project/wordfreq/) for word frequencies:
+```
+pip3 install wordfreq
+```
+If any dialog box pops up to install gcc, follow their instructions.
+Continue step 4 in All Operating Systems.
 ### Linux
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
 2. Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password). 
@@ -75,7 +99,7 @@ chmod +x set_up.py
 chmod +x automate.py
 ```
 5. Download model files and complete installation
-From the maze_automate directory, run the appropriate command. For Windows, ignore the ```./``` part of the commands and use ```python ...``` instead.
+From the maze_automate directory, run the appropriate command. For Windows, ignore the ```./``` part of the commands and use ```python3 ...``` instead.
 For Gulordava model only:
 ```
 ./set_up.py
