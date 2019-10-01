@@ -3,10 +3,12 @@ from nltk.tokenize import word_tokenize
 from gulordava_code import dictionary_corpus
 from helper import get_alt_nums, get_alts, strip_end_punct #combining helper helper_wf
 #### gulordava specific ####
+whichfreq = ""
 def load_model(freq):
     '''sets up a model for gulordava
     Arguments: none
     Returns the model and device'''
+    whichfreq = freq
     with open("gulordava_data/hidden650_batch128_dropout0.2_lr20.0.pt", 'rb') as f:
         print("Loading the model")
         # to convert model trained on cuda to cpu model
@@ -68,3 +70,80 @@ def get_surprisal(surprisals, dictionary, word):
         return -1 #use -1 as an error code
     return surprisals[token].item() #numeric value of word's surprisal
 
+def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary):
+    '''Finds an adequate distractor word
+    either the first word that meets minimum surprisal for all sentences or the best if
+    it tries num_to_test and none meet the minimum
+    Arguments:
+    num_to_test = an integer for how many candidate words to try
+    minimum = minimum surprisal desired
+    (will return first word with at least this surprisal for all sentences)
+    word_list = the good words that occur in this position
+    surprisals_list = distribution of surprisals (from update_sentence)
+    dictionary = word to word_id look up
+    returns: chosen distractor word'''
+    best_word = ""
+    best_surprisal = 0
+    length, freq = get_alt_nums(word_list) #get average length, frequency
+    options_list = None
+    i = 0
+    k = 0
+    while k == len(options_list):
+        options_list.extend(get_alts(length, freq + i))# find words with that length and frequency
+        if which_freq == "wordfreq":
+            options_list.extend(get_alts(length, freq - i))
+        i += 1 #if there weren't any, try a slightly higher frequency
+        while (k != len(options_list)):
+            word = options_list[k]
+            k += 1
+            for j, _ in enumerate(surprisals_list): # for each sentence
+                surprisal = get_surprisal(surprisals_list[j], dictionary, word) #find that word
+                min_surprisal = min(min_surprisal, surprisal) #lowest surprisal so far
+            if min_surprisal >= minimum: #if surprisal in each condition is adequate
+                return word # we found a word to use and are done here
+            if min_surprisal > best_surprisal: #if it's the best option so far, record that
+                best_word = word
+                best_surprisal = min_surprisal
+    print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal)) #return best we have
+    return best_word
+
+def do_sentence_set(sentence_set, model, device, dictionary, ntokens):
+    '''Processes a set of sentences that get the same distractors
+    Arguments:
+    sentence_set = a list of sentences (all equal length)
+    model, device = from load_model
+    dictionary, ntokens = from load_dictionary
+    returns a sentence format string of the distractors'''
+    bad_words=[]
+    words = []
+    sentence_length = len(sentence_set[0].split()) #find length of first item
+    for i, _ in enumerate(sentence_set):
+        bad_words.append(["x-x-x"])
+        sent_words = sentence_set[i].split()
+        if len(sent_words) != sentence_length:
+            print("inconsistent lengths!!")  #complain if they aren't the same length
+        words.append(sent_words) # make a new list with the sentences as word lists
+    hidden = [None]*len(sentence_set) #set up a bunch of stuff
+    input_word = [None]*len(sentence_set)
+    surprisals = [None]*len(sentence_set)
+    for i in range(len(sentence_set)): # more set up
+        input_word[i], hidden[i] = new_sentence(model, device, ntokens)
+    for j in range(sentence_length-1): # for each word position in the sentence
+        word_list = []
+        for i in range(len(sentence_set)): # for each sentence
+            hidden[i], surprisals[i] = update_sentence(words[i][j], input_word[i], model, hidden[i], dictionary) # and the next word to the sentence
+            word_list.append(words[i][j+1]) #add the word after that to a list of words
+        bad_word = find_bad_enough(100, 21, word_list, surprisals, dictionary) #find an alternate word
+        #using the surprisals and matching frequency for the good words; try 100 words, aim for surprisal of 21 or higher
+        for l, _ in enumerate(sentence_set):
+            cap=word_list[l][0].isupper() # what is capitization of good word in ith sentence
+            if cap: #capitalize it
+                mod_bad_word=bad_word[0].upper()+bad_word[1:]
+            else: #keep lower case
+                mod_bad_word=bad_word
+            mod_bad_word = mod_bad_word+strip_end_punct(word_list[l])[1] #match end punctuation
+            bad_words[l].append(mod_bad_word) # add the fixed bad word to a running list for that sentence
+    bad_sentences=[]
+    for i, _ in enumerate(bad_words):
+        bad_sentences.append(" ".join(bad_words[i]))
+    return bad_sentences # and return
