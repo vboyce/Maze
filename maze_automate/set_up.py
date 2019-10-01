@@ -4,6 +4,8 @@ import argparse
 import pip
 import os
 import wget
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 parser = argparse.ArgumentParser(description='Download and set-up files needed for Maze Automation')
 
