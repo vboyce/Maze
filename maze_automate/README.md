@@ -116,6 +116,7 @@ If you plan on using wordfreq, add "--freq wordfreq" to the above command, i.e. 
 ```
 ./set_up.py --freq wordfreq
 ```
+If there is an error indicating that it cannot import wget, use the command ```pip3 install wget```.
 6. Do a test run of distractor automation
 test_input.txt contains a few sample sentences; replace output_location.txt with the name of the file to write test Maze materials to. 
 
