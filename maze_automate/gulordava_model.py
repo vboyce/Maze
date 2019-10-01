@@ -3,12 +3,12 @@ from nltk.tokenize import word_tokenize
 from gulordava_code import dictionary_corpus
 from helper import get_alt_nums, get_alts, strip_end_punct #combining helper helper_wf
 #### gulordava specific ####
-whichfreq = ""
+which_freq = ""
 def load_model(freq):
     '''sets up a model for gulordava
     Arguments: none
     Returns the model and device'''
-    whichfreq = freq
+    which_freq = freq
     with open("gulordava_data/hidden650_batch128_dropout0.2_lr20.0.pt", 'rb') as f:
         print("Loading the model")
         # to convert model trained on cuda to cpu model
@@ -85,25 +85,26 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
     best_word = ""
     best_surprisal = 0
     length, freq = get_alt_nums(word_list) #get average length, frequency
-    options_list = None
+    options_list = []
     i = 0
     k = 0
-    while k == len(options_list):
-        options_list.extend(get_alts(length, freq + i))# find words with that length and frequency
-        if which_freq == "wordfreq":
-            options_list.extend(get_alts(length, freq - i))
-        i += 1 #if there weren't any, try a slightly higher frequency
-        while (k != len(options_list)):
-            word = options_list[k]
-            k += 1
-            for j, _ in enumerate(surprisals_list): # for each sentence
-                surprisal = get_surprisal(surprisals_list[j], dictionary, word) #find that word
-                min_surprisal = min(min_surprisal, surprisal) #lowest surprisal so far
-            if min_surprisal >= minimum: #if surprisal in each condition is adequate
-                return word # we found a word to use and are done here
-            if min_surprisal > best_surprisal: #if it's the best option so far, record that
-                best_word = word
-                best_surprisal = min_surprisal
+    while k < num_to_test:
+        while k == len(options_list): # if we run out of options
+            options_list.extend(get_alts(length, freq + i))# find words with that length and frequency
+            if which_freq == "wordfreq":
+                options_list.extend(get_alts(length, freq - i))
+            i += 1 #if there weren't any, try a slightly higher frequency
+        word = options_list[k]
+        k += 1
+        min_surprisal = 100 #dummy value higher than we expect any surprisal to actually be
+        for j, _ in enumerate(surprisals_list): # for each sentence
+            surprisal = get_surprisal(surprisals_list[j], dictionary, word) #find that word
+            min_surprisal = min(min_surprisal, surprisal) #lowest surprisal so far
+        if min_surprisal >= minimum: #if surprisal in each condition is adequate
+            return word # we found a word to use and are done here
+        if min_surprisal > best_surprisal: #if it's the best option so far, record that
+            best_word = word
+            best_surprisal = min_surprisal
     print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal)) #return best we have
     return best_word
 

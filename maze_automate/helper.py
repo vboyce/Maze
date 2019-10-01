@@ -42,6 +42,7 @@ def get_alts(length, freq):
     alts = LEXICON.get((length, freq))
     if alts is None:
         print("Trouble finding words with length "+str(length)+ " and frequency "+str(freq))
+        alts = []
     else:
         random.shuffle(alts)
     return alts

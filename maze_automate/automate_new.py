@@ -15,12 +15,11 @@ parser.add_argument('--freq', choices=["ngrams", "wordfreq"], default="ngrams",
                     help='where to get frequency data from, either ngrams (our scraping of the google ngrams corpus) or the wordfreq module')
 parser.add_argument('--format', choices=["ibex", "basic"], default="basic",
                     help='output format, either basic (for csv) or maze')
+#TODO: global surprisal threshold
+#TODO first: duplicate words
 
 args = parser.parse_args()
 
-
-
-        
 def save_output(outfile, item_to_info, end_result):
     '''Saves results to a file in semicolon delimited format
     basically same as the original input with another column for distractor sentence
@@ -84,71 +83,33 @@ def read_input(filename):
         sentences.append(item_to_info[item][1]) #make a list of sentences, grouped by item number
     return (item_to_info, sentences)
 
-
-
-def run_gulordava(sentences):
-    '''wrapper for using the gulordava model
+def run(which_model, freq, sentences):
+    '''wrapper for using either model with either wordfreq to use
     Arguments:
+    model = the model specified
+    freq = frequency model specified
     sentences = list of grouped sentences
     Returns:
     distractor sentences in same order/grouping'''
-    import gulordava
     end_result = {}
-    model, device = gulordava.load_model() #set up
-    dictionary, ntokens = gulordava.load_dict()
+    if which_model == "gulordava":
+        import gulordava_model #will be created to accommodate both gulordava and gulordava_wf
+        model, device = gulordava_model.load_model(freq) #set up
+        dictionary, ntokens = gulordava_model.load_dict()
+    elif which_model == "one_b":
+        import one_b_model #will be created to accommodate both one_b and one_b_wf
+        sess, t = one_b_model.load_model(freq)
+        dictionary = one_b_model.load_dict()
+
     for i, _ in enumerate(sentences): #process all the sentences
-        bad = gulordava.do_sentence_set(sentences[i], model, device, dictionary, ntokens)
-        for j, _ in enumerate(sentences[i]): #record results
-            end_result[sentences[i][j]] = bad[j]
-    return end_result
-    
-def run_gulordava_wf(sentences):
-    '''wrapper for using the gulordava model
-    Arguments:
-    sentences = list of grouped sentences
-    Returns:
-    distractor sentences in same order/grouping'''
-    import gulordava_wf
-    end_result = {}
-    model, device = gulordava_wf.load_model() #set up
-    dictionary, ntokens = gulordava_wf.load_dict()
-    for i, _ in enumerate(sentences): #process all the sentences
-        bad = gulordava_wf.do_sentence_set(sentences[i], model, device, dictionary, ntokens)
+        if which_model == "gulordava":
+            bad = gulordava_model.do_sentence_set(sentences[i], model, device, dictionary, ntokens)
+        elif which_model == "one_b":
+            bad = one_b_model.do_sentence_set(sentences[i], sess, t, dictionary)
         for j, _ in enumerate(sentences[i]): #record results
             end_result[sentences[i][j]] = bad[j]
     return end_result
 
-def run_one_b(sentences):
-    '''wrapper for using the one_b model
-    Arguments:
-    sentences = list of grouped sentences
-    Returns:
-    distractor sentences in same order/grouping'''
-    import one_b
-    end_result = {}
-    sess, t = one_b.load_model() #set up
-    dictionary = one_b.load_dict()
-    for i, _ in enumerate(sentences): #process all the sentences
-        bad = one_b.do_sentence_set(sentences[i], sess, t, dictionary)
-        for j, _ in enumerate(sentences[i]): #record results
-            end_result[sentences[i][j]] = bad[j]
-    return end_result
-
-def run_one_b_wf(sentences):
-    '''wrapper for using the one_b model
-    Arguments:
-    sentences = list of grouped sentences
-    Returns:
-    distractor sentences in same order/grouping'''
-    import one_b_wf
-    end_result = {}
-    sess, t = one_b_wf.load_model() #set up
-    dictionary = one_b_wf.load_dict()
-    for i, _ in enumerate(sentences): #process all the sentences
-        bad = one_b_wf.do_sentence_set(sentences[i], sess, t, dictionary)
-        for j, _ in enumerate(sentences[i]): #record results
-            end_result[sentences[i][j]] = bad[j]
-    return end_result
 '''Takes input, generates distractors, writes to output file
 Arguments:
 infile = where input is
@@ -157,16 +118,7 @@ lang_model = either "gulordava" or "one_b" for which language model to use
 out_format = either "basic" (for a semicolon delimited output) or "ibex" for ibex ready output
 Returns: none'''
 item_to_info, sentences = read_input(args.input) # read input
-if args.model == "gulordava": #for gulordava
-    if args.freq== "wordfreq":
-        end_result = run_gulordava_wf(sentences)
-    elif args.freq == "ngrams":
-        end_result = run_gulordava(sentences)
-elif args.model == "one_b": #for one b model
-    if args.freq == "wordfreq":
-        end_result = run_one_b_wf(sentences)
-    elif args.freq == "ngrams":
-        end_result = run_one_b(sentences)
+end_result = run(args.model, args.freq, sentences)
 if args.format == "ibex": #save output
     save_ibex_format(args.output, item_to_info, end_result)
 elif args.format =="basic": # save output
