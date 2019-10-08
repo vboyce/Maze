@@ -15,6 +15,10 @@ parser.add_argument('--freq', choices=["ngrams", "wordfreq"], default="ngrams",
                     help='where to get frequency data from, either ngrams (our scraping of the google ngrams corpus) or the wordfreq module')
 parser.add_argument('--format', choices=["ibex", "basic"], default="basic",
                     help='output format, either basic (for csv) or maze')
+parser.add_argument('--num_to_test', type=int, default=100,
+                    help='number of words to test in the process of finding bad words')
+parser.add_argument('--minimum', type=int, default=21,
+                    help='threshold of surprisal for a bad word, default to 21')
 #TODO: global surprisal threshold
 #TODO first: duplicate words
 
@@ -83,7 +87,7 @@ def read_input(filename):
         sentences.append(item_to_info[item][1]) #make a list of sentences, grouped by item number
     return (item_to_info, sentences)
 
-def run(which_model, freq, sentences):
+def run(which_model, freq, sentences, num_to_test, minimum):
     '''wrapper for using either model with either wordfreq to use
     Arguments:
     model = the model specified
@@ -103,7 +107,7 @@ def run(which_model, freq, sentences):
 
     for i, _ in enumerate(sentences): #process all the sentences
         if which_model == "gulordava":
-            bad = gulordava_model.do_sentence_set(sentences[i], model, device, dictionary, ntokens)
+            bad = gulordava_model.do_sentence_set(sentences[i], model, device, dictionary, ntokens, num_to_test, minimum)
         elif which_model == "one_b":
             bad = one_b_model.do_sentence_set(sentences[i], sess, t, dictionary)
         for j, _ in enumerate(sentences[i]): #record results
@@ -118,7 +122,11 @@ lang_model = either "gulordava" or "one_b" for which language model to use
 out_format = either "basic" (for a semicolon delimited output) or "ibex" for ibex ready output
 Returns: none'''
 item_to_info, sentences = read_input(args.input) # read input
-end_result = run(args.model, args.freq, sentences)
+num_to_test = args.num_to_test #set num_to_test in find_bad_words
+print("Number of bad words to test = " + str(num_to_test))
+minimum = args.minimum #set minimum in find_bad_words
+print("Minimum threshold = " + str(minimum))
+end_result = run(args.model, args.freq, sentences, num_to_test, minimum)
 if args.format == "ibex": #save output
     save_ibex_format(args.output, item_to_info, end_result)
 elif args.format =="basic": # save output
