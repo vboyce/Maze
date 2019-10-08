@@ -1,7 +1,7 @@
 import torch
 from nltk.tokenize import word_tokenize
 from gulordava_code import dictionary_corpus
-from helper import get_alt_nums, get_alts, strip_end_punct #combining helper helper_wf
+from helper_new import specify, get_alt_nums, get_alts, strip_end_punct #combining helper helper_wf
 #### gulordava specific ####
 which_freq = ""
 def load_model(freq):
@@ -9,6 +9,7 @@ def load_model(freq):
     Arguments: none
     Returns the model and device'''
     which_freq = freq
+    specify(freq)
     with open("gulordava_data/hidden650_batch128_dropout0.2_lr20.0.pt", 'rb') as f:
         print("Loading the model")
         # to convert model trained on cuda to cpu model
@@ -84,7 +85,7 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
     returns: chosen distractor word'''
     best_word = ""
     best_surprisal = 0
-    length, freq = get_alt_nums(word_list) #get average length, frequency
+    (length, freq) = get_alt_nums(word_list) #get average length, frequency
     options_list = []
     i = 0
     k = 0
@@ -108,7 +109,7 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
     print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal)) #return best we have
     return best_word
 
-def do_sentence_set(sentence_set, model, device, dictionary, ntokens):
+def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_test, minimum):
     '''Processes a set of sentences that get the same distractors
     Arguments:
     sentence_set = a list of sentences (all equal length)
@@ -134,7 +135,7 @@ def do_sentence_set(sentence_set, model, device, dictionary, ntokens):
         for i in range(len(sentence_set)): # for each sentence
             hidden[i], surprisals[i] = update_sentence(words[i][j], input_word[i], model, hidden[i], dictionary) # and the next word to the sentence
             word_list.append(words[i][j+1]) #add the word after that to a list of words
-        bad_word = find_bad_enough(100, 21, word_list, surprisals, dictionary) #find an alternate word
+        bad_word = find_bad_enough(num_to_test, minimum, word_list, surprisals, dictionary) #find an alternate word
         #using the surprisals and matching frequency for the good words; try 100 words, aim for surprisal of 21 or higher
         for l, _ in enumerate(sentence_set):
             cap=word_list[l][0].isupper() # what is capitization of good word in ith sentence

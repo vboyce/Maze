@@ -16,18 +16,18 @@ def make_word_list(output="word_list.json", source="words.txt", exclude="exclude
     source - file with a list of words (default is copy of unix dictionary)
     exclude - file with a list of words to not include
     Return: none'''
-    words = {}
+    words = set()
     with open(source, "r") as f: #read dictionary
         for line in f:
             word = line.strip()
             if re.match("^[a-z]*$", word): #check for all lowercase alpha
-                words[word] = 1
+                words.add(word.lower())
     f.close()
     if exclude is not None:
         with open(exclude, "r") as f: #remove words on exclude list
             for line in f:
                 word = line.strip()
-                words.pop(word, None)
+                words.remove(word.lower())
     f.close()
     with open(output, "w") as f: #write to file
         json.dump(words, f)
@@ -52,7 +52,7 @@ def load_word_list(filename):
         word_list = json.load(f)
     return word_list
 
-def good_word(word, count):
+def good_word(word, count, threshold = 1000):
     '''Determines if a word should be included
     Cleans it up as needed
     Chops off POS tags (after _ in google corpus)
@@ -62,7 +62,7 @@ def good_word(word, count):
     count = number of occurances
     Returns: either the word (minus POS tag) or False
     '''
-    threshold = 1000
+    #threshold = 1000
     if count >= threshold: #common enough
         word_fixed = word.split("_")[0]
         if re.match("^[a-zA-Z'-]+$", word_fixed):
@@ -84,10 +84,10 @@ def parse_files(filename="unigram_raw.json"):
     suffixes = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     prefix = "../unigram/googlebooks-eng-all-1gram-20120701-"
     postfix = ".gz"
-    for i, _ in enumerate(suffixes):
+    for char in suffixes:
         test_word = ""
         count = 0
-        with gzip.open(prefix+suffixes[i]+postfix, "rt") as f:
+        with gzip.open(prefix+char+postfix, "rt") as f:
             if test_word == "":
                 print(suffixes[i])
             for line in csv.reader(f, delimiter="\t"):
@@ -132,23 +132,17 @@ def make_lexicon(unigram, word_list, alterations):
     '''
     uni_good = {}
     lexicon = {}
-    for key in unigram:
+    for (key, value) in unigram.items():
         #for each word form, find the plurality form
         #sum up occurances and count them all as being plurality form (wrt capitalization)
-        common_index = unigram[key][1].index(max(unigram[key][1]))
-        common_form = unigram[key][0][common_index]
-        total_count = sum(unigram[key][1])
+        common_index = value[1].index(max(value[1]))
+        common_form = value[0][common_index]
+        total_count = sum(value[1])
         freq = math.floor(math.log(total_count, 2))
         if common_form in alterations: #check if it needs to be modified
             freq = alterations[common_form]
-        if len(key) < 3:
-            word_length = 3
-        elif len(key) > 15:
-            word_length = 15
-        else:
-            word_length = len(key)
-        if freq > 25:
-            freq = 25
+        word_length = max(3, min(len(key), 15))
+        freq = min(freq, 25)
         if freq >= 13:
             uni_good[common_form] = freq
             if common_form in word_list:
