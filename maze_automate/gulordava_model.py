@@ -83,6 +83,16 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
     surprisals_list = distribution of surprisals (from update_sentence)
     dictionary = word to word_id look up
     returns: chosen distractor word'''
+    #find average surprisal for the good words
+    base_surprisal = 0
+    for j in range(len(surprisals_list)):
+        surprisal = get_surprisal(surprisals_list[j], dictionary, strip_end_punct(word_list[j])[0]) #get good word surprisal
+        base_surprisal += surprisal
+    base_surprisal /= len(surprisals_list)
+    if (minimum < 0): #minimum will be less than zero if we use the dynamic minimum mode
+         minimum = base_surprisal - minimum
+         print("Minimum threshold = "+str(minimum))
+    
     best_word = ""
     best_surprisal = 0
     (length, freq) = get_alt_nums(word_list) #get average length, frequency
@@ -98,7 +108,7 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
         word = options_list[k]
         k += 1
         min_surprisal = 100 #dummy value higher than we expect any surprisal to actually be
-        for j, _ in enumerate(surprisals_list): # for each sentence
+        for j in range(len(surprisals_list)): # for each sentence
             surprisal = get_surprisal(surprisals_list[j], dictionary, word) #find that word
             min_surprisal = min(min_surprisal, surprisal) #lowest surprisal so far
         if min_surprisal >= minimum: #if surprisal in each condition is adequate
@@ -119,7 +129,7 @@ def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_tes
     bad_words=[]
     words = []
     sentence_length = len(sentence_set[0].split()) #find length of first item
-    for i, _ in enumerate(sentence_set):
+    for i in range(len(sentence_set)):
         bad_words.append(["x-x-x"])
         sent_words = sentence_set[i].split()
         if len(sent_words) != sentence_length:
@@ -137,14 +147,14 @@ def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_tes
             word_list.append(words[i][j+1]) #add the word after that to a list of words
         bad_word = find_bad_enough(num_to_test, minimum, word_list, surprisals, dictionary) #find an alternate word
         #using the surprisals and matching frequency for the good words; try 100 words, aim for surprisal of 21 or higher
-        for l, _ in enumerate(sentence_set):
-            cap=word_list[l][0].isupper() # what is capitization of good word in ith sentence
+        for i in range(len(sentence_set)):
+            cap=word_list[i][0].isupper() # what is capitization of good word in ith sentence
             if cap: #capitalize it
                 mod_bad_word=bad_word[0].upper()+bad_word[1:]
             else: #keep lower case
                 mod_bad_word=bad_word
-            mod_bad_word = mod_bad_word+strip_end_punct(word_list[l])[1] #match end punctuation
-            bad_words[l].append(mod_bad_word) # add the fixed bad word to a running list for that sentence
+            mod_bad_word = mod_bad_word+strip_end_punct(word_list[i])[1] #match end punctuation
+            bad_words[i].append(mod_bad_word) # add the fixed bad word to a running list for that sentence
     bad_sentences=[]
     for i, _ in enumerate(bad_words):
         bad_sentences.append(" ".join(bad_words[i]))

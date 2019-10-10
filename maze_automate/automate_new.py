@@ -18,7 +18,7 @@ parser.add_argument('--format', choices=["ibex", "basic"], default="basic",
 parser.add_argument('--num_to_test', type=int, default=100,
                     help='number of words to test in the process of finding bad words')
 parser.add_argument('--minimum', type=int, default=21,
-                    help='threshold of surprisal for a bad word, default to 21')
+                    help='threshold of surprisal for a bad word, default to 21. Enter a negative number of you want the minimum to be dynamic (-5 for good word surprisal + 5)')
 #TODO: global surprisal threshold
 #TODO first: duplicate words
 
