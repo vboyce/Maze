@@ -17,11 +17,14 @@ parser.add_argument('--format', choices=["ibex", "basic"], default="basic",
                     help='output format, either basic (for csv) or maze')
 parser.add_argument('--num_to_test', type=int, default=100,
                     help='number of words to test in the process of finding bad words')
+parser.add_argument('--static_min', action="store_true", default=False,
+                    help='toggle whether the minimum surprisal threshold should be dynamic or static (default to false)')
 parser.add_argument('--minimum', type=int, default=21,
-                    help='threshold of surprisal for a bad word, default to 21. Enter a negative number of you want the minimum to be dynamic (-5 for good word surprisal + 5)')
-#TODO: global surprisal threshold
-#TODO first: duplicate words
-
+                    help='absolute static threshold of surprisal for a bad word, default to 21, and relative dynamic threshold of surprisal if static-min is set to false')
+parser.add_argument('--backup_min', type=int, default=21,
+                    help='absolute static threshold of surprisal for a bad word if static-min is set to false, in case the good word is unknown')
+parser.add_argument('--duplicate_words', action="store_true", default=False,
+                    help='allow duplicate words to be in the same output sentence')
 args = parser.parse_args()
 
 def save_output(outfile, item_to_info, end_result):
@@ -87,7 +90,7 @@ def read_input(filename):
         sentences.append(item_to_info[item][1]) #make a list of sentences, grouped by item number
     return (item_to_info, sentences)
 
-def run(which_model, freq, sentences, num_to_test, minimum):
+def run(which_model, freq, sentences, num_to_test, minimum, backup_min, duplicate_words):
     '''wrapper for using either model with either wordfreq to use
     Arguments:
     model = the model specified
@@ -107,7 +110,7 @@ def run(which_model, freq, sentences, num_to_test, minimum):
 
     for i, _ in enumerate(sentences): #process all the sentences
         if which_model == "gulordava":
-            bad = gulordava_model.do_sentence_set(sentences[i], model, device, dictionary, ntokens, num_to_test, minimum)
+            bad = gulordava_model.do_sentence_set(sentences[i], model, device, dictionary, ntokens, num_to_test, minimum, backup_min, duplicate_words)
         elif which_model == "one_b":
             bad = one_b_model.do_sentence_set(sentences[i], sess, t, dictionary)
         for j, _ in enumerate(sentences[i]): #record results
@@ -124,9 +127,16 @@ Returns: none'''
 item_to_info, sentences = read_input(args.input) # read input
 num_to_test = args.num_to_test #set num_to_test in find_bad_words
 print("Number of bad words to test = " + str(num_to_test))
-minimum = args.minimum #set minimum in find_bad_words
-print("Minimum threshold = " + str(minimum))
-end_result = run(args.model, args.freq, sentences, num_to_test, minimum)
+print(str(args.static_min))
+if (args.static_min == False): #set minimum in find_bad_words : dynamic threshold
+    minimum = -args.minimum
+    print("Using dynamic threshold = " + str(-minimum) + " more than the good word")
+    backup_min = args.backup_min
+    print("Backup minimum = " + str(backup_min))
+else:
+    minimum = args.minimum #set minimum in find_bad_word
+    print("Minimum threshold = " + str(minimum))
+end_result = run(args.model, args.freq, sentences, num_to_test, minimum, backup_min, args.duplicate_words)
 if args.format == "ibex": #save output
     save_ibex_format(args.output, item_to_info, end_result)
 elif args.format =="basic": # save output

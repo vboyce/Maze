@@ -71,7 +71,7 @@ def get_surprisal(surprisals, dictionary, word):
         return -1 #use -1 as an error code
     return surprisals[token].item() #numeric value of word's surprisal
 
-def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary):
+def find_bad_enough(num_to_test, minimum, backup_min, word_list, surprisals_list, dictionary, used):
     '''Finds an adequate distractor word
     either the first word that meets minimum surprisal for all sentences or the best if
     it tries num_to_test and none meet the minimum
@@ -85,13 +85,20 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
     returns: chosen distractor word'''
     #find average surprisal for the good words
     base_surprisal = 0
+    cnt = 0
     for j in range(len(surprisals_list)):
         surprisal = get_surprisal(surprisals_list[j], dictionary, strip_end_punct(word_list[j])[0]) #get good word surprisal
-        base_surprisal += surprisal
-    base_surprisal /= len(surprisals_list)
-    if (minimum < 0): #minimum will be less than zero if we use the dynamic minimum mode
-         minimum = base_surprisal - minimum
-         print("Minimum threshold = "+str(minimum))
+        if (surprisal != -1):
+            #ignore those which are unknown
+            base_surprisal += surprisal
+            cnt += 1
+    if (cnt == 0 and minimum < 0): #good words are all unknown, dynamic minimum mode
+        minimum = backup_min
+        print("Using backup minimum threshold = "+str(minimum))
+    elif (minimum < 0): #minimum will be less than zero if we use the dynamic minimum mode
+        base_surprisal /= cnt
+        minimum = base_surprisal - minimum
+        print("Minimum threshold = "+str(minimum))
     
     best_word = ""
     best_surprisal = 0
@@ -105,8 +112,12 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
             if which_freq == "wordfreq":
                 options_list.extend(get_alts(length, freq - i))
             i += 1 #if there weren't any, try a slightly higher frequency
+            if (i > 100): #dummy value higher than we expect any frequency to be
+                break #out of infinite loop
         word = options_list[k]
         k += 1
+        if (word in used): #word has been used before in the sentence
+            continue
         min_surprisal = 100 #dummy value higher than we expect any surprisal to actually be
         for j in range(len(surprisals_list)): # for each sentence
             surprisal = get_surprisal(surprisals_list[j], dictionary, word) #find that word
@@ -116,19 +127,25 @@ def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary
         if min_surprisal > best_surprisal: #if it's the best option so far, record that
             best_word = word
             best_surprisal = min_surprisal
+        if (i > 100):
+            break #out of infinite loop
     print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal)) #return best we have
     return best_word
 
-def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_test, minimum):
+def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_test, minimum, backup_min, duplicate_words):
     '''Processes a set of sentences that get the same distractors
     Arguments:
     sentence_set = a list of sentences (all equal length)
     model, device = from load_model
     dictionary, ntokens = from load_dictionary
     returns a sentence format string of the distractors'''
-    bad_words=[]
+    bad_words = []
     words = []
     sentence_length = len(sentence_set[0].split()) #find length of first item
+    #set up a "used words" set
+    used = set()
+    if (duplicate_words == True):
+        print("Allowing duplicate words in a sentence")
     for i in range(len(sentence_set)):
         bad_words.append(["x-x-x"])
         sent_words = sentence_set[i].split()
@@ -145,7 +162,10 @@ def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_tes
         for i in range(len(sentence_set)): # for each sentence
             hidden[i], surprisals[i] = update_sentence(words[i][j], input_word[i], model, hidden[i], dictionary) # and the next word to the sentence
             word_list.append(words[i][j+1]) #add the word after that to a list of words
-        bad_word = find_bad_enough(num_to_test, minimum, word_list, surprisals, dictionary) #find an alternate word
+        bad_word = find_bad_enough(num_to_test, minimum, backup_min, word_list, surprisals, dictionary, used) #find an alternate word
+        #add bad word to the set of used words
+        if (duplicate_words == False):
+            used.add(bad_word)
         #using the surprisals and matching frequency for the good words; try 100 words, aim for surprisal of 21 or higher
         for i in range(len(sentence_set)):
             cap=word_list[i][0].isupper() # what is capitization of good word in ith sentence
