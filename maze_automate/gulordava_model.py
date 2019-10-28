@@ -71,7 +71,7 @@ def get_surprisal(surprisals, dictionary, word):
         return -1 #use -1 as an error code
     return surprisals[token].item() #numeric value of word's surprisal
 
-def find_bad_enough(num_to_test, minimum, backup_min, word_list, surprisals_list, dictionary, used):
+def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, dictionary, used):
     '''Finds an adequate distractor word
     either the first word that meets minimum surprisal for all sentences or the best if
     it tries num_to_test and none meet the minimum
@@ -92,12 +92,12 @@ def find_bad_enough(num_to_test, minimum, backup_min, word_list, surprisals_list
             #ignore those which are unknown
             base_surprisal += surprisal
             cnt += 1
-    if (cnt == 0 and minimum < 0): #good words are all unknown, dynamic minimum mode
-        minimum = backup_min
-        print("Using backup minimum threshold = "+str(minimum))
-    elif (minimum < 0): #minimum will be less than zero if we use the dynamic minimum mode
+    if (cnt == 0 or min_rel == -1): #good words are all unknown or relative minimum is not specified, using the absolute minimum
+        minimum = min_abs
+        print("Minimum threshold = "+str(minimum))
+    else: #use the higher minimum between the absolute and the relative
         base_surprisal /= cnt
-        minimum = base_surprisal - minimum
+        minimum = max(min_abs, base_surprisal + min_rel)
         print("Minimum threshold = "+str(minimum))
     
     best_word = ""
@@ -132,7 +132,7 @@ def find_bad_enough(num_to_test, minimum, backup_min, word_list, surprisals_list
     print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal)) #return best we have
     return best_word
 
-def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_test, minimum, backup_min, duplicate_words):
+def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words):
     '''Processes a set of sentences that get the same distractors
     Arguments:
     sentence_set = a list of sentences (all equal length)
@@ -162,7 +162,7 @@ def do_sentence_set(sentence_set, model, device, dictionary, ntokens, num_to_tes
         for i in range(len(sentence_set)): # for each sentence
             hidden[i], surprisals[i] = update_sentence(words[i][j], input_word[i], model, hidden[i], dictionary) # and the next word to the sentence
             word_list.append(words[i][j+1]) #add the word after that to a list of words
-        bad_word = find_bad_enough(num_to_test, minimum, backup_min, word_list, surprisals, dictionary, used) #find an alternate word
+        bad_word = find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals, dictionary, used) #find an alternate word
         #add bad word to the set of used words
         if (duplicate_words == False):
             used.add(bad_word)
