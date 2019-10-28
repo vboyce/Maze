@@ -57,7 +57,7 @@ def update_sentence(word, input_word, model, hidden, dictionary):
         word_surprisals = -1*torch.log2(word_weights/sum(word_weights))# turn into surprisals
     return (hidden, word_surprisals)
 
-def get_surprisal(surprisals, dictionary, word):
+def get_surprisal(surprisals, dictionary, word, good_bad):
     '''Find the surprisal for a word given a context
     Arguments:
     surprisals - surprisal distribution
@@ -67,7 +67,10 @@ def get_surprisal(surprisals, dictionary, word):
     We don't trust surprisal values for UNK words'''
     token = dictionary_corpus.tokenize_str(dictionary, word)[0] #take first token of word
     if word not in dictionary.word2idx:
-        print(word+" is unknown")
+        if good_bad == 0:
+            print("Good word " + word + " is unknown")
+        else:
+            print("Bad word " + word + " is unknown")
         return -1 #use -1 as an error code
     return surprisals[token].item() #numeric value of word's surprisal
 
@@ -87,7 +90,7 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
     base_surprisal = 0
     cnt = 0
     for j in range(len(surprisals_list)):
-        surprisal = get_surprisal(surprisals_list[j], dictionary, strip_end_punct(word_list[j])[0]) #get good word surprisal
+        surprisal = get_surprisal(surprisals_list[j], dictionary, strip_end_punct(word_list[j])[0], 0) #get good word surprisal
         if (surprisal != -1):
             #ignore those which are unknown
             base_surprisal += surprisal
@@ -120,7 +123,7 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
             continue
         min_surprisal = 100 #dummy value higher than we expect any surprisal to actually be
         for j in range(len(surprisals_list)): # for each sentence
-            surprisal = get_surprisal(surprisals_list[j], dictionary, word) #find that word
+            surprisal = get_surprisal(surprisals_list[j], dictionary, word, 1) #find that word
             min_surprisal = min(min_surprisal, surprisal) #lowest surprisal so far
         if min_surprisal >= minimum: #if surprisal in each condition is adequate
             return word # we found a word to use and are done here
