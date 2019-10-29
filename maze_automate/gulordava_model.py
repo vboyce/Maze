@@ -106,8 +106,8 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
     best_word = ""
     best_surprisal = 0
     (length, freq) = get_alt_nums(word_list) #get average length, frequency
-    options_list = []
-    i = 0
+    options_list = get_alts(length, freq)
+    i = 1
     k = 0
     while k < num_to_test:
         while k == len(options_list): # if we run out of options
