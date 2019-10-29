@@ -112,8 +112,7 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
     while k < num_to_test:
         while k == len(options_list): # if we run out of options
             options_list.extend(get_alts(length, freq + i))# find words with that length and frequency
-            if which_freq == "wordfreq":
-                options_list.extend(get_alts(length, freq - i))
+            options_list.extend(get_alts(length, freq - i))
             i += 1 #if there weren't any, try a slightly higher frequency
             if (i > 100): #dummy value higher than we expect any frequency to be
                 break #out of infinite loop
