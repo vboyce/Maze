@@ -1,10 +1,12 @@
 # Implementation of Maze for Ibex
 
 This provides a custom Ibex module that runs the Maze task. It is an adaptation of the SPR module, and uses the same timing mechanism as SPR. For an overview of Ibex, please see <https://github.com/addrummond/ibex/blob/master/docs/manual.md>. 
+
 ## Setup
 
 * Get a copy of Ibex (download from <https://github.com/addrummond/ibex>) and make sure you have Python 2 installed (Ibex uses Python 2 and will not work with Python 3)
-* Add Maze.css and MazeSeparator.css files to the css_includes folder and Maze.js and MazeSeparator.js files to the js_includes folder. 
+* Add Maze.css and MazeSeparator.css files to the css_includes folder 
+* Add Maze.js and MazeSeparator.js files to the js_includes folder. 
 * You can test out the maze task by putting sample.js in the data_includes folder (remove anything else from that folder) and running (to test it out on your own computer, run "python2 server.py" from ibex/www -- experiment will be on localhost:3000).
 
 
