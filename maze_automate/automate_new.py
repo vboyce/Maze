@@ -47,7 +47,7 @@ def save_output(outfile, item_to_info, end_result):
                 f.write('"'+key+'";')
                 f.write('"'+item_to_info[key][1][i]+'";')
                 f.write('"'+end_result[item_to_info[key][1][i]]+'";')
-                f.write('"'+item_to_info[key][2][i]+'"\n')
+                f.write('"'+" ".join([str(id) for id in item_to_info[key][2][i]])+'"\n')
 
 def save_ibex_format(outfile, item_to_info, end_result):
     '''Saves results to a file in ibex format
@@ -64,7 +64,7 @@ def save_ibex_format(outfile, item_to_info, end_result):
                 f.write(key+'], "Maze", {s:')
                 f.write('"'+item_to_info[key][1][i]+'", a:')
                 f.write('"'+end_result[item_to_info[key][1][i]]+'";')
-                f.write('"'+item_to_info[key][2][i]+'"\n')
+                f.write('"'+" ".join([str(id) for id in item_to_info[key][2][i]])+'"\n')
 
 def read_input(filename, match_type):
     '''Reads an input file
@@ -87,15 +87,15 @@ def read_input(filename, match_type):
                 item_to_info[row[1]][0].append(row[0]) #add condition to the list
                 item_to_info[row[1]][1].append(row[2].strip()) #add sentence to the list
                 if match_type == 'index' or match_type == 'auto': #auto has not been implemented
-                    item_to_info[row[1]][2].append([i for i in range(len(row[2].strip()])
+                    item_to_info[row[1]][2].append([i for i in range(len(row[2].strip().split()))])
                 else:
-                    item_to_info[row[1]][2].append(row[3].strip()) #add word keys to the list
+                    item_to_info[row[1]][2].append(row[3].strip().split()) #add word keys to the list
             else:
                 item_to_info[row[1]] = [[row[0]], [row[2].strip()]] # new item num, add a new entry
                 if match_type == 'index' or match_type == 'auto': #auto has not been implemented
-                    item_to_info[row[1]].append([[i for i in range(len(row[2].strip()]])
+                    item_to_info[row[1]].append([[i for i in range(len(row[2].strip().split()))]])
                 else:
-                    item_to_info[row[1]][2].append([row[3].strip()]) #add word keys to the list
+                    item_to_info[row[1]].append([row[3].strip().split()]) #add word keys to the list
     sentences = []
     for item in sorted(item_to_info):
         sentences.append((item_to_info[item][1], item_to_info[item][2])) #make a list of sentences and word keys, grouped by item number
@@ -119,11 +119,12 @@ def run(which_model, freq, sentences_keys, num_to_test, min_abs, min_rel, duplic
         sess, t = one_b_model.load_model(freq)
         dictionary = one_b_model.load_dict()
 
-    for i, _ in enumerate(sentences): #process all the sentences
+    for i in range(len(sentences_keys)): #process all the sentences
         (sentences, keys) = sentences_keys[i] #divide the (sentences, keys) tuple into sentences and word keys
         if which_model == "gulordava":
-            bad = gulordava_model.do_sentence_set(sentences, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words)
+            bad = gulordava_model.do_sentence_set(sentences, keys, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words)
         elif which_model == "one_b":
+            #TODO: refector and incorporate word keys feature (word matching)
             bad = one_b_model.do_sentence_set(sentences, sess, t, dictionary)
         for j, _ in enumerate(sentences): #record results
             end_result[sentences[j]] = bad[j]
