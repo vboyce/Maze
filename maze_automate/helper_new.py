@@ -40,14 +40,42 @@ def get_unigram_freq(word):
     freq = UNIGRAM_FREQ.get(word)
     if freq is not None:
         return freq
-    return None
+    return 0 #word not found, hopefully is very rare
 
+def strip_punct(word):
+    '''take a word, return tuple of word without punctuations,
+    if any, punctuation prefix, punctuation suffix, and word case'''
+    prefix = ""
+    suffix = ""
+    for i in range(len(word)):
+        if (word[i].isalnum()):
+            break
+    if (i > 0):
+        prefix = word[:i]
+    for j in range(len(word) - 1, 0, -1):
+        if (word[j].isalnum()):
+            break
+    if (len(word) > 1 and j + 1 < len(word)):
+        suffix = word[j+1:]
+    elif (len(word) == 1):
+        j = len(word) - 1
+    word = word[i:j+1]
+    if (word.isupper()):
+        case = 2 #all capitalized
+    elif (word[1].isupper()):
+        case = 1 #first letter capitalized
+    else:
+        case = 0 #all lowercase
+    return (word.lower(), prefix, suffix, case)
+
+'''
 def strip_end_punct(word):
-    '''take a word, return tuple of word without last end punctuation,
-    if any, and end punctuation'''
+    take a word, return tuple of word without last end punctuation,
+    if any, and end punctuation
     if word[-1] in [".", ",", "!", "?"]:
         return (word[:-1], word[-1])
     return(word, "")
+'''
 
 min_length = 4 #changeable
 max_length = 15
@@ -68,7 +96,7 @@ def get_alt_nums(word_list):
     length = 0
     freq = 0
     for raw_word in word_list: #find individual length, freq
-        (word, _) = strip_end_punct(raw_word)
+        (word, _, _, _) = strip_punct(raw_word)
         length += len(word)
         freq += get_unigram_freq(word)
     avg_length = round(length/len(word_list)) #take avg and round

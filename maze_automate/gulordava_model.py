@@ -1,7 +1,7 @@
 import torch
 from nltk.tokenize import word_tokenize
 from gulordava_code import dictionary_corpus
-from helper_new import specify, get_alt_nums, get_alts, strip_end_punct #combining helper helper_wf
+from helper_new import specify, get_alt_nums, get_alts, strip_punct #combining helper helper_wf
 #### gulordava specific ####
 which_freq = ""
 def load_model(freq):
@@ -46,6 +46,7 @@ def update_sentence(word, input_word, model, hidden, dictionary):
     Returns: output = (probably not needed??)
     hidden = new hidden layer
     word_surprisals = distribution of surprisals for all words'''
+    word = strip_punct(word)[0]
     parts = word_tokenize(word) #get list of tokens
     for part in parts:
         token = dictionary_corpus.tokenize_str(dictionary, part)[0] #get id of token
@@ -65,6 +66,7 @@ def get_surprisal(surprisals, dictionary, word, good_bad):
     word - word we want surprisal for 
     Returns the numeric surprisal value of the word, if word is unknown returns -1
     We don't trust surprisal values for UNK words'''
+    (word, _, _, _) = strip_punct(word)
     token = dictionary_corpus.tokenize_str(dictionary, word)[0] #take first token of word
     if word not in dictionary.word2idx:
         if good_bad == 0:
@@ -90,7 +92,7 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
     base_surprisal = 0
     cnt = 0
     for j in range(len(surprisals_list)):
-        surprisal = get_surprisal(surprisals_list[j], dictionary, strip_end_punct(word_list[j])[0], 0) #get good word surprisal
+        surprisal = get_surprisal(surprisals_list[j], dictionary, word_list[j], 0) #get good word surprisal
         if (surprisal != -1):
             #ignore those which are unknown
             base_surprisal += surprisal
@@ -200,12 +202,14 @@ def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntoke
             used.add(bad_word)
         #using the surprisals and matching frequency for the good words
         for i in range(len(sentence_set)):
-            cap=word_list[i][0].isupper() # what is capitization of good word in ith sentence
-            if cap: #capitalize it
-                mod_bad_word=bad_word[0].upper()+bad_word[1:]
-            else: #keep lower case
-                mod_bad_word=bad_word
-            mod_bad_word = mod_bad_word+strip_end_punct(word_list[i])[1] #match end punctuation
+            (_, prefix, suffix, case) = strip_punct(word_list[i])
+            if (case == 2): #all capitalized
+                mod_bad_word = bad_word.upper()
+            elif (case == 1): #first letter capitalized
+                mod_bad_word = bad_word[0].upper()+bad_word[1:]
+            else: #all lowercase, keep the same word case
+                mod_bad_word = bad_word
+            mod_bad_word = prefix+mod_bad_word+suffix #match end punctuation
             bad_words[i].append(mod_bad_word) # add the fixed bad word to a running list for that sentence
     bad_sentences = []
     bad_split_sentences = []
