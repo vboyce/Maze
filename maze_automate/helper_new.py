@@ -62,7 +62,7 @@ def strip_punct(word):
     word = word[i:j+1]
     if (word.isupper()):
         case = 2 #all capitalized
-    elif (word[1].isupper()):
+    elif (word[0].isupper()):
         case = 1 #first letter capitalized
     else:
         case = 0 #all lowercase
