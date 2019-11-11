@@ -164,8 +164,12 @@ Example usage: to run using the one_b model, with wordfreq frequency and ibex ou
 ```
 ./automate.py test_input.txt output_location.txt --model one_b --freq wordfreq --format ibex
 ```
-
-Advice on arguments:
+Recommended settings: 
+(Note that this is under active development and testing, so the recommended settings are subject to change.)
+ - model gulordava
+ - freq wordfreq
+ 
+Additional advice on arguments:
  - model: Use one you did set-up for. (If you're just trying it out, we recommend Gulordava.)
  - freq: Ngrams using frequency information extracted from Google ngrams and was used for the Maze Made Easy experiments, so it's been tested. However, it cannot handle OOV words in materials at all. Wordfreq uses <https://pypi.org/project/wordfreq/>, which is robust to OOV words. Wordfreq requires that [wordfreq](https://pypi.org/project/wordfreq/) be installed. Each has some idiosyncratic biases based on the corpora they were trained on.
  - format: If you're going to run the experiments using Ibex, use ibex format, which is ready to be copied into the items section of a Ibex data file. If you will be checking materials or running materials with a different framework, use the basic format, which is semicolon delimited (like input format, but with an additional column for the distractors).
