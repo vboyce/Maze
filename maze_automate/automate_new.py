@@ -66,6 +66,7 @@ def save_ibex_format(outfile, item_to_info, end_result):
                 f.write('"'+end_result[item_to_info[key][1][i]]+'";')
                 f.write('"'+" ".join([str(id) for id in item_to_info[key][2][i]])+'"\n')
 
+
 def read_input(filename, match_type):
     '''Reads an input file
     Arguments:
@@ -83,25 +84,26 @@ def read_input(filename, match_type):
     with open(filename, 'r') as tsv:
         f = csv.reader(tsv, delimiter=";", quotechar='"')
         for row in f:
-            if row[1] in item_to_info: #item num already seen
-                item_to_info[row[1]][0].append(row[0]) #add condition to the list
-                item_to_info[row[1]][1].append(row[2].strip()) #add sentence to the list
-                if match_type == 'index' or match_type == 'auto': #auto has not been implemented
+            if row[1] in item_to_info:  # item num already seen
+                item_to_info[row[1]][0].append(row[0])  # add condition to the list
+                item_to_info[row[1]][1].append(row[2].strip())  # add sentence to the list
+                if match_type == 'index' or match_type == 'auto':  # auto has not been implemented
                     item_to_info[row[1]][2].append([i for i in range(len(row[2].strip().split()))])
                 else:
-                    item_to_info[row[1]][2].append(row[3].strip().split()) #add word keys to the list
+                    item_to_info[row[1]][2].append(row[3].strip().split())  # add word keys to the list
             else:
-                item_to_info[row[1]] = [[row[0]], [row[2].strip()]] # new item num, add a new entry
-                if match_type == 'index' or match_type == 'auto': #auto has not been implemented
+                item_to_info[row[1]] = [[row[0]], [row[2].strip()]]  # new item num, add a new entry
+                if match_type == 'index' or match_type == 'auto':  # auto has not been implemented
                     item_to_info[row[1]].append([[i for i in range(len(row[2].strip().split()))]])
                 else:
-                    item_to_info[row[1]].append([row[3].strip().split()]) #add word keys to the list
+                    item_to_info[row[1]].append([row[3].strip().split()])  # add word keys to the list
     sentences = []
     for item in sorted(item_to_info):
-        sentences.append((item_to_info[item][1], item_to_info[item][2])) #make a list of sentences and word keys, grouped by item number
+        sentences.append((item_to_info[item][1], item_to_info[item][2]))  # make a list of sentences and word keys, grouped by item number
     return (item_to_info, sentences)
 
-def run(which_model, freq, sentences_keys, num_to_test, min_abs, min_rel, duplicate_words):
+
+def run(which_model, freq, sentences_keys, num_to_test, min_abs, min_rel, duplicate_words, match_type):
     '''wrapper for using either model with either wordfreq to use
     Arguments:
     model = the model specified
@@ -111,24 +113,25 @@ def run(which_model, freq, sentences_keys, num_to_test, min_abs, min_rel, duplic
     distractor sentences in same order/grouping'''
     end_result = {}
     if which_model == "gulordava":
-        import gulordava_model #will be created to accommodate both gulordava and gulordava_wf
-        model, device = gulordava_model.load_model(freq) #set up
+        import gulordava_model  # will be created to accommodate both gulordava and gulordava_wf
+        model, device = gulordava_model.load_model(freq)  # set up
         dictionary, ntokens = gulordava_model.load_dict()
     elif which_model == "one_b":
-        import one_b_model #will be created to accommodate both one_b and one_b_wf
+        import one_b_model  # will be created to accommodate both one_b and one_b_wf
         sess, t = one_b_model.load_model(freq)
         dictionary = one_b_model.load_dict()
 
-    for i in range(len(sentences_keys)): #process all the sentences
-        (sentences, keys) = sentences_keys[i] #divide the (sentences, keys) tuple into sentences and word keys
+    for i in range(len(sentences_keys)):  # process all the sentences
+        (sentences, keys) = sentences_keys[i]  # divide the (sentences, keys) tuple into sentences and word keys
         if which_model == "gulordava":
-            bad = gulordava_model.do_sentence_set(sentences, keys, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words)
+            bad = gulordava_model.do_sentence_set(sentences, keys, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words, match_type)
         elif which_model == "one_b":
             #TODO: refector and incorporate word keys feature (word matching)
             bad = one_b_model.do_sentence_set(sentences, sess, t, dictionary)
         for j, _ in enumerate(sentences): #record results
             end_result[sentences[j]] = bad[j]
     return end_result
+
 
 '''Takes input, generates distractors, writes to output file
 Arguments:
@@ -139,8 +142,8 @@ out_format = either "basic" (for a semicolon delimited output) or "ibex" for ibe
 Returns: none'''
 item_to_info, sentences = read_input(args.input, args.matching) # read input
 print("Number of bad words to test = " + str(args.num_to_test))
-end_result = run(args.model, args.freq, sentences, args.num_to_test, args.min_abs, args.min_rel, args.duplicate_words)
-if args.format == "ibex": #save output
+end_result = run(args.model, args.freq, sentences, args.num_to_test, args.min_abs, args.min_rel, args.duplicate_words, args.matching)
+if args.format == "ibex":  # save output
     save_ibex_format(args.output, item_to_info, end_result)
-elif args.format =="basic": # save output
+elif args.format == "basic":  # save output
     save_output(args.output, item_to_info, end_result)

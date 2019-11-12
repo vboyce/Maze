@@ -88,55 +88,56 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
     surprisals_list = distribution of surprisals (from update_sentence)
     dictionary = word to word_id look up
     returns: chosen distractor word'''
-    #find average surprisal for the good words
+    # find average surprisal for the good words
     base_surprisal = 0
     cnt = 0
     for j in range(len(surprisals_list)):
         surprisal = get_surprisal(surprisals_list[j], dictionary, word_list[j], 0) #get good word surprisal
         if (surprisal != -1):
-            #ignore those which are unknown
+            # ignore those which are unknown
             base_surprisal += surprisal
             cnt += 1
-    if (cnt == 0 or min_rel == -1): #good words are all unknown or relative minimum is not specified, using the absolute minimum
+    if cnt == 0 or min_rel == -1:  # good words are all unknown or relative minimum is not specified, using the absolute minimum
         minimum = min_abs
         print("Minimum threshold = "+str(minimum))
-    else: #use the higher minimum between the absolute and the relative
+    else:  # use the higher minimum between the absolute and the relative
         base_surprisal /= cnt
         minimum = max(min_abs, base_surprisal + min_rel)
         print("Minimum threshold = "+str(minimum))
     
     best_word = ""
     best_surprisal = 0
-    (length, freq) = get_alt_nums(word_list) #get average length, frequency
+    (length, freq) = get_alt_nums(word_list)  # get average length, frequency
     options_list = get_alts(length, freq)
     i = 1
     k = 0
     while k < num_to_test:
-        while k == len(options_list): # if we run out of options
-            options_list.extend(get_alts(length, freq + i))# find words with that length and frequency
+        while k == len(options_list):  # if we run out of options
+            options_list.extend(get_alts(length, freq + i))  # find words with that length and frequency
             options_list.extend(get_alts(length, freq - i))
-            i += 1 #if there weren't any, try a slightly higher frequency
-            if (i > 100): #dummy value higher than we expect any frequency to be
-                break #out of infinite loop
+            i += 1  # if there weren't any, try a slightly higher frequency
+            if i > 100:  # dummy value higher than we expect any frequency to be
+                break  # out of infinite loop
         word = options_list[k]
         k += 1
-        if (word in used): #word has been used before in the sentence
+        if word in used:  # word has been used before in the sentence
             continue
-        min_surprisal = 100 #dummy value higher than we expect any surprisal to actually be
+        min_surprisal = 100  # dummy value higher than we expect any surprisal to actually be
         for j in range(len(surprisals_list)): # for each sentence
-            surprisal = get_surprisal(surprisals_list[j], dictionary, word, 1) #find that word
-            min_surprisal = min(min_surprisal, surprisal) #lowest surprisal so far
-        if min_surprisal >= minimum: #if surprisal in each condition is adequate
+            surprisal = get_surprisal(surprisals_list[j], dictionary, word, 1)  # find that word
+            min_surprisal = min(min_surprisal, surprisal)  # lowest surprisal so far
+        if min_surprisal >= minimum:  # if surprisal in each condition is adequate
             return word # we found a word to use and are done here
-        if min_surprisal > best_surprisal: #if it's the best option so far, record that
+        if min_surprisal > best_surprisal:  # if it's the best option so far, record that
             best_word = word
             best_surprisal = min_surprisal
-        if (i > 100):
-            break #out of infinite loop
-    print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal)) #return best we have
+        if i > 100:
+            break  # out of infinite loop
+    print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal))  # return best we have
     return best_word
 
-def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words):
+
+def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words, match_type):
     '''Processes a set of sentences that get the same distractors
     Arguments:
     sentence_set = a list of sentences (all equal length)
@@ -145,10 +146,10 @@ def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntoke
     returns a sentence format string of the distractors'''
     bad_words = []
     words = []
-    #sentence_length = len(sentence_set[0].split()) #find length of first item
-    #set up a "used words" set
+    # sentence_length = len(sentence_set[0].split()) #find length of first item
+    # set up a "used words" set
     used = set()
-    if (duplicate_words == True):
+    if duplicate_words:
         print("Allowing duplicate words in a sentence")
     '''
     for i in range(len(sentence_set)):
@@ -158,66 +159,87 @@ def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntoke
             print("inconsistent lengths!!")  #complain if they aren't the same length
         words.append(sent_words) # make a new list with the sentences as word lists
     '''
-    word_to_id = {}
+    id_to_pos = {}
+    pos_to_word = {}
+    pos_to_surprisals = {}
+    id_to_badword = {}
     words_in_sentence = []
     keys_in_sentence = []
-    #TODO: for index matching, check of the sentence lengths are the same
-    #convert the sentences to the traditional 'index to index' matching
+    sentence_length = 0
+    # for index matching, check of the sentence lengths are the same
+    # preprocessing the input
     for i in range(len(sentence_set)):
-        #bad_words.append(["x-x-x"])
         bad_words.append([])
         words_in_sentence.append(sentence_set[i].split())
+        if match_type == 'index' and len(words_in_sentence[i]) != sentence_length:
+            raise ValueError("Matching failed: in this case the lengths of sentences must be the same")
+        sentence_length = max(sentence_length, len(words_in_sentence[i]))
         keys_in_sentence.append(matching_set[i])
-        if (len(words_in_sentence[i]) != len(keys_in_sentence[i])):
+        if len(words_in_sentence[i]) != len(keys_in_sentence[i]):
             raise ValueError("Matching failed: the sentence and the word IDs don't match in length")
         for j in range(len(words_in_sentence[i])):
-            if (keys_in_sentence[i][j] not in word_to_id):
-                word_to_id[keys_in_sentence[i][j]] = [words_in_sentence[i][j]]
+            if keys_in_sentence[i][j] not in id_to_pos:
+                id_to_pos[keys_in_sentence[i][j]] = [(i, j)]
             else:
-                word_to_id[keys_in_sentence[i][j]].append(words_in_sentence[i][j])
-    #constructing a 2D array resembling the traditional words array
-    words = [[] for i in range(len(sentence_set))]
-    keys = [[] for i in range(len(sentence_set))]
-    for (id, words_of_id) in word_to_id.items():
-        for i in range(len(sentence_set)):
-            words[i].append(words_of_id[i%len(words_of_id)]) #filling up to the original number of sentences
-            keys[i].append(id) #keeping track of the word ids
-    sentence_length = len(words[0])
-    hidden = [None]*len(sentence_set) #set up a bunch of stuff
+                id_to_pos[keys_in_sentence[i][j]].append((i, j))
+            pos_to_word[(i, j)] = words_in_sentence[i][j]
+    # check to make sure that first words are only matched with first words
+    for (id, pos_list) in id_to_pos.items():
+        has_first = False
+        has_nonfirst = False
+        for pos in pos_list:
+            if pos[1] == 0:
+                has_first = True
+            else:
+                has_nonfirst = True
+        if has_first and has_nonfirst:
+            raise ValueError("Matching failed: the first words in some of the sentences are matched with other words that are not first in sentence")
+
+    hidden = [None]*len(sentence_set)  # set up a bunch of stuff
     input_word = [None]*len(sentence_set)
     surprisals = [None]*len(sentence_set)
-    for i in range(len(sentence_set)): # more set up
+    for i in range(len(sentence_set)):  # more set up
         input_word[i], hidden[i] = new_sentence(model, device, ntokens)
-    for j in range(-1, sentence_length-1): # for each word position in the sentence
-        word_list = []
-        for i in range(len(sentence_set)): # for each sentence
-            if (j > -1):
-                hidden[i], surprisals[i] = update_sentence(words[i][j], input_word[i], model, hidden[i], dictionary) # and the next word to the sentence
-            else: #special case: first word in a sentence
-                hidden[i], surprisals[i] = update_sentence(words[i][j+1], input_word[i], model, hidden[i], dictionary) # and the next word to the sentence
-            word_list.append(words[i][j+1]) #add the word after that to a list of words
-        bad_word = find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals, dictionary, used) #find an alternate word
-        #add bad word to the set of used words
-        if (duplicate_words == False):
+    for j in range(sentence_length - 1):  # for each word position in the sentence
+        for i in range(len(sentence_set)):  # for each sentence
+            if j >= len(words_in_sentence[i]) - 1:  # if the sentence doesn't have as many words in the sentnece, skip
+                continue
+            hidden[i], surprisals[i] = update_sentence(words_in_sentence[i][j+1], input_word[i], model, hidden[i], dictionary)  # and the next word to the sentence
+            pos_to_surprisals[(i, j + 1)] = surprisals[i]
+    for id in id_to_pos:
+        pos_list = id_to_pos[id]
+        has_first = False
+        for pos in pos_list:
+            if pos[1] == 0:
+                has_first = True
+                break
+        if has_first:
+            # no need to find bad word, first word of the sentence
+            continue
+        word_list = [pos_to_word[pos] for pos in pos_list]
+        surprisals = [pos_to_surprisals[pos] for pos in pos_list]
+        bad_word = find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals, dictionary, used)  # find an alternate word
+        id_to_badword[id] = bad_word
+        # add bad word to the set of used words
+        if duplicate_words == False:
             used.add(bad_word)
-        #using the surprisals and matching frequency for the good words
-        for i in range(len(sentence_set)):
-            (_, prefix, suffix, case) = strip_punct(word_list[i])
-            if (case == 2): #all capitalized
-                mod_bad_word = bad_word.upper()
-            elif (case == 1): #first letter capitalized
-                mod_bad_word = bad_word[0].upper()+bad_word[1:]
-            else: #all lowercase, keep the same word case
-                mod_bad_word = bad_word
-            mod_bad_word = prefix+mod_bad_word+suffix #match end punctuation
-            bad_words[i].append(mod_bad_word) # add the fixed bad word to a running list for that sentence
+        # using the surprisals and matching frequency for the good words
+
     bad_sentences = []
-    bad_split_sentences = []
-    #converting the bad_words 2D array back to the original sentences
+    # constructing bad sentences from the stored bad words and ordering of original words
     for i in range(len(sentence_set)):
-        bad_split_sentences.append(["x-x-x"])
+        bad_split_sentence = ["x-x-x"]
         for j in range(1, len(words_in_sentence[i])):
             id = keys_in_sentence[i][j]
-            bad_split_sentences[i].append(bad_words[i][keys[i].index(id)]) #consider using a dict instead of .index()
-        bad_sentences.append(" ".join(bad_split_sentences[i]))
-    return bad_sentences # and return
+            word = id_to_badword[id]
+            (_, prefix, suffix, case) = strip_punct(words_in_sentence[i][j])  # formatting
+            if case == 2:  # all capitalized
+                mod_bad_word = word.upper()
+            elif case == 1:  # first letter capitalized
+                mod_bad_word = word[0].upper() + word[1:]
+            else:  # all lowercase, keep the same word case
+                mod_bad_word = word
+            mod_bad_word = prefix + mod_bad_word + suffix  # match end punctuation
+            bad_split_sentence.append(mod_bad_word)  # add the fixed bad word to a running list for that sentence
+        bad_sentences.append(" ".join(bad_split_sentence))
+    return bad_sentences  # and return
