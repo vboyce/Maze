@@ -49,6 +49,7 @@ def save_output(outfile, item_to_info, end_result):
                 f.write('"'+end_result[item_to_info[key][1][i]]+'";')
                 f.write('"'+" ".join([str(id) for id in item_to_info[key][2][i]])+'"\n')
 
+
 def save_ibex_format(outfile, item_to_info, end_result):
     '''Saves results to a file in ibex format
     File contents can be copied into the items list of a maze_ibex file
@@ -63,8 +64,7 @@ def save_ibex_format(outfile, item_to_info, end_result):
                 f.write('[["'+item_to_info[key][0][i]+'", ')
                 f.write(key+'], "Maze", {s:')
                 f.write('"'+item_to_info[key][1][i]+'", a:')
-                f.write('"'+end_result[item_to_info[key][1][i]]+'";')
-                f.write('"'+" ".join([str(id) for id in item_to_info[key][2][i]])+'"\n')
+                f.write('"'+end_result[item_to_info[key][1][i]]+'"}], \n')
 
 
 def read_input(filename, match_type):
