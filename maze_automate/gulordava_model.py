@@ -2,6 +2,7 @@ import torch
 from nltk.tokenize import word_tokenize
 from gulordava_code import dictionary_corpus
 from helper_new import specify, get_alt_nums, get_alts, strip_punct #combining helper helper_wf
+from flexmatch import match
 #### gulordava specific ####
 which_freq = ""
 def load_model(freq):
@@ -166,6 +167,9 @@ def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntoke
     words_in_sentence = []
     keys_in_sentence = []
     sentence_length = 0
+    # for auto matching, generate matching
+    if match_type == 'auto':
+        matching_set = match(sentence_set, 1)  # threshold: 1 for identical words only, less for similar words to be treated as identical words
     # for index matching, check of the sentence lengths are the same
     # preprocessing the input
     for i in range(len(sentence_set)):

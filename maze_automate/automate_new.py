@@ -89,13 +89,13 @@ def read_input(filename, match_type):
                 item_to_info[row[1]][1].append(row[2].strip())  # add sentence to the list
                 if match_type == 'index' or match_type == 'auto':  # auto has not been implemented
                     item_to_info[row[1]][2].append([i for i in range(len(row[2].strip().split()))])
-                else:
+                elif match_type == 'manual':
                     item_to_info[row[1]][2].append(row[3].strip().split())  # add word keys to the list
             else:
                 item_to_info[row[1]] = [[row[0]], [row[2].strip()]]  # new item num, add a new entry
                 if match_type == 'index' or match_type == 'auto':  # auto has not been implemented
                     item_to_info[row[1]].append([[i for i in range(len(row[2].strip().split()))]])
-                else:
+                elif match_type == 'manual':
                     item_to_info[row[1]].append([row[3].strip().split()])  # add word keys to the list
     sentences = []
     for item in sorted(item_to_info):

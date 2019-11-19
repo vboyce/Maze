@@ -11,6 +11,6 @@
 "flex_match"; 1; The lady that filmed the photographer walked off The Movie Set?; 0 1 2 5 3 4 6 7 8 9 10
 "flex_match"; 1; The lady that filmed the photographer after lunch walked off the movie set.; 0 1 2 5 3 4 11 12 6 7 8 9 10
 "permute"; 2; The car jumped.; 0 1 2
-"permute"; 2; Jump the car!; 2 0 1
+"permute"; 2; Jump the car!; 0 2 1
 "format"; 0; In 1857, MIT was a "founded" I think...; 0 1 2 3 4 5 6 7
-"format"; 0; In 1945, WWII ENDED IN ALL #*CAPS!!; 0 1 2 3 4 5 6
+"format"; 0; In 1945, WWII ENDED WITH ALL #*CAPS!! YAY; 0 1 2 3 4 5 6 7

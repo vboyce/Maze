@@ -1,16 +1,16 @@
-"adverb_high";" 72";"Kim will display the photos she took next month, but she won't show all of them.";"x-x-x soft kingdom else gravel late weak eyes minds, cent hour rural rose sell duty seat.";"0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"
-"adverb_low";" 72";"Kim will display the photos she took last month, but she won't show all of them.";"x-x-x soft kingdom else gravel late weak fund minds, cent hour rural rose sell duty seat.";"0 1 2 3 4 5 6 16 8 9 10 11 12 13 14 15"
-"adverb_high";" 70";"John hired the clerk he will promote last month, but he fired another employee.";"x-x-x beast here admit text sons respond soil unity, cent tree lease discuss alliance.";"0 1 2 3 4 5 6 7 8 9 10 11 12 13"
-"adverb_low";" 70";"John hired the clerk he will promote next month, but he fired another employee.";"x-x-x beast here admit text sons respond thou unity, cent tree lease discuss alliance.";"0 1 2 3 4 5 6 16 8 9 10 11 12 13"
-"filler";" 5";"The roses that Jessica likes grow on the other side of the street.";"x-x-x lungs cent Haste cares deal wish vary wise debt desk thus denied.";"0 1 2 3 4 5 6 7 8 9 10 11 12"
-"filler";" 5";"The quick brown fox jumps over the lazy dog and ate the cheese.";"x-x-x lungs cent haste cares deal wish vary wise debt desk thus denied.";"0 1 2 3 4 5 6 7 8 9 10 11 12"
-"flex_match";" 1";"The lady that the photographer filmed walked off The Movie Set!";"x-x-x sure cash what spirituality loaned growth sold Plus Aided Term!";"0 1 2 3 4 5 6 7 8 9 10"
-"flex_match";" 1";"The lady that the photographer filmed after lunch walked off the movie set?";"x-x-x sure cash what spirituality loaned cycle roads growth sold plus aided term?";"0 1 2 3 4 5 11 12 6 7 8 9 10"
-"flex_match";" 1";"The lady that the photographer talked with walked off The Movie Set.";"x-x-x sure cash what spirituality clause rate growth sold Plus Aided Term.";"0 1 2 3 4 13 14 6 7 8 9 10"
-"flex_match";" 1";"The lady that the photographer talked with after lunch walked off the movie set!";"x-x-x sure cash what spirituality clause rate cycle roads growth sold plus aided term!";"0 1 2 3 4 13 14 11 12 6 7 8 9 10"
-"flex_match";" 1";"The lady that filmed the photographer walked off The Movie Set?";"x-x-x sure cash loaned what spirituality growth sold Plus Aided Term?";"0 1 2 5 3 4 6 7 8 9 10"
-"flex_match";" 1";"The lady that filmed the photographer after lunch walked off the movie set.";"x-x-x sure cash loaned what spirituality cycle roads growth sold plus aided term.";"0 1 2 5 3 4 11 12 6 7 8 9 10"
-"permute";" 2";"The car jumped.";"x-x-x poem thee.";"0 1 2"
-"permute";" 2";"Jump the car!";"x-x-x thee poem!";"0 2 1"
-"format";" 0";"In 1857, MIT was a "founded" I think...";"x-x-x axed, RIMS beam ends "lies" grow tape...";"0 1 2 3 4 5 6 7"
-"format";" 0";"In 1945, WWII ENDED a IN ALL #*CAPS!!";"x-x-x axed, RIMS BEAM ends LIES GROW #*TAPE!!";"0 1 2 3 4 5 6 7"
+[["adverb_high",  72], "Maze", {s:"Kim will display the photos she took next month, but she won't show all of them.", a:"x-x-x feet replied came roller poet army coal broad, acid task enemy bank term step milk."}], 
+[["adverb_low",  72], "Maze", {s:"Kim will display the photos she took last month, but she won't show all of them.", a:"x-x-x feet replied came roller poet army fact broad, acid task enemy bank term step milk."}], 
+[["adverb_high",  70], "Maze", {s:"John hired the clerk he will promote last month, but he fired another employee.", a:"x-x-x drain into sixth edge baby happens sand grown, poet ring reads nations advances."}], 
+[["adverb_low",  70], "Maze", {s:"John hired the clerk he will promote next month, but he fired another employee.", a:"x-x-x drain into sixth edge baby happens thou grown, poet ring reads nations advances."}], 
+[["filler",  5], "Maze", {s:"The roses that Jessica likes grow on the other side of the street.", a:"x-x-x gland cent Avail rails told knew sake poem debt desk into topics."}], 
+[["filler",  5], "Maze", {s:"The quick brown fox jumps over the lazy dog and ate the cheese.", a:"x-x-x gland cent avail rails told knew sake poem debt desk into topics."}], 
+[["flex_match",  1], "Maze", {s:"The lady that the photographer filmed walked off The Movie Set!", a:"x-x-x poem user this appointments invert exists laid Also Asset Hear!"}], 
+[["flex_match",  1], "Maze", {s:"The lady that the photographer filmed after lunch walked off the movie set?", a:"x-x-x poem user this appointments invert kinds enjoy exists laid also asset hear?"}], 
+[["flex_match",  1], "Maze", {s:"The lady that the photographer talked with walked off The Movie Set.", a:"x-x-x poem user this appointments owners anti exists laid Also Asset Hear."}], 
+[["flex_match",  1], "Maze", {s:"The lady that the photographer talked with after lunch walked off the movie set!", a:"x-x-x poem user this appointments owners anti kinds enjoy exists laid also asset hear!"}], 
+[["flex_match",  1], "Maze", {s:"The lady that filmed the photographer walked off The Movie Set?", a:"x-x-x poem user invert this appointments exists laid Also Asset Hear?"}], 
+[["flex_match",  1], "Maze", {s:"The lady that filmed the photographer after lunch walked off the movie set.", a:"x-x-x poem user invert this appointments kinds enjoy exists laid also asset hear."}], 
+[["permute",  2], "Maze", {s:"The car jumped.", a:"x-x-x thou pray."}], 
+[["permute",  2], "Maze", {s:"Jump the car!", a:"x-x-x pray thou!"}], 
+[["format",  0], "Maze", {s:"In 1857, MIT was a "founded" I think...", a:"x-x-x axed, SACS inch thou "shall" nice emit..."}], 
+[["format",  0], "Maze", {s:"In 1945, WWII ENDED IN ALL #*CAPS!! YAY", a:"x-x-x axed, SACS INCH THOU SHALL #*NICE!! EMIT"}], 
