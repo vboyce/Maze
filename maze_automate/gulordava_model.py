@@ -166,7 +166,7 @@ def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntoke
     id_to_badword = {}
     words_in_sentence = []
     keys_in_sentence = []
-    sentence_length = 0
+    sentence_length = -1
     # for auto matching, generate matching
     if match_type == 'auto':
         matching_set = match(sentence_set, 1)  # threshold: 1 for identical words only, less for similar words to be treated as identical words
@@ -175,8 +175,13 @@ def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntoke
     for i in range(len(sentence_set)):
         bad_words.append([])
         words_in_sentence.append(sentence_set[i].split())
-        if match_type == 'index' and len(words_in_sentence[i]) != sentence_length:
-            raise ValueError("Matching failed: in this case the lengths of sentences must be the same")
+        if match_type == 'index':
+            if sentence_length == -1:
+                # first sentence
+                sentence_length = len(words_in_sentence[i])
+            elif len(words_in_sentence[i]) != sentence_length:
+                # not the first sentence, the length does not match with the first sentence
+                raise ValueError("Matching failed: in this case the lengths of sentences must be the same")
         sentence_length = max(sentence_length, len(words_in_sentence[i]))
         keys_in_sentence.append(matching_set[i])
         if len(words_in_sentence[i]) != len(keys_in_sentence[i]):
