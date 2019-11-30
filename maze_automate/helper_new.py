@@ -90,7 +90,7 @@ def get_alts(length, freq):
     length = max(min(length, max_length), min_length)
     alts = LEXICON.get((length, freq))
     if alts is None:
-        print("Trouble finding words with length "+str(length)+ " and frequency "+str(freq))
+        # print("Trouble finding words with length "+str(length)+ " and frequency "+str(freq))
         alts = []
     else:
         random.shuffle(alts)
@@ -101,10 +101,19 @@ def get_alt_nums(word_list):
     ''' given a list of words, returns the average length and average frequency as a tuple'''
     length = 0
     freq = 0
+    freq_cnt = 0
     for raw_word in word_list:  # find individual length, freq
         (word, _, _, _) = strip_punct(raw_word)
         length += len(word)
-        freq += get_unigram_freq(word)
+        freq_val = get_unigram_freq(word)
+        #for provo
+        print(word, freq_val)
+        if freq_val != 0:
+            freq += freq_val
+            freq_cnt += 1
     avg_length = round(length/len(word_list))  # take avg and round
-    avg_freq = round(freq/len(word_list))
+    if freq_cnt > 0:
+        avg_freq = round(freq/freq_cnt)
+    else:
+        avg_freq = 0
     return (avg_length, avg_freq)
