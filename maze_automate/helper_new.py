@@ -107,7 +107,7 @@ def get_alt_nums(word_list):
         length += len(word)
         freq_val = get_unigram_freq(word)
         #for provo
-        print(word, freq_val)
+        # print(word, freq_val)
         if freq_val != 0:
             freq += freq_val
             freq_cnt += 1

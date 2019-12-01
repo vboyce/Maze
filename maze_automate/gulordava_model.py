@@ -51,8 +51,8 @@ def update_sentence(word, input_word, model, hidden, dictionary):
     parts = word_tokenize(word) #get list of tokens
     for part in parts:
         token = dictionary_corpus.tokenize_str(dictionary, part)[0] #get id of token
-        # if part not in dictionary.word2idx:
-        #    print("Good word "+part+" is unknown") #error message
+        if part not in dictionary.word2idx:
+            print("Good word "+part+" is unknown") #error message
         input_word.fill_(token.item()) #fill with value of token
         output, hidden = model(input_word, hidden) #do the model thing
         word_weights = output.squeeze().div(1.0).exp().cpu() #process output into weights
@@ -70,13 +70,13 @@ def get_surprisal(surprisals, dictionary, word, good_bad):
     (word, _, _, _) = strip_punct(word)
     token = dictionary_corpus.tokenize_str(dictionary, word)[0] #take first token of word
     if word not in dictionary.word2idx:
-        #if good_bad == 0:
-        #    print("Good word " + word + " is unknown")
-        #else:
-        #    print("Bad word " + word + " is unknown")
+        if good_bad == 0:
+           print("Good word " + word + " is unknown")
+        else:
+           print("Bad word " + word + " is unknown")
         return -1 #use -1 as an error code
-    if good_bad == 0:
-        print(word, surprisals[token].item())
+    # if good_bad == 0:
+    #     print(word, surprisals[token].item())
     return surprisals[token].item() #numeric value of word's surprisal
 
 def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, dictionary, used):
@@ -102,11 +102,11 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
             cnt += 1
     if cnt == 0 or min_rel == -1:  # good words are all unknown or relative minimum is not specified, using the absolute minimum
         minimum = min_abs
-        # print("Minimum threshold = "+str(minimum))
+        print("Minimum threshold = "+str(minimum))
     else:  # use the higher minimum between the absolute and the relative
         base_surprisal /= cnt
         minimum = max(min_abs, base_surprisal + min_rel)
-        # print("Minimum threshold = "+str(minimum))
+        print("Minimum threshold = "+str(minimum))
     
     best_word = ""
     best_surprisal = 0
@@ -136,7 +136,7 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
             best_surprisal = min_surprisal
         if i > 100:
             break  # out of infinite loop
-    # print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal))  # return best we have
+    print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal))  # return best we have
     return best_word
 
 
@@ -162,7 +162,7 @@ def do_sentence_set(sentence_set, matching_set, model, device, dictionary, ntoke
             print("inconsistent lengths!!")  #complain if they aren't the same length
         words.append(sent_words) # make a new list with the sentences as word lists
     '''
-    print(sentence_set)
+    # print(sentence_set)
     id_to_pos = {}
     pos_to_word = {}
     pos_to_surprisals = {}
