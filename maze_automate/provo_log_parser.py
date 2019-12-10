@@ -11,15 +11,17 @@ with open("provo.csv", 'r') as tsv:
                 continue
             item_to_info[row[0]][0].append(row[1])  # condition generated as sentence_id
             item_to_info[row[0]][1].append(row[5].strip().split(" "))  # add sentence to the list
+            item_to_info[row[0]][2].append(row[5].strip())
         else:
-            item_to_info[row[0]] = [[row[1]], [row[5].strip().split(" ")]]  # new item num, add a new entry
+            item_to_info[row[0]] = [[row[1]], [row[5].strip().split(" ")], [row[5].strip()]]  # new item num, add a new entry
+        print(item_to_info[row[0]][2])
 
 '''Reads the provo_log file and matches the positions with the words and the information'''
 from helper_new import strip_punct
 line = 0
 id = 0
 data = []
-with open("provo_log.txt", 'r') as log:
+with open("provo_log2.txt", 'r') as log:
     for row in log:
         line += 1
         if line <= 3:
@@ -45,8 +47,8 @@ for strid in sorted(ids):
             if j >= len(item_to_info[str(id)][1][i]):
                 continue
             (word, _, _, _) = strip_punct(item_to_info[str(id)][1][i][j])
-            print(id, j, i, word, data[line])
-            if data[line][0] == word and len(data[line][1]) > 2:
+            # print(id, j, i, word, data[line])
+            if data[line][0] == word and len(data[line][1]) > 5:
                 # data should be "word surprisal"
                 item_to_surprisal[id][i].append(data[line][1])
                 line += 1
@@ -57,24 +59,27 @@ for strid in sorted(ids):
             if j >= len(item_to_info[str(id)][1][i]):
                 continue
             (word, _, _, _) = strip_punct(item_to_info[str(id)][1][i][j])
-            print(id, j, i, word, data[line])
-            if data[line][0] == word and len(data[line][1]) <= 2:
+            # print(id, j, i, word, data[line])
+            if data[line][0] == word and len(data[line][1]) <= 5:
                 # data should be "word freq"
                 item_to_freq[id][i].append(data[line][1])
                 line += 1
             else:
                 item_to_freq[id][i].append("")
-    print(item_to_freq[id])
+    # print(item_to_freq[id])
 
 '''Saves results to a file back to csv format'''
-with open("provo_final.csv", 'w') as f:
+with open("provo_final2.csv", 'w') as f:
+    writer = csv.writer(f)
     for sentence_set_id in range(1, len(item_to_info) + 1):
         for sentence_id in range(len(item_to_info[str(sentence_set_id)][1])):
             for word_id in range(len(item_to_info[str(sentence_set_id)][1][sentence_id])):
-                f.write(str(sentence_set_id) + ",")
-                f.write(str(sentence_id + 1) + ",")
-                f.write(str(word_id + 1) + ",")
-                f.write('"' + item_to_info[str(sentence_set_id)][1][sentence_id][word_id] + '",')
-                f.write('"' + " ".join(item_to_info[str(sentence_set_id)][1][sentence_id]) + '",')
-                f.write(str(item_to_freq[sentence_set_id][sentence_id][word_id]) + ",")
-                f.write(str(item_to_surprisal[sentence_set_id][sentence_id][word_id]) + ",\n")
+                row = []
+                row.append(sentence_set_id)
+                row.append(sentence_id + 1)
+                row.append(word_id + 1)
+                row.append(item_to_info[str(sentence_set_id)][1][sentence_id][word_id])
+                row.append(item_to_info[str(sentence_set_id)][2][sentence_id])
+                row.append(item_to_freq[sentence_set_id][sentence_id][word_id])
+                row.append(item_to_surprisal[sentence_set_id][sentence_id][word_id])
+                writer.writerow(row)

@@ -34,6 +34,8 @@ def get_unigram_freq(word):
     # using wordfreq
     if which_freq == "wordfreq":
         raw_freq = zipf_frequency(word,'en')  # use wordfreq to get log frequency
+        #for provo
+        print(word, raw_freq)
         freq = math.floor(math.log(10)*raw_freq)  # rescale and floor to match a bin
         freq = max(min(freq, 11), 2)  # constrain freq within the range 2...11
         return freq
