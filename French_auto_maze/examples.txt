@@ -1,0 +1,5 @@
+"filler"; 1; Petit Poulet est un poulet tout à fait normal.
+"filler"; 2; Il lit les nouvelles.
+"filler"; 3; Il n'est ni intelligent ni stupide. 
+"type_a"; 4; Il est un petit chien.
+"type_b"; 4; Il est un gros chien.
