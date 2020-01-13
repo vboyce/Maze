@@ -1,16 +1,21 @@
-[["adverb_high",  72], "Maze", {s:"Kim will display the photos she took next month, but she won't show all of them.", a:"x-x-x feet replied came roller poet army coal broad, acid task enemy bank term step milk."}], 
-[["adverb_low",  72], "Maze", {s:"Kim will display the photos she took last month, but she won't show all of them.", a:"x-x-x feet replied came roller poet army fact broad, acid task enemy bank term step milk."}], 
-[["adverb_high",  70], "Maze", {s:"John hired the clerk he will promote last month, but he fired another employee.", a:"x-x-x drain into sixth edge baby happens sand grown, poet ring reads nations advances."}], 
-[["adverb_low",  70], "Maze", {s:"John hired the clerk he will promote next month, but he fired another employee.", a:"x-x-x drain into sixth edge baby happens thou grown, poet ring reads nations advances."}], 
-[["filler",  5], "Maze", {s:"The roses that Jessica likes grow on the other side of the street.", a:"x-x-x gland cent Avail rails told knew sake poem debt desk into topics."}], 
-[["filler",  5], "Maze", {s:"The quick brown fox jumps over the lazy dog and ate the cheese.", a:"x-x-x gland cent avail rails told knew sake poem debt desk into topics."}], 
-[["flex_match",  1], "Maze", {s:"The lady that the photographer filmed walked off The Movie Set!", a:"x-x-x poem user this appointments invert exists laid Also Asset Hear!"}], 
-[["flex_match",  1], "Maze", {s:"The lady that the photographer filmed after lunch walked off the movie set?", a:"x-x-x poem user this appointments invert kinds enjoy exists laid also asset hear?"}], 
-[["flex_match",  1], "Maze", {s:"The lady that the photographer talked with walked off The Movie Set.", a:"x-x-x poem user this appointments owners anti exists laid Also Asset Hear."}], 
-[["flex_match",  1], "Maze", {s:"The lady that the photographer talked with after lunch walked off the movie set!", a:"x-x-x poem user this appointments owners anti kinds enjoy exists laid also asset hear!"}], 
-[["flex_match",  1], "Maze", {s:"The lady that filmed the photographer walked off The Movie Set?", a:"x-x-x poem user invert this appointments exists laid Also Asset Hear?"}], 
-[["flex_match",  1], "Maze", {s:"The lady that filmed the photographer after lunch walked off the movie set.", a:"x-x-x poem user invert this appointments kinds enjoy exists laid also asset hear."}], 
-[["permute",  2], "Maze", {s:"The car jumped.", a:"x-x-x thou pray."}], 
-[["permute",  2], "Maze", {s:"Jump the car!", a:"x-x-x pray thou!"}], 
-[["format",  0], "Maze", {s:"In 1857, MIT was a "founded" I think...", a:"x-x-x axed, SACS inch thou "shall" nice emit..."}], 
-[["format",  0], "Maze", {s:"In 1945, WWII ENDED IN ALL #*CAPS!! YAY", a:"x-x-x axed, SACS INCH THOU SHALL #*NICE!! EMIT"}], 
+"adverb_high";" 72";"Kim will display the photos she took next month, but she won't show all of them.";"x-x-x arts century what cyclic coal pure soil chain, farm boat miles core vast ages root.";"0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"
+"adverb_low";" 72";"Kim will display the photos she took last month, but she won't show all of them.";"x-x-x arts century what cyclic coal pure wise chain, farm boat miles core vast ages root.";"0 1 2 3 4 5 6 16 8 9 10 11 12 13 14 15"
+"adverb_high";" 70";"John hired the clerk he will promote last month, but he fired another employee.";"x-x-x hated else gross edge skin existed thou chair, poem eyes focal absence proceeds.";"0 1 2 3 4 5 6 7 8 9 10 11 12 13"
+"adverb_low";" 70";"John hired the clerk he will promote next month, but he fired another employee.";"x-x-x hated else gross edge skin existed soil chair, poem eyes focal absence proceeds.";"0 1 2 3 4 5 6 16 8 9 10 11 12 13"
+"filler";" 5";"The roses that Jessica likes grow on the other side of the street.";"x-x-x risen else Sinus fuels arts told glad need debt bent this define.";"0 1 2 3 4 5 6 7 8 9 10 11 12"
+"filler";" 5";"The quick brown fox jumps over the lazy dog and ate the cheese.";"x-x-x risen else sinus fuels arts told glad need debt bent this define.";"0 1 2 3 4 5 6 7 8 9 10 11 12"
+"flex_match";" 1";"The lady that the photographer filmed walked off The Movie Set!";"x-x-x anti bone whom shortcomings idioms heaven seek Does Dried Lose!";"0 1 2 3 4 5 6 7 8 9 10"
+"flex_match";" 1";"The lady that the photographer filmed after lunch walked off the movie set?";"x-x-x anti bone whom shortcomings idioms fixed shook heaven seek does dried lose?";"0 1 2 3 4 5 11 12 6 7 8 9 10"
+"flex_match";" 1";"The lady that the photographer talked with walked off The Movie Set.";"x-x-x anti bone whom shortcomings palace rise heaven seek Does Dried Lose.";"0 1 2 3 4 13 14 6 7 8 9 10"
+"flex_match";" 1";"The lady that the photographer talked with after lunch walked off the movie set!";"x-x-x anti bone whom shortcomings palace rise fixed shook heaven seek does dried lose!";"0 1 2 3 4 13 14 11 12 6 7 8 9 10"
+"flex_match";" 1";"The lady that filmed the photographer walked off The Movie Set?";"x-x-x anti bone idioms whom shortcomings heaven seek Does Dried Lose?";"0 1 2 5 3 4 6 7 8 9 10"
+"flex_match";" 1";"The lady that filmed the photographer after lunch walked off the movie set.";"x-x-x anti bone idioms whom shortcomings fixed shook heaven seek does dried lose.";"0 1 2 5 3 4 11 12 6 7 8 9 10"
+"permute";" 2";"The car jumped.";"x-x-x thou hath.";"0 1 2"
+"permute";" 2";"Jump the car!";"x-x-x hath thou!";"0 2 1"
+"format";" 3";"In 1857, MIT was a "founded" I think...";"x-x-x , WAND desk grew "exist" snow slay...";"0 1 2 3 4 5 6 7"
+"format";" 3";"In 1945, WWII ENDED WITH ALL #*CAPS!! YAY";"x-x-x , WAND DESK GREW EXIST #*SNOW!! SLAY";"0 1 2 3 4 5 6 7"
+"single";" 0";"This is a test sentence.";"x-x-x lady died foot violence.";"0 1 2 3 4"
+"smart";" 4";"The dancer that the audience loved ignored the director’s instructions.";"x-x-x revert anti your computer plane inquiry goes skateboarder unemployment.";"0 1 2 3 4 5 6 7 8 9"
+"smart";" 4";"The dancer that the audience loved ignored the director's instructions.";"x-x-x lagoon anti hear thoughts rapid tobacco upon quantities publications.";"0 1 2 3 4 5 6 7 8 9"
+"smart";" 4";"The dancer that the audience loved ignored the directors instructions.";"x-x-x lagoon anti hear thoughts rapid tobacco upon quantities publications.";"0 1 2 3 4 5 6 7 8 9"
+"just_smart";" 6";"The dancer that the audience loved ignored the director’s instructions.";"x-x-x revert anti your computer plane inquiry goes skateboarder unemployment.";"0 1 2 3 4 5 6 7 8 9"

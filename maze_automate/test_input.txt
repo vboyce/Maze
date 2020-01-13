@@ -15,3 +15,7 @@
 "format"; 3; In 1857, MIT was a "founded" I think...; 0 1 2 3 4 5 6 7
 "format"; 3; In 1945, WWII ENDED WITH ALL #*CAPS!! YAY; 0 1 2 3 4 5 6 7
 "single"; 0; This is a test sentence.; 0 1 2 3 4
+"smart"; 4; The dancer that the audience loved ignored the director’s instructions.; 0 1 2 3 4 5 6 7 8 9
+"smart"; 4; The dancer that the audience loved ignored the director's instructions.; 0 1 2 3 4 5 6 7 8 9
+"smart"; 4; The dancer that the audience loved ignored the directors instructions.; 0 1 2 3 4 5 6 7 8 9
+"just_smart"; 6; The dancer that the audience loved ignored the director’s instructions.; 0 1 2 3 4 5 6 7 8 9

@@ -34,8 +34,8 @@ def get_unigram_freq(word):
     # using wordfreq
     if which_freq == "wordfreq":
         raw_freq = zipf_frequency(word,'en')  # use wordfreq to get log frequency
-        #for provo
-        print(word, raw_freq)
+        # for provo
+        # print(word, raw_freq)
         freq = math.floor(math.log(10)*raw_freq)  # rescale and floor to match a bin
         freq = max(min(freq, 11), 2)  # constrain freq within the range 2...11
         return freq
@@ -73,15 +73,6 @@ def strip_punct(word):
         case = 0 #all lowercase
     return (word.lower(), prefix, suffix, case)
 
-'''
-def strip_end_punct(word):
-    take a word, return tuple of word without last end punctuation,
-    if any, and end punctuation
-    if word[-1] in [".", ",", "!", "?"]:
-        return (word[:-1], word[-1])
-    return(word, "")
-'''
-
 min_length = 4  # changeable
 max_length = 15
 
@@ -92,7 +83,7 @@ def get_alts(length, freq):
     length = max(min(length, max_length), min_length)
     alts = LEXICON.get((length, freq))
     if alts is None:
-        # print("Trouble finding words with length "+str(length)+ " and frequency "+str(freq))
+        print("Trouble finding words with length "+str(length)+ " and frequency "+str(freq))
         alts = []
     else:
         random.shuffle(alts)
@@ -108,7 +99,7 @@ def get_alt_nums(word_list):
         (word, _, _, _) = strip_punct(raw_word)
         length += len(word)
         freq_val = get_unigram_freq(word)
-        #for provo
+        # for provo
         # print(word, freq_val)
         if freq_val != 0:
             freq += freq_val

@@ -126,8 +126,7 @@ def run(which_model, freq, sentences_keys, num_to_test, min_abs, min_rel, duplic
         if which_model == "gulordava":
             bad = gulordava_model.do_sentence_set(sentences, keys, model, device, dictionary, ntokens, num_to_test, min_abs, min_rel, duplicate_words, match_type)
         elif which_model == "one_b":
-            #TODO: refector and incorporate word keys feature (word matching)
-            bad = one_b_model.do_sentence_set(sentences, sess, t, dictionary)
+            bad = one_b_model.do_sentence_set(sentences, keys, sess, t, dictionary, num_to_test, min_abs, min_rel, duplicate_words, match_type)
         for j, _ in enumerate(sentences): #record results
             end_result[sentences[j]] = bad[j]
     return end_result

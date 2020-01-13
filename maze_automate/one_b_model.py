@@ -6,9 +6,8 @@ import tensorflow as tf
 import numpy as np
 from google.protobuf import text_format
 from one_b_code import data_utils
+from helper_new import get_alt_nums, get_alts, strip_punct
 
-
-from helper_new import get_alt_nums, get_alts, strip_end_punct
 #### One b specific ###
 which_freq = ""
 def load_model(freq):
@@ -105,42 +104,67 @@ def get_surprisal(softmax, dictionary, word):
         return -1 #use -1 as an error code
     return -1 * np.log2(softmax[0][token]) #numeric value of word's surprisal
 
-def find_bad_enough(num_to_test, minimum, word_list, surprisals_list, dictionary):
-    '''will return the word that is at least minimum surprisal for all sentences. if goes through num_to_test words
-    without finding a bad enough, returns the worst it's seen (worst = highest min)
-    inputs: num_to_test - an integer for how many candidate words to try,
-    minimum = minimum suprisal to look for (will return first word with at least this surprisal for all sentences)
+def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, dictionary, used):
+    '''Finds an adequate distractor word
+    either the first word that meets minimum surprisal for all sentences or the best if
+    it tries num_to_test and none meet the minimum
+    Arguments:
+    num_to_test = an integer for how many candidate words to try
+    minimum = minimum surprisal desired
+    (will return first word with at least this surprisal for all sentences)
     word_list = the good words that occur in this position
-    surprisals_list = distribution of probabilities (from update_sentence)
-    dictionary = word to word id lookup
-    returns: a word that meets the surprisal target or the best option if num_to_test have been tested and none have met minimum'''
+    surprisals_list = distribution of surprisals (from update_sentence)
+    dictionary = word to word_id look up
+    returns: chosen distractor word'''
+    # find average surprisal for the good words
+    base_surprisal = 0
+    cnt = 0
+    for j in range(len(surprisals_list)):
+        surprisal = get_surprisal(surprisals_list[j], dictionary, word_list[j], 0) #get good word surprisal
+        if (surprisal != -1):
+            # ignore those which are unknown
+            base_surprisal += surprisal
+            cnt += 1
+    if cnt == 0 or min_rel == -1:  # good words are all unknown or relative minimum is not specified, using the absolute minimum
+        minimum = min_abs
+        # print("Minimum threshold = "+str(minimum))
+    else:  # use the higher minimum between the absolute and the relative
+        base_surprisal /= cnt
+        minimum = max(min_abs, base_surprisal + min_rel)
+        # print("Minimum threshold = "+str(minimum))
+
     best_word = ""
     best_surprisal = 0
-    (length, freq) = get_alt_nums(word_list) #get average length, frequency
-    options_list = []
-    i = 0
+    (length, freq) = get_alt_nums(word_list)  # get average length, frequency
+    options_list = get_alts(length, freq)
+    i = 1
     k = 0
     while k < num_to_test:
-        while k == len(options_list): # if we run out of options
-            options_list.extend(get_alts(length, freq + i))# find words with that length and frequency
-            if which_freq == "wordfreq":
-                options_list.extend(get_alts(length, freq - i))
-            i += 1 #if there weren't any, try a slightly higher frequency
+        while k == len(options_list):  # if we run out of options
+            options_list.extend(get_alts(length, freq + i))  # find words with that length and frequency
+            options_list.extend(get_alts(length, freq - i))
+            i += 1  # if there weren't any, try a slightly higher frequency
+            if i > 100:  # dummy value higher than we expect any frequency to be
+                break  # out of infinite loop
         word = options_list[k]
         k += 1
-        min_surprisal = 100 #dummy value higher than we expect any surprisal to actually be
-        for j, _ in enumerate(surprisals_list): # for each sentence
-            surprisal = get_surprisal(surprisals_list[j], dictionary, word) #find that word
-            min_surprisal = min(min_surprisal, surprisal) #lowest surprisal so far
-        if min_surprisal >= minimum: #if surprisal in each condition is adequate
+        if word in used:  # word has been used before in the sentence
+            continue
+        min_surprisal = 100  # dummy value higher than we expect any surprisal to actually be
+        for j in range(len(surprisals_list)): # for each sentence
+            surprisal = get_surprisal(surprisals_list[j], dictionary, word, 1)  # find that word
+            min_surprisal = min(min_surprisal, surprisal)  # lowest surprisal so far
+        if min_surprisal >= minimum:  # if surprisal in each condition is adequate
             return word # we found a word to use and are done here
-        if min_surprisal > best_surprisal: #if it's the best option so far, record that
+        if min_surprisal > best_surprisal:  # if it's the best option so far, record that
             best_word = word
             best_surprisal = min_surprisal
-    print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal)) #return best we have
+        if i > 100:
+            break  # out of infinite loop
+    # print("Couldn't meet surprisal target, returning with surprisal of "+str(best_surprisal))  # return best we have
     return best_word
 
-def do_sentence_set(sentence_set, sess, t, dictionary):
+def do_sentence_set(sentence_set, keys, sess, t, dictionary, num_to_test, min_abs, min_rel, duplicate_words, match_type):
     '''Gets distractors for a set of sentences that all get the same distractors
     arguments: sentence_set = a list of sentences (all equal length)
     sess, t = from load_model
