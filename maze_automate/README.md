@@ -135,10 +135,12 @@ This may take a few minutes to run, but when it finishes you can check that the 
 ## Basic Usage
 
 ### Set up a materials file
-See test_input.txt for a sample. Materials should be in semi-colon delimited format. 
- - Column 1: condition. This is not used at all for distractor generation, but is copied to output. For ibex format output, this is treated as the "condition"/group. Good to use to indicate practice/filler/which type of critical item.
- - Column 2: item number. Sentences with the same item number will recieve the same sequence of distractors (and need to be the same length). 
- - Column 3: The good sentence. 
+Materials should be in semi-colon delimited format. The input format is as follows (see test_input.txt as an example):
+"[label for sentence set]"; [ID for sentence set]; [Sentence]; [Word order]
+ - The label for sentence set (condition) is purely for ease of the researcher, to give an easy categorization of the sentence sets. Examples include "adverb_high" and "adverb_low". This is not used at all for distractor generation, but is copied to output. For ibex format output, this is treated as the "condition"/group. Good to use to indicate practice/filler/which type of critical item.
+ - ID for sentence set (item number) is more important programmatically. The program will feed the sentences by increasing ID, and will group together the same IDs as belonging in the same set. The IDs can be any integer, for example 0, 1, 70 and 72.
+ - The sentence follows. The format is plain text, capitalization allowed.
+ - The word order is an optional part of the input format, telling the program which words to group together to generate the same distractor word. For example, the same word "filmed" appearing at different locations in each sentence may be given the same word ID so that the same distractor word is generated for the same word "filmed". An example would be 0 1 2 3 4 5, and 0 2 1 4 3 5.
  
 ### Run
 This can be computationally expensive to run, especially using the Jozefowicz model. If you have access to a computational cluster, we recommend using that. Otherwise, plan on running this overnight, or some other time when you don't need your laptop for a few hours. For testing, running a few sentences on a laptop should work okay. (Time is roughly linear in number of sentences, so you can guess how long a full set of materials will take by running a few sentences as a test and then multiplying.)
@@ -154,21 +156,75 @@ You can see the argument options with
 ./automate.py -h
 ```
 Arguments:
- - input (required) -- file with materials
- - output (required) -- file to write output to
- - model (default: gulordava) --  which model to use: gulordava or one_b 
- - freq (default: ngrams) -- which source to use for word frequency info: ngrams or wordfreq 
- - format (default: basic) -- which format to use for the output: basic or ibex 
+ - input: location and name of the input file, for example test_input.txt
+ - output: location and name of the output file, for example output_location.txt
 
-Example usage: to run using the one_b model, with wordfreq frequency and ibex output format, you'd run
+Optional arguments:
+ - ```--model```: choice of the model to be run on the sentences, choose between ```--model=gulordava``` (which is the default) and ```--model=one_b``` (which has not been refactored)
+ - ```--freq```: choice of the frequency data to accompany the model, choose between ```--freq=ngrams``` (which is the default) and ```--freq=wordfreq```
+ - ```--format```: output file format, choose between ```--format=ibex``` and ```--format=basic``` (which is the default; csv file)
+ - ```--num_to_test```: number of words to test in the process of finding bad words, for example ```--num_to_test=100```
+ - ```--min_abs```: absolute threshold of surprisal for a bad word, for example ```--min_abs=21``` (which is the default, meaning that we are aiming for bad words with at least a surprisal value of 21 throughout the whole process
+ - ```--min_rel```: relative threshold of surprisal for a bad word to compare with the good word, for example ```--min_rel=5``` and ```--min_rel=-1``` (which is the default and indicates that relative threshold is not used)
+ - ```--duplicate_words```, indicating whether duplicate words are allowed within a particular output sentence. The default value is false, and if the parameter is included as ```--duplicate_words```, then the value becomes true.
+ - ```--matching```: choice of matching method to be used for each sentence in a sentence set, choose between ```--matching=index``` (which is the default), ```--matching=manual``` and ```--matching=auto```
+
+Example usage:
+To run using the one_b model, with wordfreq frequency and ibex output format, you'd run
 ```
 ./automate.py test_input.txt output_location.txt --model one_b --freq wordfreq --format ibex
 ```
 
-Advice on arguments:
+### Note for threshold:
+The following are example cases to demystify absolute threshold and relative threshold.
+
+```--min_abs=21 --min_rel=-1```: The threshold of surprisal to find bad words is constantly at 21.
+
+```--min_abs=21 --min_rel=5```: The threshold of surprisal to find bad words depends on each original word, and is whatever is more between 21 and (original word's surprisal + 5).
+
+### Note for matching:
+```--matching=index``` treats words at the same index as the same group and generates one bad word for the group of words. Each sentence in a set must have the same length. For example,
+>This is sentence one.
+
+>Then, the second sentence.
+
+One bad word will be generated for [this, then], [is, the], [sentence, second], [one, sentence].
+
+
+```--matching=manual``` treats words that are specified to have the same ID as the same group and generates one bad word for the group of words. Each sentence does not need to have the same length. The first words of the sentences must not match with words from elsewhere in the sentences. An example for this option is,
+>This is sentence one. 0 1 2 3
+
+>Then, the second sentence comes. 0 1 3 2 4
+
+One bad word will be generated for 0:[this, then], 1:[is, the], 2:[sentence, sentence], 3:[one, second], 4:[comes].
+
+
+```--matching=auto``` treats identical words as being in the same group and generates one bad word for the group of words. The first words of the sentences must not match with words from elsewhere in the sentences. An example for this option is,
+>This is sentence one.
+
+>That is the second sentence.
+
+One bad word will be generated for [this], [that], [is, is], [the], [sentence, sentence], [one], [second].
+
+### Advice on arguments:
  - model: Use one you did set-up for. (If you're just trying it out, we recommend Gulordava.)
  - freq: Ngrams using frequency information extracted from Google ngrams and was used for the Maze Made Easy experiments, so it's been tested. However, it cannot handle OOV words in materials at all. Wordfreq uses <https://pypi.org/project/wordfreq/>, which is robust to OOV words. Wordfreq requires that [wordfreq](https://pypi.org/project/wordfreq/) be installed. Each has some idiosyncratic biases based on the corpora they were trained on.
  - format: If you're going to run the experiments using Ibex, use ibex format, which is ready to be copied into the items section of a Ibex data file. If you will be checking materials or running materials with a different framework, use the basic format, which is semicolon delimited (like input format, but with an additional column for the distractors).
+
+### Log format (printed on terminal):
+While running maze_automate, the terminal will print on screen according to the following format:
+```
+Number of bad words to test = N
+(not wordfreq) – prints if the model used is not wordfreq
+
+(Good word ‘…’ unknown)
+Minimum threshold = X
+(Candidate bad word ‘…’ unknown)
+(Couldn't meet surprisal target, returning with surprisal of Y)
+```
+
+### Output format (output_location.txt):
+The output format depends on whether the user specifies ```--format=ibex``` or ```--format=basic```, however it generally follows the same format as the input.
 
 ## Advanced options
 
