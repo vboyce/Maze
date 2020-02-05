@@ -136,7 +136,8 @@ This may take a few minutes to run, but when it finishes you can check that the 
 
 ### Set up a materials file
 Materials should be in semi-colon delimited format. The input format is as follows (see test_input.txt as an example):
-"[label for sentence set]"; [ID for sentence set]; [Sentence]; [Word order]
+>"[label for sentence set]"; [ID for sentence set]; [Sentence]; [Word order]
+
  - The label for sentence set (condition) is purely for ease of the researcher, to give an easy categorization of the sentence sets. Examples include "adverb_high" and "adverb_low". This is not used at all for distractor generation, but is copied to output. For ibex format output, this is treated as the "condition"/group. Good to use to indicate practice/filler/which type of critical item.
  - ID for sentence set (item number) is more important programmatically. The program will feed the sentences by increasing ID, and will group together the same IDs as belonging in the same set. The IDs can be any integer, for example 0, 1, 70 and 72.
  - The sentence follows. The format is plain text, capitalization allowed.
