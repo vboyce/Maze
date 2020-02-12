@@ -114,15 +114,18 @@ def find_bad_enough(num_to_test, min_abs, min_rel, word_list, surprisals_list, d
     (length, freq) = get_alt_nums(word_list)  # get average length, frequency
     options_list = get_alts(length, freq)
     i = 1
-    k = 0
+    k = 0 #counter for number of words we've actually tested
+    j =0 #counter for where we are in the list
     while k < num_to_test:
-        while k == len(options_list):  # if we run out of options
+        while j == len(options_list):  # if we run out of options
             options_list.extend(get_alts(length, freq + i))  # find words with that length and frequency
             options_list.extend(get_alts(length, freq - i))
             i += 1  # if there weren't any, try a slightly higher frequency
             if i > 100:  # dummy value higher than we expect any frequency to be
                 break  # out of infinite loop
-        word = options_list[k]
+        while options_list[j] not in dictionary.word2idx: #skip words that the model doesn't know
+            j+=1
+        word = options_list[j] 
         k += 1
         if word in used:  # word has been used before in the sentence
             continue
