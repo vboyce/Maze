@@ -1,0 +1,13 @@
+#These are required
+min_delta: 10
+min_abs: 25
+num_to_test: 200
+model_loc: "gulordava"
+model_class: "gulordava_model"
+dictionary_loc: "wordfreq_distractor"
+dictionary_class: "wordfreq_English_dict"
+exclude_words: "exclude.txt"
+#include_words: gulordava_data/vocab.txt
+include_words: None
+threshold_loc: "wordfreq_distractor"
+threshold_name: "get_thresholds"

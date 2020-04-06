@@ -13,9 +13,6 @@ parser.add_argument('--model',
                     choices=["gulordava", "one_b", "both"],
                     default="gulordava",
                     help='which models to set up for (gulordava or one_b) or both')
-parser.add_argument('--freq', choices=["ngrams", "wordfreq", "both"],       
-                    default="ngrams",
-                    help='which frequency source to set-up, either ngrams (our scraping of the google ngrams corpus) or the wordfreq module')
 
 args = parser.parse_args()
 # need to check that all needed modules are installed
@@ -29,7 +26,7 @@ def download_gulordava():
         make_dirs(['gulordava_code', 'gulordava_data'])
         if not os.path.exists('gulordava_code/utils.py'):
             wget.download('https://raw.githubusercontent.com/facebookresearch/colorlessgreenRNNs/master/src/language_models/utils.py', 'gulordava_code/utils.py')
-        if not os.path.exists('model.py'):
+        if not os.path.exists('gulordava_code/model.py'):
             wget.download('https://raw.githubusercontent.com/facebookresearch/colorlessgreenRNNs/master/src/language_models/model.py', 'model.py')
         if not os.path.exists('gulordava_data/hidden650_batch128_dropout0.2_lr20.0.pt'):
             wget.download('https://dl.fbaipublicfiles.com/colorless-green-rnns/best-models/English/hidden650_batch128_dropout0.2_lr20.0.pt', 'gulordava_data/hidden650_batch128_dropout0.2_lr20.0.pt')
@@ -107,9 +104,4 @@ elif args.model=="one_b":
 elif args.model=="both":
     download_gulordava()
     download_one_b()
-if args.freq=="ngrams":
-    pass
-elif args.freq=="wordfreq":
-    check_pkgs(['wordfreq'])
-elif args.freq=="both":
-    check_pkgs(['wordfreq'])
+check_pkgs(['wordfreq'])
