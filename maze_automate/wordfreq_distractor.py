@@ -23,13 +23,13 @@ class wordfreq_English_dict(distractor_dict):
         exclusions = []
 
         if exclude is not None:
-            with open(exclude, "r") as f:
+            with open(exclude, "r", encoding="utf-8") as f:
                 for line in f:
                     word = line.strip()
                     exclusions.append(word)
         inclusions = []
         if include is not None:
-            with open(include, "r") as f:
+            with open(include, "r", encoding="utf-8") as f:
                 for line in f:
                     word = line.strip()
                     inclusions.append(word)

@@ -29,4 +29,4 @@ Returns: none'''
 if args.parameters==None:
     run_stuff(args.input, args.output, outformat=args.format)
 else:
-    run_stuff(args.input, args.output, params=args.parameters, outformat=args.format)
+    run_stuff(args.input, args.output, parameters=args.parameters, outformat=args.format)
