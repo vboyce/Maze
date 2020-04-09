@@ -84,14 +84,14 @@ class Label:
                         min_surp = min(min_surp, dist_surp)  # but we should keep track of the lowest anyway
                 if good:  # stayed above all surprisal thresholds
                     self.distractor = dist  # we're done, yay!
-                    return dist
+                    return self.distractor
                 if min_surp > best_min_surp:  # best so far
                     best_min_surp = min_surp
                     best_word = dist
         logging.warning("Could not find a word to meet threshold for item %s, label %s, returning %s with %d min surp instead",
             self.id, self.lab, best_word, best_min_surp)
         self.distractor = best_word
-        return dist
+        return self.distractor
 
 
 class Sentence_Set:

@@ -3,7 +3,7 @@ import logging
 from nltk.tokenize import word_tokenize
 from gulordava_code import dictionary_corpus
 from lang_model import lang_model
-
+import utils
 import sys  # because pickle is dumb and can't deal with things in other locations
 
 sys.path.insert(0, './gulordava_code')
@@ -26,7 +26,7 @@ class gulordava_model(lang_model):
 
     def tokenize(self, word):
         """ returns a list of tokens according to the models desired tokenization scheme"""
-        return word_tokenize(word)
+        return utils.tokenize(word)
 
     def empty_sentence(self):
         """Initialize a new sentence -- starter hidden state etc"""

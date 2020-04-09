@@ -1,11 +1,11 @@
 import logging
-
+from nltk.tokenize import word_tokenize
 def strip_punct(word):
     '''take a word, return word with start and end punctuation removed'''
     for i in range(len(word)):
         if word[i].isalnum():
             break
-    for j in range(len(word) - 1, 0, -1):
+    for j in range(len(word) - 1, -1, -1):
         if word[j].isalnum():
             break
     word = word[i:j + 1]
@@ -18,7 +18,7 @@ def copy_punct(word,distractor):
         if word[i].isalnum():
             break
     prefix=word[0:i]
-    for j in range(len(word) - 1, 0, -1):
+    for j in range(len(word) - 1, -1, -1):
         if word[j].isalnum():
             break
     suffix=word[j+1:]
@@ -32,3 +32,23 @@ def copy_punct(word,distractor):
     distractor=prefix+distractor+suffix
     return distractor
 
+def tokenize(word):
+    """because someone needs to pull off those initial single quotes"""
+    tokens=[]
+    end_tokens=[]
+    for i in range(len(word)):
+        if word[i].isalnum():
+            break
+        else:
+            tokens.append(word[i])
+    for j in range(len(word) - 1, -1, -1):
+        if word[j].isalnum():
+            break
+        else:
+            end_tokens.append(word[j])
+    end_tokens.reverse()
+    word = word[i:j + 1]
+    word_tokens=word_tokenize(word)
+    tokens.extend(word_tokens)
+    tokens.extend(end_tokens)
+    return tokens
