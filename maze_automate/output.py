@@ -31,6 +31,6 @@ def save_ibex(outfile, all_sentences):
         for sentence_set in all_sentences.values():
             for sentence in sentence_set.sentences:
                 f.write('[["'+sentence.tag+'", ')
-                f.write(str(sentence.id)+'], "Maze", {s:"')
+                f.write(repr(sentence.id)+'], "Maze", {s:"')
                 f.write(sentence.word_sentence+'", a:"')
                 f.write(sentence.distractor_sentence+'"}], \n')
