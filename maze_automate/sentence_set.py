@@ -1,5 +1,5 @@
 import logging
-from utils import copy_punct
+from utils import copy_punct, strip_punct
 
 
 def no_duplicates(my_list):
@@ -70,11 +70,14 @@ class Label:
         # get us some distractor candidates
         min_length, max_length, min_freq, max_freq = threshold_func(self.words)
         distractor_opts = dict.get_potential_distractors(min_length, max_length, min_freq, max_freq, params)
+        avoid=[]
+        for word in self.words: #it's real awkward if the distractor is the same as the real word, so let's not do that
+            avoid.append(strip_punct(word).lower())
         # initialize
         best_word = "x-x-x"
         best_min_surp = 0
         for dist in distractor_opts:
-            if dist not in banned:  # if we've already used it in this sentence set, don't bother
+            if dist not in banned and dist not in avoid:  # if we've already used it in this sentence set, don't bother
                 good = True
                 min_surp = 100
                 for i in range(len(self.probs)):  # check distractor candidate against each sentence's probs
