@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 
-import csv
 import argparse
-import output
-import input
 from main import run_stuff
 
 parser = argparse.ArgumentParser(description='Auto-generate Maze materials')

@@ -1,6 +1,5 @@
 import torch
 import logging
-from nltk.tokenize import word_tokenize
 from gulordava_code import dictionary_corpus
 from lang_model import lang_model
 import utils
@@ -54,7 +53,7 @@ class gulordava_model(lang_model):
         Return its surprisal (bits), or use something as unknown code"""
         word_tokens = self.tokenize(word)
         if len(word_tokens) > 1:
-            logging.info('Word %s is multi-token.', word)
+            logging.warning('Word %s is multi-token.', word)
         token = dictionary_corpus.tokenize_str(self.dictionary, word_tokens[0])[0]
         if word_tokens[0] not in self.dictionary.word2idx:
             logging.info('Word %s has unknown first token %s.', word, word_tokens[0])
