@@ -7,22 +7,18 @@ import wget
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
-parser = argparse.ArgumentParser(description='Download and set-up files needed for Maze Automation')
+parser = argparse.ArgumentParser(description='Download and set-up files needed for Maze Automation. Specify which models to set-up')
 
-parser.add_argument('--model', 
-                    choices=["gulordava", "one_b", "both"],
-                    default="gulordava",
-                    help='which models to set up for (gulordava or one_b) or both')
+parser.add_argument('--gulordava', help="For gulordava model", action="store_true")
+parser.add_argument('--french', help="for French model", action="store_true")
 
 args = parser.parse_args()
 # need to check that all needed modules are installed
 # download and place files
 
 def download_gulordava():
-    check=check_pkgs(['csv', 'argparse', 'torch', 'nltk'])
+    check=check_pkgs(['torch'])
     if check:
-        import nltk
-        nltk.download('punkt')
         make_dirs(['gulordava_code', 'gulordava_data'])
         if not os.path.exists('gulordava_code/utils.py'):
             wget.download('https://raw.githubusercontent.com/facebookresearch/colorlessgreenRNNs/master/src/language_models/utils.py', 'gulordava_code/utils.py')
@@ -32,10 +28,21 @@ def download_gulordava():
             wget.download('https://dl.fbaipublicfiles.com/colorless-green-rnns/best-models/English/hidden650_batch128_dropout0.2_lr20.0.pt', 'gulordava_data/hidden650_batch128_dropout0.2_lr20.0.pt')
         if not os.path.exists('gulordava_data/vocab.txt'):
             wget.download('https://dl.fbaipublicfiles.com/colorless-green-rnns/training-data/English/vocab.txt', 'gulordava_data/vocab.txt')
+        print("Gulordava model is ready!")
     else:
         print("Some required packages are missing. Please install packages and try again.")
     return
-    
+
+def download_french():
+    check=check_pkgs(['torch'])
+    if check:
+        if not os.path.exists('french_data/frwac_dicts.json') and os.path.exists('french_data/model_frwac.pt'):
+            print("The french model cannot be downloaded automatically at this time. You can get the files from https://drive.google.com/drive/folders/19xUZ83f9qcI1PVBdnEv-e6BscWXz_33F,",\
+              "but may need to ask for access. Then put 'frwac_dict.json' and 'model_frwac.pt' in the french_data folder.")
+        else:
+            print("French model is ready!")
+    else:
+        print("Some required packages are missing. Please install packages and try again.")
 
 def download_one_b():
     check=check_pkgs(['csv', 'argparse', 're', 'sys', 'tensorflow', 'numpy'])
@@ -97,11 +104,8 @@ def make_dirs(paths):
     return
         
             
-if args.model=="gulordava":
+if args.gulordava:
     download_gulordava()
-elif args.model=="one_b":
-    download_one_b()
-elif args.model=="both":
-    download_gulordava()
-    download_one_b()
-check_pkgs(['wordfreq'])
+elif args.french:
+    download_french()
+check_pkgs(['wordfreq','nltk'])
