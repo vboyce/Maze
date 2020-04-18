@@ -13,7 +13,7 @@ def save_delim(outfile, all_sentences):
     column 3 = good sentence
     column 4 = string of distractor words in order.
     column 5 = string of labels in order. '''
-    with open(outfile, 'w', newline="") as f:
+    with open(outfile, 'w+', newline="") as f:
         writer=csv.writer(f,delimiter=";")
         for sentence_set in all_sentences.values():
             for sentence in sentence_set.sentences:
@@ -27,7 +27,7 @@ def save_ibex(outfile, all_sentences):
     outfile = location of a file to write to
     all_sentences: dictionary of sentence_set objects
     Returns: none'''
-    with open(outfile, 'w') as f:
+    with open(outfile, 'w+') as f:
         for sentence_set in all_sentences.values():
             for sentence in sentence_set.sentences:
                 f.write('[["'+sentence.tag+'", ')

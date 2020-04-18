@@ -12,9 +12,6 @@ def run_stuff(infile, outfile, parameters="params.txt", outformat="delim"):
     if outformat not in ["delim", "ibex"]:
         logging.error("outfile format not understood")
         raise ValueError
-    if not os.path.isfile(outfile):
-        logging.error("can't find outfile")
-        raise IOError
     params = set_params(parameters)
     sents = read_input(infile)
     dict_class = getattr(importlib.import_module(params.get("dictionary_loc", "wordfreq_distractor")),
