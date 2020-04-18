@@ -1,0 +1,4 @@
+sample;1;The dog chased the cat around and around the house.
+sample;2;The cat ran far, far away from the dog.
+sub_rel;3;The cat who the dog scared hid in a box.;pre_1 pre_2 who art noun verb main_verb post_1 post_2 post_3
+obj_rel;3;The dog who scared the cat sniffed around the couch.;pre_1 pre_2 who verb art noun main_verb post_1 post_2 post_3
