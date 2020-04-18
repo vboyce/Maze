@@ -1,0 +1,6 @@
+title: Minimal theme
+logo: 
+description: Github pages site for A-maze.
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-minimal

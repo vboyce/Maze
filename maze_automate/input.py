@@ -11,7 +11,7 @@ def read_input(filename):
     this will be copied to eventual output unchanged (but will be the condition info if ibex output format is used
     second column = item number.
     Third column = sentence
-    Fourth column = labels; if it exists, must be same number of words as sentence. if it doesn't exist,
+    Fourth column = labels; if it exists, must be same number of wo./d  rds as sentence. if it doesn't exist,
     will be given 1:n labels ()
     Returns:
     item_to_info = a dictionary of item numbers as keys and a pair of lists (conditions, sentences) as value
