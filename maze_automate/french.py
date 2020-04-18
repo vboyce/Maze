@@ -60,7 +60,7 @@ class french_model(lang_model):
         Return its surprisal (bits), or use something as unknown code"""
         word_tokens = self.tokenize(word)
         if len(word_tokens) > 1:
-            logging.warning('Word %s is multi-token.', word)
+            logging.info('Word %s is multi-token.', word)
         if word_tokens[0] not in self.dictionary.word2idx:
             logging.info('Word %s has unknown first token %s.', word, word_tokens[0])
             return 0  # use 0 as an error code
