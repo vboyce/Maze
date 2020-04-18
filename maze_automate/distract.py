@@ -9,7 +9,7 @@ parser.add_argument('input', type=str,
                     help='input file')
 parser.add_argument('output', type=str,
                     help='output file')
-parser.add_argument('--parameters', type=str, default=None,
+parser.add_argument('-p','--parameters', type=str, default=None,
                     help='parameters file')
 parser.add_argument('--format', choices=["ibex", "delim"], default="delim",
                     help='output format, either delimited or for ibex maze')
