@@ -7,41 +7,11 @@ import logging
 import utils
 from distractor import distractor_dict, distractor
 
-
-class wordfreq_English_dict(distractor_dict):
-    """Dictionary built using word freq for frequencies
-     Words need to be in wordfreq's vocab, also in include file if provided
-     and not in exclude file
-     words must be lowercase alpha only"""
+class wordfreq_dict(distractor_dict):
+    """General class of dictionaries"""
 
     def __init__(self, params={}):
-        exclude = params.get("exclude_words", "exclude.txt")
-        include = params.get("include_words", "gulordava_data/vocab.txt")
-        dict = wordfreq.get_frequency_dict('en')
-        keys = dict.keys()
-        self.words = []
-        exclusions = []
-
-        if exclude is not None:
-            with open(exclude, "r", encoding="utf-8") as f:
-                for line in f:
-                    word = line.strip()
-                    exclusions.append(word)
-        inclusions = []
-        if include is not None:
-            with open(include, "r", encoding="utf-8") as f:
-                for line in f:
-                    word = line.strip()
-                    inclusions.append(word)
-            words = list(set(inclusions) & set(keys) - set(exclusions))
-        else:
-            words = list(set(keys) - set(exclusions))
-        for word in words:
-            if re.match("^[a-z]*$", word):
-                freq = math.log(
-                    dict[word] * 10 ** 9)  # we canonically calculate frequency as log occurrences/1 billion words
-                self.words.append(distractor(word, freq))
-
+        pass
     def in_dict(self, test_word):
         """Test to see if word is in dictionary"""
         for word in self.words:
@@ -83,6 +53,75 @@ class wordfreq_English_dict(distractor_dict):
                 i += 1
         logging.warning("Could not find enough distractors")
         return distractor_opts
+
+
+class wordfreq_English_dict(wordfreq_dict):
+    """Dictionary built using word freq for frequencies
+     Words need to be in wordfreq's vocab, also in include file if provided
+     and not in exclude file
+     words must be lowercase alpha only"""
+
+    def __init__(self, params={}):
+        exclude = params.get("exclude_words", "exclude.txt")
+        include = params.get("include_words", "gulordava_data/vocab.txt")
+        dict = wordfreq.get_frequency_dict('en')
+        keys = dict.keys()
+        self.words = []
+        exclusions = []
+
+        if exclude is not None:
+            with open(exclude, "r", encoding="utf-8") as f:
+                for line in f:
+                    word = line.strip()
+                    exclusions.append(word)
+        inclusions = []
+        if include is not None:
+            with open(include, "r", encoding="utf-8") as f:
+                for line in f:
+                    word = line.strip()
+                    inclusions.append(word)
+            words = list(set(inclusions) & set(keys) - set(exclusions))
+        else:
+            words = list(set(keys) - set(exclusions))
+        for word in words:
+            if re.match("^[a-z]*$", word):
+                freq = math.log(
+                    dict[word] * 10 ** 9)  # we canonically calculate frequency as log occurrences/1 billion words
+                self.words.append(distractor(word, freq))
+
+class wordfreq_French_dict(wordfreq_dict):
+    """Dictionary built using word freq for frequencies
+     Words need to be in wordfreq's vocab, also in include file if provided
+     and not in exclude file
+     words must be lowercase alpha only"""
+
+    def __init__(self, params={}):
+        exclude = params.get("exclude_words", "exclude.txt")
+        include = params.get("include_words", "french_data/frwac_vocab.txt") #list of model's vocab
+        dict = wordfreq.get_frequency_dict('fr')
+        keys = dict.keys()
+        self.words = []
+        exclusions = []
+
+        if exclude is not None:
+            with open(exclude, "r", encoding="utf-8") as f:
+                for line in f:
+                    word = line.strip()
+                    exclusions.append(word)
+        inclusions = []
+        if include is not None:
+            with open(include, "r", encoding="utf-8") as f:
+                for line in f:
+                    word = line.strip()
+                    inclusions.append(word)
+            words = list(set(inclusions) & set(keys) - set(exclusions))
+        else:
+            words = list(set(keys) - set(exclusions))
+        for word in words:
+            if re.match("^[a-zçéâêîôûàèùëïü]*$", word): #what I believe to be a complete set of french characters
+                freq = math.log(
+                    dict[word] * 10 ** 9)  # we canonically calculate frequency as log occurrences/1 billion words
+                self.words.append(distractor(word, freq))
 
 
 def get_frequency(word):
