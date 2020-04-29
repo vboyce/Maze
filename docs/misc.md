@@ -1,21 +1,5 @@
 Assorted unclassified maze notes to turn into the github pages:
 
-# Introduction to the Maze task
-
-Depending on where you're coming from, you may be wondering what this task even is. The easiest way to explain is to give an example instead. (Note that results from this sample are not actually analysed in any way.)
-
-TODO: embed/link to an ibex maze instance
-TODO: 
-
-The Maze task is a word by word reading task, where the dependent measure is how long it takes to select the next word. Traditionally, the non-correct words (henceforth called distractors) were written by hand (see for instance TODO traditional maze papers). Usually they were real words that were chosen to fit poorly in the context (Grammatical maze), but nonce words have also been used (Lexical maze). 
-
-Here we attempt to create Maze materials with real word distractors with much less effort by using language models to select the distractors. We take some list of potential distractors (i.e. a long list of words), take a subset that correspond with the correct word(s) in some way (for instance, similar length and unigram frequency), and then from that, pick a distractor to use that is high surprisal in the given position according to some language model. We do this for every word in the materials, and there we are.
-
-The ideal is that it's always obvious which word fits in the context and which does not; we do not meet this ideal, but we do get close enough to get useful results anyway. However, we're still working to figure out if better models and parameter tweaks will get us closer to the ideal more often. 
-
-If you care about having better materials, you may want to use A-maze as a starting point and then hand check and edit the places where distractors fall short. This is time consuming (which is why I personally just use the auto-generated materials and deal), but it's still easier than writing distractors entirely from scratch. 
-
-For a much longer discussion of A-maze, there's a paper. (Note that the implementation has improved since then, so some of the technical details have changed, but overall principles and theory still hold.) TODO: link to paper
 
 # Why use A-maze?
 
@@ -61,21 +45,30 @@ We want to control out annoying RT effects and "still thinking about that last m
 
 We also want some amount of comprehension control, and it's unclear what that's like for maze generally or with mistake continuing in particular. 
 
-The basic idea of A-maze is that given some experimental materials we generate a distractor word for each word in the materials, such that in the Maze task (sequential forced choices between the correct word and the distractor), participants can choose correctly, but with reaction time reflecting something meaningful about processing difficulty. 
+---
+layout: default
+---
 
-Unpacking the details of various of the parts above gives us some desiderata, and gets us closer to what we need to do this. 
+This is some of the motivation behind some of the choices that were made in implementing A-maze. 
 
-# Desiderata
-- Experimental materials: We assume these are a set of sentences, which might have substantial structure. They might also contain just about any word and may contain low frequency constructions, perhaps even constructions that are not agreed-upon parts of the language. Ideally, we would not place constraints on what can occur in materials, although in many cases, experimental materials could be written or tweaked to use a restricted set of language. 
+The basic idea of A-maze is that given some experimental materials we generate a distractor word for each word in the materials, such that in the Maze task, participants can choose correctly, but with reaction time reflecting something meaningful about processing difficulty of the sentence. 
 
-- Distractor word: While we call them "distractors", the foils really should not be distracting, and should be rather bland. That is, they should be easily identifiable as words, and not distract participants with their weirdness, unknownness, or frequent repetition. At the same time, at a surface level, they should "match" the real words, so that the only way to pick out the correct word involves some of that processing we're interested in. There should not be easy to identify heuristics for distinguishing the distractors. 
+Unpacking the details of various of the parts above gives us some desiderata. 
 
-- "Can choose correctly": On the other hand, we do want the distractors to be clearly worse than the correct word given the sentence context. Otherwise, participants might get frustrated, and we don't get the data we want. 
+## Desiderata
+- Experimental materials: We assume these are a set of sentences, which might have substantial structure. They might also contain just about any word and may contain low frequency constructions, perhaps even constructions that are not agreed-upon parts of the language. They might also more naturalistic sentences with quoted speech, parentheses, and numbers. Ideally, we would not place constraints on what can occur in materials, although in many cases, experimental materials could be written or tweaked to use a restricted set of language. 
+
+- Distractor word: While we call them "distractors", the foils really should not be distracting, and should instead be rather bland. That is, they should be easily identifiable as words, and not distract participants with their weirdness, unknownness, or frequent repetition. At the same time, at a surface level, they should "match" the real words, so that the only way to pick out the correct word involves some of that processing we're interested in. There should not be easy to identify heuristics for distinguishing the distractors. 
+
+- "Can choose correctly": On the other hand, we *do* want the distractors to be clearly worse than the correct word given the sentence context. Otherwise, participants might get frustrated, and we don't get the data we want. 
 
 - Something meaningful about processing difficulty: Critical items are likely to be in minimal pairs (or n-tuples), and it may be desirable to match distractors between words that represent minimal pairs for the analysis. This leads to wanting to be able to specify distractor match locations freely; however, many paradigms will want one of a few simpler types of matching (and so for ease of use, we'd like these common types to be easy to specify). 
 
-# Some of the choices we made
+## Some trade-offs to consider
 
+- It's unclear what a good algorithm for matching distractors to real words is. It should be able to accomodate distractors that need to match multiple words (which may have different lengths and frequencies), should provide reasonable options even if we're starting in a sparse part of length/frenquency space, and should try to give words that are matched. This almost certainly could be improved. 
+
+ - To avoid heuristics, we 'decorate' distractor words with the same start and end punctuation and capitalization that the real word has. 
 To address the "matching" between distractors and correct words, we try to make them be similar in terms of length (in characters) and frequency (overall). We also match on capitalization and punctuation to the correct word, which means the distractors need to be okay in either/any case, which restricts to naturally lowercased words (aka, no proper nouns). 
 
 There are less straightforward choices to be made in handling materials with unusual words, such as copious abbreviations or numerals, and we're still working on what will look reasonable. 
@@ -84,6 +77,8 @@ There are less straightforward choices to be made in handling materials with unu
 Assuming a perfect language model, it might make sense to optomize for the worst of a set of possible distractors. In our method, we generate a list of potential distractors (on length/frequency match) and then sample until we find one that meets the set surprisal thresholds or until we've tried a bunch and we back off and take the best so far. However, given imperfections of determining frequency and surprisal, optomizing would not only take longer, but it would also probably find exceptions -- the words where frequency was off or where the language model was confused. It also might find these consistently. 
 
 Another constraint on the aesthetics of distractor words is that we'd like them to not appear to frequently. Not only does frequency perhaps imply some issues with the underlying generative models (frequency, language model), but it's going to bely what's going on if the same three letter word comes up frequently. 
+
+## Things that could be done differently
 
 
 

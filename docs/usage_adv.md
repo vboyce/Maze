@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Structure of maze automation
+# Structure of maze automation
 
 This is written with the assumption that you might be trying to mess with things or add new modules to maze automation. 
 
@@ -26,12 +26,7 @@ Files and what they do:
 
 - utils: has arbitrary functions other files want
 
-## Things that are changeable without writing code
-Without writing code, you can change threshold parameters in the params.txt file (or copy and provide the new location). You can ban undesirable distractors by adding them to exclude.txt (or switching to a different file, and specifying it in params.txt). You can change the base distractor source by changing the include file in params.txt.
-
-Once there are coded up alternatives for things like models and dictionaries, you can also switch these out by specifying parameters, but they don't exist yet.
-
-## Things you might want to mess with
+# Things you might want to mess with
 
 Some obvious steps to mess with:
 - The distractor word source and frequency information. It's unclear how good wordfreq is, and you could definitely create a new subclass of distractor_dict. It would also want corresponding frequency and threshold functions.
@@ -39,11 +34,13 @@ Some obvious steps to mess with:
 - Change the language model. Just made something that behaves similarly to the parent class/gulordava model. This should approximately just work for models that tokenize at approximately the word level (modulo a few stray multi-token words, punctuation, etc) and return a distribution over next tokens. The key point is that these "next tokens" need to include lots of whole words. (So, no BPE models, at least for now.)
 (Digression: It's probably possible to get this set up to deal with BPE models, but it would be non-trivial.)
 
-## Adding other languages
+# Adding other languages
 
 It shouldn't be hard to set up Maze to work for non-English languages. The hard part is finding/making a good language model. As a proof-of-concept, a set-up for French maze is provided. 
 
 The key things to consider are:
 - Distractor words and frequencies -- for French, we use wordfreq, and only allow words in the model vocabulary; however, the exclude list hasn't been populated because my French isn't very good. Similar to with English, we use a regex to exclude words with numbers or punctuation, but for French we enumerate a list of acceptable accented characters.
 - What features of distractors should be post-matched to correct words. (Depending on language, it may or may not be appropriate to match capitalization.)
-- Interfacing with the language model. You may need to deal with tokenization. (the french model uses an lstm with similar architecture to the gulordava model, so the interfacing is similar.)
+- Interfacing with the language model. You may need to deal with tokenization. (the French model uses an lstm with similar architecture to the gulordava model, so the interfacing is similar.)
+
+If you do fix bugs, add new features, or new languages; please submit pull requests! 
