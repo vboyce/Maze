@@ -12,13 +12,13 @@ The pipeline for running an A-maze experiment is similar to running an SPR exper
 
 3. Install A-maze generation following [these instructions](install.md). If you are using a model other than gulordava, you may need to install additional packages (run `./set_up.py -h` to see available models, and `./set_up.py --desired_model` to set-up the model). 
 
-4. Run the materials. To run the materials, run `./distract.py input_file.txt output_file.txt`. Optionally append `-p parameter_file.txt` to specify a file with parameters and `--format ibex` to output in ibex format. See more on [parameters](#parameters). 
+4. Run the materials. To run the materials, run `./distract.py input_file.txt output_file.txt`. Optionally append `-p parameter_file.txt` to specify a file with parameters and `--format ibex` to output in ibex format. See more on [parameters](parameters.md). 
 
 5. Format your materials, and put them in the experimental setup. If you're running your experiment using Ibex, you can copy the maze output into the items list of a ibex experiment file. Add whatever other experimental parts you need (consent statement, instructions, comprehension questions, demographics, etc), and check that the experiment runs as desired. See [Ibex-with-Maze](ibex.md) for more on using Ibex for Maze experiments. 
 
 6. Collect data.
 
-7. Analyse results.
+7. Analyse results. See [a sample R script](experiments.md#analysing-results) for turning Ibex results files into rectangular data tables.
 
 # Formatting materials
 
@@ -43,42 +43,6 @@ This means there is no need to label sentences if they are the only one with tha
 If you want them to match up differently specify labels for the sentences. For instance, in the test_input sample above, _scared_ is always labelled as "verb"; if we were comparing RTs on verbs in object versus subject relative clauses, we'd be able to say that the distractors weren't a source of difference between conditions. (It's unclear if this actually matters, but the ability to control it is available.)
 
 None of these fields need to be quoted (except if your have semicolons in your materials), but they can be. You may find it easier to put together and label your items in another program (R or a spreadsheet editor) and then save them to this format. 
-
-# Parameters
-
-In addition to the input and output file locations, the program also gets a list of parameters from a parameters file. By default, it uses `params.txt`, but you can specify another file to change parameter values.
-
-A parameter file wil look something like this.
-```
-#These are required
-min_delta: 10
-min_abs: 25
-num_to_test: 200
-#These are not required, but if they aren't here you get the defaults
-dictionary_loc: "wordfreq_distractor"
-dictionary_class: "wordfreq_English_dict"
-threshold_loc: "wordfreq_distractor"
-threshold_name: "get_thresholds"
-model_loc: "gulordava"
-model_class: "gulordava_model"
-exclude_words: "exclude.txt"
-include_words: "gulordava_data/vocab.txt"
-```
-Three parameters control how hard the program to find good distractors.
- - min_delta is how much *more* surprising the distractors should be than the correct words (in bits)
- - min_abs is how surprising the distractors should be (in bits)
- - num_to_test is how many potential distractors the program tries (for one position in a sentence) before it gives up and returns the best so far. 
-
-In general, high values should yield more surprising distractors, but we don't know how accurate surprisal values are, so raising them too high may end up just selecting for noise.
-
-Other parameters tell the program what models and vocabulary sources to use and where to find them.
- - dictionary_loc and dictionary_class specify what possible distractors are
- - threshold_loc and threshold_name specify how to find what potential distractors to try for what correct words
- - model_loc and model_class specify what model to use to get surprisals
-
-The last two parameters control what the pool of potential distractor words is:
- - exclude_words is a list of words that may not be used as distractors. So, if you see words getting used that you don't want, add them to this list (one word per line). For instance, you may want to ban curse words, abbreviations, or words no longer in common usage.
- - include_words allows only words on this list to be used as distractors. Here, it's set as the model's vocabulary, which means distractors are pre-filtered to be words the model knows (and not ones it treats as unknown).
 
 # Other notes
 

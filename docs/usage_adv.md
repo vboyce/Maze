@@ -43,4 +43,8 @@ The key things to consider are:
 - What features of distractors should be post-matched to correct words. (Depending on language, it may or may not be appropriate to match capitalization.)
 - Interfacing with the language model. You may need to deal with tokenization. (the French model uses an lstm with similar architecture to the gulordava model, so the interfacing is similar.)
 
-If you do fix bugs, add new features, or new languages; please submit pull requests! 
+# Alternatives to Ibex
+
+It might be desirable to run A-maze experiments on a platform other than Ibex that is more up to date or familiar. It should be relatively easy to implement the Maze task on other frameworks that do reaction time measurements especially if they're already set up for SPR.
+
+*If you do fix bugs, add new features, or new languages; please submit pull requests!*
