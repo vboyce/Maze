@@ -35,14 +35,14 @@
         {% endif %}
          <p><b>Thought pages</b><br>
         <a href="{{ "/intro.html" | relative_url}}">What is A-maze?</a><br>
-        <a href="{{site.url+site.baseurl}}/redo.html">An argument for 'redo' mode</a><br>
-        <a href="{{site.url}}/experiments.html">Experiment design</a><br>
+        <a href="{{ "/redo.html" | relative_url}}">An argument for 'redo' mode</a><br>
+        <a href="{{ "/experiments.html" | relative_url}}">Experiment design</a><br>
         <p><b>Practical pages</b><br>
-        <a href="{{site.url}}/install.html">Install instructions</a><br>
-        <a href="{{site.url}}/usage_basic.html">Basic use</a><br>
-        <a href="{{site.url}}/parameters.html">Parameters</a><br>
-        <a href="{{site.url}}/usage_adv.html">Advanced options</a><br>
-        <a href="{{site.url}}/ibex.html">Using Ibex for Maze</a></p>
+        <a href="{{ "/install.html" | relative_url}}">Install instructions</a><br>
+        <a href="{{ "/usage_basic.html" | relative_url}}">Basic use</a><br>
+        <a href="{{ "/parameters.html" | relative_url}}">Parameters</a><br>
+        <a href="{{ "/usage_adv.html" | relative_url}}">Advanced options</a><br>
+        <a href="{{ "/ibex.html" | relative_url}}">Using Ibex for Maze</a></p>
       </header>
 
       
@@ -58,15 +58,5 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    {% if site.google_analytics %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
-    {% endif %}
   </body>
 </html>
