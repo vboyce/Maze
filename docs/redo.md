@@ -17,7 +17,7 @@ var defaults = ["Maze", {redo: true}];
 ```
 This leads to a Maze task that looks more like the following. (Selected words circles in blue.) 
 
-<img src="{{ "/assets/maze_diagram.jpg" |relative }}" width="300" style="display:block;margin-left:auto;margin-right:auto" alt="diagram of Maze task"/>
+<img src="assets/maze_diagram.jpg" width="300" style="display:block;margin-left:auto;margin-right:auto" alt="diagram of Maze task"/>
 
 I initially added this setting as a way to check materials (so, the experimenter could go through and note where things were iffy, continuing to check a sentence even after they misclicked), but I quickly convinced myself that this was just a better way to run experiments. 
 
@@ -25,7 +25,7 @@ For one, this gives me a much better idea of how participants are doing. I can g
 
 As an example, here's the correlation between accuracy on the Maze task (fraction of words chosen correctly) and mean RT on a recent experiment of 100 participants recruited from MTurk. As you can see, some participants jam the keys to get through the experiment quickly -- they have mean RT around 100-250 ms and accuracy around 50%, consistent with random guessing. We don't want data from these participants; it's useless. However, there's also a lot of participants with accuracy >90% range and RTs around 1 second. This is the data we want. By using redo mode, we can get good measures of accuracy (free from the confound of "did they make a mistake on word 2 because their error rate is 50% or because the distractor at word 2 was poor?") and use this to filter participants. I use 80% accuracy as the cut-off for including a participant's data in analyses. 
 
-<img src="{{ "/assets/error.jpg" | }}" width="500" style="display:block;margin-left:auto;margin-right:auto" alt="accuracy v RT"/>
+<img src="assets/error.jpg" width="500" style="display:block;margin-left:auto;margin-right:auto" alt="accuracy v RT"/>
 
 Additionally, I can run multi-sentence materials where information builds on previous sentences because even if they make mistakes, participants still saw all the information and can follow the text. 
 
