@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>What is A-maze? | A-maze</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="What is A-maze?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Github pages site for A-maze." />
+<meta property="og:description" content="Github pages site for A-maze." />
+<link rel="canonical" href="http://localhost:4000/intro.html" />
+<meta property="og:url" content="http://localhost:4000/intro.html" />
+<meta property="og:site_name" content="A-maze" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"What is A-maze?","url":"http://localhost:4000/intro.html","description":"Github pages site for A-maze.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=b4a913a9466ed5a63c57575890c30df0aef59e4c">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">A-maze</a></h1>
+        
+        
+
+        <p>Github pages site for A-maze.</p>
+
+        
+        <p class="view"><a href="http://github.com/vboyce/Maze">View the Project on GitHub <small>vboyce/Maze</small></a></p>
+        
+
+        
+         <p><b>Thought pages</b><br>
+        <a href="http://localhost:4000/intro.html">What is A-maze?</a><br>
+        <a href="http://localhost:4000/redo.html">An argument for 'redo' mode</a><br>
+        <a href="http://localhost:4000/experiments.html">Experiment design</a><br>
+        <p><b>Practical pages</b><br>
+        <a href="http://localhost:4000/install.html">Install instructions</a><br>
+        <a href="http://localhost:4000/usage_basic.html">Basic use</a><br>
+        <a href="http://localhost:4000/parameters.html">Parameters</a><br>
+        <a href="http://localhost:4000/usage_adv.html">Advanced options</a><br>
+        <a href="http://localhost:4000/ibex.html">Using Ibex for Maze</a></p>
+      </header>
+
+      
+      <section>
+      <h1 id="what-is-a-maze">What is A-maze?</h1>
+
+<h2 id="demonstration">Demonstration</h2>
+
+<p>The easiest way to explain the method is to demonstrate instead; so try out the embedded <a href="http://syntaxgym.org:666/experiment.html">demo</a> below. (Note that results from this sample are not analysed in any way.)</p>
+
+<iframe src="http://syntaxgym.org:666/experiment.html" width="710" height="400" style="border:2px solid black;"></iframe>
+<p><br /></p>
+<h2 id="explanation">Explanation</h2>
+
+<p>The Maze task is a word by word reading task where a participant sees two words at at time and must select the correct word to continue. The dependent measure is the time to press the button. Traditionally, the non-correct words (henceforth called distractors) were written by hand. Usually they were real words that were chosen to fit poorly in the context, but nonce words have also been used. For more on the previous uses of the Maze task, see for instance <a href="https://www.researchgate.net/profile/Kenneth_Forster/publication/23964016_The_maze_task_Measuring_forced_incremental_sentence_processing_time/links/0c960528e5bae4cf4b000000/The-maze-task-Measuring-forced-incremental-sentence-processing-time.pdf">Forster, Guerrera, and Elliot, 2009</a> and <a href="https://www.researchgate.net/profile/Jeffrey_Witzel/publication/51719334_Comparisons_of_online_reading_paradigms_Eye_tracking_moving-window_and_maze/links/556c4f7208aeab7772218886/Comparisons-of-online-reading-paradigms-Eye-tracking-moving-window-and-maze.pdf">Witzel, Witzel, and Forster, 2012</a>).</p>
+
+<p><img src="http://localhost:4000/assets/maze_diagram.jpg" width="300" style="display:block;margin-left:auto;margin-right:auto" alt="diagram of Maze task" /></p>
+
+<p>Here we attempt to create Maze materials that mimic the properties of hand-written maze materials without the effort, which we call A-maze (short for Auto-maze). To do this, we use language models from Natural Language Processing to select distractors that are likely to be a poor continuation to the sentence so far. We take some list of potential distractors (i.e. a long list of words), take a subset that correspond with the correct word(s) in some way (for instance, similar length and unigram frequency), and then pick a distractor from that subset that is high surprisal (i.e. low probability) in that position according to some language model. We do this for every word in the materials.</p>
+
+<p>Ideally in a Maze task it’s always obvious which word fits in the context and which does not. With A-maze we do not meet this ideal, but we do get close enough to get useful results anyway. However, using better language models or better parameter choices may get us closer to this ideal.</p>
+
+<p>For a much more involved discussion of A-maze, please read <a href="https://psyarxiv.com/b7nqd/">Boyce, Futrell, and Levy, 2020</a>. Note that the implementation of A-maze has been improved since what is described in the paper; the theory and basic ideas hold true, some of the limitations less so.</p>
+
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="http://github.com/vboyce">vboyce</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

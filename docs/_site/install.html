@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Installation instructions for Maze | A-maze</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Installation instructions for Maze" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Github pages site for A-maze." />
+<meta property="og:description" content="Github pages site for A-maze." />
+<link rel="canonical" href="http://localhost:4000/install.html" />
+<meta property="og:url" content="http://localhost:4000/install.html" />
+<meta property="og:site_name" content="A-maze" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Installation instructions for Maze","url":"http://localhost:4000/install.html","description":"Github pages site for A-maze.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=b4a913a9466ed5a63c57575890c30df0aef59e4c">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">A-maze</a></h1>
+        
+        
+
+        <p>Github pages site for A-maze.</p>
+
+        
+        <p class="view"><a href="http://github.com/vboyce/Maze">View the Project on GitHub <small>vboyce/Maze</small></a></p>
+        
+
+        
+         <p><b>Thought pages</b><br>
+        <a href="http://localhost:4000/intro.html">What is A-maze?</a><br>
+        <a href="http://localhost:4000/redo.html">An argument for 'redo' mode</a><br>
+        <a href="http://localhost:4000/experiments.html">Experiment design</a><br>
+        <p><b>Practical pages</b><br>
+        <a href="http://localhost:4000/install.html">Install instructions</a><br>
+        <a href="http://localhost:4000/usage_basic.html">Basic use</a><br>
+        <a href="http://localhost:4000/parameters.html">Parameters</a><br>
+        <a href="http://localhost:4000/usage_adv.html">Advanced options</a><br>
+        <a href="http://localhost:4000/ibex.html">Using Ibex for Maze</a></p>
+      </header>
+
+      
+      <section>
+      <h1 id="installation-instructions-for-maze">Installation instructions for Maze</h1>
+
+<p>This covers the basics of installing on Windows, MacOS, and Linux.</p>
+
+<h3 id="windows">Windows</h3>
+<ol>
+  <li>Download the files by going to <a href="https://github.com/vboyce/Maze">https://github.com/vboyce/Maze</a>, clicking the green “Clone or Download” button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location.</li>
+  <li>Install python3 and pip3 by going to <a href="https://www.python.org/downloads/windows/">https://www.python.org/downloads/windows/</a> and selecting under Stable Releases &gt; (latest Python 3 version) &gt; “Download Windows x86-64 executable installer” for 64-bit computers or “Download Windows x86 executable installer” for 32-bit computers. Run the installer and complete the installation.<br />
+IMPORTANT: make sure the box that says “Add Python 3.X to PATH” is checked, otherwise you may not be able to use the python/python3 command in the command prompt.<br />
+To check if pip3 is installed on the computer, open command prompt and type either of the following:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> pip --version
+ pip3 --version
+</code></pre></div>    </div>
+    <p>Make sure pip3 is updated to the latest version, which could be done using the following command:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python3 -m pip install --upgrade pip
+</code></pre></div>    </div>
+  </li>
+  <li>Install needed packages.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 install nltk
+pip3 install wordfreq
+pip3 install torch===1.2.0 torchvision===0.4.0 -f https://download.pytorch.org/whl/torch_stable.html
+</code></pre></div>    </div>
+    <p>The command for downloading torch depends on the versions you’re using and going to install, look here for more details: <a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a>.</p>
+  </li>
+</ol>
+
+<p>Continue under All Operating Systems.</p>
+<h3 id="mac-os-x">Mac OS X</h3>
+<ol>
+  <li>Download the files by going to <a href="https://github.com/vboyce/Maze">https://github.com/vboyce/Maze</a>, clicking the green “Clone or Download” button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location.</li>
+  <li>Install python3 and pip3 by going to <a href="https://www.python.org/downloads/mac-osx/">https://www.python.org/downloads/mac-osx/</a> and selecting under Stable Releases &gt; (latest Python 3 version) &gt; “Download macOS 64-bit installer” for 64-bit computers or “Download macOS 64-bit/32-bit installer” for 32-bit computers. Run the installer and complete the installation.
+To check if pip3 is installed on the computer, open command prompt and type the following:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 --version
+</code></pre></div>    </div>
+    <p>Make sure pip3 is updated to the latest version, which could be done using the following command:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 -m pip install --upgrade pip
+</code></pre></div>    </div>
+  </li>
+  <li>Install needed packages.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 install nltk
+pip3 install wordfreq
+pip3 install torch
+</code></pre></div>    </div>
+    <p>If any dialog box pops up to install gcc, follow their instructions.
+Continue under All Operating Systems.</p>
+  </li>
+</ol>
+
+<h3 id="linux">Linux</h3>
+<ol>
+  <li>Download the files by going to <a href="https://github.com/vboyce/Maze">https://github.com/vboyce/Maze</a>, clicking the green “Clone or Download” button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location.</li>
+  <li>Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password).
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install python3
+sudo apt update
+sudo apt-get install python3-pip
+</code></pre></div>    </div>
+  </li>
+  <li>Install needed packages.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 install nltk
+pip3 install torch
+pip3 install wordfreq
+</code></pre></div>    </div>
+    <p>Continue under All Operating Systems.</p>
+  </li>
+</ol>
+
+<h3 id="all-operating-systems">All Operating Systems</h3>
+
+<ol>
+  <li>Make commands executable
+Navigate into the maze_automate folder (command will differ depending on where you put the folder; use cd to move into a folder and ls to see the contents)
+Example
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd (where the repository is stored)/Maze/maze_automate
+</code></pre></div>    </div>
+    <p>Make files exectutable</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x set_up.py
+chmod +x distract.py
+</code></pre></div>    </div>
+  </li>
+  <li>Download model files and complete installation
+From the maze_automate directory, run the appropriate command. For Windows, ignore the <code class="highlighter-rouge">./</code> part of the commands and use <code class="highlighter-rouge">python3 ...</code> instead.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./set_up.py --gulordava
+</code></pre></div>    </div>
+    <p>If there is an error indicating that it cannot import wget, use the command <code class="highlighter-rouge">pip3 install wget</code>. (If that doesn’t work, try also <code class="highlighter-rouge">pip3 install python-wget</code>.)</p>
+  </li>
+  <li>Do a test run of distractor automation
+test_input.txt contains a few sample sentences; replace output_location.txt with the name of the file to write test Maze materials to. 
+To test Gulordava model
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./automate.py test_input.txt output_location.txt
+</code></pre></div>    </div>
+    <p>This may take a few minutes to run, but when it finishes you can check that the output file contains Maze materials for the input file.</p>
+  </li>
+</ol>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="http://github.com/vboyce">vboyce</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>

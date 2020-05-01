@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>A-maze | Github pages site for A-maze.</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="A-maze" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Github pages site for A-maze." />
+<meta property="og:description" content="Github pages site for A-maze." />
+<link rel="canonical" href="http://localhost:4000/misc.html" />
+<meta property="og:url" content="http://localhost:4000/misc.html" />
+<meta property="og:site_name" content="A-maze" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"A-maze","url":"http://localhost:4000/misc.html","description":"Github pages site for A-maze.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=b4a913a9466ed5a63c57575890c30df0aef59e4c">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">A-maze</a></h1>
+        
+        
+
+        <p>Github pages site for A-maze.</p>
+
+        
+        <p class="view"><a href="http://github.com/vboyce/Maze">View the Project on GitHub <small>vboyce/Maze</small></a></p>
+        
+
+        
+         <p><b>Thought pages</b><br>
+        <a href="http://localhost:4000/intro.html">What is A-maze?</a><br>
+        <a href="http://localhost:4000/redo.html">An argument for 'redo' mode</a><br>
+        <a href="http://localhost:4000/experiments.html">Experiment design</a><br>
+        <p><b>Practical pages</b><br>
+        <a href="http://localhost:4000/install.html">Install instructions</a><br>
+        <a href="http://localhost:4000/usage_basic.html">Basic use</a><br>
+        <a href="http://localhost:4000/parameters.html">Parameters</a><br>
+        <a href="http://localhost:4000/usage_adv.html">Advanced options</a><br>
+        <a href="http://localhost:4000/ibex.html">Using Ibex for Maze</a></p>
+      </header>
+
+      
+      <section>
+      <p>Assorted unclassified maze notes to turn into the github pages:</p>
+
+<h1 id="why-use-a-maze">Why use A-maze?</h1>
+
+<p>There are many cases where one may want reading/reaction time data, and Maze seems more desirable than either SPR or eye-tracking. One place this is likely to be true is running web-based experiments where SPR data can be very noisy. Maze is relatively rarely used, and A-maze is new, so we don’t have a good sense of how good it is. As more experiments are done, we’ll collectively come to a better understanding of what A-maze is good (or not good) for in terms of effects.</p>
+
+<p>In terms of why use A-maze over G-maze or L-maze, we find that L-maze doesn’t show as strong effects, and I at least am far too lazy to write G-maze materials.</p>
+
+<h1 id="recommended-settings">Recommended settings</h1>
+
+<h1 id="an-argument-in-favor-of-redo-mode">An argument in favor of redo mode</h1>
+
+<p>Under the usual Maze task, as soon as you make a mistake the sentence terminates, and you move onto the next item.</p>
+
+<p>The first time we ran Maze experiments, we were trying to just automate distractors and otherwise stay close to what the task was, so we also did this. However, we then started thinking about how it might be nice to use this task, on longer items such as the Natural Stories corpus. That would be impossible because the stories were long, and no one would be able to get through them mistake-free.</p>
+
+<p>So, how to handle mistakes? We needed people to be able to continue the sentence somehow which means they needed to have the context, so they needed to see the correct word to include. Thus, I wrote a version where mistakes were met by an error message, but you would correct your mistake (by hitting the other button) and move on.</p>
+
+<p>Having collected some data using this method, I know think we should just always use this method.</p>
+
+<p>First of all, this gives us more correct error rates because all participants who finish the experiment have seen the whole thing. We don’t have the data censored by the mistakes. One obvious thing we see here is that (at least running on mturk), there appear to be two subpopulations – those who try and those who randomly guess, with noticeably different error rates and RTs. Now, even if you’re only going to use pre-mistake data, having the rest of the data makes it easier to figure out error rates (and potentially exclude participants) and to tell if there were issues with distractors, even late in the sentence (because you still have everyone’s reading data there).</p>
+
+<p>Second, it probably makes for a better user experience. I’m guessing here, but it may make mistakes (due to bad distractors or misclicking when you didn’t mean to) seem less unfair, because you get to “fix” them and continue.</p>
+
+<p>Third, if this past-a-mistake data is useable, then there’s more data; and for long items, potentially a lot more data. For items that are long, such as multi-sentence vignettes, we’re almost certainly okay using data that is 10 words past the last mistake. It’s not obvious what the buffer around mistakes should be (maybe the next couple words are less reliable and we should do some trimming?), but we can try to look at that and determine an empirically-based recommendation.</p>
+
+<p>When in redo mode, the recorded RT is the RT to first push, so if they got it wrong, it’s the time it took for that push. How many additional pushes and ms it takes until they press the correct button is not recorded.</p>
+
+<h1 id="more-redo-mode-thoughts">More redo mode thoughts</h1>
+
+<p>What do mistakes signify?</p>
+
+<p>In some sense, mistakes could be coming from any of about 3 sources.</p>
+<ol>
+  <li>The participant screwed up, and meant to hit the other button. (Hand mind coordination is hard sometimes.)</li>
+  <li>The distractor was totally plausible. (Model did a bad job at this task) Note that this could be happening even when the distractor isn’t as good as the good word, but when it’s good enough to be reasonable (so semantically and syntactically plausible, even if not as predictable.)</li>
+  <li>The participant was not paying enough attention; they were trying to do the task quickly, or they got distracted.</li>
+</ol>
+
+<p>We can get rid of a lot of the 3 mistakes by throwing out bad participants. There will still be the “got distracted” moments in otherwise attentive participants.</p>
+
+<p>How do we determine how good comprehension is? Could ask participants to type what they recall, or use comprehension questions. Issue with comprehension questions is they may query word level, which might be pretty remembered, versus syntactic structure.</p>
+
+<p>We want to control out annoying RT effects and “still thinking about that last mistake” would count – unclear how to detect this, although we could margin of 5 words or something I’d believe it gone. Arbitrary, but so is a lot of this.</p>
+
+<p>We also want some amount of comprehension control, and it’s unclear what that’s like for maze generally or with mistake continuing in particular.</p>
+
+<hr />
+<p>layout: default
+—</p>
+
+<p>This is some of the motivation behind some of the choices that were made in implementing A-maze.</p>
+
+<p>The basic idea of A-maze is that given some experimental materials we generate a distractor word for each word in the materials, such that in the Maze task, participants can choose correctly, but with reaction time reflecting something meaningful about processing difficulty of the sentence.</p>
+
+<p>Unpacking the details of various of the parts above gives us some desiderata.</p>
+
+<h2 id="desiderata">Desiderata</h2>
+<ul>
+  <li>
+    <p>Experimental materials: We assume these are a set of sentences, which might have substantial structure. They might also contain just about any word and may contain low frequency constructions, perhaps even constructions that are not agreed-upon parts of the language. They might also more naturalistic sentences with quoted speech, parentheses, and numbers. Ideally, we would not place constraints on what can occur in materials, although in many cases, experimental materials could be written or tweaked to use a restricted set of language.</p>
+  </li>
+  <li>
+    <p>Distractor word: While we call them “distractors”, the foils really should not be distracting, and should instead be rather bland. That is, they should be easily identifiable as words, and not distract participants with their weirdness, unknownness, or frequent repetition. At the same time, at a surface level, they should “match” the real words, so that the only way to pick out the correct word involves some of that processing we’re interested in. There should not be easy to identify heuristics for distinguishing the distractors.</p>
+  </li>
+  <li>
+    <p>“Can choose correctly”: On the other hand, we <em>do</em> want the distractors to be clearly worse than the correct word given the sentence context. Otherwise, participants might get frustrated, and we don’t get the data we want.</p>
+  </li>
+  <li>
+    <p>Something meaningful about processing difficulty: Critical items are likely to be in minimal pairs (or n-tuples), and it may be desirable to match distractors between words that represent minimal pairs for the analysis. This leads to wanting to be able to specify distractor match locations freely; however, many paradigms will want one of a few simpler types of matching (and so for ease of use, we’d like these common types to be easy to specify).</p>
+  </li>
+</ul>
+
+<h2 id="some-trade-offs-to-consider">Some trade-offs to consider</h2>
+
+<ul>
+  <li>
+    <p>It’s unclear what a good algorithm for matching distractors to real words is. It should be able to accomodate distractors that need to match multiple words (which may have different lengths and frequencies), should provide reasonable options even if we’re starting in a sparse part of length/frenquency space, and should try to give words that are matched. This almost certainly could be improved.</p>
+  </li>
+  <li>
+    <p>To avoid heuristics, we ‘decorate’ distractor words with the same start and end punctuation and capitalization that the real word has. 
+To address the “matching” between distractors and correct words, we try to make them be similar in terms of length (in characters) and frequency (overall). We also match on capitalization and punctuation to the correct word, which means the distractors need to be okay in either/any case, which restricts to naturally lowercased words (aka, no proper nouns).</p>
+  </li>
+</ul>
+
+<p>There are less straightforward choices to be made in handling materials with unusual words, such as copious abbreviations or numerals, and we’re still working on what will look reasonable.</p>
+
+<h2 id="trade-offs-between-match-search-time-and-badness">Trade-offs between match, search-time, and badness</h2>
+<p>Assuming a perfect language model, it might make sense to optomize for the worst of a set of possible distractors. In our method, we generate a list of potential distractors (on length/frequency match) and then sample until we find one that meets the set surprisal thresholds or until we’ve tried a bunch and we back off and take the best so far. However, given imperfections of determining frequency and surprisal, optomizing would not only take longer, but it would also probably find exceptions – the words where frequency was off or where the language model was confused. It also might find these consistently.</p>
+
+<p>Another constraint on the aesthetics of distractor words is that we’d like them to not appear to frequently. Not only does frequency perhaps imply some issues with the underlying generative models (frequency, language model), but it’s going to bely what’s going on if the same three letter word comes up frequently.</p>
+
+<h2 id="things-that-could-be-done-differently">Things that could be done differently</h2>
+
+<h1 id="what-youd-need-for-this-process">What you’d need for this process</h1>
+<p>One big reason to think about what is needed for A-maze is if you wanted to run A-maze in another language.</p>
+
+<p>For this you’d need:</p>
+<ul>
+  <li>a list of valid distractor words (computer dictionaries might be helpful, but also may need to be cut for things like abbreviations or swear words). In some languages, requiring that the distractor words consist only of characters from some list of valid characters may help.</li>
+  <li>a way of telling how bad/surprising a word is in a given context. This probably will be some sort of neural language model, which thus probably requires a large corpora of text to train on.</li>
+  <li>a way of choosing potential distractors. For instance, if you’re trying to match by frequency, you’ll need frequency data for the distractor words and correct words, and potentially a plan for what happens when the word is unknown.</li>
+</ul>
+
+<p>Other things to keep in mind:
+How punctuation and capitilization work, and whether they should get matched. For instance, in English, we capitilize the distractor to match, but that wouldn’t necessarily make sense for German. 
+Depending on the tokenization scheme of the language model and how well it matches (or doesn’t match) with word boundaries in the written language, there might be things to consider. It’s recommended that distractor words be single tokens so that surprisal calculations are easier. 
+(also need a plan for tokenization of lm)</p>
+
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="http://github.com/vboyce">vboyce</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+    
+  </body>
+</html>
