@@ -8,4 +8,4 @@ The auto-generation of materials and Ibex framework are designed to work togethe
 
 Files and instructions for running maze using Ibex are now in [its own repo](https://github.com/vboyce/Ibex-with-Maze)
 
-See also vboyce.github.io/Maze for more information on automating the Maze task and running it on Ibex. 
+See also <vboyce.github.io/Maze> for more information on automating the Maze task and running it on Ibex. 
