@@ -87,6 +87,6 @@ If there is an error indicating that it cannot import wget, use the command ```p
 test_input.txt contains a few sample sentences; replace output_location.txt with the name of the file to write test Maze materials to. 
 To test Gulordava model
 ```
-./automate.py test_input.txt output_location.txt
+./distract.py test_input.txt output_location.txt
 ```
 This may take a few minutes to run, but when it finishes you can check that the output file contains Maze materials for the input file.
