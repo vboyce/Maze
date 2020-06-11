@@ -43,7 +43,7 @@ python3 -m pip install --upgrade pip
 ```
 pip3 install nltk
 pip3 install wordfreq
-pip3 install torch
+pip3 install torch==1.3.1
 ```
 If any dialog box pops up to install gcc, follow their instructions.
 Continue under All Operating Systems.
@@ -59,7 +59,7 @@ sudo apt-get install python3-pip
 3. Install needed packages.
 ```
 pip3 install nltk
-pip3 install torch
+pip3 install torch==1.3.1
 pip3 install wordfreq
 ```
 Continue under All Operating Systems.
@@ -90,3 +90,7 @@ To test Gulordava model
 ./distract.py test_input.txt output_location.txt
 ```
 This may take a few minutes to run, but when it finishes you can check that the output file contains Maze materials for the input file.
+
+Trouble shooting notes:
+If you get an error about `'LSTM' object has no attribute '_flat_weights_names'` it means you need to downgrade torch to an older version (1.2 and 1.3.1 should work, 1.4 does not). 
+If you get errors about `no such file or directory`, check that you ran set_up.py. (Note: if set_up.py isn't working, you can also manually download the files mentioned in set_up.py and move the to the appropriate locations.)
