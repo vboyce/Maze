@@ -8,7 +8,7 @@ This covers the basics of installing on Windows, MacOS, and Linux.
 
 ### Windows
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
-2. Install python3 and pip3 by going to <https://www.python.org/downloads/windows/> and selecting under Stable Releases > (latest Python 3 version) > "Download Windows x86-64 executable installer" for 64-bit computers or "Download Windows x86 executable installer" for 32-bit computers. Run the installer and complete the installation.  
+2. Install python3 and pip3 by going to <https://www.python.org/downloads/windows/> and selecting under Stable Releases > Python 3.7.7 > "Download Windows x86-64 executable installer" for 64-bit computers or "Download Windows x86 executable installer" for 32-bit computers. Run the installer and complete the installation. (Earlier versions of Python 3 (3.6 etc) may also work, Python 3.8 or newer will not.)  
 IMPORTANT: make sure the box that says "Add Python 3.X to PATH" is checked, otherwise you may not be able to use the python/python3 command in the command prompt.  
 To check if pip3 is installed on the computer, open command prompt and type either of the following:
  ```
@@ -30,7 +30,7 @@ The command for downloading torch depends on the versions you're using and going
 Continue under All Operating Systems.
 ### Mac OS X
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
-2. Install python3 and pip3 by going to <https://www.python.org/downloads/mac-osx/> and selecting under Stable Releases > (latest Python 3 version) > "Download macOS 64-bit installer" for 64-bit computers or "Download macOS 64-bit/32-bit installer" for 32-bit computers. Run the installer and complete the installation.
+2. Install python3 and pip3 by going to <https://www.python.org/downloads/mac-osx/> and selecting under Stable Releases > 3.7.7 > "Download macOS 64-bit installer" for 64-bit computers or "Download macOS 64-bit/32-bit installer" for 32-bit computers. Run the installer and complete the installation. (Earlier versions of Python 3 (3.6 etc) may also work, Python 3.8 or newer will not.)  
 To check if pip3 is installed on the computer, open command prompt and type the following:
 ```
 pip3 --version
@@ -52,10 +52,11 @@ Continue under All Operating Systems.
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
 2. Install python3 and pip3 (copy/paste the shown commands into terminal/command line one by one, when prompted, type your password). 
 ```
-sudo apt-get install python3
+sudo apt-get install python3.7
 sudo apt update
 sudo apt-get install python3-pip
 ```
+(Note: Earlier versions of Python 3 (3.6 etc) may also work, Python 3.8 or newer will not.)
 3. Install needed packages.
 ```
 pip3 install nltk
@@ -92,5 +93,10 @@ To test Gulordava model
 This may take a few minutes to run, but when it finishes you can check that the output file contains Maze materials for the input file.
 
 Trouble shooting notes:
+
+If you get errors about pytorch version 1.3.1 not being available, check what version of Python you have; if it's 3.8 or newer, you need to downgrade to 3.7 to be able to install the right version of pytorch.
+
+If you get errors about `no such file or directory`, check that you ran set_up.py. (Note: if set_up.py isn't working, you can also manually download the files mentioned in set_up.py and move them to the appropriate locations.)
+
 If you get an error about `'LSTM' object has no attribute '_flat_weights_names'` it means you need to downgrade torch to an older version (1.2 and 1.3.1 should work, 1.4 does not). 
-If you get errors about `no such file or directory`, check that you ran set_up.py. (Note: if set_up.py isn't working, you can also manually download the files mentioned in set_up.py and move the to the appropriate locations.)
+
