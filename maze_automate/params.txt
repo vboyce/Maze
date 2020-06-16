@@ -11,3 +11,4 @@ model_loc: "gulordava"
 model_class: "gulordava_model"
 exclude_words: "exclude.txt"
 include_words: "gulordava_data/vocab.txt"
+max_repeat: 0

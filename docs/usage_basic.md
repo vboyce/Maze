@@ -44,6 +44,18 @@ If you want them to match up differently specify labels for the sentences. For i
 
 None of these fields need to be quoted (except if your have semicolons in your materials), but they can be. You may find it easier to put together and label your items in another program (R or a spreadsheet editor) and then save them to this format. 
 
+# Guarantees and lack thereof
+
+This code is offered as is; it's supposed to do a few things (assuming I didn't make coding errors) and it hopefully does some other things. 
+
+Supposed to:
+- not repeat distractors within an item identifier (this means that each distractor should appear at most once in any sentence; if you want to further limit distractor repeats see the max_repeats [parameter](parameters.md))
+- not given any word itself as a distractor 
+
+Hopefully:
+- usually provides substantially infelicitious distractors (absolutely no guarantees that they will be "ungrammatical", but empirically they're usually bad enough that attentive participants can easily and accurately pick the correct word)
+
+
 # Other notes
 
 The Gulordava model runs fairly quickly; however, running language models is computationally intensive, so if you have access to a computational cluster, you may want to use that. Otherwise, just be prepared to have it run on your laptop for a bit. (You can always time it on 5 or 10 sentences before running a longer set of materials to get a guess on how long it will take.)

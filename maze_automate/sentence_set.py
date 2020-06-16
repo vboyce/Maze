@@ -1,6 +1,6 @@
 import logging
 from utils import copy_punct, strip_punct
-
+from limit_repeats import Repeatcounter
 
 def no_duplicates(my_list):
     """True if list has no duplicates, else false"""
@@ -140,12 +140,13 @@ class Sentence_Set:
                 lab = sentence.labels[i]
                 self.labels[lab].add_sentence(sentence.words[i], sentence.probs[lab], sentence.surprisal[lab])
 
-    def do_distractors(self, model, d, threshold_func, params):
+    def do_distractors(self, model, d, threshold_func, params, repeats):
         """Get distractors using specified stuff"""
-        banned = [] #don't allow duplicate distractors within the set
+        banned = repeats.banned[:] #don't allow duplicate distractors within the set
         for label in self.labels.values(): #get distractors for each label
             dist = label.choose_distractor(model, d, threshold_func, params, banned)
             banned.append(dist)
+            repeats.increment(dist)
         for sentence in self.sentences: #give the sentences the distractors
             for i in range(1, len(sentence.labels)):
                 lab = sentence.labels[i]

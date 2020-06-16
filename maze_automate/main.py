@@ -1,6 +1,7 @@
 import logging
 import importlib
 from set_params import set_params
+from limit_repeats import Repeatcounter
 from input import read_input
 from output import save_ibex, save_delim
 import os.path
@@ -22,11 +23,16 @@ def run_stuff(infile, outfile, parameters="params.txt", outformat="delim"):
     m = model_class()
     threshold_func = getattr(importlib.import_module(params.get("threshold_loc", "wordfreq_distractor")),
                              params.get("threshold_name", "get_thresholds"))
+    repeats=Repeatcounter(params.get("max_repeat", 0))
+    print(repeats.max)
+    print(repeats.limit)
     for ss in sents.values():
         ss.do_model(m)
         ss.do_surprisals(m)
         ss.make_labels()
-        ss.do_distractors(m, d, threshold_func, params)
+        ss.do_distractors(m, d, threshold_func, params, repeats)
+        print(repeats.distractors)
+        print(repeats.banned)
         ss.clean_up()
     if outformat == "delim":
         save_delim(outfile, sents)

@@ -24,6 +24,8 @@ Files and what they do:
 - gulordava.py: gulordava model subclass of lang_model
 - french.py: french model subclass of lang_model
 
+- limit_repeats.py: has class for limiting repeats of distractors between items
+
 - utils: has arbitrary functions other files want
 
 # Things you might want to mess with

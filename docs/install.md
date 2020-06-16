@@ -6,6 +6,8 @@ layout: default
 
 This covers the basics of installing on Windows, MacOS, and Linux.
 
+Note: Maze needs specific versions of Python and some packages. If you use Python for other projects, we recommend using [conda](https://docs.conda.io/projects/conda/en/latest/) to manage environments so it's easy to switch between what Maze needs and what your other projects use. 
+
 ### Windows
 1. Download the files by going to <https://github.com/vboyce/Maze>, clicking the green "Clone or Download" button, and selecting Download Zip. Once the zip file downloads, extract the maze_automate folder to the desired location. 
 2. Install python3 and pip3 by going to <https://www.python.org/downloads/windows/> and selecting under Stable Releases > Python 3.7.7 > "Download Windows x86-64 executable installer" for 64-bit computers or "Download Windows x86 executable installer" for 32-bit computers. Run the installer and complete the installation. (Earlier versions of Python 3 (3.6 etc) may also work, Python 3.8 or newer will not.)  
@@ -92,9 +94,9 @@ To test Gulordava model
 ```
 This may take a few minutes to run, but when it finishes you can check that the output file contains Maze materials for the input file.
 
-Trouble shooting notes:
+## Troubleshooting notes:
 
-If you get errors about pytorch version 1.3.1 not being available, check what version of Python you have; if it's 3.8 or newer, you need to downgrade to 3.7 to be able to install the right version of pytorch.
+If you get errors about pytorch version 1.3.1 not being available, check what version of Python you have; if it's 3.8 or newer, you need to downgrade to 3.7 to be able to install the right version of pytorch. I recommend using [conda](https://docs.conda.io/projects/conda/en/latest/) to create a separate environment for Maze. 
 
 If you get errors about `no such file or directory`, check that you ran set_up.py. (Note: if set_up.py isn't working, you can also manually download the files mentioned in set_up.py and move them to the appropriate locations.)
 
