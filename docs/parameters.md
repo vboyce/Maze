@@ -29,7 +29,7 @@ Three parameters control how hard the program to find good distractors.
  - min_abs is how surprising the distractors should be (in bits)
  - num_to_test is how many potential distractors the program tries (for one position in a sentence) before it gives up and returns the best so far. 
 
-In general, high values should yield more surprising distractors, but we don't know how accurate surprisal values are, so raising them too high may end up just selecting for noise.
+In general, high values should yield more surprising distractors, but we don't know how accurate surprisal values are, so raising them too high may end up just selecting for noise. I wrote [more about this potential trade-offs](advice.md). 
 
 Max_repeat also effects what distractors are returned. Distractors never repeat within the same sentence, but by default, they can repeat across different items. If you don't want repeats, or if you find that some words are coming up as distractors too often, you can set max_repeat to a positive integer and no distractor will appear more than that number of times in the entire set of materials. Setting max_repeat to 0 (the default) means that no limit is applied. Note: this is a new feature, and we don't have any recommendations about what you might want to set it to. Setting it too high relative to the length of your materials and other parameters may result in worse distractors for sentences later in your materials. 
 
