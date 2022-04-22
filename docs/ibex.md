@@ -35,6 +35,9 @@ If you're not, these are the available arguments and specifications.
 
 to the top of the data file. (Note that to check *all* experimental items, you may need to relabel the types of sentences to override Latin square behavior.)
 This mode can also be used when running the experiment; both the time until first press, and the total time to correct are recorded, so it you can tell how long participants are spending after making mistakes. (From some limited testing, this mode seems to work, and is useful if your items are long or you don't proofread your distractors.) We recommend you consider whether your experiment would benefit from having participants continue after mistakes or not. 
+* time: An integer 0 or greater. Only relevant if redo:true, this is how many milliseconds to wait after an incorrect selection before registering the next selection. By default time=1000 (for a 1 second delay). To use redo with no delay, set time: 0. 
+* emess: A string. Only relevant if redo:true and time>0. This is the message displayed after a mistake while presses are not registered. By default, the message is "Incorrect!"
+* rmess: A string. Only relevant if redo:true. This is the message displayed after a mistake once time has elapsed and button presses will work. By default, the message is "Please try again.". If time:0, we only rmess will be seen, so we recommend changing it to something like "Incorrect! Please try again.". 
 
 ### Passing results to next item:
 When a participant makes an incorrect selection, maze will record the time it took them to do so, but then it will stop that sentence, and pass "failed" to the next element. It is recommended to use "followEachWith" for maze items to follow each with a separator saying whether it was correct or not, so participants know when a new sentence is starting. 
@@ -55,5 +58,5 @@ The first seven are same as for other Ibex modules; see Ibex documentation for a
 * 12.Correct: "yes" or "no" depending on whether the participant answered correctly. Note that "no" will be shown for words the participant did not see (i.e. words after the one they got wrong). In "redo" mode, this refers to the first button they press.
 * 13.Reading time to first answer: in ms. Reading time is provided for all words a participant saw, but the 0-word reading time is assessed differently (and so may not be comparable with other words in the sentence). Reading times are given for the word a participant gets wrong. "None" is used for words a participant did not see. In "redo" mode, this is time to first press (either right or wrong).
 * 14.Sentence. Text of the entire correct sentence. 
-* 15.Total time to correct answer. If not "redo" mode, will duplicate column 13. In "redo" mode, this count the time from the start of the item to the correct answer which will be longer for incorrect answers. Subtract column 13 from this to get time spent correcting the error.
+* 15.Total time to correct answer. If not "redo" mode, will duplicate column 13. In "redo" mode, this count the time from the start of the item to the correct answer which will be longer for incorrect answers. Subtract col 13 from this to get time spent correcting the error. Note that in "redo" mode with a delay (time>0), this will include time to first click, time spent on the delay, and time to correct click once allowed. 
 
