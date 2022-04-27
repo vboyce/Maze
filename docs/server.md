@@ -104,7 +104,7 @@ scp -i ~/.ssh/myserver.pem fixed-file.txt ubuntu@12.345.69.89:my-ibex-experiment
 
 
 ## Running the experiment 
-When running the experiment, you should use screen (or tmux) so that the server process keeps going even if your computer disconnects from the server. [Learn more about screen](https://linuxize.com/post/how-to-use-linux-screen/)
+When running the experiment, you should use screen (or tmux) so that the server process keeps going even if your computer disconnects from the server. [Learn more about screen](https://linuxize.com/post/how-to-use-linux-screen/)  
 While ssh'd to the server,
 ```
 screen
