@@ -40,26 +40,23 @@ cd ~/.ssh
 cp ~/Downloads/myserver.pem .
 chmod 400 myserver.pem
 ```
-
-	(Replace myserver.pem with the name of your file, and the ~/Downloads/ with where it is if it isn't in downloads.) [Learn more about chmod](https://opensource.com/article/19/8/linux-chmod-command)
+ (Replace myserver.pem with the name of your file, and the ~/Downloads/ with where it is if it isn't in downloads.) [Learn more about chmod](https://opensource.com/article/19/8/linux-chmod-command)
 
 2. ssh into your server. You'll need to know what the public IP is (which you took note of in step 4 above). In this line, you should use the name of your pem file and your IP. Say yes to the prompt. 
-
 ```
 ssh -i ~/.ssh/myserver.pem ubuntu@12.345.67.89
 ```
-
-[Learn more about ssh](https://schh.medium.com/ssh-for-dummies-ea168e6ff547)
+ [Learn more about ssh](https://schh.medium.com/ssh-for-dummies-ea168e6ff547)
 
 # Launching the ibex-maze sample
 The fastest way to test that it's all working is to run the ibex-maze sample from your server.
 
-1.(While ssh'd into the server) Install python 2.
+1. (While ssh'd into the server) Install python 2.
 ``` 
 sudo apt-get update
 sudo apt install python2
 ```
-say yes to prompt.
+ say yes to prompt.
 
 2. clone Ibex-with-Maze
 ```
@@ -71,7 +68,7 @@ git clone https://github.com/vboyce/Ibex-with-Maze.git
 cd Ibex-with-Maze/www
 python2 server.py
 ```
-In a web browser go to 12.345.67.89:3000 (use your servers IPv4 address that you used above). You should see the Ibex experiment.
+ In a web browser go to 12.345.67.89:3000 (use your servers IPv4 address that you used above). You should see the Ibex experiment.
 
 # Your experiment 
 
@@ -89,16 +86,17 @@ git clone https://github.com/username/project.git
 If you don't usually use git with terminal, you can learn more at [Git Guides](https://github.com/git-guides).
 
 ### Option 2: use scp
-The other option is to use scp, which is a terminal tool for copying files to other servers. [Learn more about scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/)
-Say you have your experiment in the path `Research/my-ibex-experiment` Then, on your computer you would run the following to copy my-ibex-experiment over. 
-``` cd ~/Research
+The other option is to use scp, which is a terminal tool for copying files to other servers. [Learn more about scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/)  
+ Say you have your experiment in the path `Research/my-ibex-experiment` Then, on your computer you would run the following to copy my-ibex-experiment over. 
+``` 
+cd ~/Research
 scp -i ~/.ssh/myserver.pem -r my-ibex-experiment ubuntu@12.345.69.89:
 ```
-If you then ssh into the server (see above) and do `ls` you will see the folder my-ibex-experiment. 
+ If you then ssh into the server (see above) and do `ls` you will see the folder my-ibex-experiment. 
+ 
+ The key thing to remember is that scp is done from the local side, not the server side! When doing this, it's often helpful to have two terminal tabs open -- one on the server (it'll say that it's at ubuntu@ip-172-whatever) and one on local (where it'll say username@computername). Then you can check where files are located on the server or that they copied correctly. 
 
-The key thing to remember is that scp is done from the local side, not the server side! When doing this, it's often helpful to have two terminal tabs open -- one on the server (it'll say that it's at ubuntu@ip-172-whatever) and one on local (where it'll say username@computername). Then you can check where files are located on the server or that they copied correctly. 
-
-Sometimes, you may want to copy just one file to a specific place. For instance
+ Sometimes, you may want to copy just one file to a specific place. For instance
 ``` 
 cd ~/Research/my-ibex-experiment
 scp -i ~/.ssh/myserver.pem fixed-file.txt ubuntu@12.345.69.89:my-ibex-experiment
@@ -111,15 +109,16 @@ While ssh'd to the server,
 ```
 screen
 ```
-This starts a new screen, where you can enter commands as normal. Then you can launch your experiment.
+ This starts a new screen, where you can enter commands as normal. Then you can launch your experiment.
 ```
 cd ~/Research/my-ibex-experiment/www
 python2 server.py
 ```
-Now it's running, and you can disconnect from the screen by doing Ctrl-A Ctrl-D. Your terminal should go back to the previous display, but the experiment is still running (go to the website and check!). 
+ Now it's running, and you can disconnect from the screen by doing Ctrl-A Ctrl-D. Your terminal should go back to the previous display, but the experiment is still running (go to the website and check!). 
 
-To get back to that screen (for instance to stop the experiment), you want to reconnect to the screen so do
-``` screen -r
+ To get back to that screen (for instance to stop the experiment), you want to reconnect to the screen so do
+``` 
+screen -r
 ```
 
 You can stop the experiment running with Ctrl+C. 
@@ -135,10 +134,12 @@ If you don't usually use git with terminal, you can learn more at [Git Guides](h
 ## Option 2: scp
 You ran your experiment and now you want to copy the results folder to your own computer. You'll need to know where the results folder is on the server -- say it's at `my-ibex-experiment/results`
 From your computer, use cd to navigate to the folder you want to copy the results folder to.
-``` cd ~/Research/my-ibex-experiment
+``` 
+cd ~/Research/my-ibex-experiment
 ```
 Then use scp to copy the files.
-```scp -i ~/.ssh/myserver.pem -r ubuntu@12.345.69.89:my-ibex-experiment/results . 
+```
+scp -i ~/.ssh/myserver.pem -r ubuntu@12.345.69.89:my-ibex-experiment/results . 
 ```
 [Learn more about scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/)
 
