@@ -30,7 +30,7 @@ Follow through the steps and do the following
 
 5. Take note of what the *public* IPv4 for your server is. This will be listed in the instance summary and will be some numbers with dots in between like 12.345.67.89 . You will need this later. 
 
-6. The last website thing we need is to make a port open so you'll be able to host experiments and have others see them. The most common port to have open is 3000, so we'll do that. To do this, you want to go to the security group -- probably called `sg-blahblahblah (launch-wizard-1)` and edit inbound rules. Add a rule for `type="custom tcp"`, `port range = 3000`, `source=anywhere`, and save rules. 
+6. The last website thing we need is to make a port open so you'll be able to host experiments and have others see them. The most common port to have open is 3000, so we'll do that. To do this, you want to go to the security group -- probably called `sg-blahblahblah (launch-wizard-1)` and edit inbound rules. Add a rule for `type="custom tcp"`, `port range = 3000`, `source=anywhere-IPv4`, and save rules. 
 
 ## On your computer
 
@@ -143,9 +143,14 @@ scp -i ~/.ssh/myserver.pem -r ubuntu@12.345.69.89:my-ibex-experiment/results .
 ```
 [Learn more about scp](https://linuxize.com/post/how-to-use-scp-command-to-securely-transfer-files/)
 
+# Additional consideration: Memory
+The aws-free tier is a t2.micro which comes with 1GB (around 1000MB) of memory. Ibex experiments don't use a lot of memory, but by far the biggest user of memory is results files. A results file from a 1000 word experiment run on 100 people came to around 30MB; Ibex writes two results files, a raw_results file and a results file, and raw_results files may be a little bigger. All told, I think that experiment took 100MB or less of memory on the server. 
+
+You should be able to run reasonable-sized Ibex experiments on a t2.micro, but to be careful, avoid letting folders of old experiments build up on the server. When you're done with an experiment (and have the data safely backed up elsewhere), you can delete folders using `rm -rf Folder_to_delete`.
+
 # Generalizations
 * if you want to run multiple experiments at once, you can open up more ports, change the ports each experiment is running on to be all different, and use more screens to run them simultaneously. (Just keep track of what's running in which port and screen so you don't kill the wrong one by accident, or direct people to the wrong site!)
 
-* This general process isn't just for running Ibex, it'll also work for other web-based experiments -- anything that you can run via terminal on localhost:3000, you can also run on your server in a similar way. Just make sure you install any dependencies needed on the server. (Example: I run experiments written with [Empirica](https://empirica.ly/) on an ec2 instance.)
+* This general process isn't just for running Ibex, it'll also work for other web-based experiments -- anything that you can run via terminal on localhost:3000, you can also run on your server in a similar way. Just make sure you install any dependencies needed on the server. (Example: I run experiments written with [Empirica](https://empirica.ly/) on an ec2 instance.) Note that some experimental frameworks may use a lot more memory than Ibex does. 
 
 * AWS EC2 instances happen to be the cloud service I use for running experiments. Aside from the EC2 specific set-up, the rest of the instructions will work for any server with open ports that you have ssh access to. Depending on the authentication method, you may not need to include `-i ~/.ssh/myserver.pem` in the ssh and scp lines, and may instead be asked for a password, or ssh keys may be used. 
